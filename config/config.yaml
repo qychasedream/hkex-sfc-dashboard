@@ -1,0 +1,44 @@
+# HKEX/SFC Regulatory Watch Dashboard Configuration
+# ==================================================
+
+sources:
+  sfc:
+    name: "Securities and Futures Commission"
+    name_zh: "香港證監會"
+    base_url: "https://www.sfc.hk"
+    news_url: "https://www.sfc.hk/EN/News-and-announcements"
+    search_keywords:
+      - "SFC disciplinary action"
+      - "SFC enforcement news Hong Kong"
+      - "SFC regulatory consultation conclusion"
+      - "SFC new regulatory rules guidelines"
+      - "香港證監會 紀律處分"
+      - "香港證監會 監管規則"
+
+  hkex:
+    name: "Hong Kong Exchanges and Clearing"
+    name_zh: "香港聯交所"
+    base_url: "https://www.hkex.com.hk"
+    news_url: "https://www.hkex.com.hk/News/Regulatory-Announcements"
+    rules_url: "https://www.hkex.com.hk/Listing/Rules-and-Guidance/Listing-Rules"
+    search_keywords:
+      - "HKEX disciplinary action listing"
+      - "HKEX listing regulation amendment"
+      - "HKEX consultation conclusion listing rules"
+      - "香港聯交所 紀律行動"
+      - "香港聯交所 上市規則修訂"
+
+collection:
+  lookback_days: 7
+  claude:
+    model: "claude-sonnet-4-6"
+    max_search_uses: 8
+    max_fetch_uses: 6
+    effort: "high"
+
+output:
+  site_dir: "docs"
+  title: "HKEX/SFC Regulatory Watch"
+  title_zh: "香港監管諮詢看板"
+  max_items: 50
+  languages: ["en", "zh-HK"]
