@@ -561,36 +561,9 @@
             <h2>⚖️ SFC 证监会 — 近期监管与执法动态</h2>
             <span class="badge badge-sfc">证监会</span>
         </div>
-        <div class="news-grid">
-            <div class="news-card sfc">
-                <div class="news-card-title">🔴 IPO 监管收紧 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC4" target="_blank">📄 26EC4</a></div>
-                <div class="news-card-date">2026年7月3日 / 通函 2026年1月30日</div>
-                <div class="news-card-desc">SFC 因应虚假需求及不公平分配问题加强IPO监管，要求投行提交整改计划，对保荐人及承销商提出更严格要求。</div>
-            </div>
-            <div class="news-card sfc">
-                <div class="news-card-title">⚖️ 「拉高出货」案 — 法院批准禁制令 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR99" target="_blank">📰 26PR99</a></div>
-                <div class="news-card-date">2026年6月9日</div>
-                <div class="news-card-desc">涉及 Grand Talents Group 股票的操纵案，投资者损失约 <strong>3.94亿港元</strong>。法院批准 SFC 申请的资产冻结令。<br><small class="text-muted">案号: SFC v Lui Man Wah & 15 Ors [2026] HKCFI 2140</small></div>
-            </div>
-            <div class="news-card sfc">
-                <div class="news-card-title">🏛️ 恒大清盘人挑战 PwC 和解 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR62" target="_blank">📰 26PR62</a></div>
-                <div class="news-card-date">2026年4月23日 (SFC公告) / 6月16日 (清盘人覆核)</div>
-                <div class="news-card-desc">SFC 与 PwC HK 达成 <strong>10亿港元</strong> 股东赔偿协议。恒大清盘人其后提出司法覆核，法院 8月19日审理。</div>
-            </div>
-            <div class="news-card sfc">
-                <div class="news-card-title">💱 虚拟资产监管更新 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR59" target="_blank">📰 26PR59</a></div>
-                <div class="news-card-date">2026年4月20日 / 通函 2026年5月27日</div>
-                <div class="news-card-desc">SFC 更新监管框架允许认可投资产品在二级市场买卖；虚拟资产顾问及资产管理服务将纳入强制发牌 (<strong>26EC31, 26EC26</strong>)。</div>
-            </div>
-            <div class="news-card sfc">
-                <div class="news-card-title">🛡️ 网络安全紧急警告 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR77" target="_blank">📰 26PR77</a></div>
-                <div class="news-card-date">2026年6月2日</div>
-                <div class="news-card-desc">网络事件激增 <strong>27%</strong>。SFC 要求持牌机构紧急升级措施应对 AI 驱动威胁，高管承担最终责任。(通函 <strong>26EC32</strong>)</div>
-            </div>
-            <div class="news-card sfc">
-                <div class="news-card-title">🔍 跨境开户管控联合执法 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR72" target="_blank">📰 26PR72</a></div>
-                <div class="news-card-date">2026年5月22日</div>
-                <div class="news-card-desc">SFC 审查 <strong>12家持牌券商</strong>，发现系统性开户缺失。要求关闭可疑账户、取得境外资金来源声明等三项措施。</div>
+        <div class="news-grid" id="sfc-news-cards">
+            <div class="news-card sfc" style="text-align:center;grid-column:1/-1;padding:24px;">
+                <p>⏳ 正在加载 SFC 最新新闻...</p>
             </div>
         </div>
     </div>
@@ -722,10 +695,76 @@
             <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" target="_blank">HKEX 新闻发布</a> ·
             <a href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/" target="_blank">SFC 新闻公告</a>
         </p>
-        <p style="margin-top:6px;">自动抓取 · 每日更新 · 最后更新: 2026-07-05</p>
+        <p style="margin-top:6px;" id="update-footer">自动抓取 · 每日更新 · 最后更新: 加载中...</p>
     </div>
 
 </div>
+
+<script>
+// === 动态加载 SFC 数据 ===
+const DATA_BASE = '../../data/';
+
+async function loadJSON(path) {
+    try {
+        const resp = await fetch(path);
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        return await resp.json();
+    } catch(e) {
+        console.warn(`Failed to load ${path}:`, e.message);
+        return null;
+    }
+}
+
+function formatDate(iso) {
+    if (!iso) return '';
+    const d = new Date(iso);
+    return d.toLocaleDateString('zh-HK', { year:'numeric', month:'2-digit', day:'2-digit', timeZone:'Asia/Hong_Kong' });
+}
+
+async function refreshData() {
+    // 1. 加载元数据
+    const meta = await loadJSON(DATA_BASE + 'update_meta.json');
+    if (meta && meta.lastUpdate) {
+        document.getElementById('update-footer').textContent =
+            `自动抓取 · 每日更新 · 最后更新: ${formatDate(meta.lastUpdate)} · SFC新闻:${meta.stats?.sfcNews||0}条 · 通函:${meta.stats?.sfcCirculars||0}条`;
+    }
+
+    // 2. 加载 SFC 新闻并渲染为卡片
+    const newsData = await loadJSON(DATA_BASE + 'sfc_news.json');
+    if (newsData && newsData.items && newsData.items.length > 0) {
+        renderSfcNewsCards(newsData.items.slice(0, 9));
+    }
+}
+
+function renderSfcNewsCards(items) {
+    const container = document.getElementById('sfc-news-cards');
+    if (!container) return;
+
+    let html = '';
+    items.forEach(item => {
+        const date = item.date || '';
+        const typeLabel = item.type === 'enforcement'
+            ? '<span class="badge badge-enf" style="font-size:0.65rem;">执法</span>'
+            : '<span class="badge badge-sfc" style="font-size:0.65rem;">新闻</span>';
+        html += `
+            <div class="news-card sfc">
+                <div class="news-card-title">${typeLabel} ${escapeHTML(item.title)}
+                    <a class="source-link sfc" href="${escapeHTML(item.url)}" target="_blank">📰 SFC</a>
+                </div>
+                <div class="news-card-date">${escapeHTML(date)}</div>
+            </div>`;
+    });
+    container.innerHTML = html;
+}
+
+function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// 页面加载时刷新
+document.addEventListener('DOMContentLoaded', refreshData);
+</script>
 
 </body>
 </html>
