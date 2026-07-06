@@ -1,55 +1,6 @@
 {
-  "updated": "2026-07-06T09:15:55.230570+08:00",
+  "updated": "2026-07-06T11:48:10.708959+08:00",
   "source": "HKEX 规则手册",
-  "count": 6,
-  "items": [
-    {
-      "topic": "董事及高級管理人員",
-      "ref": "常問問題1.1 - 編號1-20",
-      "detail": "常問問題 - 董事",
-      "date": "12/2011 (02/2026)",
-      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-1.1_c_202602.pdf",
-      "topicUrl": "https://cn-rules.hkex.com.hk/node/12800"
-    },
-    {
-      "topic": "董事及高級管理人員",
-      "ref": "常問問題1.2 - 編號1-3",
-      "detail": "常問問題 - 公司秘書",
-      "date": "12/2011 (02/2026)",
-      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-1.2_c_202602.pdf",
-      "topicUrl": "https://cn-rules.hkex.com.hk/node/12800"
-    },
-    {
-      "topic": "公眾持股量",
-      "ref": "常問問題7 – 編號1-5",
-      "detail": "常問問題 - 公眾持股量",
-      "date": "09/2019 (02/2026)",
-      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-7_c_202602.pdf",
-      "topicUrl": "https://cn-rules.hkex.com.hk/node/12806"
-    },
-    {
-      "topic": "核心的股東保障水平",
-      "ref": "常問問題16 - 編號1-8",
-      "detail": "常問問題 - 核心的股東保障水平",
-      "date": "06/2022 (04/2026)",
-      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-16_c_202604.pdf",
-      "topicUrl": "https://cn-rules.hkex.com.hk/node/13508"
-    },
-    {
-      "topic": "企業管治 / 環境、社會及管治 / 董事進行證券交易",
-      "ref": "常問問題17.1 - 編號1-11",
-      "detail": "常問問題 - 《企業管治守則》",
-      "date": "12/2011 (02/2026)",
-      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-17.1_c_202602.pdf",
-      "topicUrl": "https://cn-rules.hkex.com.hk/node/13509"
-    },
-    {
-      "topic": "企業管治 / 環境、社會及管治 / 董事進行證券交易",
-      "ref": "常問問題17.2 - 編號1-21",
-      "detail": "常問問題 - 《環境、社會及管治報告守則》",
-      "date": "08/2012 (04/2026)",
-      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-17.2_c_202604.pdf",
-      "topicUrl": "https://cn-rules.hkex.com.hk/node/13509"
-    }
-  ]
+  "count": 0,
+  "items": []
 }
