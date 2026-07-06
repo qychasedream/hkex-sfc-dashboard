@@ -370,7 +370,7 @@
         <span class="pill pill-sfc">SFC 证监会</span>
         <span class="pill pill-new">持续更新</span>
     </div>
-    <div class="update-time">🕐 数据更新于 2026年7月5日 | 来源：<a href="https://cn-rules.hkex.com.hk/" style="color:#90caf9;">HKEX 规则手册</a> · <a href="https://www.sfc.hk/" style="color:#ef9a9a;">SFC 证监会</a> · <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" style="color:#90caf9;">HKEX 新闻</a></div>
+    <div class="update-time">🕐 <span id="header-update-time">加载中...</span> | 来源：<a href="https://cn-rules.hkex.com.hk/" style="color:#90caf9;">HKEX 规则手册</a> · <a href="https://www.sfc.hk/" style="color:#ef9a9a;">SFC 证监会</a> · <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" style="color:#90caf9;">HKEX 新闻</a></div>
 </header>
 
 <div class="container">
@@ -727,6 +727,8 @@ async function refreshData() {
     if (meta && meta.lastUpdate) {
         document.getElementById('update-footer').textContent =
             `自动抓取 · 每日更新 · 最后更新: ${formatDate(meta.lastUpdate)} · SFC新闻:${meta.stats?.sfcNews||0}条 · 通函:${meta.stats?.sfcCirculars||0}条`;
+        var hdrEl = document.getElementById('header-update-time');
+        if (hdrEl) hdrEl.textContent = '数据更新于 ' + new Date(meta.lastUpdate).toLocaleDateString('zh-HK', { year:'numeric', month:'long', day:'numeric', timeZone:'Asia/Hong_Kong' });
     }
 
     // 2. 加载 SFC 新闻并渲染为卡片
