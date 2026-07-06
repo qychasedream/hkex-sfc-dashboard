@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-06T11:48:07.276484+08:00",
+  "updated": "2026-07-06T21:48:43.882090+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR104",
+      "title": "證監會暫時吊銷王添喜的牌照九個月 ",
+      "type": "enforcement",
+      "date": "2026-07-06",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR104"
+    },
     {
       "refNo": "26PR103",
       "title": "證監會《2025年資產及財富管理活動調查》：香港管理資產總值上升20%至歷史新高 ",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-01-29",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR13"
-    },
-    {
-      "refNo": "26PR12",
-      "title": "黃天祐的新演說：在恒生黃金ETF上市儀式上的演說",
-      "type": "general",
-      "date": "2026-01-29",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR12"
     }
   ]
 }
