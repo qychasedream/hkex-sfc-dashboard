@@ -23,7 +23,7 @@ if sys.platform == 'win32':
 
 # === 配置 ===
 HKT = timezone(timedelta(hours=8))
-DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'docs', 'data')
 os.makedirs(DATA_DIR, exist_ok=True)
 
 HEADERS = {
