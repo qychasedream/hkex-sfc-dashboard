@@ -229,6 +229,41 @@ body {
   margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
 }
 
+/* Law Firm Grid */
+.law-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+.law-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 18px 20px;
+  transition: box-shadow .15s, transform .15s;
+}
+.law-card:hover {
+  box-shadow: var(--shadow-md); transform: translateY(-2px);
+}
+.law-card .law-firm {
+  font-weight: 700; color: var(--primary); font-size: .88em;
+  display: flex; align-items: center; gap: 6px; margin-bottom: 4px;
+}
+.law-card .law-topic {
+  display: inline-block; padding: 2px 10px; border-radius: 10px;
+  font-size: .72em; font-weight: 600; background: var(--accent-light);
+  color: var(--accent); margin-bottom: 8px;
+}
+.law-card .law-title {
+  font-size: .9em; color: var(--text); line-height: 1.5; margin-bottom: 8px;
+}
+.law-card .law-meta {
+  font-size: .75em; color: var(--text-muted);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.law-card .law-link {
+  color: var(--primary-light); text-decoration: none; font-weight: 600; font-size: .8em;
+}
+.law-card .law-link:hover { text-decoration: underline; }
+
 /* Footer */
 .footer {
   margin-top: 56px; padding: 32px 0 24px;
@@ -356,6 +391,15 @@ body {
   <div class="chart-section">
     <h2>📊 近30天监管动态趋势</h2>
     <canvas id="trendChart" height="80"></canvas>
+  </div>
+
+  <!-- Law Firm Summaries -->
+  <div class="chart-section" style="margin-top:24px;">
+    <h2>🏛️ 律所监管动态解读</h2>
+    <p style="color:var(--text-secondary);font-size:.85em;margin-bottom:16px;">知名律所对联交所及证监会最新监管动态的专题分析</p>
+    <div class="law-grid" id="law-firm-grid">
+      <div class="loading"><div class="spinner"></div><p style="margin-top:12px;">正在加载律所解读...</p></div>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -557,6 +601,7 @@ async function init() {
   var hkexNewsP = loadJSON(DATA_BASE + 'hkex_news_releases.json');
   var hkexGLArchiveP = loadJSON(DATA_BASE + 'hkex_guidance_archive.json');
   var hkexClaudeP = loadJSON(DATA_BASE + 'hkex_claude_search.json');
+  var lawP = loadJSON(DATA_BASE + 'law_firm_summaries.json');
 
   var meta = await metaP;
   var sfcNews = await sfcNewsP;
@@ -566,6 +611,7 @@ async function init() {
   var hkexNews = await hkexNewsP;
   var hkexGLArchive = await hkexGLArchiveP;
   var hkexClaude = await hkexClaudeP;
+  var lawData = await lawP;
 
   // Update header and footer time
   if (meta && meta.lastUpdate) {
@@ -630,6 +676,11 @@ async function init() {
 
   // Render chart
   renderChart(recentItems);
+
+  // Render law firm summaries
+  if (lawData && lawData.items) {
+    renderLawFirms(lawData.items);
+  }
 
   // Update period badge
   if (recentItems.length > 0) {
@@ -812,6 +863,26 @@ function renderChart(items) {
       }
     }
   });
+}
+
+// ===== Render Law Firm Summaries =====
+function renderLawFirms(items) {
+  var container = document.getElementById('law-firm-grid');
+  if (!container) return;
+  // Sort by date descending
+  items.sort(function(a, b) { if (a.date > b.date) return -1; if (a.date < b.date) return 1; return 0; });
+  var html = '';
+  items.forEach(function(item) {
+    html += '<div class="law-card">'
+      + '<div class="law-firm">' + esc(item.firm || '') + '</div>'
+      + (item.topic ? '<span class="law-topic">' + esc(item.topic) + '</span>' : '')
+      + '<div class="law-title">' + esc(item.title || '') + '</div>'
+      + '<div class="law-meta">'
+      + '<span>' + (item.date || '').slice(0, 10) + '</span>'
+      + (item.url ? '<a class="law-link" href="' + esc(item.url) + '" target="_blank">阅读原文 →</a>' : '')
+      + '</div></div>';
+  });
+  container.innerHTML = html;
 }
 
 // Start loading
