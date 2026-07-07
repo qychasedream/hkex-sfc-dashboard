@@ -1,8 +1,29 @@
 {
-  "updated": "2026-07-07T10:26:01.110266+08:00",
+  "updated": "2026-07-07T14:16:43.236070+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR108",
+      "title": "證監會歡迎推進香港固定收益及貨幣市場發展的新措施",
+      "type": "general",
+      "date": "2026-07-07",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR108"
+    },
+    {
+      "refNo": "26PR106",
+      "title": "梁鳳儀的新演說摘要：在香港固定收益及貨幣峰會暨債券通論壇的專題討論上發言\r\n\r\n",
+      "type": "general",
+      "date": "2026-07-07",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR106"
+    },
+    {
+      "refNo": "26PR105",
+      "title": "黃天祐的新演說：在香港固定收益及貨幣峰會暨債券通論壇的歡迎辭\r\n\r\n",
+      "type": "general",
+      "date": "2026-07-07",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR105"
+    },
     {
       "refNo": "26PR104",
       "title": "證監會暫時吊銷王添喜的牌照九個月 ",
@@ -611,27 +632,6 @@
       "type": "general",
       "date": "2026-01-30",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR16"
-    },
-    {
-      "refNo": "26PR14",
-      "title": "楊慧明的新演說：在香港房託基金協會午餐會上的演說",
-      "type": "general",
-      "date": "2026-01-30",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR14"
-    },
-    {
-      "refNo": "26PR15",
-      "title": "跨機構督導小組公布2026至2028年策略重點",
-      "type": "general",
-      "date": "2026-01-30",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR15"
-    },
-    {
-      "refNo": "26PR13",
-      "title": "證監會與金管局就場外衍生工具《結算規則》下的標準計算期間進行聯合諮詢",
-      "type": "general",
-      "date": "2026-01-29",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR13"
     }
   ]
 }
