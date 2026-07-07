@@ -1,10 +1,9 @@
-name: Hourly Data Update (HKT 09:00-18:00)
+name: Hourly Data Update (24x7)
 
 on:
   schedule:
-    # 香港时间 09:00-18:00 每小时刷新 (UTC 01:00-10:00)
-    - cron: '0 1-10 * * *'
-  # 也允许手动触发
+    # 每小时整点运行，全天24小时覆盖
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
