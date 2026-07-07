@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-07T18:29:49.573604+08:00",
+  "updated": "2026-07-08T01:08:41.672246+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR107",
+      "title": "中國人民銀行、香港金融管理局、香港證券及期貨事務監察委員會關於在港建設交易平台的聯合公告\r\n",
+      "type": "general",
+      "date": "2026-07-07",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR107"
+    },
     {
       "refNo": "26PR108",
       "title": "證監會歡迎推進香港固定收益及貨幣市場發展的新措施",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-02-02",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR17"
-    },
-    {
-      "refNo": "26PR16",
-      "title": "證監會指示上市保薦人從速進行內部檢討  以糾正招股文件擬備工作中的嚴重缺失",
-      "type": "general",
-      "date": "2026-01-30",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR16"
     }
   ]
 }
