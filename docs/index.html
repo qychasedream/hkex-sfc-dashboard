@@ -106,6 +106,28 @@ body {
   margin-top: 6px; border: 1px solid #c8dce8;
 }
 
+/* Enforcement Section */
+.enforcement-section {
+  background: var(--surface); border-radius: var(--radius-lg);
+  padding: 28px; margin-bottom: 24px;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+  border-left: 4px solid var(--danger);
+}
+.enf-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.enf-header h2 { font-size: 1.2em; font-weight: 700; color: var(--danger); margin: 0; }
+.enf-count { font-size: .85em; color: var(--danger); font-weight: 600; background: var(--danger-bg); padding: 3px 12px; border-radius: 12px; }
+.enf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 768px) { .enf-grid { grid-template-columns: 1fr; } }
+.enf-col-title { font-weight: 700; color: var(--primary); font-size: .95em; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+.enf-list { max-height: 420px; overflow-y: auto; }
+.enf-item { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.enf-item:last-child { border-bottom: none; }
+.enf-item .enf-date { font-size: .75em; color: var(--text-muted); margin-bottom: 2px; }
+.enf-item .enf-title { font-size: .85em; color: var(--text); line-height: 1.5; }
+.enf-item .enf-title a { color: var(--primary-light); text-decoration: none; }
+.enf-item .enf-title a:hover { text-decoration: underline; }
+.enf-item .enf-stock { font-size: .75em; color: var(--accent); font-weight: 600; }
+
 /* Stats Row */
 .stats-row {
   display: grid;
@@ -377,6 +399,24 @@ body {
   <!-- Stats Row (dynamic) -->
   <div class="stats-row" id="stats-row">
     <div class="loading"><div class="spinner"></div><p style="margin-top:12px;">正在加载数据...</p></div>
+  </div>
+
+  <!-- Enforcement Section -->
+  <div class="enforcement-section" id="enforcement-section" style="display:none;">
+    <div class="enf-header">
+      <h2>⚖️ 监管处罚与执法</h2>
+      <span class="enf-count" id="enf-count"></span>
+    </div>
+    <div class="enf-grid">
+      <div class="enf-col">
+        <div class="enf-col-title">🏢 联交所纪律行动</div>
+        <div class="enf-list" id="enf-hkex"></div>
+      </div>
+      <div class="enf-col">
+        <div class="enf-col-title">🔍 证监会执法新闻</div>
+        <div class="enf-list" id="enf-sfc"></div>
+      </div>
+    </div>
   </div>
 
   <!-- Filter Bar (dynamic) -->
@@ -674,6 +714,9 @@ async function init() {
   // Render items
   renderItems(catGroups);
 
+  // Render enforcement section
+  renderEnforcement(allItems);
+
   // Render chart
   renderChart(recentItems);
 
@@ -863,6 +906,64 @@ function renderChart(items) {
       }
     }
   });
+}
+
+// ===== Render Enforcement Section =====
+function renderEnforcement(allItems) {
+  // Separate HKEX disciplinary and SFC enforcement
+  var hkexEnf = [];
+  var sfcEnf = [];
+  allItems.forEach(function(item) {
+    if (item.source === 'HKEX' && (item.category === 'disciplinary' || item.category === 'enforcement_news')) {
+      hkexEnf.push(item);
+    } else if (item.source === 'SFC' && (item.category === 'enforcement_news' || item.category === 'disciplinary')) {
+      sfcEnf.push(item);
+    }
+  });
+
+  // Sort by date descending
+  var sortFn = function(a, b) { return a.date > b.date ? -1 : a.date < b.date ? 1 : 0; };
+  hkexEnf.sort(sortFn);
+  sfcEnf.sort(sortFn);
+
+  // Dedup by url
+  var dedup = function(arr) {
+    var seen = {}, result = [];
+    arr.forEach(function(i) {
+      if (!seen[i.url]) { seen[i.url] = true; result.push(i); }
+    });
+    return result;
+  };
+  hkexEnf = dedup(hkexEnf);
+  sfcEnf = dedup(sfcEnf);
+
+  // Show section if there's data
+  var section = document.getElementById('enforcement-section');
+  if (hkexEnf.length === 0 && sfcEnf.length === 0) return;
+  section.style.display = 'block';
+
+  document.getElementById('enf-count').textContent = '共 ' + (hkexEnf.length + sfcEnf.length) + ' 条';
+
+  // Render HKEX column
+  var renderList = function(items, containerId) {
+    var html = '';
+    items.forEach(function(item) {
+      var title = item.title || '';
+      // Extract stock code if present
+      var stockMatch = title.match(/股份代號[：:]\s*(\d+)/);
+      var stockCode = stockMatch ? stockMatch[1] : '';
+      html += '<div class="enf-item">'
+        + '<div class="enf-date">' + (item.date || '').slice(0, 10) + '</div>'
+        + (stockCode ? '<span class="enf-stock">' + esc(stockCode) + '</span> ' : '')
+        + '<div class="enf-title">'
+        + (item.url ? '<a href="' + esc(item.url) + '" target="_blank">' + esc(title) + '</a>' : esc(title))
+        + '</div></div>';
+    });
+    document.getElementById(containerId).innerHTML = html;
+  };
+
+  renderList(hkexEnf.slice(0, 30), 'enf-hkex');
+  renderList(sfcEnf.slice(0, 30), 'enf-sfc');
 }
 
 // ===== Render Law Firm Summaries =====
