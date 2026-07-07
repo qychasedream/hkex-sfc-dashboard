@@ -450,10 +450,12 @@ def fetch_hkex_guidance_archive():
 def save_json(data, filename, skip_empty=True):
     """保存 JSON 文件（skip_empty: 无数据时不覆盖已有文件）"""
     filepath = os.path.join(DATA_DIR, filename)
-    count = data.get('count', 0)
-    if skip_empty and count == 0:
-        print(f"  → 跳过: {filename} (无数据，保留已有文件)")
-        return
+    # 对 update_meta 始终保存；对数据文件检查 count 字段
+    if skip_empty and filename != 'update_meta.json':
+        count = data.get('count', 0)
+        if count == 0:
+            print(f"  → 跳过: {filename} (无数据，保留已有文件)")
+            return
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"  → 已保存: {filename}")

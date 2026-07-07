@@ -1,8 +1,53 @@
 {
-  "updated": "2026-07-06T22:52:12.575273+08:00",
+  "updated": "2026-07-07T10:28:15.409935+08:00",
   "source": "HKEX 规则手册",
-  "count": 26,
+  "count": 49,
   "items": [
+    {
+      "topic": "董事及高級管理人員",
+      "ref": "常問問題1.1 - 編號1-20",
+      "detail": "常問問題 - 董事",
+      "date": "12/2011 (02/2026)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-1.1_c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12800",
+      "docType": "faq"
+    },
+    {
+      "topic": "董事及高級管理人員",
+      "ref": "GL108-20",
+      "detail": "指引信 - 公司秘書的經驗及資格規定",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL108-20_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12800",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "董事及高級管理人員",
+      "ref": "常問問題1.2 - 編號1-3",
+      "detail": "常問問題 - 公司秘書",
+      "date": "12/2011 (02/2026)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-1.2_c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12800",
+      "docType": "faq"
+    },
+    {
+      "topic": "合規顧問和其他專業顧問",
+      "ref": "GL67-13",
+      "detail": "指引信 - 新上市發行人遵守合規顧問規定的指引",
+      "date": "01/2024(06/2024)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL67-13_c_202406.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12801",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "合規顧問和其他專業顧問",
+      "ref": "GL76-14",
+      "detail": "指引信 - 獨立財務顧問根據《上市規則》規定編備意見函件的指引",
+      "date": "01/2024(06/2024)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL76-14_c_202406.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12801",
+      "docType": "guidance_letter"
+    },
     {
       "topic": "會計及審計事宜",
       "ref": "GL103-19",
@@ -236,6 +281,168 @@
       "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-10_c_202512.pdf",
       "topicUrl": "https://cn-rules.hkex.com.hk/node/12804",
       "docType": "faq"
+    },
+    {
+      "topic": "須予公布的交易",
+      "ref": "GL104-19",
+      "detail": "指引信 - 應用反收購行動規則的指引",
+      "date": "10/2019(09/2024)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL104-19_c_202409.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12809",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "須予公布的交易",
+      "ref": "GL105-19",
+      "detail": "指引信 - 大規模發行證券的指引",
+      "date": "10/2019",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL105-19_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12809",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "須予公布的交易",
+      "ref": "GL69-13",
+      "detail": "指引信 - 對於 (i) 發行人擬將業務或資產在聯交所分拆作獨立上市；或(ii) 發行人擬進行反收購行動而被視作為新上市申請人提供指引",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL69-13_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12809",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "須予公布的交易",
+      "ref": "GL116-23",
+      "detail": "指引信 - 須予公布的交易中代價基準及業務估值披露",
+      "date": "01/2024(06/2024)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL116-23_c_202406.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12809",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "關連交易",
+      "ref": "GL73-14",
+      "detail": "指引信 - 持續關連交易的定價政策及相關資料披露的指引",
+      "date": "07/2014",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL73-14_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12810",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "特別上市制度或其他上市架構",
+      "ref": "GL111-22",
+      "detail": "指引信 - 適用於海外發行人的指引",
+      "date": "01/2024(05/2024)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL111-22_c_202405.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12812",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "特別上市制度或其他上市架構",
+      "ref": "GL112-22",
+      "detail": "指引信 - 主板上市地位由第二上市改為雙重主要上市或主要上市",
+      "date": "01/2024(05/2024)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL112-22_c_202405.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12812",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "特別上市制度或其他上市架構",
+      "ref": "常問問題14.1 - 編號1-3",
+      "detail": "常問問題 - 海外發行人",
+      "date": "01/2022 (12/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-14.1_c_202512.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12812",
+      "docType": "faq"
+    },
+    {
+      "topic": "特別上市制度或其他上市架構",
+      "ref": "GL47-13",
+      "detail": "指引信 - 第18章的持續責任要求的指引",
+      "date": "01/2013",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL47-13_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12812",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "特別上市制度或其他上市架構",
+      "ref": "GL113-22",
+      "detail": "指引信 - 特殊目的收購公司的修訂指引 (自2024年9月1日起生效)",
+      "date": "01/2024(08/2024)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL113-22_c_202408.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12812",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "特別上市制度或其他上市架構",
+      "ref": "GL109-20",
+      "detail": "指引信 - 有關證監會認可交易所買賣基金管理公司的披露指引",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL109-20_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12812",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "特別上市制度或其他上市架構",
+      "ref": "GL79-14",
+      "detail": "指引信 - 有關認可集體投資計劃的指引",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL79-14_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12812",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "分拆上市",
+      "ref": "GL69-13",
+      "detail": "指引信 - 對於 (i) 發行人擬將業務或資產在聯交所分拆作獨立上市；或(ii) 發行人擬進行反收購行動而被視作為新上市申請人提供指引",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL69-13_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12811",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "核心的股東保障水平",
+      "ref": "常問問題16 - 編號1-8",
+      "detail": "常問問題 - 核心的股東保障水平",
+      "date": "06/2022 (04/2026)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-16_c_202604.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/13508",
+      "docType": "faq"
+    },
+    {
+      "topic": "企業管治 / 環境、社會及管治 / 董事進行證券交易",
+      "ref": "常問問題17.1 - 編號1-11",
+      "detail": "常問問題 - 《企業管治守則》",
+      "date": "12/2011 (02/2026)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-17.1_c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/13509",
+      "docType": "faq"
+    },
+    {
+      "topic": "企業管治 / 環境、社會及管治 / 董事進行證券交易",
+      "ref": "常問問題17.2 - 編號1-21",
+      "detail": "常問問題 - 《環境、社會及管治報告守則》",
+      "date": "08/2012 (04/2026)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-17.2_c_202604.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/13509",
+      "docType": "faq"
+    },
+    {
+      "topic": "其他主題",
+      "ref": "GL77-14",
+      "detail": "指引信 - 上市發行人業務使用合約安排的指引",
+      "date": "05/2014(05/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL77-14_c_202505.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12813",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "其他主題",
+      "ref": "GL71-14",
+      "detail": "指引信 - 涉及經營賭博業務的上市申請人及上市發行人",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL71-14_c_202405.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12813",
+      "docType": "guidance_letter"
     }
   ]
 }
