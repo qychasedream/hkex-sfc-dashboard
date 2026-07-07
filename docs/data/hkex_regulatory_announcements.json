@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-07T14:16:47.604220+08:00",
+  "updated": "2026-07-07T18:29:53.845685+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 49,
   "items": [
+    {
+      "title": "通告 - 關於大中華金融控股有限公司 （於百慕達註冊成立之有限公司） （股份代號：431）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2607072news?sc_lang=zh-HK",
+      "date": "2026-07-07",
+      "description": "通告 - 關於大中華金融控股有限公司 （於百慕達註冊成立之有限公司） （股份代號：431）取消上市地位",
+      "category": "enforcement_news"
+    },
     {
       "title": "聯交所對銀建國際控股集團有限公司（股份代號：171）一名前董事的紀律行動",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260706news?sc_lang=zh-HK",
@@ -338,13 +345,6 @@
       "date": "2025-12-03",
       "description": "通告 - 關於艾伯科技股份有限公司（清盤中）   （於開曼群島註冊成立之有限公司） （股份代號：2708） 取消上市地位",
       "category": "enforcement_news"
-    },
-    {
-      "title": "聯交所對泰加保險（控股）有限公司（已除牌，前股份代號：6161）及六名董事的紀律行動",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/251125news?sc_lang=zh-HK",
-      "date": "2025-11-25",
-      "description": "聯交所對泰加保險（控股）有限公司（已除牌，前股份代號：6161）及六名董事的紀律行動",
-      "category": "disciplinary"
     }
   ]
 }

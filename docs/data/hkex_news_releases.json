@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-07T14:16:49.579460+08:00",
+  "updated": "2026-07-07T18:29:56.003498+08:00",
   "source": "HKEX News Releases RSS (filtered)",
   "count": 43,
   "items": [
+    {
+      "title": "業界領袖齊聚一堂，攜手推動香港固定收益及貨幣市場生態圈發展",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/2607073news?sc_lang=zh-HK",
+      "date": "2026-07-07",
+      "description": "業界領袖齊聚一堂，攜手推動香港固定收益及貨幣市場生態圈發展",
+      "category": "general"
+    },
     {
       "title": "香港交易所與跨境清算公司簽署合作備忘錄 加強香港離岸人民幣結算基礎設施建設",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/2607071news?sc_lang=zh-HK",
@@ -295,13 +302,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/250820news?sc_lang=zh-HK",
       "date": "2025-08-20",
       "description": "香港交易所2025年中期業績",
-      "category": "general"
-    },
-    {
-      "title": "委任中國業務諮詢委員會成員",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250801news?sc_lang=zh-HK",
-      "date": "2025-08-01",
-      "description": "委任中國業務諮詢委員會成員",
       "category": "general"
     }
   ]
