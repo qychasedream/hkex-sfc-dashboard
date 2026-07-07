@@ -1,24 +1,42 @@
 {
-  "updated": "2026-07-07T11:13:42.757045+08:00",
-  "source": "Claude AI Web Search — HKEX What's New",
-  "count": 17,
+  "updated": "2026-07-07T17:39:32.175835+08:00",
+  "source": "Claude AI Search — HKEX Listed Issuers Updates",
+  "count": 22,
   "items": [
     {
-      "title": "Update No. 153 — 結構性產品上市制度修訂（第15A章）",
+      "title": "聯交所就《上市規則》有關持續公眾持股量規定的修訂建議刊發諮詢總結",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/251217news?sc_lang=zh-HK",
+      "date": "2025-12-17",
+      "category": "consultation"
+    },
+    {
+      "title": "聯交所就優化首次公開招股價格發現及公開市場規定刊發諮詢總結",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/250807news?sc_lang=zh-HK",
+      "date": "2025-08-07",
+      "category": "consultation"
+    },
+    {
+      "title": "聯交所就縮減最低上落價位及新《企業管治守則》刊發諮詢總結",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/250206news?sc_lang=zh-HK",
+      "date": "2025-02-06",
+      "category": "consultation"
+    },
+    {
+      "title": "聯交所就優化結構性產品上市制度建議刊發諮詢總結",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260420news?sc_lang=zh-HK",
+      "date": "2026-04-20",
+      "category": "consultation"
+    },
+    {
+      "title": "聯交所就提升上市機制競爭力（第一階段）的建議諮詢市場意見",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260313news?sc_lang=zh-HK",
+      "date": "2026-03-13",
+      "category": "consultation"
+    },
+    {
+      "title": "Update No. 153 — 結構性產品上市制度修訂（第15A章）：Part A 產品要求(2026/5/1生效) + Part B 發行人資格(2026/7/1生效)",
       "url": "https://en-rules.hkex.com.hk/rulebook/update-no-153",
       "date": "2026-04-20",
-      "category": "regulatory_rule"
-    },
-    {
-      "title": "Update No. 153 — Part A 產品要求修訂生效（2026年5月1日）",
-      "url": "https://en-rules.hkex.com.hk/rulebook/update-no-153",
-      "date": "2026-05-01",
-      "category": "regulatory_rule"
-    },
-    {
-      "title": "Update No. 153 — Part B 結構性產品發行人資格及披露修訂生效（2026年7月1日）",
-      "url": "https://en-rules.hkex.com.hk/rulebook/update-no-153",
-      "date": "2026-07-01",
       "category": "regulatory_rule"
     },
     {
@@ -28,63 +46,87 @@
       "category": "regulatory_rule"
     },
     {
-      "title": "Update No. 86 (GEM) — USM、IAP及持續公眾持股量雜項修訂",
+      "title": "Update No. 151 — 持續公眾持股量新規定（主板規則13.32A-13.32G）(2026/1/1生效)",
+      "url": "https://en-rules.hkex.com.hk/rulebook/update-no-151",
+      "date": "2025-12-17",
+      "category": "regulatory_rule"
+    },
+    {
+      "title": "Update No. 86 (GEM) — USM、IAP及公眾持股量雜項修訂",
       "url": "https://en-rules.hkex.com.hk/rulebook/update-no-86-1",
       "date": "2026-03-31",
       "category": "regulatory_rule"
     },
     {
-      "title": "持續公眾持股量新規定生效（主板規則13.32A-13.32G / GEM規則17.37A-17.37G）",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/251217news?sc_lang=zh-HK",
-      "date": "2026-01-01",
-      "category": "regulatory_rule"
-    },
-    {
-      "title": "新上市申請人指南 — 更新第5號 (Guide for New Listing Applicants Update No. 5)",
-      "url": "https://en-rules.hkex.com.hk/rulebook/guide-new-listing-applicants",
-      "date": "2026-06-01",
-      "category": "regulatory_rule"
-    },
-    {
-      "title": "HKEX-GL121-26 — 有關公眾持股量的指引",
+      "title": "GL121-26 — 有關公眾持股量的指引（主板規則13.32A-13.32G）",
       "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL121-26_c_202602.pdf",
       "date": "2026-02-01",
       "category": "regulatory_rule"
     },
     {
-      "title": "聯交所就優化結構性產品上市制度建議刊發諮詢總結",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260420news?sc_lang=zh-HK",
-      "date": "2026-04-20",
-      "category": "consultation"
-    },
-    {
-      "title": "聯交所就提升上市機制競爭力的建議諮詢市場意見",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260313news?sc_lang=zh-HK",
-      "date": "2026-03-13",
-      "category": "consultation"
-    },
-    {
-      "title": "香港交易所聯訊通(IAP)將於2026年第四季度推出",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260629news?sc_lang=zh-HK",
-      "date": "2026-06-29",
+      "title": "GL95-18 — 有關長時間停牌及除牌的指引（2025年12月更新）",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL95-18_c_202405.pdf",
+      "date": "2025-12-31",
       "category": "regulatory_rule"
     },
     {
-      "title": "優化交易板塊安排 — 簡化股份交易單位框架",
-      "url": "https://www.hkex.com.hk/News/Market-Communications/2026/260630news?sc_lang=zh-HK",
-      "date": "2026-06-30",
+      "title": "GL80-15 — 上市發行人發行可轉換證券的指引（2025年12月更新）",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/gl80_15_mu1807_c.pdf",
+      "date": "2025-12-31",
       "category": "regulatory_rule"
     },
     {
-      "title": "聯交所刊發2025年上市委員會報告",
+      "title": "GL117-23 — 代表上市發行人進行自動股份購回計劃的指引（2025年8月更新）",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL117-23_c_202510.pdf",
+      "date": "2025-08-01",
+      "category": "regulatory_rule"
+    },
+    {
+      "title": "GL77-14 — 上市發行人業務使用合約安排(VIE)的指引（2025年5月更新）",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL77-14_c_202505.pdf",
+      "date": "2025-05-01",
+      "category": "regulatory_rule"
+    },
+    {
+      "title": "GL104-19 — 應用反收購行動規則的指引（2024年9月更新）",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL104-19_c_202409.pdf",
+      "date": "2024-09-01",
+      "category": "regulatory_rule"
+    },
+    {
+      "title": "聯交所刊發2025年上市委員會報告（全年處理133宗上市申請、26宗紀律個案）",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260316news?sc_lang=zh-HK",
       "date": "2026-03-16",
       "category": "regulatory_rule"
     },
     {
-      "title": "2026年1月新股上市、除牌及停牌報告",
-      "url": "https://www.hkex.com.hk/News/Market-Communications/2026/260130news?sc_lang=en",
-      "date": "2026-01-30",
+      "title": "有關首次公開招股申請、除牌和停牌公司之報告（2026年6月）",
+      "url": "https://www.hkex.com.hk/News/Market-Communications/2026/2606302news?sc_lang=zh-HK",
+      "date": "2026-06-30",
+      "category": "regulatory_rule"
+    },
+    {
+      "title": "香港交易所聯訊通(IAP)將於2026年Q4推出——成為發行人提交監管文件的主要平台",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260629news?sc_lang=zh-HK",
+      "date": "2026-06-29",
+      "category": "regulatory_rule"
+    },
+    {
+      "title": "新《企業管治守則》修訂生效：強制設立首席獨立非執行董事、董事培訓、9年獨立非執行董事任期上限",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/250206news?sc_lang=zh-HK",
+      "date": "2025-07-01",
+      "category": "regulatory_rule"
+    },
+    {
+      "title": "聯交所就優化交易板塊安排及簡化股份交易單位框架刊發市場通訊",
+      "url": "https://www.hkex.com.hk/News/Market-Communications/2026/260630news?sc_lang=zh-HK",
+      "date": "2026-06-30",
+      "category": "regulatory_rule"
+    },
+    {
+      "title": "聯交所縮減最低上落價位第二階段實施",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/250206news?sc_lang=zh-HK",
+      "date": "2026-06-01",
       "category": "regulatory_rule"
     },
     {
@@ -92,18 +134,6 @@
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260706news?sc_lang=zh-HK",
       "date": "2026-07-06",
       "category": "disciplinary"
-    },
-    {
-      "title": "聯交所刊發2025年發行人年報審閱報告（含企業管治及ESG）",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/251211news?sc_lang=zh-HK",
-      "date": "2025-12-11",
-      "category": "regulatory_rule"
-    },
-    {
-      "title": "聯交所就持續公眾持股量規定修訂刊發諮詢總結",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/251217news?sc_lang=zh-HK",
-      "date": "2025-12-17",
-      "category": "consultation"
     }
   ]
 }
