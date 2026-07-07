@@ -1,9 +1,9 @@
-name: Daily Data Update
+name: Hourly Data Update (HKT 09:00-18:00)
 
 on:
   schedule:
-    # 每天香港时间 08:00 (UTC 00:00) 和 18:00 (UTC 10:00)
-    - cron: '0 0,10 * * *'
+    # 香港时间 09:00-18:00 每小时刷新 (UTC 01:00-10:00)
+    - cron: '0 1-10 * * *'
   # 也允许手动触发
   workflow_dispatch:
 

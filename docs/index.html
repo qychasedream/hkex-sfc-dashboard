@@ -98,6 +98,13 @@ body {
   font-size: .95em;
   color: var(--text-secondary);
 }
+.page-header .update-time-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--info-bg); color: var(--info);
+  padding: 5px 14px; border-radius: 16px;
+  font-size: .82em; font-weight: 600;
+  margin-top: 6px; border: 1px solid #c8dce8;
+}
 
 /* Stats Row */
 .stats-row {
@@ -310,6 +317,7 @@ body {
     </div>
     <h1>香港监管动态追踪</h1>
     <div class="subtitle">覆盖香港证监会（SFC）及香港联交所（HKEX）官方监管公告与规则更新</div>
+    <div class="update-time-badge" id="header-update-time">⏰ 最后更新：加载中...</div>
   </div>
 
   <!-- Quick Links -->
@@ -461,6 +469,65 @@ function parseHkexDate(dateStr) {
   return '';
 }
 
+// ===== New HKEX Data Transformations =====
+function transformHkexRegulatory(items) {
+  // Map RSS categories to our category system
+  var catMap = {
+    'disciplinary': 'disciplinary',
+    'consultation': 'consultation',
+    'enforcement_news': 'enforcement_news',
+    'regulatory_rule': 'regulatory_rule',
+    'other': 'general'
+  };
+  return (items || []).map(function(item, i) {
+    var cat = catMap[item.category] || 'general';
+    return {
+      id: 'hkex-reg-' + i,
+      title: item.title || '',
+      url: item.url || '',
+      date: (item.date || '').slice(0, 10),
+      source: 'HKEX',
+      category: cat,
+      summary: item.description || '',
+      method: 'hkex_rss'
+    };
+  });
+}
+
+function transformHkexNews(items) {
+  return (items || []).map(function(item, i) {
+    return {
+      id: 'hkex-news-' + i,
+      title: item.title || '',
+      url: item.url || '',
+      date: (item.date || '').slice(0, 10),
+      source: 'HKEX',
+      category: item.category === 'regulatory_rule' ? 'regulatory_rule' : 'general',
+      summary: item.description || '',
+      method: 'hkex_rss'
+    };
+  });
+}
+
+function transformHkexGLArchive(items) {
+  return (items || []).map(function(item, i) {
+    var title = (item.gl_ref ? item.gl_ref + ' — ' : '') + (item.title || '');
+    // Clean up HTML entities in title
+    title = title.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&');
+    var summary = (item.doc_type || '') + ' · ' + (item.category || '');
+    return {
+      id: 'hkex-gla-' + i,
+      title: title,
+      url: item.url || '',
+      date: (item.date || '').slice(0, 10),
+      source: 'HKEX',
+      category: 'regulatory_rule',
+      summary: summary,
+      method: 'hkex_archive'
+    };
+  });
+}
+
 // ===== Load and Render =====
 var trendChart = null;
 
@@ -470,17 +537,32 @@ async function init() {
   var sfcNewsP = loadJSON(DATA_BASE + 'sfc_news.json');
   var sfcCircP = loadJSON(DATA_BASE + 'sfc_circulars.json');
   var hkexP = loadJSON(DATA_BASE + 'hkex_guidance_updates.json');
+  var hkexRegP = loadJSON(DATA_BASE + 'hkex_regulatory_announcements.json');
+  var hkexNewsP = loadJSON(DATA_BASE + 'hkex_news_releases.json');
+  var hkexGLArchiveP = loadJSON(DATA_BASE + 'hkex_guidance_archive.json');
 
   var meta = await metaP;
   var sfcNews = await sfcNewsP;
   var sfcCirc = await sfcCircP;
   var hkex = await hkexP;
+  var hkexReg = await hkexRegP;
+  var hkexNews = await hkexNewsP;
+  var hkexGLArchive = await hkexGLArchiveP;
 
-  // Update footer time
+  // Update header and footer time
   if (meta && meta.lastUpdate) {
+    // Header badge: show detailed time
+    var headerEl = document.getElementById('header-update-time');
+    if (headerEl) {
+      var d = new Date(meta.lastUpdate);
+      var timeStr = d.toLocaleString('zh-HK', { timeZone: 'Asia/Hong_Kong', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', second:'2-digit' });
+      headerEl.textContent = '⏰ 最后更新：' + timeStr + ' (每小時自動刷新)';
+    }
+    // Footer stats
     document.getElementById('update-time').textContent =
       '更新时间：' + fmtDate(meta.lastUpdate) + ' (自动) · SFC新闻:' + (meta.stats?.sfcNews||0) +
-      '条 · 通函:' + (meta.stats?.sfcCirculars||0) + '条';
+      '条 · HKEX监管通讯:' + (meta.stats?.hkexRegulatory||0) +
+      '条 · 指引信:' + (meta.stats?.hkexGLArchive||0) + '条';
   }
 
   // Transform data
@@ -488,6 +570,9 @@ async function init() {
   if (sfcNews) allItems = allItems.concat(transformSfcNews(sfcNews.items));
   if (sfcCirc) allItems = allItems.concat(transformSfcCirculars(sfcCirc.items));
   if (hkex) allItems = allItems.concat(transformHkexGuidance(hkex.items));
+  if (hkexReg) allItems = allItems.concat(transformHkexRegulatory(hkexReg.items));
+  if (hkexNews) allItems = allItems.concat(transformHkexNews(hkexNews.items));
+  if (hkexGLArchive) allItems = allItems.concat(transformHkexGLArchive(hkexGLArchive.items));
 
   // Sort by date descending
   allItems.sort(function(a, b) {
@@ -503,9 +588,9 @@ async function init() {
     return item.date >= cutoff30;
   });
 
-  // If no recent items, use all items up to 50
+  // If no recent items, use all items up to 100
   if (recentItems.length === 0) {
-    recentItems = allItems.slice(0, 50);
+    recentItems = allItems.slice(0, 100);
   }
 
   // Group by category

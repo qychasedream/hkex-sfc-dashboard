@@ -726,9 +726,13 @@ async function refreshData() {
     const meta = await loadJSON(DATA_BASE + 'update_meta.json');
     if (meta && meta.lastUpdate) {
         document.getElementById('update-footer').textContent =
-            `自动抓取 · 每日更新 · 最后更新: ${formatDate(meta.lastUpdate)} · SFC新闻:${meta.stats?.sfcNews||0}条 · 通函:${meta.stats?.sfcCirculars||0}条`;
+            `自动抓取 · 每小时刷新 (HKT 09:00-18:00) · 最后更新: ${formatDate(meta.lastUpdate)} · SFC新闻:${meta.stats?.sfcNews||0}条 · HKEX监管通讯:${meta.stats?.hkexRegulatory||0}条`;
         var hdrEl = document.getElementById('header-update-time');
-        if (hdrEl) hdrEl.textContent = '数据更新于 ' + new Date(meta.lastUpdate).toLocaleDateString('zh-HK', { year:'numeric', month:'long', day:'numeric', timeZone:'Asia/Hong_Kong' });
+        if (hdrEl) {
+            var d = new Date(meta.lastUpdate);
+            var timeStr = d.toLocaleString('zh-HK', { timeZone:'Asia/Hong_Kong', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', second:'2-digit' });
+            hdrEl.textContent = '最后更新：' + timeStr + ' (每小時刷新)';
+        }
     }
 
     // 2. 加载 SFC 新闻并渲染为卡片

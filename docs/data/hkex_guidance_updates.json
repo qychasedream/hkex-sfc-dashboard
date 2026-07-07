@@ -1,6 +1,241 @@
 {
-  "updated": "2026-07-06T21:48:47.552968+08:00",
+  "updated": "2026-07-06T22:52:12.575273+08:00",
   "source": "HKEX 规则手册",
-  "count": 0,
-  "items": []
+  "count": 26,
+  "items": [
+    {
+      "topic": "會計及審計事宜",
+      "ref": "GL103-19",
+      "detail": "指引信 - 列報非公認會計原則財務指標的指引",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL103-19_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12802",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "短暫停牌、停牌、除牌及撤回上市",
+      "ref": "GL83-15",
+      "detail": "指引信 - 短暫停牌的指引",
+      "date": "01/2024(05/2024)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL83-15_c_202405.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12803",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "短暫停牌、停牌、除牌及撤回上市",
+      "ref": "GL95-18",
+      "detail": "指引信 - 長時間停牌及除牌的指引",
+      "date": "05/2018(12/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL95-18_c_202405.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12803",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "短暫停牌、停牌、除牌及撤回上市",
+      "ref": "GL120-24",
+      "detail": "指引信 - 有關長時間停牌發行人進行調查的指引",
+      "date": "11/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL120-24_c_202411.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12803",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "繼續上市準則",
+      "ref": "GL96-18",
+      "detail": "指引信 - 上市發行人是否適合繼續上市的指引",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL96-18_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12805",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "繼續上市準則",
+      "ref": "GL106-19",
+      "detail": "指引信 - 業務充足水平的指引",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL106-19_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12805",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "發行證券或再出售庫存股份及相關事宜",
+      "ref": "GL105-19",
+      "detail": "指引信 - 大規模發行證券的指引",
+      "date": "10/2019",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL105-19_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12807",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "發行證券或再出售庫存股份及相關事宜",
+      "ref": "GL80-15",
+      "detail": "指引信 - 上市發行人發行可轉換證券的指引",
+      "date": "05/2015(12/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL80-15_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12807",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "發行證券或再出售庫存股份及相關事宜",
+      "ref": "LD139-2025",
+      "detail": "上市決策 – 聯交所會否根據《主板規則》第10.06(3)(a)條同意上市發行人發行可換股債券並同時購回股份",
+      "date": "06/2025",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/ld139-2025_c_202506.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12807",
+      "docType": "faq"
+    },
+    {
+      "topic": "發行證券或再出售庫存股份及相關事宜",
+      "ref": "LD56-2013",
+      "detail": "上市決策 – 就上市發行人因轉換可換股票據而發行的新股導致其公眾持股量不足，聯交所會否批准有關新股上市",
+      "date": "03/2013(12/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/ld56-2013-c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12807",
+      "docType": "faq"
+    },
+    {
+      "topic": "發行證券或再出售庫存股份及相關事宜",
+      "ref": "LD140-2025",
+      "detail": "上市決策 – 聯交所會否就上市發行人就其發行股本掛鈎證券而發行的認股權證授出豁免",
+      "date": "06/2025",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/ld140-2025_c_202506.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12807",
+      "docType": "faq"
+    },
+    {
+      "topic": "發行證券或再出售庫存股份及相關事宜",
+      "ref": "LD83-2014",
+      "detail": "上市決策 – 聯交所會否就具紅利認股權證的供股建議豁免有關認股權證上市時認股權證持有人人數及分佈的規定",
+      "date": "01/2014(08/2025)&nbsp;",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/ld83-2014_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12807",
+      "docType": "faq"
+    },
+    {
+      "topic": "發行證券或再出售庫存股份及相關事宜",
+      "ref": "GL88-16",
+      "detail": "指引信 - 發行紅股的指引",
+      "date": "07/2018(06/2024)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL88-16_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12807",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "發行證券或再出售庫存股份及相關事宜",
+      "ref": "GL118-23",
+      "detail": "指引信 - 有關以電子方式向聯交所及公司註冊處提交招股章程及隨附的文件申請批准將招股章程登記及相關登記的指引",
+      "date": "01/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL118-23_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12807",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "公眾持股量",
+      "ref": "GL121-26",
+      "detail": "指引信 - 有關公眾持股量的指引",
+      "date": "12/2025",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL121-26_c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12806",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "公眾持股量",
+      "ref": "LD82-2014",
+      "detail": "上市決策– (i) 上市發行人是否可以進行可能導致其股份欠缺公開市場的股份購回要約； 及 (ii) 聯交所會否同意上市發行人於要約完成後30日內發行新股，以符合公眾持股量之規定",
+      "date": "01/2014(12/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/LD82-2014_c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12806",
+      "docType": "faq"
+    },
+    {
+      "topic": "公眾持股量",
+      "ref": "LD101-1",
+      "detail": "上市決策 – 就上市發行人因向投資者配售新股而導致其公眾持股量不足，聯交所會否批准有關股份上市",
+      "date": "08/2010(12/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/ld101-1_c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12806",
+      "docType": "faq"
+    },
+    {
+      "topic": "公眾持股量",
+      "ref": "LD56-2013",
+      "detail": "上市決策 – 就上市發行人因轉換可換股票據而發行的新股導致其公眾持股量不足，聯交所會否批准有關新股上市",
+      "date": "03/2013(12/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/ld56-2013-c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12806",
+      "docType": "faq"
+    },
+    {
+      "topic": "公眾持股量",
+      "ref": "常問問題7 – 編號1-5",
+      "detail": "常問問題 - 公眾持股量",
+      "date": "09/2019 (02/2026)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-7_c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12806",
+      "docType": "faq"
+    },
+    {
+      "topic": "股份購回及庫存股份",
+      "ref": "GL117-23",
+      "detail": "指引信 - 代表上市發行人進行自動股份購回計劃的指引",
+      "date": "10/2023(08/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL117-23_c_202510.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12808",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "股份購回及庫存股份",
+      "ref": "LD139-2025",
+      "detail": "上市決策 – 聯交所會否根據《主板規則》第10.06(3)(a)條同意上市發行人發行可換股債券並同時購回股份",
+      "date": "06/2025",
+      "url": "https://hkexcn.thomsonreuters.com/sites/default/files/pdf_documents/ld139-2025_c_202506.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12808",
+      "docType": "faq"
+    },
+    {
+      "topic": "股份購回及庫存股份",
+      "ref": "LD82-2014",
+      "detail": "上市決策– (i) 上市發行人是否可以進行可能導致其股份欠缺公開市場的股份購回要約； 及 (ii) 聯交所會否同意上市發行人於要約完成後30日內發行新股，以符合公眾持股量之規定",
+      "date": "01/2014(12/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/LD82-2014_c_202602.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12808",
+      "docType": "faq"
+    },
+    {
+      "topic": "股份購回及庫存股份",
+      "ref": "GL119-24",
+      "detail": "指引信 – 有關上市發行人於中央結算系統持有或存放庫存股份的安排指引（自2024年6月11日起生效）",
+      "date": "04/2024",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL119-24_c_202404.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12808",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "持續責任",
+      "ref": "-",
+      "detail": "年報編備指引",
+      "date": "12/2024(12/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/Guide_on_Preparation_of_Annual_Report_c_202505.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12804",
+      "docType": "faq"
+    },
+    {
+      "topic": "持續責任",
+      "ref": "GL87-16",
+      "detail": "指引信 - 發行人應對市場評論或傳聞的指引",
+      "date": "04/2016",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL87-16_c_202312.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12804",
+      "docType": "guidance_letter"
+    },
+    {
+      "topic": "持續責任",
+      "ref": "常問問題10 – 編號1-38",
+      "detail": "常問問題 - 持續責任",
+      "date": "03/2004 (07/2025)",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-10_c_202512.pdf",
+      "topicUrl": "https://cn-rules.hkex.com.hk/node/12804",
+      "docType": "faq"
+    }
+  ]
 }
