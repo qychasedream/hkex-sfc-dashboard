@@ -509,6 +509,22 @@ function transformHkexNews(items) {
   });
 }
 
+function transformHkexClaude(items) {
+  var catMap = { disciplinary: 'disciplinary', consultation: 'consultation', enforcement_news: 'enforcement_news', regulatory_rule: 'regulatory_rule' };
+  return (items || []).map(function(item, i) {
+    return {
+      id: 'hkex-ai-' + i,
+      title: item.title || '',
+      url: item.url || '',
+      date: (item.date || '').slice(0, 10),
+      source: 'HKEX',
+      category: catMap[item.category] || 'general',
+      summary: '从 HKEX 最新消息抓取',
+      method: 'claude_api'
+    };
+  });
+}
+
 function transformHkexGLArchive(items) {
   return (items || []).map(function(item, i) {
     var title = (item.gl_ref ? item.gl_ref + ' — ' : '') + (item.title || '');
@@ -540,6 +556,7 @@ async function init() {
   var hkexRegP = loadJSON(DATA_BASE + 'hkex_regulatory_announcements.json');
   var hkexNewsP = loadJSON(DATA_BASE + 'hkex_news_releases.json');
   var hkexGLArchiveP = loadJSON(DATA_BASE + 'hkex_guidance_archive.json');
+  var hkexClaudeP = loadJSON(DATA_BASE + 'hkex_claude_search.json');
 
   var meta = await metaP;
   var sfcNews = await sfcNewsP;
@@ -548,6 +565,7 @@ async function init() {
   var hkexReg = await hkexRegP;
   var hkexNews = await hkexNewsP;
   var hkexGLArchive = await hkexGLArchiveP;
+  var hkexClaude = await hkexClaudeP;
 
   // Update header and footer time
   if (meta && meta.lastUpdate) {
@@ -573,6 +591,7 @@ async function init() {
   if (hkexReg) allItems = allItems.concat(transformHkexRegulatory(hkexReg.items));
   if (hkexNews) allItems = allItems.concat(transformHkexNews(hkexNews.items));
   if (hkexGLArchive) allItems = allItems.concat(transformHkexGLArchive(hkexGLArchive.items));
+  if (hkexClaude) allItems = allItems.concat(transformHkexClaude(hkexClaude.items));
 
   // Sort by date descending
   allItems.sort(function(a, b) {

@@ -447,15 +447,87 @@ def fetch_hkex_guidance_archive():
     return items
 
 
+def fetch_hkex_via_claude():
+    """使用 Claude API web_search 抓取 HKEX 最新消息页面（JS渲染页面）"""
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if not api_key:
+        print("[HKEX] Claude API: 未设置 ANTHROPIC_API_KEY，跳过")
+        return []
+
+    try:
+        import anthropic
+    except ImportError:
+        print("[HKEX] Claude API: anthropic SDK 未安装，跳过")
+        return []
+
+    print("[HKEX] Claude API: 搜索 HKEX 最新消息...")
+    client = anthropic.Anthropic(api_key=api_key)
+
+    prompt = """Search the HKEX "What's New" listing page at:
+https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK
+
+Also search for recent listing-related announcements from HKEX in the past 7 days.
+
+Find ALL new/updated items including:
+- Listing Rule amendments
+- Guidance Letters (GL-xxx)
+- FAQs / Frequently Asked Questions
+- Consultation Papers and Conclusions
+- Listing Committee decisions and reports
+- Disciplinary actions
+- Any other listing-related publications
+
+For each item extract:
+- title (in Chinese)
+- url (the official HKEX link)
+- date (in YYYY-MM-DD format)
+- category: one of [disciplinary, consultation, regulatory_rule, enforcement_news]
+
+Return as JSON: {"items": [{"title": "...", "url": "...", "date": "...", "category": "...", "relevance_score": 8}, ...]}
+Only include items from OFFICIAL HKEX sources (hkex.com.hk)."""
+
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=4096,
+            tools=[
+                {"type": "web_search_20260209", "name": "web_search", "max_uses": 10},
+                {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 8},
+            ],
+            messages=[{"role": "user", "content": prompt}],
+        )
+
+        items = []
+        for block in response.content:
+            if hasattr(block, 'type') and block.type == "text":
+                try:
+                    data = json.loads(block.text)
+                    raw_items = data.get("items", []) if isinstance(data, dict) else data
+                    for raw in raw_items:
+                        if raw.get("relevance_score", 0) >= 6 and raw.get("url"):
+                            items.append({
+                                "title": raw.get("title", ""),
+                                "url": raw.get("url", ""),
+                                "date": raw.get("date", ""),
+                                "category": raw.get("category", "other"),
+                            })
+                except json.JSONDecodeError:
+                    continue
+
+        print(f"  ✓ Claude API: 获取 {len(items)} 条")
+        return items
+    except Exception as e:
+        print(f"  [WARN] Claude API 失败: {e}")
+        return []
+
+
 def save_json(data, filename, skip_empty=True):
     """保存 JSON 文件（skip_empty: 无数据时不覆盖已有文件）"""
     filepath = os.path.join(DATA_DIR, filename)
-    # 对 update_meta 始终保存；对数据文件检查 count 字段
-    if skip_empty and filename != 'update_meta.json':
-        count = data.get('count', 0)
-        if count == 0:
-            print(f"  → 跳过: {filename} (无数据，保留已有文件)")
-            return
+    count = data.get('count', 0)
+    if skip_empty and count == 0:
+        print(f"  → 跳过: {filename} (无数据，保留已有文件)")
+        return
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"  → 已保存: {filename}")
@@ -518,7 +590,16 @@ def main():
         'items': hkex_gl_archive
     }, 'hkex_guidance_archive.json')
 
-    # 7. 元数据 (记录本次更新)
+    # 7. HKEX 最新消息 (Claude API web_search, 可选)
+    hkex_claude = fetch_hkex_via_claude()
+    save_json({
+        'updated': datetime.now(HKT).isoformat(),
+        'source': 'HKEX Claude API Search',
+        'count': len(hkex_claude),
+        'items': hkex_claude
+    }, 'hkex_claude_search.json')
+
+    # 8. 元数据 (记录本次更新)
     save_json({
         'lastUpdate': datetime.now(HKT).isoformat(),
         'stats': {
@@ -527,7 +608,8 @@ def main():
             'hkexGuidanceUpdates': len(hkex_updates),
             'hkexRegulatory': len(hkex_reg),
             'hkexNews': len(hkex_news),
-            'hkexGLArchive': len(hkex_gl_archive)
+            'hkexGLArchive': len(hkex_gl_archive),
+            'hkexClaude': len(hkex_claude)
         }
     }, 'update_meta.json')
 
