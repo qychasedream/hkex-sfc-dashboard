@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-08T16:15:30.622897+08:00",
+  "updated": "2026-07-08T18:58:46.711025+08:00",
   "source": "HKEX News Releases RSS (filtered)",
-  "count": 43,
+  "count": 44,
   "items": [
+    {
+      "title": "香港交易所將於立訊精密上市日向投資者提供多項產品選擇",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260708news?sc_lang=zh-HK",
+      "date": "2026-07-08",
+      "description": "香港交易所將於立訊精密上市日向投資者提供多項產品選擇",
+      "category": "general"
+    },
     {
       "title": "業界領袖齊聚一堂，攜手推動香港固定收益及貨幣市場生態圈發展",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/2607073news?sc_lang=zh-HK",
