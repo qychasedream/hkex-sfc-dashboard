@@ -1,0 +1,2 @@
+# 标准库无需额外依赖，可选:
+# anthropic  # 如需 Claude API 搜索功能
