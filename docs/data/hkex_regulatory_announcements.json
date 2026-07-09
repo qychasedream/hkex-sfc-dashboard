@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-09T16:22:55.424316+08:00",
+  "updated": "2026-07-09T19:51:27.638892+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 49,
   "items": [
+    {
+      "title": "聯交所對恒達集團（控股）有限公司（股份代號：3616）、四名董事及五名高級管理層成員的紀律行動",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260709news?sc_lang=zh-HK",
+      "date": "2026-07-09",
+      "description": "聯交所對恒達集團（控股）有限公司（股份代號：3616）、四名董事及五名高級管理層成員的紀律行動",
+      "category": "disciplinary"
+    },
     {
       "title": "通告 - 關於大中華金融控股有限公司 （於百慕達註冊成立之有限公司） （股份代號：431）取消上市地位",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2607072news?sc_lang=zh-HK",
@@ -338,13 +345,6 @@
       "date": "2025-12-11",
       "description": "聯交所刊發有關發行人年報、企業管治報告以及環境、社會及管治報告的年度審閱報告; 推出人工智能平台年報易覽",
       "category": "regulatory_rule"
-    },
-    {
-      "title": "通告 - 關於艾伯科技股份有限公司（清盤中）   （於開曼群島註冊成立之有限公司） （股份代號：2708） 取消上市地位",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/251203news?sc_lang=zh-HK",
-      "date": "2025-12-03",
-      "description": "通告 - 關於艾伯科技股份有限公司（清盤中）   （於開曼群島註冊成立之有限公司） （股份代號：2708） 取消上市地位",
-      "category": "enforcement_news"
     }
   ]
 }

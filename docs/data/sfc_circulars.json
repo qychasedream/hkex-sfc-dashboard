@@ -1,8 +1,14 @@
 {
-  "updated": "2026-07-09T16:22:50.756155+08:00",
+  "updated": "2026-07-09T19:51:24.294997+08:00",
   "source": "SFC e-Distribution API",
   "count": 20,
   "items": [
+    {
+      "refNo": "26EC35",
+      "title": "致持牌法團及獲證監會發牌的虛擬資產服務提供者的通函 \r\n實施(i)穩健的認證方法以降低及紓減來自仿冒詐騙攻擊的黑客入侵風險及(ii)充足的監察及監督措施以識別可疑活動",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC35"
+    },
     {
       "refNo": "26EC34",
       "title": "致中介人的通函\r\n有關香港交易所證券市場系統主幹網絡升級第三次非強制性市場演習的最新消息\r\n",
@@ -116,12 +122,6 @@
       "title": "致從事資產及財富管理活動的持牌法團的通函 - 2025年資產及財富管理活動調查 (只備有英文版)",
       "date": "",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC7"
-    },
-    {
-      "refNo": "26EC4",
-      "title": "致持牌法團有關保薦人工作的通函",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC4"
     }
   ]
 }

@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-09T16:22:50.140175+08:00",
+  "updated": "2026-07-09T19:51:23.497409+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR101",
+      "title": "證監會要求互聯網經紀行及虛擬資產交易平台採用可防止仿冒詐騙的認證方法以保障客戶帳戶",
+      "type": "general",
+      "date": "2026-07-09",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR101"
+    },
     {
       "refNo": "26PR107",
       "title": "中國人民銀行、香港金融管理局、香港證券及期貨事務監察委員會關於在港建設交易平台的聯合公告\r\n",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-02-06",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR18"
-    },
-    {
-      "refNo": "26PR17",
-      "title": "證監會加強業界協作　共創合規及創新的未來市場",
-      "type": "general",
-      "date": "2026-02-02",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR17"
     }
   ]
 }
