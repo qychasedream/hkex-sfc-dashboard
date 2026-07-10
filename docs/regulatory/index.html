@@ -766,17 +766,20 @@ async function loadJSON(path, noCache) {
     }
 }
 
-// 页面打开时：先快速加载缓存，再强制刷新一次最新数据，之后每15分钟自动刷新
-document.addEventListener('DOMContentLoaded', function() {
-    refreshData(false).catch(function(e){ console.error('首次加载失败:', e); }).then(function() {
-        return refreshData(true).catch(function(e){ console.error('后台刷新失败:', e); });
-    }).then(function() {
-        var statusEl = document.getElementById('refresh-status');
-        if (statusEl) statusEl.textContent = '已刷新';
-        setInterval(function() {
-            refreshData(true).catch(function(e){ console.error('定时刷新失败:', e); });
-        }, 900000);
-    });
+// 页面打开时：强制刷新一次最新数据，之后每15分钟自动刷新
+document.addEventListener('DOMContentLoaded', async function() {
+    var statusEl = document.getElementById('refresh-status');
+    try {
+        if (statusEl) { statusEl.textContent = '后台刷新中...'; statusEl.style.color = '#ffd54f'; }
+        await refreshData(true);
+        if (statusEl) { statusEl.textContent = '✓ 已刷新'; statusEl.style.color = '#81c784'; }
+    } catch (e) {
+        console.error('数据刷新失败:', e);
+        if (statusEl) { statusEl.textContent = '✗ 刷新失败: ' + e.message; statusEl.style.color = '#e57373'; }
+    }
+    setInterval(function() {
+        refreshData(true).catch(function(e){ console.error('定时刷新失败:', e); });
+    }, 900000);
 });
 
 // Transform functions
