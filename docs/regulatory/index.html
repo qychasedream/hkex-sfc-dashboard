@@ -751,9 +751,13 @@
 // === 全数据源加载 ===
 const DATA_BASE = '../data/';
 
-async function loadJSON(path) {
+async function loadJSON(path, noCache) {
     try {
-        const resp = await fetch(path);
+        var url = path;
+        if (noCache) {
+            url = path + (path.indexOf('?') >= 0 ? '&' : '?') + '_t=' + Date.now();
+        }
+        const resp = await fetch(url);
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         return await resp.json();
     } catch(e) {
@@ -762,14 +766,17 @@ async function loadJSON(path) {
     }
 }
 
-function esc(s) { if (!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function fmtDate(iso) { if (!iso) return ''; return iso.slice(0,10); }
+// 页面打开时：先快速加载缓存，再强制刷新一次最新数据，之后每小时自动刷新
+document.addEventListener('DOMContentLoaded', function() {
+    refreshData(false).then(function() {
+        return refreshData(true);
+    }).then(function() {
+        setInterval(function() { refreshData(true); }, 3600000);
+    });
+});
 
 // Transform functions
 function txSfcNews(items) {
-    return (items||[]).map(function(i,idx){ return {id:'sn-'+idx,title:i.title||'',url:i.url||'',date:(i.date||'').slice(0,10),source:'SFC',category:i.type==='enforcement'?'enforcement_news':'general',summary:'',method:'sfc_api'};});
-}
-function txSfcCirc(items) {
     return (items||[]).map(function(i,idx){ return {id:'sc-'+idx,title:i.title||'',url:i.url||'',date:(i.date||'').slice(0,10),source:'SFC',category:'regulatory_rule',summary:'',method:'sfc_api'};});
 }
 function txHkexGuidance(items) {
@@ -792,16 +799,17 @@ function txClaude(items) {
     return (items||[]).map(function(i,idx){ return {id:'cl-'+idx,title:i.title||'',url:i.url||'',date:(i.date||'').slice(0,10),source:'HKEX',category:CL_CAT[i.category]||'general',summary:'HKEX/SFC 最新消息',method:'claude_api'};});
 }
 
-async function refreshData() {
-    var meta = await loadJSON(DATA_BASE+'update_meta.json');
-    var sfcNews = await loadJSON(DATA_BASE+'sfc_news.json');
-    var sfcCirc = await loadJSON(DATA_BASE+'sfc_circulars.json');
-    var hkexUp = await loadJSON(DATA_BASE+'hkex_guidance_updates.json');
-    var hkexReg = await loadJSON(DATA_BASE+'hkex_regulatory_announcements.json');
-    var hkexNews = await loadJSON(DATA_BASE+'hkex_news_releases.json');
-    var hkexGL = await loadJSON(DATA_BASE+'hkex_guidance_archive.json');
-    var hkexClaude = await loadJSON(DATA_BASE+'hkex_claude_search.json');
-    var lawData = await loadJSON(DATA_BASE+'law_firm_summaries.json');
+async function refreshData(noCache) {
+    noCache = !!noCache;
+    var meta = await loadJSON(DATA_BASE+'update_meta.json', noCache);
+    var sfcNews = await loadJSON(DATA_BASE+'sfc_news.json', noCache);
+    var sfcCirc = await loadJSON(DATA_BASE+'sfc_circulars.json', noCache);
+    var hkexUp = await loadJSON(DATA_BASE+'hkex_guidance_updates.json', noCache);
+    var hkexReg = await loadJSON(DATA_BASE+'hkex_regulatory_announcements.json', noCache);
+    var hkexNews = await loadJSON(DATA_BASE+'hkex_news_releases.json', noCache);
+    var hkexGL = await loadJSON(DATA_BASE+'hkex_guidance_archive.json', noCache);
+    var hkexClaude = await loadJSON(DATA_BASE+'hkex_claude_search.json', noCache);
+    var lawData = await loadJSON(DATA_BASE+'law_firm_summaries.json', noCache);
 
     // Build allItems
     var allItems = [];
@@ -896,7 +904,9 @@ function renderSfcNewsCards(items) {
     c.innerHTML=h;
 }
 
-document.addEventListener('DOMContentLoaded', refreshData);
+// 旧的直接调用已替换为 DOMContentLoaded 中的先缓存后刷新逻辑
+// document.addEventListener('DOMContentLoaded', refreshData);
+
 </script>
 
 </body>

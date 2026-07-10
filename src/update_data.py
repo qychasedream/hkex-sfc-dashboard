@@ -611,7 +611,7 @@ def main():
             'hkexGLArchive': len(hkex_gl_archive),
             'hkexClaude': len(hkex_claude)
         }
-    }, 'update_meta.json')
+    }, 'update_meta.json', skip_empty=False)
 
     print(f"\n=== 更新完成 ===")
     return 0

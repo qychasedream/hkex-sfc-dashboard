@@ -1,13 +1,12 @@
 {
-  "lastUpdate": "2026-07-07T18:36:19.234967+08:00",
+  "lastUpdate": "2026-07-10T09:38:15.838550+08:00",
   "stats": {
     "sfcNews": 90,
     "sfcCirculars": 20,
-    "hkexGuidanceUpdates": 49,
+    "hkexGuidanceUpdates": 47,
     "hkexRegulatory": 49,
-    "hkexNews": 43,
+    "hkexNews": 44,
     "hkexGLArchive": 130,
-    "hkexClaude": 25,
-    "lawFirms": 13
+    "hkexClaude": 0
   }
 }

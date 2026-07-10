@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: hkex-sfc-dashboard-backend
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn backend:app --bind 0.0.0.0:$PORT --timeout 300 --workers 1"
+    envVars:
+      - key: GH_TOKEN
+        sync: false
+      - key: GIT_USER_NAME
+        value: github-actions[bot]
+      - key: GIT_USER_EMAIL
+        value: github-actions[bot]@users.noreply.github.com
+      - key: PYTHON_VERSION
+        value: 3.12

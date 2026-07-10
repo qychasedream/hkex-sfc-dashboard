@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-07T10:28:15.409935+08:00",
+  "updated": "2026-07-10T09:36:57.632249+08:00",
   "source": "HKEX 规则手册",
-  "count": 49,
+  "count": 47,
   "items": [
     {
       "topic": "董事及高級管理人員",
@@ -82,24 +82,6 @@
       "date": "11/2024",
       "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL120-24_c_202411.pdf",
       "topicUrl": "https://cn-rules.hkex.com.hk/node/12803",
-      "docType": "guidance_letter"
-    },
-    {
-      "topic": "繼續上市準則",
-      "ref": "GL96-18",
-      "detail": "指引信 - 上市發行人是否適合繼續上市的指引",
-      "date": "01/2024",
-      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL96-18_c_202312.pdf",
-      "topicUrl": "https://cn-rules.hkex.com.hk/node/12805",
-      "docType": "guidance_letter"
-    },
-    {
-      "topic": "繼續上市準則",
-      "ref": "GL106-19",
-      "detail": "指引信 - 業務充足水平的指引",
-      "date": "01/2024",
-      "url": "https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL106-19_c_202312.pdf",
-      "topicUrl": "https://cn-rules.hkex.com.hk/node/12805",
       "docType": "guidance_letter"
     },
     {
