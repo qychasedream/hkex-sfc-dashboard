@@ -390,7 +390,7 @@
         <span class="pill pill-sfc">SFC 证监会</span>
         <span class="pill pill-new">持续更新</span>
     </div>
-    <div class="update-time">🕐 <span id="header-update-time">加载中...</span> | 来源：<a href="https://cn-rules.hkex.com.hk/" style="color:#90caf9;">HKEX 规则手册</a> · <a href="https://www.sfc.hk/" style="color:#ef9a9a;">SFC 证监会</a> · <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" style="color:#90caf9;">HKEX 新闻</a></div>
+    <div class="update-time">🕐 <span id="header-update-time">2026-07-10 09:41:19（缓存数据）</span> | 来源：<a href="https://cn-rules.hkex.com.hk/" style="color:#90caf9;">HKEX 规则手册</a> · <a href="https://www.sfc.hk/" style="color:#ef9a9a;">SFC 证监会</a> · <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" style="color:#90caf9;">HKEX 新闻</a> · <span id="refresh-status" style="color:#ffd54f;">后台刷新中...</span></div>
 </header>
 
 <div class="container">
@@ -742,7 +742,7 @@
             <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" target="_blank">HKEX 新闻发布</a> ·
             <a href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/" target="_blank">SFC 新闻公告</a>
         </p>
-        <p style="margin-top:6px;" id="update-footer">自动抓取 · 每日更新 · 最后更新: 加载中...</p>
+        <p style="margin-top:6px;" id="update-footer">自动抓取 · 每15分钟更新 · 最后更新: 2026-07-10 09:41:19 · 后台刷新中...</p>
     </div>
 
 </div>
@@ -766,12 +766,16 @@ async function loadJSON(path, noCache) {
     }
 }
 
-// 页面打开时：先快速加载缓存，再强制刷新一次最新数据，之后每小时自动刷新
+// 页面打开时：先快速加载缓存，再强制刷新一次最新数据，之后每15分钟自动刷新
 document.addEventListener('DOMContentLoaded', function() {
-    refreshData(false).then(function() {
-        return refreshData(true);
+    refreshData(false).catch(function(e){ console.error('首次加载失败:', e); }).then(function() {
+        return refreshData(true).catch(function(e){ console.error('后台刷新失败:', e); });
     }).then(function() {
-        setInterval(function() { refreshData(true); }, 3600000);
+        var statusEl = document.getElementById('refresh-status');
+        if (statusEl) statusEl.textContent = '已刷新';
+        setInterval(function() {
+            refreshData(true).catch(function(e){ console.error('定时刷新失败:', e); });
+        }, 900000);
     });
 });
 
@@ -828,7 +832,10 @@ async function refreshData(noCache) {
         var ts = d.toLocaleString('zh-HK',{timeZone:'Asia/Hong_Kong',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
         var hdr = document.getElementById('header-update-time');
         if (hdr) hdr.innerHTML = '最后更新：<strong>' + ts + '</strong> (每小時刷新) | 共 <strong>' + allItems.length + '</strong> 条资讯';
-        document.getElementById('update-footer').textContent = '自动抓取 · 每小时刷新 (HKT 09-18) · ' + ts + ' · 共' + allItems.length + '条';
+        document.getElementById('update-footer').textContent = '自动抓取 · 每15分钟更新 · ' + ts + ' · 共' + allItems.length + '条';
+        // 刷新状态改为成功
+        var statusEl = document.getElementById('refresh-status');
+        if (statusEl) { statusEl.textContent = '✓ 已刷新'; statusEl.style.color = '#81c784'; }
         // Update stats
         var st = meta.stats||{};
         var statEls = document.querySelectorAll('.stat-number');
