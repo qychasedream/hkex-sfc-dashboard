@@ -781,7 +781,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Transform functions
 function txSfcNews(items) {
-    return (items||[]).map(function(i,idx){ return {id:'sc-'+idx,title:i.title||'',url:i.url||'',date:(i.date||'').slice(0,10),source:'SFC',category:'regulatory_rule',summary:'',method:'sfc_api'};});
+    return (items||[]).map(function(i,idx){
+        var type = i.type === 'enforcement' ? 'enforcement' : 'general';
+        return {
+            id:'sn-'+idx,
+            title:i.title||'',
+            url:i.url||'',
+            date:(i.date||'').slice(0,10),
+            source:'SFC',
+            category:type==='enforcement'?'enforcement_news':'general',
+            type:type,
+            summary:'',
+            method:'sfc_api'
+        };
+    });
 }
 function txHkexGuidance(items) {
     return (items||[]).map(function(i,idx){ var s=i.detail!==i.ref?i.detail:''; return {id:'hg-'+idx,title:(i.ref?i.ref+' - ':'')+(i.detail||i.topic||''),url:i.url||i.topicUrl||'',date:parseHkexDate(i.date),source:'HKEX',category:'regulatory_rule',summary:s,method:'hkex_scraper'};});
