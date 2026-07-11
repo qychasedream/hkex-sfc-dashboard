@@ -41,7 +41,8 @@
       "Bash(kill 1209)",
       "Bash(kill 1075)",
       "Bash(pip install *)",
-      "Bash(kill 795)"
+      "Bash(kill 795)",
+      "Bash(nslookup qychasedream.github.io)"
     ]
   }
 }

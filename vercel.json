@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "outputDirectory": "docs",
+  "framework": null,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/regulatory/(.*)", "dest": "/regulatory/index.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
