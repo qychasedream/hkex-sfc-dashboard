@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-13T12:04:34.422882+08:00",
+  "updated": "2026-07-13T15:41:33.273167+08:00",
   "source": "HKEX News Releases RSS (filtered)",
   "count": 44,
   "items": [
+    {
+      "title": "香港交易所新增18隻每周及月度股票期權類別",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260713news?sc_lang=zh-HK",
+      "date": "2026-07-13",
+      "description": "香港交易所新增18隻每周及月度股票期權類別",
+      "category": "general"
+    },
     {
       "title": "香港交易所將於立訊精密上市日向投資者提供多項產品選擇",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/260708news?sc_lang=zh-HK",
@@ -302,13 +309,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/250910news?sc_lang=zh-HK",
       "date": "2025-09-10",
       "description": "香港交易所舉辦氣候融資論壇，塑造環境權益產品市場未來格局",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所2025年中期業績",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250820news?sc_lang=zh-HK",
-      "date": "2025-08-20",
-      "description": "香港交易所2025年中期業績",
       "category": "general"
     }
   ]
