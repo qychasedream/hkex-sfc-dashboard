@@ -1,8 +1,14 @@
 {
-  "updated": "2026-07-13T15:41:27.359924+08:00",
+  "updated": "2026-07-13T18:44:18.625896+08:00",
   "source": "SFC e-Distribution API",
   "count": 20,
   "items": [
+    {
+      "refNo": "26EC41",
+      "title": "致中介機構的通函 \r\n場外衍生工具監管制度 ── 業界網上研討會 ",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC41"
+    },
     {
       "refNo": "26EC40",
       "title": "致持牌法團、獲證監會發牌的虛擬資產服務提供者及有聯繫實體的通函 - 網絡安全網絡研討會",
@@ -116,12 +122,6 @@
       "title": "有關提供虛擬資產交易服務的持牌法團\r\n(1) 就虛擬資產交易提供融資和共享掛盤冊服務及\r\n(2) 在提取客戶虛擬資產方面施加保障措施的通函",
       "date": "",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC5"
-    },
-    {
-      "refNo": "26EC6",
-      "title": "有關准許虛擬資產交易平台營運者接受關聯莊家的通函",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC6"
     }
   ]
 }
