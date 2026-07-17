@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-17T16:29:39.440990+08:00",
+  "updated": "2026-07-17T18:22:34.646014+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 49,
   "items": [
+    {
+      "title": "聯交所對佳源服務控股有限公司（股份代號：1153）三名前董事的紀律行動",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260717news?sc_lang=zh-HK",
+      "date": "2026-07-17",
+      "description": "聯交所對佳源服務控股有限公司（股份代號：1153）三名前董事的紀律行動",
+      "category": "disciplinary"
+    },
     {
       "title": "委任上市覆核委員會成員",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2607102news?sc_lang=zh-HK",
@@ -337,13 +344,6 @@
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2601022news?sc_lang=zh-HK",
       "date": "2026-01-02",
       "description": "通告 - 關於德信中國控股有限公司（清盤中） （於開曼群島註冊成立之有限公司）  （股份代號：2019）取消上市地位",
-      "category": "enforcement_news"
-    },
-    {
-      "title": "通告 - 關於重慶洪九果品股份有限公司  （於中華人民共和國註冊成立的股份有限公司）  （股份代號：6689）取消上市地位",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/251224news?sc_lang=zh-HK",
-      "date": "2025-12-24",
-      "description": "通告 - 關於重慶洪九果品股份有限公司  （於中華人民共和國註冊成立的股份有限公司）  （股份代號：6689）取消上市地位",
       "category": "enforcement_news"
     }
   ]
