@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-17T19:53:43.681449+08:00",
+  "updated": "2026-07-17T21:51:55.242551+08:00",
   "source": "HKEX News Releases RSS (filtered)",
-  "count": 44,
+  "count": 45,
   "items": [
+    {
+      "title": "滬深港交易所簽署合作備忘錄，促進滬深股通信息交流",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/2707173news?sc_lang=zh-HK",
+      "date": "2026-07-17",
+      "description": "滬深港交易所簽署合作備忘錄，促進滬深股通信息交流",
+      "category": "general"
+    },
     {
       "title": "香港交易所新增18隻每周及月度股票期權類別",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/260713news?sc_lang=zh-HK",
