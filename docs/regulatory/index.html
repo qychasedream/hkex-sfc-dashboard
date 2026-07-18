@@ -595,6 +595,18 @@
         </div>
     </div>
 
+    <!-- ====== SECTION: 律所解读 ====== -->
+    <div class="section" id="law-section">
+        <div class="section-header" onclick="toggleSection(this)">
+            <h2>🏛️ 律所监管动态解读</h2>
+            <span class="badge badge-consult">专业分析</span>
+            <span class="toggle-icon">▼</span>
+        </div>
+        <div class="section-content reg-list" id="law-list">
+            <div class="reg-item"><div class="reg-meta">⏳ 正在加载律所解读...</div></div>
+        </div>
+    </div>
+
     <!-- Disclaimer -->
     <div class="disclaimer">
         ⚠️ <strong>免责声明：</strong>本看板仅供资讯参考，不构成法律或专业建议。指引文件不构成《上市规则》的一部分。具体合规要求请咨询联交所、证监会或专业顾问。资讯来源包括公开监管公告及专业机构简报，可能存在延迟或不完整之处。
@@ -718,6 +730,7 @@ async function refreshData(noCache) {
     var hkexNews = await loadJSON(DATA_BASE+'hkex_news_releases.json', noCache);
     var hkexGL = await loadJSON(DATA_BASE+'hkex_guidance_archive.json', noCache);
     var hkexClaude = await loadJSON(DATA_BASE+'hkex_claude_search.json', noCache);
+    var lawData = await loadJSON(DATA_BASE+'law_firm_summaries.json', noCache);
 
     // Build allItems
     var allItems = [];
@@ -753,6 +766,7 @@ async function refreshData(noCache) {
 
     // Render dynamic lists
     if (sfcNews && sfcNews.items) renderSfcNewsList(sfcNews.items.slice(0, 30));
+    if (lawData && lawData.items) renderLawFirmsList(lawData.items);
     if (hkexUp && hkexUp.items && hkexUp.items.length) renderGuidanceList(hkexUp.items);
     if (hkexGL && hkexGL.items && hkexGL.items.length) renderGLList(hkexGL.items.slice(0, 50));
 
@@ -773,6 +787,21 @@ function renderSfcNewsList(items) {
              '</div>';
     });
     c.innerHTML = h || '<div class="reg-item sfc"><div class="reg-meta">暂无数据</div></div>';
+}
+
+function renderLawFirmsList(items) {
+    var c = document.getElementById('law-list');
+    if (!c) return;
+    items.sort(function(a,b){return a.date>b.date?-1:a.date<b.date?1:0;});
+    var h = '';
+    items.forEach(function(i){
+        h += '<div class="reg-item">' +
+             '<div class="reg-badges"><span class="topic-tag">' + esc(i.firm||'') + '</span>' + (i.topic?'<span class="badge badge-consult">' + esc(i.topic) + '</span>':'') + '</div>' +
+             '<div class="reg-title">' + esc(i.title||'') + '</div>' +
+             '<div class="reg-meta">' + esc((i.date||'').slice(0,10)) + (i.url?' · <a class="source-link" href="' + esc(i.url) + '" target="_blank">阅读原文 →</a>':'') + '</div>' +
+             '</div>';
+    });
+    c.innerHTML = h || '<div class="reg-item"><div class="reg-meta">暂无数据</div></div>';
 }
 
 function renderGuidanceList(items) {

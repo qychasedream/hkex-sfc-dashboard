@@ -45,12 +45,30 @@ with open(os.path.join(data_dir, 'hkex_claude_search.json'), 'w', encoding='utf-
     json.dump(data, f, ensure_ascii=False, indent=2)
 print(f'hkex_claude_search.json: {len(items)} items')
 
+# ===== Law firm summaries (links verified) =====
+law_items = [
+    {"firm": "King & Wood Mallesons (金杜)", "title": "King & Wood assists Structured Products Industry on HKEX's Review of Chapter 15A – Structured Products", "url": "https://www.kingandwood.com/hk/en/insights/latest-thinking/king-and-wood-assists-structured-products-industry-on-hkex-s-review-of-chapter-15a-structured-products.html", "date": "2026-04-22", "topic": "结构性产品"},
+    {"firm": "Charltons (易周律师行)", "title": "HKEX Launches Major Consultation on Listing Framework Reform", "url": "https://www.charltonslaw.com/hkex-launches-major-consultation-on-listing-framework-reform/", "date": "2026-03-17", "topic": "上市竞争力"},
+    {"firm": "Bird & Bird (鸿鹄)", "title": "HKEX revises ongoing public float requirements: what listed issuers need to know", "url": "https://www.twobirds.com/en/insights/2026/china/hkex-revises-ongoing-public-float-requirements-what-listed-issuers-need-to-know", "date": "2026-01-15", "topic": "公众持股量"},
+    {"firm": "JSM (孖士打)", "title": "Hong Kong Stock Exchange Announces More Flexible Public Float Requirements for 2026", "url": "https://www.jsm.com/publications/2025/hong-kong-stock-exchange-announces-more-flexible-public-float-requirements-for-2026/", "date": "2025-12-18", "topic": "公众持股量"},
+    {"firm": "Charltons (易周律师行)", "title": "New Ongoing Public Float Requirements for HKEX Listed Companies from 1 January 2026", "url": "https://www.charltonslaw.com/new-ongoing-public-float-requirements-for-hkex-listed-companies-from-1-january-2026/", "date": "2025-12-17", "topic": "公众持股量"},
+    {"firm": "Norton Rose Fulbright", "title": "SFC tightens sponsor compliance framework – new reporting, review and inspection requirements", "url": "https://www.nortonrosefulbright.com/en-cn/knowledge/publications/5937882d/sfc-tightens-sponsor-compliance-framework-new-reporting-review-and-inspection-requirements", "date": "2026-02-05", "topic": "IPO保荐人"},
+    {"firm": "Davis Polk", "title": "SFC identifies regulatory concerns on sponsor work amid surge in Hong Kong IPO activity", "url": "https://www.davispolk.com/insights/client-update/sfc-identifies-regulatory-concerns-sponsor-work-amid-surge-hong-kong-ipo", "date": "2026-02-04", "topic": "IPO保荐人"},
+    {"firm": "Bird & Bird (鸿鹄)", "title": "SFC issues stern warning to IPO sponsors amid surge in listing applications", "url": "https://www.twobirds.com/en/insights/2026/sfc-issues-stern-warning-to-ipo-sponsors-amid-surge-in-listing-applications", "date": "2026-02-03", "topic": "IPO保荐人"},
+    {"firm": "Charltons (易周律师行)", "title": "Appendix to the SFC Sponsor Circular: Substandard Conduct of Sponsors – Case Examples and Regulatory Expectations", "url": "https://www.charltonslaw.com/appendix-to-the-sfc-sponsor-circular-substandard-conduct-of-sponsors-case-examples-and-regulatory-expectations/", "date": "2026-02-02", "topic": "IPO保荐人"},
+]
+
+law_data = {"updated": datetime.now(HKT).isoformat(), "source": "Verified Law Firm Publications", "count": len(law_items), "items": law_items}
+with open(os.path.join(data_dir, 'law_firm_summaries.json'), 'w', encoding='utf-8') as f:
+    json.dump(law_data, f, ensure_ascii=False, indent=2)
+print(f'law_firm_summaries.json: {len(law_items)} items (verified links)')
+
 # Update meta
 files_map = {
     'sfc_news.json': 'sfcNews', 'sfc_circulars.json': 'sfcCirculars',
     'hkex_guidance_updates.json': 'hkexGuidanceUpdates', 'hkex_regulatory_announcements.json': 'hkexRegulatory',
     'hkex_news_releases.json': 'hkexNews', 'hkex_guidance_archive.json': 'hkexGLArchive',
-    'hkex_claude_search.json': 'hkexClaude'
+    'hkex_claude_search.json': 'hkexClaude', 'law_firm_summaries.json': 'lawFirms'
 }
 stats = {}
 for f, key in files_map.items():
