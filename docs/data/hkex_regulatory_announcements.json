@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-22T15:24:32.926750+08:00",
+  "updated": "2026-07-22T18:01:47.170038+08:00",
   "source": "HKEX Regulatory Announcements RSS",
-  "count": 49,
+  "count": 50,
   "items": [
+    {
+      "title": "通告 - 關於Paladin Limited （於百慕達註冊成立之有限公司） （股份代號：495）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260722news?sc_lang=zh-HK",
+      "date": "2026-07-22",
+      "description": "通告 - 關於Paladin Limited （於百慕達註冊成立之有限公司） （股份代號：495）取消上市地位",
+      "category": "enforcement_news"
+    },
     {
       "title": "聯交所對佳源服務控股有限公司（股份代號：1153）三名前董事的紀律行動",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260717news?sc_lang=zh-HK",
