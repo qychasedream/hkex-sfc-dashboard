@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-23T17:10:25.930914+08:00",
+  "updated": "2026-07-23T19:21:15.550889+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR112",
+      "title": "證監會與馬證委合辦業界圓桌會議   就基金互認安排及簡化雙重首次公開招股上市框架作交流\r\n",
+      "type": "general",
+      "date": "2026-07-23",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR112"
+    },
     {
       "refNo": "26PR111",
       "title": "證監會與馬證委簽訂諒解備忘錄      擴大基金互認安排及促進簡化雙重首次公開招股上市框架",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-02-11",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR23"
-    },
-    {
-      "refNo": "26PR22",
-      "title": "證監會提醒公眾警惕偽冒股評人的“唱高散貨”投資騙局",
-      "type": "general",
-      "date": "2026-02-11",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR22"
     }
   ]
 }
