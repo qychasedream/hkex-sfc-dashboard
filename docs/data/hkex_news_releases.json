@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-23T11:28:34.537439+08:00",
+  "updated": "2026-07-23T14:17:32.269933+08:00",
   "source": "HKEX News Releases RSS (filtered)",
   "count": 45,
   "items": [
+    {
+      "title": "香港交易所新增馬來西亞交易所為認可證券交易所",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260723news?sc_lang=zh-HK",
+      "date": "2026-07-23",
+      "description": "香港交易所新增馬來西亞交易所為認可證券交易所",
+      "category": "general"
+    },
     {
       "title": "滬深港交易所簽署合作備忘錄，促進滬深股通信息交流",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/2707173news?sc_lang=zh-HK",
@@ -309,13 +316,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/250918news?sc_lang=zh-HK",
       "date": "2025-09-18",
       "description": "香港交易所與阿布扎比證券交易所簽署合作備忘錄，增強兩地市場聯繫",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所舉辦氣候融資論壇，塑造環境權益產品市場未來格局",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250910news?sc_lang=zh-HK",
-      "date": "2025-09-10",
-      "description": "香港交易所舉辦氣候融資論壇，塑造環境權益產品市場未來格局",
       "category": "general"
     }
   ]

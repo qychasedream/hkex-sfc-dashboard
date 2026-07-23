@@ -1,8 +1,29 @@
 {
-  "updated": "2026-07-23T11:28:27.535717+08:00",
+  "updated": "2026-07-23T14:17:25.040600+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR111",
+      "title": "證監會與馬證委簽訂諒解備忘錄      擴大基金互認安排及促進簡化雙重首次公開招股上市框架",
+      "type": "general",
+      "date": "2026-07-23",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR111"
+    },
+    {
+      "refNo": "26PR114",
+      "title": "梁鳳儀的新演說：在證監會與馬來西亞證券事務監察委員會諒解備忘錄簽署儀式上的致辭",
+      "type": "general",
+      "date": "2026-07-23",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR114"
+    },
+    {
+      "refNo": "26PR110",
+      "title": "黃天祐的新演說：在證監會與馬來西亞證券事務監察委員會諒解備忘錄簽署儀式上的致辭",
+      "type": "general",
+      "date": "2026-07-23",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR110"
+    },
     {
       "refNo": "26PR109",
       "title": "證監會與中國證監會舉行高層執法合作會議",
@@ -611,27 +632,6 @@
       "type": "general",
       "date": "2026-02-11",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR22"
-    },
-    {
-      "refNo": "26PR21",
-      "title": "證監會取得針對裕承科金有限公司前任董事的賠償令及取消資格令",
-      "type": "enforcement",
-      "date": "2026-02-10",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR21"
-    },
-    {
-      "refNo": "26PR20",
-      "title": "證券欺詐案主腦因利用涉嫌“唱高散貨”計劃社交媒體“股票貼士”被判監禁最長24個月\r\n",
-      "type": "enforcement",
-      "date": "2026-02-09",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR20"
-    },
-    {
-      "refNo": "26PR19",
-      "title": "凱銀國際（香港）有限公司因基金管理缺失遭證監會譴責及罰款900萬元",
-      "type": "enforcement",
-      "date": "2026-02-09",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR19"
     }
   ]
 }
