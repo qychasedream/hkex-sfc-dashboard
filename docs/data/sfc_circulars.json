@@ -1,8 +1,14 @@
 {
-  "updated": "2026-07-24T15:19:42.452617+08:00",
+  "updated": "2026-07-24T17:57:28.156157+08:00",
   "source": "SFC e-Distribution API",
   "count": 20,
   "items": [
+    {
+      "refNo": "26EC43",
+      "title": "有關上市結構性基金的通函 (只備有英文版)",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC43"
+    },
     {
       "refNo": "26EC38",
       "title": "有關馬來西亞房地產投資信託基金在香港互掛上市的通函（只備有英文版）",
@@ -116,12 +122,6 @@
       "title": "致中介人的通函\r\n香港交易所證券市場系統主幹網絡升級的最新市場演習消息\r\n\r\n",
       "date": "",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC15"
-    },
-    {
-      "refNo": "26EC14",
-      "title": "致持牌法團的通函 - 有關場外衍生工具交易匯報的文件更新",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC14"
     }
   ]
 }

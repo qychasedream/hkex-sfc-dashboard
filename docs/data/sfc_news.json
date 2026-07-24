@@ -1,8 +1,22 @@
 {
-  "updated": "2026-07-24T15:19:41.777662+08:00",
+  "updated": "2026-07-24T17:57:27.368140+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR115",
+      "title": "證監會優化單日槓桿及反向產品的監管框架以確保市場有序交易",
+      "type": "general",
+      "date": "2026-07-24",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR115"
+    },
+    {
+      "refNo": "26PR113",
+      "title": "勝利證券有限公司因違反監管規定遭證監會譴責及罰款170萬元並暫時吊銷其負責人員的牌照\r\n",
+      "type": "enforcement",
+      "date": "2026-07-24",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR113"
+    },
     {
       "refNo": "26PR112",
       "title": "證監會與馬證委合辦業界圓桌會議   就基金互認安排及簡化雙重首次公開招股上市框架作交流\r\n",
@@ -618,20 +632,6 @@
       "type": "general",
       "date": "2026-02-12",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR26"
-    },
-    {
-      "refNo": "26PR24",
-      "title": "證監會推新措施促進香港的數字資產交易  以激發市場活力",
-      "type": "general",
-      "date": "2026-02-11",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR24"
-    },
-    {
-      "refNo": "26PR23",
-      "title": "葉志衡的新演說摘要：在Consensus香港大會2026的主題演說",
-      "type": "general",
-      "date": "2026-02-11",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR23"
     }
   ]
 }

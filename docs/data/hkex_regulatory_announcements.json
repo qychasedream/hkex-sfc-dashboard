@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-24T15:19:47.419213+08:00",
+  "updated": "2026-07-24T17:57:31.772875+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 50,
   "items": [
+    {
+      "title": "聯交所就提升上市機制競爭力的建議發布諮詢總結",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260724news?sc_lang=zh-HK",
+      "date": "2026-07-24",
+      "description": "聯交所就提升上市機制競爭力的建議發布諮詢總結",
+      "category": "consultation"
+    },
     {
       "title": "通告 - 關於Paladin Limited （於百慕達註冊成立之有限公司） （股份代號：495）取消上市地位",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260722news?sc_lang=zh-HK",
@@ -345,13 +352,6 @@
       "date": "2026-01-12",
       "description": "上市提名委員會物色上市委員會成員人選",
       "category": "regulatory_rule"
-    },
-    {
-      "title": "通告 - 關於德信中國控股有限公司（清盤中） （於開曼群島註冊成立之有限公司）  （股份代號：2019）取消上市地位",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2601022news?sc_lang=zh-HK",
-      "date": "2026-01-02",
-      "description": "通告 - 關於德信中國控股有限公司（清盤中） （於開曼群島註冊成立之有限公司）  （股份代號：2019）取消上市地位",
-      "category": "enforcement_news"
     }
   ]
 }

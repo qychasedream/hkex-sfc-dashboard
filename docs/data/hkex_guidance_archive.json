@@ -1,8 +1,48 @@
 {
-  "updated": "2026-07-24T15:19:51.181801+08:00",
+  "updated": "2026-07-24T17:57:38.549876+08:00",
   "source": "HKEX 指引信档案",
   "count": 130,
   "items": [
+    {
+      "gl_ref": "GL79-14",
+      "title": "有關集體投資計劃申請提交文件的規定及行政事宜的指引 (GL79-14) (於2026年7月刊登的標註修改版本)",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL79_14_mu_c.pdf",
+      "first_date": "01/01/2024",
+      "update_date": "24/07/2026",
+      "date": "2026-07-01",
+      "doc_type": "指引信",
+      "category": "上市發行人"
+    },
+    {
+      "gl_ref": "GL111-22",
+      "title": "適用於海外發行人的指引 (GL111-22) (於2026年7月刊登的標註修改版本)",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL111_22(0510)_c.pdf",
+      "first_date": "01/01/2022",
+      "update_date": "24/07/2026",
+      "date": "2026-07-01",
+      "doc_type": "指引信",
+      "category": "上市發行人"
+    },
+    {
+      "gl_ref": "GL112-22",
+      "title": "主板上市地位由第二上市改為雙重主要上市或主要上市 (GL112-22) (於2026年7月刊登的標註修改版本)",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL112_22(0510)_c.pdf",
+      "first_date": "01/01/2022",
+      "update_date": "24/07/2026",
+      "date": "2026-07-01",
+      "doc_type": "指引信",
+      "category": "上市發行人"
+    },
+    {
+      "gl_ref": "GL69-13",
+      "title": "對於(i) 發行人擬將業務或資產在聯交所分拆作獨立上市；或(ii) 發行人擬進行反收購行動而被視作為新上市申請人提供指引 (GL69-13) (於2026年7月刊登的標註修改版本)",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL69_13_c.pdf",
+      "first_date": "13/12/2013",
+      "update_date": "24/07/2026",
+      "date": "2026-07-01",
+      "doc_type": "指引信",
+      "category": "上市發行人"
+    },
     {
       "gl_ref": "GL80-15",
       "title": "指引信 - 上市發行人發行可轉換證券的指引 (GL80-15) &nbsp;(於2025年12月刊登的標註修改版本)",
@@ -114,26 +154,6 @@
       "category": "上市發行人"
     },
     {
-      "gl_ref": "GL111-22",
-      "title": "適用於海外發行人的指引 (GL111-22) (於2024年5月刊登的標註修改版本)",
-      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL111_22(0510)_c.pdf",
-      "first_date": "01/01/2022",
-      "update_date": "10/05/2024",
-      "date": "2024-05-01",
-      "doc_type": "指引信",
-      "category": "上市發行人"
-    },
-    {
-      "gl_ref": "GL112-22",
-      "title": "主板上市地位由第二上市改為雙重主要上市或主要上市 (GL112-22) (於2024年5月刊登的標註修改版本)",
-      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL112_22(0510)_c.pdf",
-      "first_date": "01/01/2022",
-      "update_date": "10/05/2024",
-      "date": "2024-05-01",
-      "doc_type": "指引信",
-      "category": "上市發行人"
-    },
-    {
       "gl_ref": "GL96-18",
       "title": "有關上市發行人是否適合繼續上市的指引 (GL96-18) (於2024年1月刊登的標註修改版本)",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL96_18_c.pdf",
@@ -188,16 +208,6 @@
       "title": "有關短暫停牌的指引 (GL83-15) (於2024年1月刊登的標註修改版本)",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL83_15_c.pdf",
       "first_date": "11/12/2015",
-      "update_date": "01/01/2024",
-      "date": "2024-01-01",
-      "doc_type": "指引信",
-      "category": "上市發行人"
-    },
-    {
-      "gl_ref": "GL69-13",
-      "title": "對於(i) 發行人擬將業務或資產在聯交所分拆作獨立上市；或(ii) 發行人擬進行反收購行動而被視作為新上市申請人提供指引 (GL69-13) (於2024年1月刊登的標註修改版本)",
-      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL69_13_c.pdf",
-      "first_date": "13/12/2013",
       "update_date": "01/01/2024",
       "date": "2024-01-01",
       "doc_type": "指引信",
@@ -758,16 +768,6 @@
       "title": "有關申請人在上市文件內列報非公認會計原則財務指標的指引及根據本交易所《上市規則》發出的任何有關文件 (GL103-19) (由2024年1月發布的新版本取代（與《新上市申請人指南》的相關指引一致）)",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL103_19_c.pdf",
       "first_date": "26/04/2019",
-      "update_date": "01/01/2024",
-      "date": "2024-01-01",
-      "doc_type": "指引信",
-      "category": "上市申請人/上市發行人"
-    },
-    {
-      "gl_ref": "GL111-22",
-      "title": "適用於海外發行人的指引 (GL111-22) (由2024年1月發布的新版本取代（與《新上市申請人指南》的相關指引一致）)",
-      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL111_22_c.pdf",
-      "first_date": "01/01/2022",
       "update_date": "01/01/2024",
       "date": "2024-01-01",
       "doc_type": "指引信",
