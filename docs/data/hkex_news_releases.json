@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-27T09:22:38.614378+08:00",
+  "updated": "2026-07-27T13:27:19.519764+08:00",
   "source": "HKEX News Releases RSS (filtered)",
   "count": 45,
   "items": [
+    {
+      "title": "香港交易所將於中際旭創上市日向投資者提供多項產品選擇",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260727news?sc_lang=zh-HK",
+      "date": "2026-07-27",
+      "description": "香港交易所將於中際旭創上市日向投資者提供多項產品選擇",
+      "category": "general"
+    },
     {
       "title": "香港交易所新增馬來西亞交易所為認可證券交易所",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/260723news?sc_lang=zh-HK",
@@ -309,13 +316,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/250923news?sc_lang=zh-HK",
       "date": "2025-09-23",
       "description": "香港交易所簽訂合作備忘錄 推動粵港澳大灣區碳市場發展",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所與阿布扎比證券交易所簽署合作備忘錄，增強兩地市場聯繫",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250918news?sc_lang=zh-HK",
-      "date": "2025-09-18",
-      "description": "香港交易所與阿布扎比證券交易所簽署合作備忘錄，增強兩地市場聯繫",
       "category": "general"
     }
   ]
