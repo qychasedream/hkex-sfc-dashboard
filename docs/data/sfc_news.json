@@ -1,8 +1,22 @@
 {
-  "updated": "2026-07-27T13:27:11.879480+08:00",
+  "updated": "2026-07-27T16:57:04.575313+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR116",
+      "title": "興證國際資管因未能妥善識別並處理可疑安排中的預警跡象及在管理私人基金方面犯有其他缺失而遭證監會譴責及罰款680萬元",
+      "type": "enforcement",
+      "date": "2026-07-27",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR116"
+    },
+    {
+      "refNo": "26PR117",
+      "title": "耀才證券國際（香港）有限公司因在監察可疑交易方面犯有內部監控缺失遭證監會譴責及罰款280萬元 ",
+      "type": "enforcement",
+      "date": "2026-07-27",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR117"
+    },
     {
       "refNo": "26PR115",
       "title": "證監會優化單日槓桿及反向產品的監管框架以確保市場有序交易",
@@ -618,20 +632,6 @@
       "type": "general",
       "date": "2026-02-16",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR27"
-    },
-    {
-      "refNo": "26PR25",
-      "title": "個人投資者在證監會提出的虛假交易案中被判刑",
-      "type": "enforcement",
-      "date": "2026-02-12",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR25"
-    },
-    {
-      "refNo": "26PR26",
-      "title": "證監會告誡公眾提防冒充其名義的詐騙活動",
-      "type": "general",
-      "date": "2026-02-12",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR26"
     }
   ]
 }
