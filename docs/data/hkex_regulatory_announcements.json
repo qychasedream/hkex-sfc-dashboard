@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-28T14:14:54.048135+08:00",
+  "updated": "2026-07-28T17:10:38.048308+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 50,
   "items": [
+    {
+      "title": "聯交所對力高健康生活有限公司（股份代號：2370）及兩名現任董事的紀律行動",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260728news?sc_lang=zh-HK",
+      "date": "2026-07-28",
+      "description": "聯交所對力高健康生活有限公司（股份代號：2370）及兩名現任董事的紀律行動",
+      "category": "disciplinary"
+    },
     {
       "title": "聯交所就提升上市機制競爭力的建議發布諮詢總結",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260724news?sc_lang=zh-HK",
@@ -344,13 +351,6 @@
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2601122news?sc_lang=zh-HK",
       "date": "2026-01-12",
       "description": "上市提名委員會物色上市覆核委員會成員人選",
-      "category": "regulatory_rule"
-    },
-    {
-      "title": "上市提名委員會物色上市委員會成員人選",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260112news?sc_lang=zh-HK",
-      "date": "2026-01-12",
-      "description": "上市提名委員會物色上市委員會成員人選",
       "category": "regulatory_rule"
     }
   ]

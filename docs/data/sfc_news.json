@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-28T14:14:49.653663+08:00",
+  "updated": "2026-07-28T17:10:26.725316+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR118",
+      "title": "六福證券（香港）有限公司因網絡保安監控措施不足以抵禦網絡攻擊遭證監會譴責及罰款210萬元",
+      "type": "enforcement",
+      "date": "2026-07-28",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR118"
+    },
     {
       "refNo": "26PR116",
       "title": "興證國際資管因未能妥善識別並處理可疑安排中的預警跡象及在管理私人基金方面犯有其他缺失而遭證監會譴責及罰款680萬元",
@@ -625,13 +632,6 @@
       "type": "enforcement",
       "date": "2026-02-24",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR28"
-    },
-    {
-      "refNo": "26PR27",
-      "title": "根據《公司收購、合併及股份回購守則》就有關佐丹奴國際有限公司的事宜與華富國際有限公司及Clear Prosper Global Limited達成和解\r\n",
-      "type": "general",
-      "date": "2026-02-16",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR27"
     }
   ]
 }
