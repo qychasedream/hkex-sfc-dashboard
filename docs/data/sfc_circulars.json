@@ -1,8 +1,14 @@
 {
-  "updated": "2026-07-29T15:32:32.400862+08:00",
+  "updated": "2026-07-29T18:19:17.726473+08:00",
   "source": "SFC e-Distribution API",
   "count": 20,
   "items": [
+    {
+      "refNo": "26EC45",
+      "title": "有關跨行業網絡地圖項目的聯合通函（只備有英文版）",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC45"
+    },
     {
       "refNo": "26EC43",
       "title": "有關上市結構性基金的通函 (只備有英文版)",
@@ -116,12 +122,6 @@
       "title": "致本身為香港聯合交易所有限公司或香港期貨交易所有限公司參與者的持牌法團的通函 - 交易所參與者的持牌人保險計劃",
       "date": "",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC18"
-    },
-    {
-      "refNo": "26EC15",
-      "title": "致中介人的通函\r\n香港交易所證券市場系統主幹網絡升級的最新市場演習消息\r\n\r\n",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC15"
     }
   ]
 }
