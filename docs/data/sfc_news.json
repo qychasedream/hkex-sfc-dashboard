@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-30T13:48:21.136028+08:00",
+  "updated": "2026-07-30T16:38:34.057703+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR119",
+      "title": "證監會向經紀行發出限制通知書以凍結與涉嫌首次公開招股欺詐有關的逾1.25億元資產\r\n",
+      "type": "enforcement",
+      "date": "2026-07-30",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR119"
+    },
     {
       "refNo": "26PR118",
       "title": "六福證券（香港）有限公司因網絡保安監控措施不足以抵禦網絡攻擊遭證監會譴責及罰款210萬元",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-02-25",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR29"
-    },
-    {
-      "refNo": "26PR28",
-      "title": "證監會於香港和英格蘭及威爾斯取得全球性法庭命令以凍結涉嫌內幕交易中的嫌疑犯高達430萬港元的資產\r\n",
-      "type": "enforcement",
-      "date": "2026-02-24",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR28"
     }
   ]
 }
