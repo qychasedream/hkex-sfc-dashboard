@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-31T17:49:31.316687+08:00",
+  "updated": "2026-07-31T20:04:55.611101+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR121",
+      "title": "市場失當行為審裁處裁定潘廸生爵士在披露11.5億港元企業意外收益前進行內幕交易罪成",
+      "type": "enforcement",
+      "date": "2026-07-31",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR121"
+    },
     {
       "refNo": "26PR119",
       "title": "證監會向經紀行發出限制通知書以凍結與涉嫌首次公開招股欺詐有關的逾1.25億元資產\r\n",
@@ -625,13 +632,6 @@
       "type": "enforcement",
       "date": "2026-02-26",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR30"
-    },
-    {
-      "refNo": "26PR29",
-      "title": "證監會歡迎政府財政預算案措施  鞏固香港國際金融中心地位和在國家發展中的角色",
-      "type": "general",
-      "date": "2026-02-25",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR29"
     }
   ]
 }
