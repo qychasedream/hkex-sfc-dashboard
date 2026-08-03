@@ -1,8 +1,22 @@
 {
-  "updated": "2026-08-03T08:16:53.839279+08:00",
+  "updated": "2026-08-03T12:08:07.664566+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR122",
+      "title": "證監會與中國證監會聯合公布深化兩地市場務實合作與密切協同發展的新舉措",
+      "type": "general",
+      "date": "2026-08-03",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR122"
+    },
+    {
+      "refNo": "26PR120",
+      "title": "黃天祐的新演說：在香港交易所中國國債期貨啟動儀式上的主題演說",
+      "type": "general",
+      "date": "2026-08-03",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR120"
+    },
     {
       "refNo": "26PR121",
       "title": "市場失當行為審裁處裁定潘廸生爵士在披露11.5億港元企業意外收益前進行內幕交易罪成",
@@ -618,20 +632,6 @@
       "type": "general",
       "date": "2026-03-05",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR32"
-    },
-    {
-      "refNo": "26PR31",
-      "title": "黃天祐的新演說：香港金融服務界丙午年新春酒會上的演說",
-      "type": "general",
-      "date": "2026-03-02",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR31"
-    },
-    {
-      "refNo": "26PR30",
-      "title": "證監會終身禁止劉家豪重投業界",
-      "type": "enforcement",
-      "date": "2026-02-26",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR30"
     }
   ]
 }
