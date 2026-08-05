@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-05T15:26:23.529065+08:00",
+  "updated": "2026-08-05T18:11:05.826062+08:00",
   "source": "HKEX News Releases RSS (filtered)",
   "count": 45,
   "items": [
+    {
+      "title": "香港交易所宣布管理層任命",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/2608052news?sc_lang=zh-HK",
+      "date": "2026-08-05",
+      "description": "香港交易所宣布管理層任命",
+      "category": "general"
+    },
     {
       "title": "香港交易所推出五年期中國國債期貨",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/260803news?sc_lang=zh-HK",
@@ -309,13 +316,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/250930news?sc_lang=zh-HK",
       "date": "2025-09-30",
       "description": "香港交易所推出泡泡瑪特股票期權",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所與公益金首次在中環舉辦慈善接力賽",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250926news?sc_lang=zh-HK",
-      "date": "2025-09-26",
-      "description": "香港交易所與公益金首次在中環舉辦慈善接力賽",
       "category": "general"
     }
   ]

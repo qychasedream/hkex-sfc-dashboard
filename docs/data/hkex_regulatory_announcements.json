@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-05T15:26:21.430773+08:00",
+  "updated": "2026-08-05T18:11:03.824931+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 50,
   "items": [
+    {
+      "title": "通告 - 關於保集健康控股有限公司  （於開曼群島註冊成立之有限公司） （股份代號：1246）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260805news?sc_lang=zh-HK",
+      "date": "2026-08-05",
+      "description": "通告 - 關於保集健康控股有限公司  （於開曼群島註冊成立之有限公司） （股份代號：1246）取消上市地位",
+      "category": "enforcement_news"
+    },
     {
       "title": "聯交所對力高健康生活有限公司（股份代號：2370）及兩名現任董事的紀律行動",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260728news?sc_lang=zh-HK",
@@ -345,13 +352,6 @@
       "date": "2026-01-13",
       "description": "聯交所對星悅康旅股份有限公司（前稱奧園健康生活集團有限公司）（股份代號：3662）以及星悅康旅股份有限公司及 / 或中國奧園集團股份有限公司（股份代號：3883）15名董事的紀律行動",
       "category": "disciplinary"
-    },
-    {
-      "title": "上市提名委員會物色上市覆核委員會成員人選",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2601122news?sc_lang=zh-HK",
-      "date": "2026-01-12",
-      "description": "上市提名委員會物色上市覆核委員會成員人選",
-      "category": "regulatory_rule"
     }
   ]
 }
