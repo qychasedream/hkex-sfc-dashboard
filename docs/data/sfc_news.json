@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-06T15:27:21.142199+08:00",
+  "updated": "2026-08-06T18:13:39.552490+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR123",
+      "title": "證監會就中國糖果控股有限公司前高層人員的企業失當行為取得針對他們為期13年的取消資格令\r\n",
+      "type": "enforcement",
+      "date": "2026-08-06",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR123"
+    },
     {
       "refNo": "26PR122",
       "title": "證監會與中國證監會聯合公布深化兩地市場務實合作與密切協同發展的新舉措",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-05",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR35"
-    },
-    {
-      "refNo": "26PR32",
-      "title": "梁鳳儀的新演說：在2026亞洲證券業與金融市場協會的歐盟 ─ 亞洲金融服務對話活動上的主題演說",
-      "type": "general",
-      "date": "2026-03-05",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR32"
     }
   ]
 }
