@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-11T17:09:38.988619+08:00",
+  "updated": "2026-08-11T18:12:57.758615+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 50,
   "items": [
+    {
+      "title": "聯交所對中國奧園集團股份有限公司（股份代號：3883）一名前董事的紀律行動",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260811news?sc_lang=zh-HK",
+      "date": "2026-08-11",
+      "description": "聯交所對中國奧園集團股份有限公司（股份代號：3883）一名前董事的紀律行動",
+      "category": "disciplinary"
+    },
     {
       "title": "通告 - 關於保集健康控股有限公司  （於開曼群島註冊成立之有限公司） （股份代號：1246）取消上市地位",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260805news?sc_lang=zh-HK",
@@ -345,13 +352,6 @@
       "date": "2026-01-14",
       "description": "通告 - 關於第一信用金融集團有限公司  （於開曼群島註冊成立並於百慕達存續之有限公司） （股份代號：8215）取消上市地位",
       "category": "enforcement_news"
-    },
-    {
-      "title": "聯交所對星悅康旅股份有限公司（前稱奧園健康生活集團有限公司）（股份代號：3662）以及星悅康旅股份有限公司及 / 或中國奧園集團股份有限公司（股份代號：3883）15名董事的紀律行動",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260113news?sc_lang=zh-HK",
-      "date": "2026-01-13",
-      "description": "聯交所對星悅康旅股份有限公司（前稱奧園健康生活集團有限公司）（股份代號：3662）以及星悅康旅股份有限公司及 / 或中國奧園集團股份有限公司（股份代號：3883）15名董事的紀律行動",
-      "category": "disciplinary"
     }
   ]
 }
