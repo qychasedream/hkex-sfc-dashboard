@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-12T15:45:42.719550+08:00",
+  "updated": "2026-08-12T17:17:32.750047+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 50,
   "items": [
+    {
+      "title": "通告 - 關於融科控股集團有限公司（強制清盤中）  （於百慕達註冊成立之有限公司） （股份代號：2323）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260812news?sc_lang=zh-HK",
+      "date": "2026-08-12",
+      "description": "通告 - 關於融科控股集團有限公司（強制清盤中）  （於百慕達註冊成立之有限公司） （股份代號：2323）取消上市地位",
+      "category": "enforcement_news"
+    },
     {
       "title": "聯交所對中國奧園集團股份有限公司（股份代號：3883）一名前董事的紀律行動",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260811news?sc_lang=zh-HK",
@@ -345,13 +352,6 @@
       "date": "2026-01-15",
       "description": "聯交所對皇庭智家控股有限公司（前稱慕容家居控股有限公司）（股份代號：1575）兩名前任董事的紀律行動",
       "category": "disciplinary"
-    },
-    {
-      "title": "通告 - 關於第一信用金融集團有限公司  （於開曼群島註冊成立並於百慕達存續之有限公司） （股份代號：8215）取消上市地位",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260114news?sc_lang=zh-HK",
-      "date": "2026-01-14",
-      "description": "通告 - 關於第一信用金融集團有限公司  （於開曼群島註冊成立並於百慕達存續之有限公司） （股份代號：8215）取消上市地位",
-      "category": "enforcement_news"
     }
   ]
 }
