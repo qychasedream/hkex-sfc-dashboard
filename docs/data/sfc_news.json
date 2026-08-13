@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-13T18:38:18.576023+08:00",
+  "updated": "2026-08-13T19:32:06.692426+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR125",
+      "title": "法庭押後因不遵從證監會就調查市場操縱案發出的通知而展開的刑事檢控聆訊",
+      "type": "enforcement",
+      "date": "2026-08-13",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR125"
+    },
     {
       "refNo": "26PR124",
       "title": "證監會就虛構交易取得針對國家聯合資源控股有限公司前執行董事為期六年的取消資格令",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-05",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR33"
-    },
-    {
-      "refNo": "26PR34",
-      "title": "證監會取得針對酷派集團有限公司前執行董事的賠償令及取消資格令",
-      "type": "enforcement",
-      "date": "2026-03-05",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR34"
     }
   ]
 }
