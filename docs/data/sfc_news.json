@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-13T17:18:10.740111+08:00",
+  "updated": "2026-08-13T18:38:18.576023+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR124",
+      "title": "證監會就虛構交易取得針對國家聯合資源控股有限公司前執行董事為期六年的取消資格令",
+      "type": "enforcement",
+      "date": "2026-08-13",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR124"
+    },
     {
       "refNo": "26PR123",
       "title": "證監會就中國糖果控股有限公司前高層人員的企業失當行為取得針對他們為期13年的取消資格令\r\n",
@@ -625,13 +632,6 @@
       "type": "enforcement",
       "date": "2026-03-05",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR34"
-    },
-    {
-      "refNo": "26PR35",
-      "title": "證監會推動亞太區監管同業就鞏固市場韌性形成共識  將加強合作及新科技應用",
-      "type": "general",
-      "date": "2026-03-05",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR35"
     }
   ]
 }
