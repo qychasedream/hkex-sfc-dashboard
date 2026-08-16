@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-16T20:55:41.472659+08:00",
+  "updated": "2026-08-16T21:37:15.649258+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR126",
+      "title": "前證監會職員在證監會與廉署聯合調查後被落案起訴",
+      "type": "general",
+      "date": "2026-08-16",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR126"
+    },
     {
       "refNo": "26PR125",
       "title": "法庭押後因不遵從證監會就調查市場操縱案發出的通知而展開的刑事檢控聆訊",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-09",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR36"
-    },
-    {
-      "refNo": "26PR33",
-      "title": "監管機構推出GenA.I.沙盒++以促進金融服務領域的人工智能創新",
-      "type": "general",
-      "date": "2026-03-05",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR33"
     }
   ]
 }
