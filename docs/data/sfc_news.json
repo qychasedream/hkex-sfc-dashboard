@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-18T16:45:36.699949+08:00",
+  "updated": "2026-08-18T17:39:10.864795+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR127",
+      "title": "證監會歡迎金融監管總局宣布支持內地保險機構可透過滬深港通投資香港ETF",
+      "type": "general",
+      "date": "2026-08-18",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR127"
+    },
     {
       "refNo": "26PR126",
       "title": "前證監會職員在證監會與廉署聯合調查後被落案起訴",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-10",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR37"
-    },
-    {
-      "refNo": "26PR36",
-      "title": "黃天祐的新演說：在香港證券及投資學會主席酒會上的主題演說\r\n\r\n",
-      "type": "general",
-      "date": "2026-03-09",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR36"
     }
   ]
 }
