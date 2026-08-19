@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-19T17:18:20.722945+08:00",
+  "updated": "2026-08-19T17:59:44.768276+08:00",
   "source": "HKEX News Releases RSS (filtered)",
-  "count": 46,
+  "count": 45,
   "items": [
     {
       "title": "香港交易所2026年中期業績",
@@ -316,13 +316,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/2510132news?sc_lang=zh-HK",
       "date": "2025-10-13",
       "description": "香港交易所宣布管理層任命",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所在杜拜設立新子公司\t拓展大宗商品業務",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/251013news?sc_lang=zh-HK",
-      "date": "2025-10-13",
-      "description": "香港交易所在杜拜設立新子公司\t拓展大宗商品業務",
       "category": "general"
     }
   ]
