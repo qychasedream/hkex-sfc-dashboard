@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-20T15:58:07.437634+08:00",
+  "updated": "2026-08-20T16:50:12.986324+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 50,
   "items": [
+    {
+      "title": "通告 - 關於綠科科技國際有限公司  （於開曼群島註冊成立之有限公司）  （股份代號：195）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260820news?sc_lang=zh-HK",
+      "date": "2026-08-20",
+      "description": "通告 - 關於綠科科技國際有限公司  （於開曼群島註冊成立之有限公司）  （股份代號：195）取消上市地位",
+      "category": "enforcement_news"
+    },
     {
       "title": "通告 - 關於融科控股集團有限公司（強制清盤中）  （於百慕達註冊成立之有限公司） （股份代號：2323）取消上市地位",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260812news?sc_lang=zh-HK",
@@ -344,13 +351,6 @@
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260120news?sc_lang=zh-HK",
       "date": "2026-01-20",
       "description": "聯交所對美臻集團控股有限公司（股份代號：1825）及三名董事的紀律行動",
-      "category": "disciplinary"
-    },
-    {
-      "title": "聯交所對皇庭智家控股有限公司（前稱慕容家居控股有限公司）（股份代號：1575）兩名前任董事的紀律行動",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260115news?sc_lang=zh-HK",
-      "date": "2026-01-15",
-      "description": "聯交所對皇庭智家控股有限公司（前稱慕容家居控股有限公司）（股份代號：1575）兩名前任董事的紀律行動",
       "category": "disciplinary"
     }
   ]
