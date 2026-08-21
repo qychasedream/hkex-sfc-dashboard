@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-21T16:06:53.088516+08:00",
+  "updated": "2026-08-21T16:59:27.554382+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 50,
   "items": [
+    {
+      "title": "聯交所延長新上市申請有效期",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260821news?sc_lang=zh-HK",
+      "date": "2026-08-21",
+      "description": "聯交所延長新上市申請有效期",
+      "category": "other"
+    },
     {
       "title": "通告 - 關於綠科科技國際有限公司  （於開曼群島註冊成立之有限公司）  （股份代號：195）取消上市地位",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260820news?sc_lang=zh-HK",
@@ -344,13 +351,6 @@
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260122news?sc_lang=zh-HK",
       "date": "2026-01-22",
       "description": "聯交所對佳源服務控股有限公司（股份代號：1153）的一名前董事的紀律行動",
-      "category": "disciplinary"
-    },
-    {
-      "title": "聯交所對美臻集團控股有限公司（股份代號：1825）及三名董事的紀律行動",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260120news?sc_lang=zh-HK",
-      "date": "2026-01-20",
-      "description": "聯交所對美臻集團控股有限公司（股份代號：1825）及三名董事的紀律行動",
       "category": "disciplinary"
     }
   ]
