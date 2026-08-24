@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-24T16:05:23.030070+08:00",
+  "updated": "2026-08-24T17:06:09.951827+08:00",
   "source": "HKEX News Releases RSS (filtered)",
   "count": 45,
   "items": [
+    {
+      "title": "香港交易所委任對外傳訊主管",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260824news?sc_lang=zh-HK",
+      "date": "2026-08-24",
+      "description": "香港交易所委任對外傳訊主管",
+      "category": "general"
+    },
     {
       "title": "香港交易所2026年中期業績",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/260819news?sc_lang=zh-HK",
@@ -309,13 +316,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/251014news?sc_lang=zh-HK",
       "date": "2025-10-14",
       "description": "香港交易所將推出恒生生物科技指數期貨",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所宣布管理層任命",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/2510132news?sc_lang=zh-HK",
-      "date": "2025-10-13",
-      "description": "香港交易所宣布管理層任命",
       "category": "general"
     }
   ]

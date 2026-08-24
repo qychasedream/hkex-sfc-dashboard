@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-24T16:05:14.396889+08:00",
+  "updated": "2026-08-24T17:06:01.613960+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR128",
+      "title": "證監會撤銷陳子建的牌照及禁止他重投業界十年",
+      "type": "enforcement",
+      "date": "2026-08-24",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR128"
+    },
     {
       "refNo": "26PR127",
       "title": "證監會歡迎金融監管總局宣布支持內地保險機構可透過滬深港通投資香港ETF",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-10",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR38"
-    },
-    {
-      "refNo": "26PR37",
-      "title": "黃天祐的新演說：在投資者及理財教育獎2025頒獎典禮的演說",
-      "type": "general",
-      "date": "2026-03-10",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR37"
     }
   ]
 }
