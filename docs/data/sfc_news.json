@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-26T17:04:37.628783+08:00",
+  "updated": "2026-08-26T17:59:02.041582+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR129",
+      "title": "證監會《季度報告》：︁香港持續深化內地聯通  作為中國資產國際門戶的優勢更趨鞏固",
+      "type": "general",
+      "date": "2026-08-26",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR129"
+    },
     {
       "refNo": "26PR128",
       "title": "證監會撤銷陳子建的牌照及禁止他重投業界十年",
@@ -625,13 +632,6 @@
       "type": "enforcement",
       "date": "2026-03-12",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR40"
-    },
-    {
-      "refNo": "26PR38",
-      "title": "梁鳳儀的新演說：在投資者及理財教育獎2025頒獎典禮的演說",
-      "type": "general",
-      "date": "2026-03-10",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR38"
     }
   ]
 }
