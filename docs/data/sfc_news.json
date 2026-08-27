@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-27T11:29:26.422026+08:00",
+  "updated": "2026-08-27T22:35:17.271752+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR130",
+      "title": "第一期GenA.I.沙盒++參與者名單",
+      "type": "general",
+      "date": "2026-08-27",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR130"
+    },
     {
       "refNo": "26PR129",
       "title": "證監會《季度報告》：︁香港持續深化內地聯通  作為中國資產國際門戶的優勢更趨鞏固",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-13",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR39"
-    },
-    {
-      "refNo": "26PR40",
-      "title": "證監會與廉署就持牌公司高層涉嫌內幕交易及貪污採取聯合行動",
-      "type": "enforcement",
-      "date": "2026-03-12",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR40"
     }
   ]
 }
