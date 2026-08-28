@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-28T08:02:23.054739+08:00",
+  "updated": "2026-08-28T19:27:22.542240+08:00",
   "source": "HKEX News Releases RSS (filtered)",
   "count": 45,
   "items": [
+    {
+      "title": "香港交易所將於希音上市日向投資者提供多項產品選擇",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260828news?sc_lang=zh-HK",
+      "date": "2026-08-28",
+      "description": "香港交易所將於希音上市日向投資者提供多項產品選擇",
+      "category": "general"
+    },
     {
       "title": "香港交易所委任對外傳訊主管",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/260824news?sc_lang=zh-HK",
@@ -309,13 +316,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/251105news?sc_lang=zh-HK",
       "date": "2025-11-05",
       "description": "香港交易所2025年第三季度業績",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所將推出恒生生物科技指數期貨",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/251014news?sc_lang=zh-HK",
-      "date": "2025-10-14",
-      "description": "香港交易所將推出恒生生物科技指數期貨",
       "category": "general"
     }
   ]
