@@ -1,8 +1,14 @@
 {
-  "updated": "2026-08-31T15:28:43.902660+08:00",
+  "updated": "2026-08-31T23:21:16.597539+08:00",
   "source": "SFC e-Distribution API",
   "count": 20,
   "items": [
+    {
+      "refNo": "26EC52",
+      "title": "致持牌法團的通函 \r\n關於已達到為場外衍生工具制度而設的結算及備存紀錄規則下的結算門檻\r\n的訂明人士名單\r\n",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC52"
+    },
     {
       "refNo": "26EC51",
       "title": "致持牌法團、獲證監會發牌的虛擬資產服務提供者及有聯繫實體的通函\r\n紓減透過簡化電子直接扣帳授權安排收取存款的風險",
@@ -116,12 +122,6 @@
       "title": "有關代幣化證監會認可投資產品二級市場買賣的通函",
       "date": "",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC23"
-    },
-    {
-      "refNo": "26EC19",
-      "title": "金融服務提供者名單維持不變—場外衍生工具監管制度下的結算及備存紀錄規則",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC19"
     }
   ]
 }
