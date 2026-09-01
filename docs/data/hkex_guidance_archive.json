@@ -1,8 +1,18 @@
 {
-  "updated": "2026-09-01T13:42:38.450103+08:00",
+  "updated": "2026-09-01T18:30:36.644290+08:00",
   "source": "HKEX 指引信档案",
   "count": 130,
   "items": [
+    {
+      "gl_ref": "GL95-18",
+      "title": "有關長時間停牌及除牌的指引 (GL95-18) (於2026年9月刊登的標註修改版本)",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL95_18_c.pdf",
+      "first_date": "25/05/2018",
+      "update_date": "01/09/2026",
+      "date": "2026-09-01",
+      "doc_type": "指引信",
+      "category": "上市發行人"
+    },
     {
       "gl_ref": "GL79-14",
       "title": "有關集體投資計劃申請提交文件的規定及行政事宜的指引 (GL79-14) (於2026年7月刊登的標註修改版本)",
@@ -48,16 +58,6 @@
       "title": "指引信 - 上市發行人發行可轉換證券的指引 (GL80-15) &nbsp;(於2025年12月刊登的標註修改版本)",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/gl80_15_mu1807_c.pdf",
       "first_date": "05/2015",
-      "update_date": "31/12/2025",
-      "date": "2025-12-01",
-      "doc_type": "指引信",
-      "category": "上市發行人"
-    },
-    {
-      "gl_ref": "GL95-18",
-      "title": "有關長時間停牌及除牌的指引 (GL95-18) &nbsp;(於2025年12月刊登的標註修改版本)",
-      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Archive/Guidance-Letters/GL95_18_c.pdf",
-      "first_date": "25/05/2018",
       "update_date": "31/12/2025",
       "date": "2025-12-01",
       "doc_type": "指引信",
