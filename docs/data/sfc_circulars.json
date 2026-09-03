@@ -1,8 +1,14 @@
 {
-  "updated": "2026-09-03T14:26:30.436179+08:00",
+  "updated": "2026-09-03T19:38:21.559552+08:00",
   "source": "SFC e-Distribution API",
   "count": 20,
   "items": [
+    {
+      "refNo": "26EC55",
+      "title": "有關證監會認可基金投資私募市場資產的通函（只備有英文版）",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC55"
+    },
     {
       "refNo": "26EC52",
       "title": "致持牌法團的通函 \r\n關於已達到為場外衍生工具制度而設的結算及備存紀錄規則下的結算門檻\r\n的訂明人士名單\r\n",
@@ -116,12 +122,6 @@
       "title": "有關代幣化證監會認可投資產品的通函 (只備有英文版)",
       "date": "",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC22"
-    },
-    {
-      "refNo": "26EC23",
-      "title": "有關代幣化證監會認可投資產品二級市場買賣的通函",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC23"
     }
   ]
 }
