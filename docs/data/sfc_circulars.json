@@ -1,8 +1,14 @@
 {
-  "updated": "2026-09-04T09:17:36.647564+08:00",
+  "updated": "2026-09-04T14:25:58.713473+08:00",
   "source": "SFC e-Distribution API",
   "count": 20,
   "items": [
+    {
+      "refNo": "26EC54",
+      "title": "致持牌法團、獲證監會發牌的虛擬資產服務提供者及有聯繫實體的通函\r\n香港證券業發展研討會",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC54"
+    },
     {
       "refNo": "26EC55",
       "title": "有關證監會認可基金投資私募市場資產的通函（只備有英文版）",
@@ -116,12 +122,6 @@
       "title": "致中介人的通函\r\n有關香港交易所證券市場系統主幹網絡升級第二次市場演習的最新消息\r\n",
       "date": "",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC28"
-    },
-    {
-      "refNo": "26EC22",
-      "title": "有關代幣化證監會認可投資產品的通函 (只備有英文版)",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC22"
     }
   ]
 }
