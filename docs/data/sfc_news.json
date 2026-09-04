@@ -1,8 +1,22 @@
 {
-  "updated": "2026-09-04T14:25:57.798489+08:00",
+  "updated": "2026-09-04T19:38:53.915820+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR134",
+      "title": "區域法院就涉及非法賣空的證券欺詐案定下審訊日期",
+      "type": "enforcement",
+      "date": "2026-09-04",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR134"
+    },
+    {
+      "refNo": "26PR132",
+      "title": "梁鳳儀的新演說摘要：在香港銀行公會年度卓越人士講座暨午餐會的專題討論上發言",
+      "type": "general",
+      "date": "2026-09-04",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR132"
+    },
     {
       "refNo": "26PR131",
       "title": "證監會加強認可基金就私募市場資產投資的指引",
@@ -618,20 +632,6 @@
       "type": "general",
       "date": "2026-03-19",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR43"
-    },
-    {
-      "refNo": "26PR42",
-      "title": "證監會發表有關聯交所規管上市事宜表現的檢討報告",
-      "type": "general",
-      "date": "2026-03-18",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR42"
-    },
-    {
-      "refNo": "26PR41",
-      "title": "黃天祐的新演說：在香港獨立非執行董事協會2026年春茗午宴的演說",
-      "type": "general",
-      "date": "2026-03-13",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR41"
     }
   ]
 }
