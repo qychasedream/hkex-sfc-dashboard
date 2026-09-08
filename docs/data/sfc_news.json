@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-08T13:20:28.354488+08:00",
+  "updated": "2026-09-08T18:00:22.083490+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR136",
+      "title": "黃天祐的新演說：在證監會論壇“Transition Plans: From Disclosures to Delivery”上的開幕辭",
+      "type": "general",
+      "date": "2026-09-08",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR136"
+    },
     {
       "refNo": "26PR135",
       "title": "證監會與金管局的2025年聯合調查：香港投資產品銷售創新高  固定收益、貨幣及商品相關的產品需求強勁 ",
@@ -625,13 +632,6 @@
       "type": "enforcement",
       "date": "2026-03-20",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR45"
-    },
-    {
-      "refNo": "26PR44",
-      "title": "證監會禁止郭哲榮重投業界四年半並處以罰款100萬元",
-      "type": "enforcement",
-      "date": "2026-03-19",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR44"
     }
   ]
 }
