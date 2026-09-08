@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-08T08:42:58.984069+08:00",
+  "updated": "2026-09-08T13:20:28.354488+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR135",
+      "title": "證監會與金管局的2025年聯合調查：香港投資產品銷售創新高  固定收益、貨幣及商品相關的產品需求強勁 ",
+      "type": "general",
+      "date": "2026-09-08",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR135"
+    },
     {
       "refNo": "26PR134",
       "title": "區域法院就涉及非法賣空的證券欺詐案定下審訊日期",
@@ -625,13 +632,6 @@
       "type": "enforcement",
       "date": "2026-03-19",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR44"
-    },
-    {
-      "refNo": "26PR43",
-      "title": "證監會《季度報告》：︁策略性創新促進香港上市及數字資產市場持續增長",
-      "type": "general",
-      "date": "2026-03-19",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR43"
     }
   ]
 }
