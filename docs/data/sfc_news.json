@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-09T14:34:55.126374+08:00",
+  "updated": "2026-09-09T19:54:31.976363+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR138",
+      "title": "證監會沉痛哀悼首任行政長官董建華先生逝世",
+      "type": "general",
+      "date": "2026-09-09",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR138"
+    },
     {
       "refNo": "26PR137",
       "title": "梁仲賢的新演說：在第四屆HKEX中國機遇論壇的主題演講",
@@ -625,13 +632,6 @@
       "type": "enforcement",
       "date": "2026-03-25",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR48"
-    },
-    {
-      "refNo": "26PR47",
-      "title": "呂伯棠因失當行為遭證監會終身禁止重投業界並處以罰款1,743萬元",
-      "type": "enforcement",
-      "date": "2026-03-24",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR47"
     }
   ]
 }
