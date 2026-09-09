@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-09T09:26:38.770836+08:00",
+  "updated": "2026-09-09T14:34:55.126374+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR137",
+      "title": "梁仲賢的新演說：在第四屆HKEX中國機遇論壇的主題演講",
+      "type": "general",
+      "date": "2026-09-09",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR137"
+    },
     {
       "refNo": "26PR136",
       "title": "黃天祐的新演說：在證監會論壇“Transition Plans: From Disclosures to Delivery”上的開幕辭",
@@ -625,13 +632,6 @@
       "type": "enforcement",
       "date": "2026-03-24",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR47"
-    },
-    {
-      "refNo": "26PR45",
-      "title": "根據《證券及期貨條例》在區域法院進行的首宗涉及非法賣空的證券欺詐刑事檢控的聆訊日期已定",
-      "type": "enforcement",
-      "date": "2026-03-20",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR45"
     }
   ]
 }
