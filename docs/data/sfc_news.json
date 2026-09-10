@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-10T12:29:06.689968+08:00",
+  "updated": "2026-09-10T17:07:10.332148+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR140",
+      "title": "證監會因涉嫌操縱首次公開招股行為而暫停撥康視雲製藥有限公司的股份交易",
+      "type": "enforcement",
+      "date": "2026-09-10",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR140"
+    },
     {
       "refNo": "26PR138",
       "title": "證監會沉痛哀悼首任行政長官董建華先生逝世",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-25",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR49"
-    },
-    {
-      "refNo": "26PR48",
-      "title": "證監會取得法庭命令凍結涉嫌操縱嘉藝股份人士高達2.19億元的資產",
-      "type": "enforcement",
-      "date": "2026-03-25",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR48"
     }
   ]
 }
