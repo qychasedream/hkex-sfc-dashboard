@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-10T17:07:18.801889+08:00",
+  "updated": "2026-09-10T21:38:21.694950+08:00",
   "source": "HKEX News Releases RSS (filtered)",
   "count": 45,
   "items": [
+    {
+      "title": "香港交易所、香港金管局、迪拜金管局和納斯達克迪拜成立策略工作小組 \t加強香港與迪拜金融市場互聯互通",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260910news?sc_lang=zh-HK",
+      "date": "2026-09-10",
+      "description": "香港交易所、香港金管局、迪拜金管局和納斯達克迪拜成立策略工作小組 \t加強香港與迪拜金融市場互聯互通",
+      "category": "general"
+    },
     {
       "title": "香港交易所將於希音上市日向投資者提供多項產品選擇",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/260828news?sc_lang=zh-HK",
@@ -309,13 +316,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/251112news?sc_lang=zh-HK",
       "date": "2025-11-12",
       "description": "香港交易所對迅清結算控股進行戰略投資，加快推動香港固定收益及貨幣市場生態圈的發展",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所2025年第三季度業績",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/251105news?sc_lang=zh-HK",
-      "date": "2025-11-05",
-      "description": "香港交易所2025年第三季度業績",
       "category": "general"
     }
   ]

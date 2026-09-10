@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-10T17:07:10.332148+08:00",
+  "updated": "2026-09-10T21:38:14.912529+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR139",
+      "title": "證監會舉辦資產管理業發展研討會",
+      "type": "general",
+      "date": "2026-09-10",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR139"
+    },
     {
       "refNo": "26PR140",
       "title": "證監會因涉嫌操縱首次公開招股行為而暫停撥康視雲製藥有限公司的股份交易",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-27",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR50"
-    },
-    {
-      "refNo": "26PR49",
-      "title": "證監會行政總裁獲再度委任為國際證監會組織亞太委員會主席",
-      "type": "general",
-      "date": "2026-03-25",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR49"
     }
   ]
 }
