@@ -1,8 +1,78 @@
 {
-  "updated": "2026-08-31T12:54:50.053099+08:00",
+  "updated": "2026-09-11T22:12:02.749260+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR141",
+      "title": "證監會禁止莫卓玲重投業界42個月",
+      "type": "enforcement",
+      "date": "2026-09-11",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR141"
+    },
+    {
+      "refNo": "26PR139",
+      "title": "證監會舉辦資產管理業發展研討會",
+      "type": "general",
+      "date": "2026-09-10",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR139"
+    },
+    {
+      "refNo": "26PR140",
+      "title": "證監會因涉嫌操縱首次公開招股行為而暫停撥康視雲製藥有限公司的股份交易",
+      "type": "enforcement",
+      "date": "2026-09-10",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR140"
+    },
+    {
+      "refNo": "26PR138",
+      "title": "證監會沉痛哀悼首任行政長官董建華先生逝世",
+      "type": "general",
+      "date": "2026-09-09",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR138"
+    },
+    {
+      "refNo": "26PR137",
+      "title": "梁仲賢的新演說：在第四屆HKEX中國機遇論壇的主題演講",
+      "type": "general",
+      "date": "2026-09-09",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR137"
+    },
+    {
+      "refNo": "26PR136",
+      "title": "黃天祐的新演說：在證監會論壇“Transition Plans: From Disclosures to Delivery”上的開幕辭",
+      "type": "general",
+      "date": "2026-09-08",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR136"
+    },
+    {
+      "refNo": "26PR135",
+      "title": "證監會與金管局的2025年聯合調查：香港投資產品銷售創新高  固定收益、貨幣及商品相關的產品需求強勁 ",
+      "type": "general",
+      "date": "2026-09-08",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR135"
+    },
+    {
+      "refNo": "26PR134",
+      "title": "區域法院就涉及非法賣空的證券欺詐案定下審訊日期",
+      "type": "enforcement",
+      "date": "2026-09-04",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR134"
+    },
+    {
+      "refNo": "26PR132",
+      "title": "梁鳳儀的新演說摘要：在香港銀行公會年度卓越人士講座暨午餐會的專題討論上發言",
+      "type": "general",
+      "date": "2026-09-04",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR132"
+    },
+    {
+      "refNo": "26PR131",
+      "title": "證監會加強認可基金就私募市場資產投資的指引",
+      "type": "general",
+      "date": "2026-09-03",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR131"
+    },
     {
       "refNo": "26PR130",
       "title": "第一期GenA.I.沙盒++參與者名單",
@@ -562,76 +632,6 @@
       "type": "general",
       "date": "2026-03-30",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR51"
-    },
-    {
-      "refNo": "26PR50",
-      "title": "黃天祐的新演說：在證券商協會春酌晚宴的致辭",
-      "type": "general",
-      "date": "2026-03-27",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR50"
-    },
-    {
-      "refNo": "26PR49",
-      "title": "證監會行政總裁獲再度委任為國際證監會組織亞太委員會主席",
-      "type": "general",
-      "date": "2026-03-25",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR49"
-    },
-    {
-      "refNo": "26PR48",
-      "title": "證監會取得法庭命令凍結涉嫌操縱嘉藝股份人士高達2.19億元的資產",
-      "type": "enforcement",
-      "date": "2026-03-25",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR48"
-    },
-    {
-      "refNo": "26PR47",
-      "title": "呂伯棠因失當行為遭證監會終身禁止重投業界並處以罰款1,743萬元",
-      "type": "enforcement",
-      "date": "2026-03-24",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR47"
-    },
-    {
-      "refNo": "26PR45",
-      "title": "根據《證券及期貨條例》在區域法院進行的首宗涉及非法賣空的證券欺詐刑事檢控的聆訊日期已定",
-      "type": "enforcement",
-      "date": "2026-03-20",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR45"
-    },
-    {
-      "refNo": "26PR44",
-      "title": "證監會禁止郭哲榮重投業界四年半並處以罰款100萬元",
-      "type": "enforcement",
-      "date": "2026-03-19",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR44"
-    },
-    {
-      "refNo": "26PR43",
-      "title": "證監會《季度報告》：︁策略性創新促進香港上市及數字資產市場持續增長",
-      "type": "general",
-      "date": "2026-03-19",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR43"
-    },
-    {
-      "refNo": "26PR42",
-      "title": "證監會發表有關聯交所規管上市事宜表現的檢討報告",
-      "type": "general",
-      "date": "2026-03-18",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR42"
-    },
-    {
-      "refNo": "26PR41",
-      "title": "黃天祐的新演說：在香港獨立非執行董事協會2026年春茗午宴的演說",
-      "type": "general",
-      "date": "2026-03-13",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR41"
-    },
-    {
-      "refNo": "26PR39",
-      "title": "黃天祐的新演說：在香港會計師公會的金融服務興趣小組酒會上的主題演說",
-      "type": "general",
-      "date": "2026-03-13",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR39"
     }
   ]
 }

@@ -1,8 +1,22 @@
 {
-  "updated": "2026-08-31T12:55:45.722236+08:00",
+  "updated": "2026-09-11T22:12:08.598567+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 50,
   "items": [
+    {
+      "title": "聯交所對Home Control International Limited（股份代號：1747）及兩名前董事的紀律行動",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260908news?sc_lang=zh-HK",
+      "date": "2026-09-08",
+      "description": "聯交所對Home Control International Limited（股份代號：1747）及兩名前董事的紀律行動",
+      "category": "disciplinary"
+    },
+    {
+      "title": "通告 - 關於智富資源投資控股集團有限公司  （於百慕達註冊成立之有限公司） （股份代號：7）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260907news?sc_lang=zh-HK",
+      "date": "2026-09-07",
+      "description": "通告 - 關於智富資源投資控股集團有限公司  （於百慕達註冊成立之有限公司） （股份代號：7）取消上市地位",
+      "category": "enforcement_news"
+    },
     {
       "title": "聯交所延長新上市申請有效期",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260821news?sc_lang=zh-HK",
@@ -338,20 +352,6 @@
       "date": "2026-01-23",
       "description": "通告 - 關於夢東方集團有限公司（強制清盤中）  （於百慕達註冊成立之有限公司）  （股份代號：593）取消上市地位",
       "category": "enforcement_news"
-    },
-    {
-      "title": "聯交所對佳源國際控股有限公司（已除牌，前股份代號：2768）的一名前董事的紀律行動",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2601222news?sc_lang=zh-HK",
-      "date": "2026-01-22",
-      "description": "聯交所對佳源國際控股有限公司（已除牌，前股份代號：2768）的一名前董事的紀律行動",
-      "category": "disciplinary"
-    },
-    {
-      "title": "聯交所對佳源服務控股有限公司（股份代號：1153）的一名前董事的紀律行動",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260122news?sc_lang=zh-HK",
-      "date": "2026-01-22",
-      "description": "聯交所對佳源服務控股有限公司（股份代號：1153）的一名前董事的紀律行動",
-      "category": "disciplinary"
     }
   ]
 }
