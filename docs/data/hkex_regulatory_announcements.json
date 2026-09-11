@@ -1,8 +1,64 @@
 {
-  "updated": "2026-07-18T10:12:42.106357+08:00",
+  "updated": "2026-08-31T12:55:45.722236+08:00",
   "source": "HKEX Regulatory Announcements RSS",
-  "count": 49,
+  "count": 50,
   "items": [
+    {
+      "title": "聯交所延長新上市申請有效期",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260821news?sc_lang=zh-HK",
+      "date": "2026-08-21",
+      "description": "聯交所延長新上市申請有效期",
+      "category": "other"
+    },
+    {
+      "title": "通告 - 關於綠科科技國際有限公司  （於開曼群島註冊成立之有限公司）  （股份代號：195）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260820news?sc_lang=zh-HK",
+      "date": "2026-08-20",
+      "description": "通告 - 關於綠科科技國際有限公司  （於開曼群島註冊成立之有限公司）  （股份代號：195）取消上市地位",
+      "category": "enforcement_news"
+    },
+    {
+      "title": "通告 - 關於融科控股集團有限公司（強制清盤中）  （於百慕達註冊成立之有限公司） （股份代號：2323）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260812news?sc_lang=zh-HK",
+      "date": "2026-08-12",
+      "description": "通告 - 關於融科控股集團有限公司（強制清盤中）  （於百慕達註冊成立之有限公司） （股份代號：2323）取消上市地位",
+      "category": "enforcement_news"
+    },
+    {
+      "title": "聯交所對中國奧園集團股份有限公司（股份代號：3883）一名前董事的紀律行動",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260811news?sc_lang=zh-HK",
+      "date": "2026-08-11",
+      "description": "聯交所對中國奧園集團股份有限公司（股份代號：3883）一名前董事的紀律行動",
+      "category": "disciplinary"
+    },
+    {
+      "title": "通告 - 關於保集健康控股有限公司  （於開曼群島註冊成立之有限公司） （股份代號：1246）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260805news?sc_lang=zh-HK",
+      "date": "2026-08-05",
+      "description": "通告 - 關於保集健康控股有限公司  （於開曼群島註冊成立之有限公司） （股份代號：1246）取消上市地位",
+      "category": "enforcement_news"
+    },
+    {
+      "title": "聯交所對力高健康生活有限公司（股份代號：2370）及兩名現任董事的紀律行動",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260728news?sc_lang=zh-HK",
+      "date": "2026-07-28",
+      "description": "聯交所對力高健康生活有限公司（股份代號：2370）及兩名現任董事的紀律行動",
+      "category": "disciplinary"
+    },
+    {
+      "title": "聯交所就提升上市機制競爭力的建議發布諮詢總結",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260724news?sc_lang=zh-HK",
+      "date": "2026-07-24",
+      "description": "聯交所就提升上市機制競爭力的建議發布諮詢總結",
+      "category": "consultation"
+    },
+    {
+      "title": "通告 - 關於Paladin Limited （於百慕達註冊成立之有限公司） （股份代號：495）取消上市地位",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260722news?sc_lang=zh-HK",
+      "date": "2026-07-22",
+      "description": "通告 - 關於Paladin Limited （於百慕達註冊成立之有限公司） （股份代號：495）取消上市地位",
+      "category": "enforcement_news"
+    },
     {
       "title": "聯交所對佳源服務控股有限公司（股份代號：1153）三名前董事的紀律行動",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260717news?sc_lang=zh-HK",
@@ -296,55 +352,6 @@
       "date": "2026-01-22",
       "description": "聯交所對佳源服務控股有限公司（股份代號：1153）的一名前董事的紀律行動",
       "category": "disciplinary"
-    },
-    {
-      "title": "聯交所對美臻集團控股有限公司（股份代號：1825）及三名董事的紀律行動",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260120news?sc_lang=zh-HK",
-      "date": "2026-01-20",
-      "description": "聯交所對美臻集團控股有限公司（股份代號：1825）及三名董事的紀律行動",
-      "category": "disciplinary"
-    },
-    {
-      "title": "聯交所對皇庭智家控股有限公司（前稱慕容家居控股有限公司）（股份代號：1575）兩名前任董事的紀律行動",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260115news?sc_lang=zh-HK",
-      "date": "2026-01-15",
-      "description": "聯交所對皇庭智家控股有限公司（前稱慕容家居控股有限公司）（股份代號：1575）兩名前任董事的紀律行動",
-      "category": "disciplinary"
-    },
-    {
-      "title": "通告 - 關於第一信用金融集團有限公司  （於開曼群島註冊成立並於百慕達存續之有限公司） （股份代號：8215）取消上市地位",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260114news?sc_lang=zh-HK",
-      "date": "2026-01-14",
-      "description": "通告 - 關於第一信用金融集團有限公司  （於開曼群島註冊成立並於百慕達存續之有限公司） （股份代號：8215）取消上市地位",
-      "category": "enforcement_news"
-    },
-    {
-      "title": "聯交所對星悅康旅股份有限公司（前稱奧園健康生活集團有限公司）（股份代號：3662）以及星悅康旅股份有限公司及 / 或中國奧園集團股份有限公司（股份代號：3883）15名董事的紀律行動",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260113news?sc_lang=zh-HK",
-      "date": "2026-01-13",
-      "description": "聯交所對星悅康旅股份有限公司（前稱奧園健康生活集團有限公司）（股份代號：3662）以及星悅康旅股份有限公司及 / 或中國奧園集團股份有限公司（股份代號：3883）15名董事的紀律行動",
-      "category": "disciplinary"
-    },
-    {
-      "title": "上市提名委員會物色上市覆核委員會成員人選",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2601122news?sc_lang=zh-HK",
-      "date": "2026-01-12",
-      "description": "上市提名委員會物色上市覆核委員會成員人選",
-      "category": "regulatory_rule"
-    },
-    {
-      "title": "上市提名委員會物色上市委員會成員人選",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260112news?sc_lang=zh-HK",
-      "date": "2026-01-12",
-      "description": "上市提名委員會物色上市委員會成員人選",
-      "category": "regulatory_rule"
-    },
-    {
-      "title": "通告 - 關於德信中國控股有限公司（清盤中） （於開曼群島註冊成立之有限公司）  （股份代號：2019）取消上市地位",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/2601022news?sc_lang=zh-HK",
-      "date": "2026-01-02",
-      "description": "通告 - 關於德信中國控股有限公司（清盤中） （於開曼群島註冊成立之有限公司）  （股份代號：2019）取消上市地位",
-      "category": "enforcement_news"
     }
   ]
 }

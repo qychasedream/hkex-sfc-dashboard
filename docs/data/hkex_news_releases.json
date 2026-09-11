@@ -1,8 +1,71 @@
 {
-  "updated": "2026-07-18T10:12:45.565068+08:00",
+  "updated": "2026-08-31T12:55:48.436599+08:00",
   "source": "HKEX News Releases RSS (filtered)",
   "count": 45,
   "items": [
+    {
+      "title": "香港交易所將於希音上市日向投資者提供多項產品選擇",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260828news?sc_lang=zh-HK",
+      "date": "2026-08-28",
+      "description": "香港交易所將於希音上市日向投資者提供多項產品選擇",
+      "category": "general"
+    },
+    {
+      "title": "香港交易所委任對外傳訊主管",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260824news?sc_lang=zh-HK",
+      "date": "2026-08-24",
+      "description": "香港交易所委任對外傳訊主管",
+      "category": "general"
+    },
+    {
+      "title": "香港交易所2026年中期業績",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260819news?sc_lang=zh-HK",
+      "date": "2026-08-19",
+      "description": "香港交易所2026年中期業績",
+      "category": "general"
+    },
+    {
+      "title": "香港交易所歡迎內地保險資金通過滬深港通投資香港ETF",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260818news?sc_lang=zh-HK",
+      "date": "2026-08-18",
+      "description": "香港交易所歡迎內地保險資金通過滬深港通投資香港ETF",
+      "category": "general"
+    },
+    {
+      "title": "香港交易所集團行政總裁續任",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260817news?sc_lang=zh-HK",
+      "date": "2026-08-17",
+      "description": "香港交易所集團行政總裁續任",
+      "category": "general"
+    },
+    {
+      "title": "香港交易所宣布管理層任命",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/2608052news?sc_lang=zh-HK",
+      "date": "2026-08-05",
+      "description": "香港交易所宣布管理層任命",
+      "category": "general"
+    },
+    {
+      "title": "香港交易所推出五年期中國國債期貨",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260803news?sc_lang=zh-HK",
+      "date": "2026-08-03",
+      "description": "香港交易所推出五年期中國國債期貨",
+      "category": "general"
+    },
+    {
+      "title": "香港交易所將於中際旭創上市日向投資者提供多項產品選擇",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260727news?sc_lang=zh-HK",
+      "date": "2026-07-27",
+      "description": "香港交易所將於中際旭創上市日向投資者提供多項產品選擇",
+      "category": "general"
+    },
+    {
+      "title": "香港交易所新增馬來西亞交易所為認可證券交易所",
+      "url": "https://www.hkex.com.hk/News/News-Release/2026/260723news?sc_lang=zh-HK",
+      "date": "2026-07-23",
+      "description": "香港交易所新增馬來西亞交易所為認可證券交易所",
+      "category": "general"
+    },
     {
       "title": "滬深港交易所簽署合作備忘錄，促進滬深股通信息交流",
       "url": "https://www.hkex.com.hk/News/News-Release/2026/2707173news?sc_lang=zh-HK",
@@ -253,69 +316,6 @@
       "url": "https://www.hkex.com.hk/News/News-Release/2025/251105news?sc_lang=zh-HK",
       "date": "2025-11-05",
       "description": "香港交易所2025年第三季度業績",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所將推出恒生生物科技指數期貨",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/251014news?sc_lang=zh-HK",
-      "date": "2025-10-14",
-      "description": "香港交易所將推出恒生生物科技指數期貨",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所宣布管理層任命",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/2510132news?sc_lang=zh-HK",
-      "date": "2025-10-13",
-      "description": "香港交易所宣布管理層任命",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所在杜拜設立新子公司\t拓展大宗商品業務",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/251013news?sc_lang=zh-HK",
-      "date": "2025-10-13",
-      "description": "香港交易所在杜拜設立新子公司\t拓展大宗商品業務",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所新增五隻期權類別每周合約",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/251009news?sc_lang=zh-HK",
-      "date": "2025-10-09",
-      "description": "香港交易所新增五隻期權類別每周合約",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所推出泡泡瑪特股票期權",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250930news?sc_lang=zh-HK",
-      "date": "2025-09-30",
-      "description": "香港交易所推出泡泡瑪特股票期權",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所與公益金首次在中環舉辦慈善接力賽",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250926news?sc_lang=zh-HK",
-      "date": "2025-09-26",
-      "description": "香港交易所與公益金首次在中環舉辦慈善接力賽",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所簽訂合作備忘錄 推動粵港澳大灣區碳市場發展",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250923news?sc_lang=zh-HK",
-      "date": "2025-09-23",
-      "description": "香港交易所簽訂合作備忘錄 推動粵港澳大灣區碳市場發展",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所與阿布扎比證券交易所簽署合作備忘錄，增強兩地市場聯繫",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250918news?sc_lang=zh-HK",
-      "date": "2025-09-18",
-      "description": "香港交易所與阿布扎比證券交易所簽署合作備忘錄，增強兩地市場聯繫",
-      "category": "general"
-    },
-    {
-      "title": "香港交易所舉辦氣候融資論壇，塑造環境權益產品市場未來格局",
-      "url": "https://www.hkex.com.hk/News/News-Release/2025/250910news?sc_lang=zh-HK",
-      "date": "2025-09-10",
-      "description": "香港交易所舉辦氣候融資論壇，塑造環境權益產品市場未來格局",
       "category": "general"
     }
   ]

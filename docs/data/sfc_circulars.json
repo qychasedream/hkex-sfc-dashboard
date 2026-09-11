@@ -1,8 +1,44 @@
 {
-  "updated": "2026-07-18T10:11:21.251736+08:00",
+  "updated": "2026-08-31T12:54:51.363553+08:00",
   "source": "SFC e-Distribution API",
   "count": 20,
   "items": [
+    {
+      "refNo": "26EC51",
+      "title": "致持牌法團、獲證監會發牌的虛擬資產服務提供者及有聯繫實體的通函\r\n紓減透過簡化電子直接扣帳授權安排收取存款的風險",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC51"
+    },
+    {
+      "refNo": "26EC45",
+      "title": "有關跨行業網絡地圖項目的聯合通函（只備有英文版）",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC45"
+    },
+    {
+      "refNo": "26EC43",
+      "title": "有關上市結構性基金的通函 (只備有英文版)",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC43"
+    },
+    {
+      "refNo": "26EC38",
+      "title": "有關馬來西亞房地產投資信託基金在香港互掛上市的通函（只備有英文版）",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC38"
+    },
+    {
+      "refNo": "26EC37",
+      "title": "有關馬來西亞與香港基金互認的通函（只備有英文版）",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC37"
+    },
+    {
+      "refNo": "26EC44",
+      "title": "致中介人的通函\r\n有關香港交易所證券市場系統主幹網絡升級推出前測試的最新通報\r\n",
+      "date": "",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC44"
+    },
     {
       "refNo": "26EC39",
       "title": "致持牌法團、獲證監會發牌的虛擬資產服務提供者及有聯繫實體的通函 - 打擊洗錢／恐怖分子資金籌集\r\n(1)  財務行動特別組織有關要求各方對高風險司法管轄區採取行動的聲明\r\n(2)  特別組織有關被加強監察的司法管轄區的聲明\r\n(3)  特別組織於2026年6月17至19日舉行全體會議所取得的成果",
@@ -86,42 +122,6 @@
       "title": "金融服務提供者名單維持不變—場外衍生工具監管制度下的結算及備存紀錄規則",
       "date": "",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC19"
-    },
-    {
-      "refNo": "26EC18",
-      "title": "致本身為香港聯合交易所有限公司或香港期貨交易所有限公司參與者的持牌法團的通函 - 交易所參與者的持牌人保險計劃",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC18"
-    },
-    {
-      "refNo": "26EC15",
-      "title": "致中介人的通函\r\n香港交易所證券市場系統主幹網絡升級的最新市場演習消息\r\n\r\n",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC15"
-    },
-    {
-      "refNo": "26EC14",
-      "title": "致持牌法團的通函 - 有關場外衍生工具交易匯報的文件更新",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC14"
-    },
-    {
-      "refNo": "26EC13",
-      "title": "致持牌法團、獲證監會發牌的虛擬資產服務提供者及有聯繫實體的通函 - 打擊洗錢／恐怖分子資金籌集\r\n(1) 財務行動特別組織有關要求各方對高風險司法管轄區採取行動的聲明\r\n(2) 特別組織有關被加強監察的司法管轄區的聲明\r\n(3) 特別組織於2026年2月11至13日舉行全體會議所取得的成果",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC13"
-    },
-    {
-      "refNo": "26EC11",
-      "title": "有關擴展生成式人工智能沙盒的聯合通函 (只備有英文版)",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC11"
-    },
-    {
-      "refNo": "26EC9",
-      "title": "致中介人的通函\r\n香港交易所證券市場系統主幹網絡升級的市場演習\r\n",
-      "date": "",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC9"
     }
   ]
 }
