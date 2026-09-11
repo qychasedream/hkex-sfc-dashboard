@@ -133,6 +133,7 @@ def fetch_hkex_guidance():
     recent_updates = []
 
     for num, nid, name in topics:
+        print(f"  ▶ 主题 {num}/18: {name}", flush=True)
         try:
             url = f'https://cn-rules.hkex.com.hk/node/{nid}'
             req = urllib.request.Request(url, headers=HEADERS)

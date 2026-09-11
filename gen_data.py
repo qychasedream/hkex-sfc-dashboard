@@ -45,21 +45,43 @@ with open(os.path.join(data_dir, 'hkex_claude_search.json'), 'w', encoding='utf-
     json.dump(data, f, ensure_ascii=False, indent=2)
 print(f'hkex_claude_search.json: {len(items)} items')
 
-# ===== Law firm summaries (links verified) =====
+# ===== Law firm summaries (links verified via HTTP 200 + title match) =====
+# 注：金杜(KWM)、O'Melveny 链接因 Cloudflare 反爬无法验证，不收录 —— 只保留可验证打开的真实链接
 law_items = [
-    {"firm": "King & Wood Mallesons (金杜)", "title": "King & Wood assists Structured Products Industry on HKEX's Review of Chapter 15A – Structured Products", "url": "https://www.kingandwood.com/hk/en/insights/latest-thinking/king-and-wood-assists-structured-products-industry-on-hkex-s-review-of-chapter-15a-structured-products.html", "date": "2026-04-22", "topic": "结构性产品"},
-    {"firm": "Charltons (易周律师行)", "title": "HKEX Launches Major Consultation on Listing Framework Reform", "url": "https://www.charltonslaw.com/hkex-launches-major-consultation-on-listing-framework-reform/", "date": "2026-03-17", "topic": "上市竞争力"},
-    {"firm": "Bird & Bird (鸿鹄)", "title": "HKEX revises ongoing public float requirements: what listed issuers need to know", "url": "https://www.twobirds.com/en/insights/2026/china/hkex-revises-ongoing-public-float-requirements-what-listed-issuers-need-to-know", "date": "2026-01-15", "topic": "公众持股量"},
-    {"firm": "JSM (孖士打)", "title": "Hong Kong Stock Exchange Announces More Flexible Public Float Requirements for 2026", "url": "https://www.jsm.com/publications/2025/hong-kong-stock-exchange-announces-more-flexible-public-float-requirements-for-2026/", "date": "2025-12-18", "topic": "公众持股量"},
-    {"firm": "Charltons (易周律师行)", "title": "New Ongoing Public Float Requirements for HKEX Listed Companies from 1 January 2026", "url": "https://www.charltonslaw.com/new-ongoing-public-float-requirements-for-hkex-listed-companies-from-1-january-2026/", "date": "2025-12-17", "topic": "公众持股量"},
-    {"firm": "Norton Rose Fulbright", "title": "SFC tightens sponsor compliance framework – new reporting, review and inspection requirements", "url": "https://www.nortonrosefulbright.com/en-cn/knowledge/publications/5937882d/sfc-tightens-sponsor-compliance-framework-new-reporting-review-and-inspection-requirements", "date": "2026-02-05", "topic": "IPO保荐人"},
-    {"firm": "Davis Polk", "title": "SFC identifies regulatory concerns on sponsor work amid surge in Hong Kong IPO activity", "url": "https://www.davispolk.com/insights/client-update/sfc-identifies-regulatory-concerns-sponsor-work-amid-surge-hong-kong-ipo", "date": "2026-02-04", "topic": "IPO保荐人"},
-    {"firm": "Bird & Bird (鸿鹄)", "title": "SFC issues stern warning to IPO sponsors amid surge in listing applications", "url": "https://www.twobirds.com/en/insights/2026/sfc-issues-stern-warning-to-ipo-sponsors-amid-surge-in-listing-applications", "date": "2026-02-03", "topic": "IPO保荐人"},
-    {"firm": "Charltons (易周律师行)", "title": "Appendix to the SFC Sponsor Circular: Substandard Conduct of Sponsors – Case Examples and Regulatory Expectations", "url": "https://www.charltonslaw.com/appendix-to-the-sfc-sponsor-circular-substandard-conduct-of-sponsors-case-examples-and-regulatory-expectations/", "date": "2026-02-02", "topic": "IPO保荐人"},
+    # === 2026年7-8月：上市竞争力咨询总结 + GL122-26 数字资产指引（2026-08-28 验证） ===
+    {"firm": "Morgan Lewis", "title": "HKEX Adopts Proposed Amendments to Listing Framework Following Competitiveness Review", "url": "https://www.morganlewis.com/pubs/2026/08/hkex-adopts-proposed-amendments-to-listing-framework-following-competitiveness-review", "date": "2026-08-10", "topic": "上市竞争力", "summary": "联交所采纳上市框架竞争力改革建议：WVR门槛下调、第二上市放宽，第二阶段咨询即将展开。"},
+    {"firm": "Davis Polk", "title": "HKEX clarifies listing expectations for digital asset activities", "url": "https://www.davispolk.com/insights/client-update/hkex-clarifies-listing-expectations-digital-asset-activities", "date": "2026-08-21", "topic": "数字资产", "summary": "解读GL122-26：联交所厘清数字资产业务的上市期望，披露要求与内部监控架构全解析。"},
+    {"firm": "Han Kun (汉坤)", "title": "香港联交所数字资产指引正式落地：港股发行人数字资产业务合规全景图", "url": "https://www.hankunlaw.com/portal/article/index/cid/8/id/17007.html", "date": "2026-07-30", "topic": "数字资产", "summary": "中文深度解读GL122-26：数字资产投资、稳定币、RWA代币化的上市资格、持续合规与披露要求。"},
+    {"firm": "Charltons (易周律师行)", "title": "Revised HKEX Listing Rules Take Effect on 24 July 2026", "url": "https://www.charltonslaw.com/revised-hkex-listing-rules-take-effect-on-24-july-2026/", "date": "2026-07-29", "topic": "上市竞争力", "summary": "经修订的《上市规则》于2026年7月24日生效：WVR、第二上市、生物科技及特专科技公司改革要点。"},
+    {"firm": "Howse Williams (何韦律师行)", "title": "上市框架競爭力檢討的諮詢總結", "url": "https://howsewilliams.com/tc/consultation-conclusions-on-competitiveness-review-of-listing-framework/", "date": "2026-07-29", "topic": "上市竞争力", "summary": "中文解读咨询总结：WVR财务资格门槛减半、第二上市门槛降低等改革逐条分析。"},
+    {"firm": "Latham & Watkins (瑞生)", "title": "Hong Kong Stock Exchange Publishes Consultation Conclusions on Proposals to Enhance Listing Competitiveness", "url": "https://www.lw.com/en/insights/hong-kong-stock-exchange-publishes-consultation-conclusions-on-proposals-to-enhance-listing", "date": "2026-07-28", "topic": "上市竞争力", "summary": "联交所发布提升上市竞争力咨询总结：生物科技/特专科技公司外部验证要求及WVR资格门槛分析。"},
+    {"firm": "Norton Rose Fulbright", "title": "HKEx Competitiveness Review: Key reforms to the listing framework", "url": "https://www.nortonrosefulbright.com/en/knowledge/publications/4bee16b7/hkex-competitiveness-review-key-reforms-to-the-listing-framework", "date": "2026-07-24", "topic": "上市竞争力", "summary": "竞争力检讨三大改革：优化WVR制度、便利海外发行人上市、简化首次上市要求。"},
+    # === 2026年上半年（早前已验证） ===
+    {"firm": "Charltons (易周律师行)", "title": "HKEX Launches Major Consultation on Listing Framework Reform", "url": "https://www.charltonslaw.com/hkex-launches-major-consultation-on-listing-framework-reform/", "date": "2026-03-17", "topic": "上市竞争力", "summary": "联交所就上市框架改革推出重大市场咨询，全面检讨上市机制竞争力。"},
+    {"firm": "Bird & Bird (鸿鹄)", "title": "HKEX revises ongoing public float requirements: what listed issuers need to know", "url": "https://www.twobirds.com/en/insights/2026/china/hkex-revises-ongoing-public-float-requirements-what-listed-issuers-need-to-know", "date": "2026-01-15", "topic": "公众持股量", "summary": "解读联交所持续公众持股量要求修订要点，以及上市发行人需要了解的合规事项。"},
+    {"firm": "JSM (孖士打)", "title": "Hong Kong Stock Exchange Announces More Flexible Public Float Requirements for 2026", "url": "https://www.jsm.com/publications/2025/hong-kong-stock-exchange-announces-more-flexible-public-float-requirements-for-2026/", "date": "2025-12-18", "topic": "公众持股量", "summary": "联交所宣布自2026年起实施更灵活的公众持股量要求及其对上市公司的影响。"},
+    {"firm": "Charltons (易周律师行)", "title": "New Ongoing Public Float Requirements for HKEX Listed Companies from 1 January 2026", "url": "https://www.charltonslaw.com/new-ongoing-public-float-requirements-for-hkex-listed-companies-from-1-january-2026/", "date": "2025-12-17", "topic": "公众持股量", "summary": "联交所上市公司自2026年1月1日起适用新的持续公众持股量要求，逐条解读新规。"},
+    {"firm": "Norton Rose Fulbright", "title": "SFC tightens sponsor compliance framework – new reporting, review and inspection requirements", "url": "https://www.nortonrosefulbright.com/en-cn/knowledge/publications/5937882d/sfc-tightens-sponsor-compliance-framework-new-reporting-review-and-inspection-requirements", "date": "2026-02-05", "topic": "IPO保荐人", "summary": "证监会收紧保荐人合规框架：新增申报、检讨及视察要求。"},
+    {"firm": "Davis Polk", "title": "SFC identifies regulatory concerns on sponsor work amid surge in Hong Kong IPO activity", "url": "https://www.davispolk.com/insights/client-update/sfc-identifies-regulatory-concerns-sponsor-work-amid-surge-hong-kong-ipo", "date": "2026-02-04", "topic": "IPO保荐人", "summary": "香港IPO活动激增之际，证监会识别出保荐人工作的监管关注点。"},
+    {"firm": "Bird & Bird (鸿鹄)", "title": "SFC issues stern warning to IPO sponsors amid surge in listing applications", "url": "https://www.twobirds.com/en/insights/2026/sfc-issues-stern-warning-to-ipo-sponsors-amid-surge-in-listing-applications", "date": "2026-02-03", "topic": "IPO保荐人", "summary": "上市申请激增，证监会向IPO保荐人发出严厉警告，强调尽职审查标准。"},
+    {"firm": "Charltons (易周律师行)", "title": "Appendix to the SFC Sponsor Circular: Substandard Conduct of Sponsors – Case Examples and Regulatory Expectations", "url": "https://www.charltonslaw.com/appendix-to-the-sfc-sponsor-circular-substandard-conduct-of-sponsors-case-examples-and-regulatory-expectations/", "date": "2026-02-02", "topic": "IPO保荐人", "summary": "证监会保荐人通函附录：剖析保荐人不当行为案例及监管期望。"},
 ]
 
-law_data = {"updated": datetime.now(HKT).isoformat(), "source": "Verified Law Firm Publications", "count": len(law_items), "items": law_items}
-with open(os.path.join(data_dir, 'law_firm_summaries.json'), 'w', encoding='utf-8') as f:
+# 合并而非覆盖：保留扫描器 (src/collectors/law_firm_scan.py) 自动收录的条目
+law_json_path = os.path.join(data_dir, 'law_firm_summaries.json')
+curated_urls = {i['url'].rstrip('/') for i in law_items}
+if os.path.exists(law_json_path):
+    try:
+        existing = json.load(open(law_json_path, 'r', encoding='utf-8')).get('items', [])
+        for i in existing:
+            if i.get('url', '').rstrip('/') not in curated_urls:
+                law_items.append(i)  # 保留自动收录条目
+    except Exception:
+        pass
+law_items.sort(key=lambda i: i.get('date', ''), reverse=True)
+
+law_data = {"updated": datetime.now(HKT).isoformat(), "source": "Verified Law Firm Publications (curated + auto-scan)", "count": len(law_items), "items": law_items}
+with open(law_json_path, 'w', encoding='utf-8') as f:
     json.dump(law_data, f, ensure_ascii=False, indent=2)
 print(f'law_firm_summaries.json: {len(law_items)} items (verified links)')
 

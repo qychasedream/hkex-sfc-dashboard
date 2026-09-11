@@ -8,7 +8,6 @@
         :root {
             --hkex-blue: #1f497d;
             --sfc-red: #b71c1c;
-            --sfc-maroon: #8b0000;
             --bg: #f4f6f9;
             --card-bg: #ffffff;
             --text: #333333;
@@ -20,8 +19,6 @@
             --accent-gl: #1565c0;
             --accent-faq: #2e7d32;
             --accent-ld: #e65100;
-            --accent-hkex: #1f497d;
-            --accent-sfc: #b71c1c;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,11 +30,22 @@
             line-height: 1.6;
         }
 
+        /* === TOP NAV === */
+        .topnav {
+            background: #1a1a2e;
+            color: #fff;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+        .topnav a { color: #f5f0e0; text-decoration: none; }
+        .topnav a.active { color: #90caf9; font-weight: 700; }
+
         /* === HEADER === */
         .header {
             background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
             color: white;
-            padding: 24px 32px;
+            padding: 24px 32px 20px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.2);
             position: relative;
             overflow: hidden;
@@ -49,24 +57,10 @@
             width: 200px; height: 200px;
             border: 3px solid rgba(255,255,255,0.08);
             border-radius: 50%;
+            pointer-events: none;
         }
-        .header-top {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .header h1 {
-            font-size: 1.7rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        .header .badge-row {
-            display: flex;
-            gap: 8px;
-            margin-top: 6px;
-            flex-wrap: wrap;
-        }
+        .header h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: 0.5px; }
+        .badge-row { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
         .pill {
             display: inline-block;
             padding: 3px 12px;
@@ -78,17 +72,61 @@
         .pill-hkex { background: #1f497d; color: #c6d9f1; }
         .pill-sfc { background: #b71c1c; color: #ffcdd2; }
         .pill-new { background: #ff5722; color: white; }
-        .header .update-time {
+        .update-line {
             font-size: 0.78rem;
-            opacity: 0.65;
+            opacity: 0.75;
             margin-top: 10px;
         }
+        .update-line a { color: #90caf9; }
+        .update-line a.sfc { color: #ef9a9a; }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
+        /* === REFRESH BUTTON === */
+        .refresh-btn {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            color: #16213e;
+            border: none;
+            border-radius: 24px;
+            padding: 10px 20px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+            transition: transform .15s, box-shadow .15s, opacity .15s;
+            font-family: inherit;
         }
+        .refresh-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
+        .refresh-btn:disabled { opacity: 0.75; cursor: default; transform: none; }
+        .refresh-btn .ricon { display: inline-block; font-size: 1rem; }
+        .refresh-btn.loading .ricon { animation: spin 0.9s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* === TOAST === */
+        .toast {
+            position: fixed;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-80px);
+            background: #2e7d32;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 24px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            z-index: 99;
+            transition: transform .3s ease;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); }
+        .toast.error { background: #c62828; }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
 
         /* === STATS === */
         .stats-row {
@@ -103,16 +141,11 @@
             padding: 16px 20px;
             box-shadow: var(--shadow);
             border-left: 4px solid #999;
-            display: flex;
-            flex-direction: column;
         }
         .stat-card.hkex { border-left-color: var(--hkex-blue); }
         .stat-card.sfc { border-left-color: var(--sfc-red); }
         .stat-card.warn { border-left-color: var(--accent-new); }
-        .stat-number {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
+        .stat-number { font-size: 1.8rem; font-weight: 700; }
         .stat-card.hkex .stat-number { color: var(--hkex-blue); }
         .stat-card.sfc .stat-number { color: var(--sfc-red); }
         .stat-card.warn .stat-number { color: var(--accent-new); }
@@ -142,6 +175,7 @@
         .section-header.sfc:hover { background: #ffeeee; }
         .section-header.hkex { background: #f5f8fc; }
         .section-header.hkex:hover { background: #eef4fa; }
+        .section-header.enf { border-left: 4px solid var(--sfc-red); }
         .section-header h2 { font-size: 1.1rem; font-weight: 700; flex: 1; }
         .toggle-icon {
             font-size: 0.85rem;
@@ -153,11 +187,10 @@
         .section.collapsed .section-content { display: none; }
 
         .section-content {
-            max-height: 520px;
+            max-height: 560px;
             overflow-y: auto;
-            padding: 4px 20px;
+            padding: 4px 20px 12px;
         }
-        .section-content:empty { padding: 16px 20px; }
 
         .badge {
             display: inline-block;
@@ -176,66 +209,7 @@
         .badge-rule { background: #fff8e1; color: #e65100; }
         .badge-enf { background: #ffebee; color: #b71c1c; }
         .badge-consult { background: #f3e5f5; color: #7b1fa2; }
-        .badge-va { background: #e0f2f1; color: #00695c; }
-
-        /* === UNIFIED REGULATORY LIST === */
-        .reg-list {
-            display: flex;
-            flex-direction: column;
-        }
-        .reg-item {
-            padding: 12px 0 12px 12px;
-            border-bottom: 1px solid var(--border);
-        }
-        .reg-item:last-child { border-bottom: none; }
-        .reg-item.sfc { border-left: 3px solid var(--sfc-red); }
-        .reg-item.hkex { border-left: 3px solid var(--hkex-blue); }
-        .reg-item.new { background: #fffdf5; }
-
-        .reg-badges { margin-bottom: 4px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-        .reg-meta {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-bottom: 2px;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .reg-title {
-            font-weight: 600;
-            font-size: 0.92rem;
-            line-height: 1.5;
-            color: var(--text);
-        }
-        .reg-title a {
-            color: var(--hkex-blue);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .reg-title a.sfc { color: var(--sfc-red); }
-        .reg-title a:hover { text-decoration: underline; }
-        .reg-desc {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-            margin-top: 4px;
-        }
-        .reg-desc ul {
-            margin: 4px 0 0 18px;
-            padding: 0;
-            font-size: 0.8rem;
-        }
-
-        .topic-tag {
-            display: inline-block;
-            padding: 1px 8px;
-            background: #eef2f7;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: #555;
-        }
-        .topic-tag.sfc { background: #fce4ec; color: #b71c1c; }
+        .badge-live { background: #b71c1c; color: #fff; }
 
         .source-link {
             display: inline-block;
@@ -249,29 +223,153 @@
             color: #1f497d;
             white-space: nowrap;
         }
-        .source-link:hover { background: #dbe4ee; text-decoration: none; }
+        .source-link:hover { background: #dbe4ee; }
         .source-link.sfc { background: #fce4ec; color: #b71c1c; }
         .source-link.sfc:hover { background: #f8bbd0; }
 
-        .date-cell { white-space: nowrap; }
-        .date-original { color: var(--text-secondary); font-size: 0.78rem; }
-        .date-updated { color: #d32f2f; font-weight: 600; }
-        .date-today { color: #d32f2f; font-weight: 700; font-size: 0.82rem; }
-        .date-recent { color: #e65100; font-weight: 600; }
+        /* === TIMELINE === */
+        .timeline { position: relative; padding: 8px 0 8px 22px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px; top: 14px; bottom: 14px;
+            width: 2px;
+            background: #dfe4ea;
+        }
+        .tl-item { position: relative; padding: 10px 0 12px; }
+        .tl-item + .tl-item { border-top: 1px dashed #eef1f4; }
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -21px; top: 16px;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: #999;
+            box-shadow: 0 0 0 3px #fff, 0 0 0 4px #dfe4ea;
+        }
+        .tl-item.sfc::before { background: var(--sfc-red); box-shadow: 0 0 0 3px #fff, 0 0 0 4px #f3caca; }
+        .tl-item.hkex::before { background: var(--hkex-blue); box-shadow: 0 0 0 3px #fff, 0 0 0 4px #c9d8ec; }
+        .tl-meta { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 2px; }
+        .tl-title { font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
+        .tl-desc { font-size: 0.83rem; color: var(--text-secondary); margin-top: 3px; }
 
-        /* === ENFORCEMENT LISTS === */
-        .enf-grid-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 12px 20px; }
+        /* === TABLES === */
+        table.grid {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.86rem;
+        }
+        table.grid th {
+            text-align: left;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 10px 12px;
+            border-bottom: 2px solid var(--border);
+            background: #fafbfc;
+            position: sticky;
+            top: -4px;
+            z-index: 1;
+        }
+        table.grid td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        table.grid tr:last-child td { border-bottom: none; }
+        table.grid tr:hover td { background: #fafcff; }
+        td.col-topic, td.col-type { white-space: nowrap; }
+        .topic-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            background: #eef2f7;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #555;
+            white-space: nowrap;
+        }
+        .rule-title { font-weight: 700; font-size: 0.9rem; }
+        .rule-sub { font-size: 0.76rem; color: var(--text-secondary); margin-top: 2px; }
+        .rule-points { margin: 6px 0 0 18px; font-size: 0.82rem; color: #444; }
+        .rule-points li { margin: 2px 0; }
+        .date-key { color: #d32f2f; font-weight: 700; white-space: nowrap; }
+        .date-sub { font-size: 0.75rem; color: var(--text-secondary); }
+        .impact-text { font-size: 0.8rem; color: #444; }
+        .pdf-link {
+            display: inline-block;
+            padding: 2px 10px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            background: #fff;
+        }
+        .pdf-link:hover { background: #f0f4f8; color: var(--hkex-blue); border-color: #c9d8ec; }
+
+        /* === TWO-COL SECTION === */
+        .two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 900px) { .two-col-grid { grid-template-columns: 1fr; } }
+
+        /* === SFC CARDS === */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 12px;
+            padding: 12px 0;
+        }
+        .news-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 12px 14px;
+            background: #fff;
+            transition: box-shadow .15s, transform .15s;
+        }
+        .news-card:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+        .news-card .nc-badges { display: flex; gap: 6px; margin-bottom: 6px; align-items: center; }
+        .news-card .nc-title { font-size: 0.85rem; font-weight: 600; line-height: 1.5; }
+        .news-card .nc-title a { color: var(--text); text-decoration: none; }
+        .news-card .nc-title a:hover { color: var(--sfc-red); text-decoration: underline; }
+        .news-card .nc-meta { font-size: 0.72rem; color: #999; margin-top: 6px; display: flex; gap: 8px; align-items: center; }
+
+        /* === LAW FIRM CARDS === */
+        .law-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+            padding: 12px 0;
+        }
+        .law-card {
+            border: 1px solid var(--border);
+            border-left: 4px solid #7b1fa2;
+            border-radius: var(--radius);
+            padding: 14px 16px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow .15s, transform .15s;
+        }
+        .law-card:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+        .law-firm { font-weight: 700; font-size: 0.9rem; color: var(--text); }
+        .law-topic { margin: 6px 0; }
+        .law-summary { font-size: 0.82rem; color: #444; flex: 1; }
+        .law-title-en { font-size: 0.72rem; color: #999; margin-top: 6px; font-style: italic; }
+        .law-meta { font-size: 0.75rem; color: var(--text-secondary); margin-top: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .law-meta a { color: var(--hkex-blue); text-decoration: none; font-weight: 600; }
+        .law-meta a:hover { text-decoration: underline; }
+
+        /* === ENFORCEMENT === */
+        .enf-grid-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 12px 0; }
         @media (max-width: 768px) { .enf-grid-col { grid-template-columns: 1fr; } }
-        .enf-list { max-height: 420px; overflow-y: auto; }
-        .enf-subtitle { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+        .enf-subtitle { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
         .enf-subtitle.hkex { color: var(--hkex-blue); }
         .enf-subtitle.sfc { color: var(--sfc-red); }
-        .enf-item { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+        .enf-item { padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
         .enf-item:last-child { border-bottom: none; }
         .enf-item .enf-date { font-size: 0.72rem; color: #999; }
         .enf-item .enf-title a { color: var(--text); text-decoration: none; }
         .enf-item .enf-title a:hover { color: var(--hkex-blue); text-decoration: underline; }
-        .enf-stock { font-size: 0.7rem; color: var(--accent-new); font-weight: 600; }
+        .enf-stock { font-size: 0.7rem; color: var(--accent-new); font-weight: 700; }
 
         /* === FOOTER === */
         .footer {
@@ -293,27 +391,33 @@
             text-align: center;
             margin-top: 16px;
         }
+        .loading-tip { padding: 24px; text-align: center; color: var(--text-secondary); font-size: 0.85rem; }
 
-        .text-small { font-size: 0.8rem; }
-        .text-muted { color: var(--text-secondary); }
+        @media (max-width: 700px) {
+            .refresh-btn { position: static; margin-top: 12px; }
+            .header { padding-bottom: 16px; }
+        }
     </style>
 </head>
 <body>
-<div style="background:#1a1a2e;color:#fff;text-align:center;padding:8px 16px;font-size:0.85rem;">
-  📊 <a href="../" style="color:#f5f0e0;">香港监管咨询看板</a> &nbsp;|&nbsp;
-  📋 <a href="./" style="color:#90caf9;font-weight:700;">监管资讯看板 (HKEX + SFC)</a>
+<div class="topnav">
+  📊 <a href="../">香港监管咨询看板</a> &nbsp;|&nbsp;
+  📋 <a href="./" class="active">监管资讯看板 (HKEX + SFC)</a>
 </div>
 
+<div class="toast" id="toast"></div>
+
 <header class="header">
-    <div class="header-top">
-        <h1>📊 香港监管资讯看板</h1>
-    </div>
+    <button class="refresh-btn" id="refresh-btn" onclick="manualRefresh()">
+        <span class="ricon">🔄</span><span id="refresh-btn-text">刷新全部动态</span>
+    </button>
+    <h1>📊 香港监管资讯看板</h1>
     <div class="badge-row">
         <span class="pill pill-hkex">HKEX 联交所</span>
         <span class="pill pill-sfc">SFC 证监会</span>
         <span class="pill pill-new">持续更新</span>
     </div>
-    <div class="update-time">🕐 <span id="header-update-time">2026-07-10 09:41:19（缓存数据）</span> | 来源：<a href="https://cn-rules.hkex.com.hk/" style="color:#90caf9;">HKEX 规则手册</a> · <a href="https://www.sfc.hk/" style="color:#ef9a9a;">SFC 证监会</a> · <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" style="color:#90caf9;">HKEX 新闻</a> · <span id="refresh-status" style="color:#ffd54f;">后台刷新中...</span></div>
+    <div class="update-line">🕐 <span id="header-update-time">加载中...</span> | 来源：<a href="https://cn-rules.hkex.com.hk/" target="_blank">HKEX 规则手册</a> · <a class="sfc" href="https://www.sfc.hk/" target="_blank">SFC 证监会</a> · <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" target="_blank">HKEX 新闻</a></div>
 </header>
 
 <div class="container">
@@ -321,289 +425,261 @@
     <!-- Stats Overview -->
     <div class="stats-row">
         <div class="stat-card warn">
-            <div class="stat-number">12</div>
+            <div class="stat-number" id="stat-1">–</div>
             <div class="stat-label">近30天监管动态</div>
         </div>
         <div class="stat-card hkex">
-            <div class="stat-number">3</div>
-            <div class="stat-label">HKEX 规则修订 (6-7月)</div>
+            <div class="stat-number" id="stat-2">–</div>
+            <div class="stat-label">HKEX 规则修订 (6-8月)</div>
         </div>
         <div class="stat-card sfc">
-            <div class="stat-number">6</div>
+            <div class="stat-number" id="stat-3">–</div>
             <div class="stat-label">SFC 执法/监管行动</div>
         </div>
         <div class="stat-card hkex">
-            <div class="stat-number">6</div>
+            <div class="stat-number" id="stat-4">–</div>
             <div class="stat-label">2026年指引文件更新</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">31</div>
+            <div class="stat-number" id="stat-5">–</div>
             <div class="stat-label">现行指引信 (GL)</div>
         </div>
     </div>
 
-    <!-- ====== SECTION 1: 最新监管动态时间线 ====== -->
+    <!-- ====== SECTION 1: 监管动态时间线 ====== -->
     <div class="section">
         <div class="section-header" onclick="toggleSection(this)">
-            <h2>📅 2026年6月–7月 监管动态时间线</h2>
+            <h2>📅 2026年6月–8月 监管动态时间线</h2>
             <span class="badge badge-new">最新</span>
             <span class="toggle-icon">▼</span>
         </div>
-        <div class="section-content reg-list">
-            <div class="reg-item sfc new">
-                <div class="reg-meta">2026年7月3日 · SFC</div>
-                <div class="reg-title">🔴 SFC 加强 IPO 监管，要求投行提交整改计划 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC4" target="_blank">📄 通函 26EC4</a></div>
-                <div class="reg-desc">因应虚假需求及不公平分配问题，SFC 对 IPO 保荐人及承销商提出更严格的监管要求</div>
-            </div>
-            <div class="reg-item hkex new">
-                <div class="reg-meta">2026年7月2日 · HKEX</div>
-                <div class="reg-title">🔵 每手买卖单位框架改革 第一阶段生效 <a class="source-link" href="https://www.hkex.com.hk/News/Market-Communications/2026/260630news?sc_lang=zh-HK" target="_blank">📰 原文</a></div>
-                <div class="reg-desc">每手股数从40多种统一为8种；价值指引下限降至1,000港元；上限设为50,000港元</div>
-            </div>
-            <div class="reg-item hkex new">
-                <div class="reg-meta">2026年7月1日 · HKEX</div>
-                <div class="reg-title">🔵 结构性产品上市制度优化生效 <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260420news?sc_lang=zh-HK" target="_blank">📰 原文</a></div>
-                <div class="reg-desc">衍生权证最低发行价降至0.15港元；取消牛熊证最低发行价；最低市值降至600万港元</div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-meta">2026年6月30日 · HKEX</div>
-                <div class="reg-title">📘 刊发「优化每手买卖单位框架」咨询总结 <a class="source-link" href="https://www.hkex.com.hk/News/Market-Communications/2026/260630news?sc_lang=zh-HK" target="_blank">📰 原文</a></div>
-                <div class="reg-desc">共收到85份回应；分两阶段实施（7月2日及11月16日）</div>
-            </div>
-            <div class="reg-item sfc">
-                <div class="reg-meta">2026年6月24日 · SFC</div>
-                <div class="reg-title">📋 SFC 发布《2025-26年报》 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR98" target="_blank">📰 SFC 26PR98</a></div>
-                <div class="reg-desc">多元引擎推动高质量发展，巩固香港资本市场全球地位；涵盖虚拟资产发牌、ESG等最新监管资讯</div>
-            </div>
-            <div class="reg-item sfc">
-                <div class="reg-meta">2026年6月16日 · SFC</div>
-                <div class="reg-title">⚖️ 恒大清盘人挑战 SFC 与 PwC HK 和解协议 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR62" target="_blank">📰 SFC 26PR62</a></div>
-                <div class="reg-desc">清盘人要求法院宣告 SFC 与 PwC 达成的10亿港元股东赔偿协议"不合法、无效"；法院8月19日审理</div>
-            </div>
-            <div class="reg-item sfc">
-                <div class="reg-meta">2026年6月9日 · SFC</div>
-                <div class="reg-title">⚖️ 「拉高出货」市场操纵案 — 法院批准临时禁制令 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR99" target="_blank">📰 SFC 26PR99</a></div>
-                <div class="reg-desc">涉及 Grand Talents Group 股票；投资者损失约3.94亿港元；法院批准资产冻结令 (案号 [2026] HKCFI 2140)</div>
-            </div>
-            <div class="reg-item sfc">
-                <div class="reg-meta">2026年6月2日 · SFC</div>
-                <div class="reg-title">🛡️ SFC 促持牌机构应对AI驱动网络威胁 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR77" target="_blank">📰 SFC 26PR77</a> <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC32" target="_blank">📄 通函 26EC32</a></div>
-                <div class="reg-desc">本地网络事件激增27%；要求虚拟资产服务提供商紧急升级措施应对AI驱动威胁</div>
-            </div>
-            <div class="reg-item sfc">
-                <div class="reg-meta">2026年6月 · SFC</div>
-                <div class="reg-title">💱 证监会更新虚拟资产监管框架 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR59" target="_blank">📰 SFC 26PR59</a> <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC31" target="_blank">📄 通函 26EC31</a></div>
-                <div class="reg-desc">4月更新监管框架允许认可投资产品二级交易；5月发出虚拟资产基金及稳定币通函</div>
-            </div>
-            <div class="reg-item sfc">
-                <div class="reg-meta">2026年5月22日 · SFC</div>
-                <div class="reg-title">🔍 SFC 对12家持牌券商开户管控审查结果公布 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR72" target="_blank">📰 SFC 26PR72</a></div>
-                <div class="reg-desc">与中证监联合执法；针对非法跨境证券/期货/基金业务；须关闭可疑账户、取得境外资金来源声明</div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-meta">2026年4月20日 · HKEX</div>
-                <div class="reg-title">📘 刊发「优化结构性产品上市制度」咨询总结 <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260420news?sc_lang=zh-HK" target="_blank">📰 原文</a></div>
-                <div class="reg-desc">《上市规则》第153次修订；5月1日/7月1日分阶段生效；共收到28份回应</div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-meta">2026年3月13日 · HKEX</div>
-                <div class="reg-title">📘 刊发「提升上市机制竞争力」咨询文件 <a class="source-link" href="https://www.hkex.com.hk/news/regulatory-announcements/2026/260313news?sc_lang=zh-hk" target="_blank">📰 原文</a></div>
-                <div class="reg-desc">涵盖不同投票权(WVR)放宽、海外发行人第二上市、允许US GAAP、所有权延续性；咨询期至5月8日</div>
+        <div class="section-content">
+            <div class="timeline">
+                <div class="tl-item hkex">
+                    <div class="tl-meta">2026年8月21日 · HKEX</div>
+                    <div class="tl-title">🔵 联交所延长新上市申请有效期：6个月 → 12个月 <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260821news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
+                    <div class="tl-desc">以短期豁免形式实施三年；提升申请人管理上市时间表的灵活性，监管标准及投资者保障维持不变</div>
+                </div>
+                <div class="tl-item sfc">
+                    <div class="tl-meta">2026年8月26日 · SFC</div>
+                    <div class="tl-title">📋 SFC 发表《季度报告》：香港持续深化内地联通 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR129" target="_blank" rel="noopener">📰 SFC 26PR129</a></div>
+                    <div class="tl-desc">作为中国资产国际门户的优势更趋巩固；涵盖市场互联互通及监管工作最新进展</div>
+                </div>
+                <div class="tl-item hkex">
+                    <div class="tl-meta">2026年7月24日 · HKEX</div>
+                    <div class="tl-title">🔴 刊发「提升上市机制竞争力」咨询总结，新规即时生效 <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260724news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
+                    <div class="tl-desc">共收到73份回应，所有建议经修改后均获采纳；WVR公司市值门槛降至200亿/60亿港元；稍后展开第二阶段咨询</div>
+                </div>
+                <div class="tl-item hkex">
+                    <div class="tl-meta">2026年7月 · HKEX</div>
+                    <div class="tl-title">📘 发布 GL122-26《有关数字资产相关活动的指引》 <a class="source-link" href="https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/GL122-26_c_202607.pdf" target="_blank" rel="noopener">📄 PDF</a></div>
+                    <div class="tl-desc">联交所首份数字资产相关活动指引信；同月更新 GL69-13（分拆上市）、GL111-22/GL112-22（海外发行人）、GL79-14（集体投资计划）等多份指引</div>
+                </div>
+                <div class="tl-item sfc">
+                    <div class="tl-meta">2026年7月3日 · SFC</div>
+                    <div class="tl-title">🔴 SFC 加强 IPO 监管，要求投行提交整改计划 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC4" target="_blank" rel="noopener">📄 通函 26EC4</a></div>
+                    <div class="tl-desc">因应虚假需求及不公平分配问题，SFC 对 IPO 保荐人及承销商提出更严格的监管要求</div>
+                </div>
+                <div class="tl-item hkex">
+                    <div class="tl-meta">2026年7月2日 · HKEX</div>
+                    <div class="tl-title">🔵 每手买卖单位框架改革 第一阶段生效 <a class="source-link" href="https://www.hkex.com.hk/News/Market-Communications/2026/260630news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
+                    <div class="tl-desc">每手股数从40多种统一为8种；价值指引下限降至1,000港元；上限设为50,000港元</div>
+                </div>
+                <div class="tl-item hkex">
+                    <div class="tl-meta">2026年7月1日 · HKEX</div>
+                    <div class="tl-title">🔵 结构性产品上市制度优化生效 <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260420news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
+                    <div class="tl-desc">衍生权证最低发行价降至0.15港元；取消牛熊证最低发行价；最低市值降至600万港元</div>
+                </div>
+                <div class="tl-item hkex">
+                    <div class="tl-meta">2026年6月30日 · HKEX</div>
+                    <div class="tl-title">📘 刊发「优化每手买卖单位框架」咨询总结 <a class="source-link" href="https://www.hkex.com.hk/News/Market-Communications/2026/260630news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
+                    <div class="tl-desc">共收到85份回应；分两阶段实施（7月2日及11月16日）</div>
+                </div>
+                <div class="tl-item sfc">
+                    <div class="tl-meta">2026年6月24日 · SFC</div>
+                    <div class="tl-title">📋 SFC 发布《2025-26年报》 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR98" target="_blank" rel="noopener">📰 SFC 26PR98</a></div>
+                    <div class="tl-desc">多元引擎推动高质量发展，巩固香港资本市场全球地位；涵盖虚拟资产发牌、ESG等最新监管资讯</div>
+                </div>
+                <div class="tl-item sfc">
+                    <div class="tl-meta">2026年6月16日 · SFC</div>
+                    <div class="tl-title">⚖️ 恒大清盘人挑战 SFC 与 PwC HK 和解协议 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR62" target="_blank" rel="noopener">📰 SFC 26PR62</a></div>
+                    <div class="tl-desc">清盘人要求法院宣告 SFC 与 PwC 达成的10亿港元股东赔偿协议"不合法、无效"；法院8月19日审理</div>
+                </div>
+                <div class="tl-item sfc">
+                    <div class="tl-meta">2026年6月9日 · SFC</div>
+                    <div class="tl-title">⚖️ 「拉高出货」市场操纵案 — 法院批准临时禁制令 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR99" target="_blank" rel="noopener">📰 SFC 26PR99</a></div>
+                    <div class="tl-desc">涉及 Grand Talents Group 股票；投资者损失约3.94亿港元；法院批准资产冻结令 (案号 [2026] HKCFI 2140)</div>
+                </div>
+                <div class="tl-item sfc">
+                    <div class="tl-meta">2026年6月2日 · SFC</div>
+                    <div class="tl-title">🛡️ SFC 促持牌机构应对AI驱动网络威胁 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR77" target="_blank" rel="noopener">📰 SFC 26PR77</a> <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC32" target="_blank" rel="noopener">📄 通函 26EC32</a></div>
+                    <div class="tl-desc">本地网络事件激增27%；要求虚拟资产服务提供商紧急升级措施应对AI驱动威胁</div>
+                </div>
+                <div class="tl-item sfc">
+                    <div class="tl-meta">2026年6月 · SFC</div>
+                    <div class="tl-title">💱 证监会更新虚拟资产监管框架 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR59" target="_blank" rel="noopener">📰 SFC 26PR59</a> <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/circular/doc?refNo=26EC31" target="_blank" rel="noopener">📄 通函 26EC31</a></div>
+                    <div class="tl-desc">4月更新监管框架允许认可投资产品二级交易；5月发出虚拟资产基金及稳定币通函</div>
+                </div>
+                <div class="tl-item sfc">
+                    <div class="tl-meta">2026年5月22日 · SFC</div>
+                    <div class="tl-title">🔍 SFC 对12家持牌券商开户管控审查结果公布 <a class="source-link sfc" href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR72" target="_blank" rel="noopener">📰 SFC 26PR72</a></div>
+                    <div class="tl-desc">与中证监联合执法；针对非法跨境证券/期货/基金业务；须关闭可疑账户、取得境外资金来源声明</div>
+                </div>
+                <div class="tl-item hkex">
+                    <div class="tl-meta">2026年4月20日 · HKEX</div>
+                    <div class="tl-title">📘 刊发「优化结构性产品上市制度」咨询总结 <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260420news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
+                    <div class="tl-desc">《上市规则》第153次修订；5月1日/7月1日分阶段生效；共收到28份回应</div>
+                </div>
+                <div class="tl-item hkex">
+                    <div class="tl-meta">2026年3月13日 · HKEX</div>
+                    <div class="tl-title">📘 刊发「提升上市机制竞争力」咨询文件 <a class="source-link" href="https://www.hkex.com.hk/news/regulatory-announcements/2026/260313news?sc_lang=zh-hk" target="_blank" rel="noopener">📰 原文</a></div>
+                    <div class="tl-desc">涵盖不同投票权(WVR)放宽、海外发行人第二上市、允许US GAAP、所有权延续性；咨询期至5月8日</div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- ====== SECTION 2: HKEX 规则修订详情 ====== -->
+    <!-- ====== SECTION 2: HKEX 上市规则修订与咨询（表格） ====== -->
     <div class="section">
         <div class="section-header hkex" onclick="toggleSection(this)">
-            <h2>📘 HKEX 上市规则修订与咨询</h2>
+            <h2>📑 HKEX 上市规则修订与咨询</h2>
             <span class="badge badge-hkex">联交所</span>
             <span class="toggle-icon">▼</span>
         </div>
-        <div class="section-content reg-list">
-            <div class="reg-item hkex new">
-                <div class="reg-badges"><span class="topic-tag">交易机制</span><span class="badge badge-rule">咨询总结</span></div>
-                <div class="reg-title">优化每手买卖单位框架 <a class="source-link" href="https://www.hkex.com.hk/News/Market-Communications/2026/260630news?sc_lang=zh-HK" target="_blank">📰 原文</a></div>
-                <div class="reg-desc">
-                    <ul>
-                        <li>每手股数统一为8种标准</li>
-                        <li>价值指引下限降至1,000港元</li>
-                        <li>增设50,000港元上限 (&gt;100股)</li>
-                    </ul>
-                </div>
-                <div class="reg-meta"><span class="date-today">7月2日生效</span> · 咨询总结: 6月30日 · 第二阶段: 11月16日 · 所有发行人须在无纸化后6个月内采用标准每手股数</div>
-            </div>
-            <div class="reg-item hkex new">
-                <div class="reg-badges"><span class="topic-tag">结构性产品</span><span class="badge badge-rule">规则修订</span></div>
-                <div class="reg-title">优化结构性产品上市制度 (第153次修订) <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260420news?sc_lang=zh-HK" target="_blank">📰 原文</a></div>
-                <div class="reg-desc">
-                    <ul>
-                        <li>衍生权证最低发行价: 0.25 → 0.15港元</li>
-                        <li>取消牛熊证最低发行价</li>
-                        <li>最低市值: 1,000万 → 600万港元</li>
-                    </ul>
-                </div>
-                <div class="reg-meta"><span class="date-today">7月1日生效</span> · 过渡期至2027年6月30日 · 现有发行人须于2027年6月前合规</div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="topic-tag">上市机制</span><span class="badge badge-consult">咨询文件</span></div>
-                <div class="reg-title">提升上市机制竞争力 <a class="source-link" href="https://www.hkex.com.hk/news/regulatory-announcements/2026/260313news?sc_lang=zh-hk" target="_blank">📰 原文</a></div>
-                <div class="reg-desc">
-                    <ul>
-                        <li>WVR 最高投票权放宽至 20:1</li>
-                        <li>大中华/东南亚发行人第二上市门槛降低</li>
-                        <li>允许 US GAAP 编制财报</li>
-                    </ul>
-                </div>
-                <div class="reg-meta">2026年3月13日刊发 · 咨询期至5月8日 · 拟吸引更多海外及新经济公司来港上市</div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="topic-tag">无纸化</span><span class="badge badge-rule">规则修订</span></div>
-                <div class="reg-title">无纸证券市场 (USM) (第152次修订) <a class="source-link" href="https://www.hkex.com.hk/services/settlement-and-depository/usm?sc_lang=zh-hk" target="_blank">📄 详情</a></div>
-                <div class="reg-desc">香港证券市场全面转向无纸化；2026-2030年分批过渡</div>
-                <div class="reg-meta">11月16日实施 · 3月31日修订生效</div>
-            </div>
+        <div class="section-content">
+            <table class="grid">
+                <thead>
+                    <tr><th style="width:90px;">主题</th><th style="width:90px;">类型</th><th>详情</th><th style="width:170px;">关键日期</th><th style="width:230px;">影响</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-topic"><span class="topic-tag">交易机制</span></td>
+                        <td class="col-type"><span class="badge badge-rule">咨询总结</span></td>
+                        <td>
+                            <div class="rule-title">优化每手买卖单位框架 <a class="source-link" href="https://www.hkex.com.hk/News/Market-Communications/2026/260630news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
+                            <ul class="rule-points">
+                                <li>每手股数统一为8种标准</li>
+                                <li>价值指引下限降至1,000港元</li>
+                                <li>增设50,000港元上限 (&gt;100股)</li>
+                            </ul>
+                        </td>
+                        <td><div class="date-key">7月2日生效</div><div class="date-sub">咨询总结: 6月30日</div><div class="date-sub">第二阶段: 11月16日</div></td>
+                        <td><div class="impact-text">所有发行人须在无纸化后6个月内采用标准每手股数</div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-topic"><span class="topic-tag">结构性产品</span></td>
+                        <td class="col-type"><span class="badge badge-rule">规则修订</span></td>
+                        <td>
+                            <div class="rule-title">优化结构性产品上市制度 (第153次修订) <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260420news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
+                            <ul class="rule-points">
+                                <li>衍生权证最低发行价: 0.25 → 0.15港元</li>
+                                <li>取消牛熊证最低发行价</li>
+                                <li>最低市值: 1,000万 → 600万港元</li>
+                            </ul>
+                        </td>
+                        <td><div class="date-key">7月1日生效</div><div class="date-sub">过渡期至2027年6月30日</div></td>
+                        <td><div class="impact-text">12个月过渡期; 现有发行人须于2027年6月前合规</div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-topic"><span class="topic-tag">上市机制</span></td>
+                        <td class="col-type"><span class="badge badge-rule">咨询总结</span></td>
+                        <td>
+                            <div class="rule-title">提升上市机制竞争力 (新规即时生效) <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260724news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
+                            <ul class="rule-points">
+                                <li>WVR 公司市值门槛降至 200亿 / 60亿港元；市值≥400亿时投票权上限 20:1</li>
+                                <li>第二上市门槛降低（同股同权测试B市值 100亿 → 60亿港元）</li>
+                                <li>简化第二上市转主要上市指引；允许 US GAAP 编制财报</li>
+                            </ul>
+                        </td>
+                        <td><div class="date-key">7月24日刊发并生效</div><div class="date-sub">共73份回应，全部建议获采纳</div><div class="date-sub">第二阶段咨询稍后展开</div></td>
+                        <td><div class="impact-text">拓宽优质公司上市渠道，巩固香港全球首选上市地地位</div></td>
+                    </tr>
+                    <tr>
+                        <td class="col-topic"><span class="topic-tag">无纸化</span></td>
+                        <td class="col-type"><span class="badge badge-rule">规则修订</span></td>
+                        <td>
+                            <div class="rule-title">无纸证券市场 (USM) (第152次修订) <a class="source-link" href="https://www.hkex.com.hk/services/settlement-and-depository/usm?sc_lang=zh-hk" target="_blank" rel="noopener">📄 详情</a></div>
+                        </td>
+                        <td><div class="date-key">11月16日实施</div><div class="date-sub">3月31日修订生效</div></td>
+                        <td><div class="impact-text">香港证券市场全面转向无纸化; 2026-2030年分批过渡</div></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- ====== SECTION 3: SFC 监管新闻 ====== -->
+    <!-- ====== SECTION 3: SFC 近期监管与执法动态（卡片） ====== -->
     <div class="section">
         <div class="section-header sfc" onclick="toggleSection(this)">
             <h2>⚖️ SFC 证监会 — 近期监管与执法动态</h2>
             <span class="badge badge-sfc">证监会</span>
             <span class="toggle-icon">▼</span>
         </div>
-        <div class="section-content reg-list" id="sfc-news-list">
-            <div class="reg-item sfc"><div class="reg-meta">⏳ 正在加载 SFC 最新新闻...</div></div>
+        <div class="section-content">
+            <div class="cards-grid" id="sfc-cards"><div class="loading-tip">⏳ 正在加载 SFC 最新新闻...</div></div>
         </div>
     </div>
 
-    <!-- ====== SECTION 4: 2026年指引文件更新 ====== -->
-    <div class="section">
-        <div class="section-header hkex" onclick="toggleSection(this)">
-            <h2>🆕 2026年 指引文件更新</h2>
-            <span class="badge badge-faq">FAQ 常問問題</span>
-            <span class="toggle-icon">▼</span>
+    <!-- ====== SECTION 4+5: FAQ 指引文件更新 + 指引信·上市决策 ====== -->
+    <div class="two-col-grid">
+        <div class="section">
+            <div class="section-header hkex" onclick="toggleSection(this)">
+                <h2>🆕 2026年 指引文件更新</h2>
+                <span class="badge badge-faq">FAQ 常問問題</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <table class="grid">
+                    <thead><tr><th style="width:80px;">编号</th><th>内容</th><th style="width:80px;">更新</th><th style="width:56px;">PDF</th></tr></thead>
+                    <tbody id="faq-tbody"><tr><td colspan="4"><div class="loading-tip">⏳ 加载中...</div></td></tr></tbody>
+                </table>
+            </div>
         </div>
-        <div class="section-content reg-list" id="guidance-list">
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-faq">FAQ 1.1</span></div>
-                <div class="reg-title">常問問題 — 董事 <a class="source-link" href="https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-1.1_c_202602.pdf" target="_blank">PDF</a></div>
-                <div class="reg-desc">《主板規則》第三章及第十三章</div>
-                <div class="reg-meta"><span class="date-updated">02/2026 更新</span></div>
+        <div class="section">
+            <div class="section-header hkex" onclick="toggleSection(this)">
+                <h2>📨 指引信 · 上市决策 最新</h2>
+                <span class="badge badge-gl">GL+LD</span>
+                <span class="toggle-icon">▼</span>
             </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-faq">FAQ 1.2</span></div>
-                <div class="reg-title">常問問題 — 公司秘書 <a class="source-link" href="https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-1.2_c_202602.pdf" target="_blank">PDF</a></div>
-                <div class="reg-meta"><span class="date-updated">02/2026 更新</span></div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-faq">FAQ 7</span></div>
-                <div class="reg-title">常問問題 — 公眾持股量 <a class="source-link" href="https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-7_c_202602.pdf" target="_blank">PDF</a></div>
-                <div class="reg-meta"><span class="date-updated">02/2026 更新</span></div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-faq">FAQ 16</span></div>
-                <div class="reg-title">常問問題 — 核心的股東保障水平 <a class="source-link" href="https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-16_c_202604.pdf" target="_blank">PDF</a></div>
-                <div class="reg-meta"><span class="date-updated">04/2026 更新</span></div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-faq">FAQ 17.1</span></div>
-                <div class="reg-title">常問問題 — 《企業管治守則》 <a class="source-link" href="https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-17.1_c_202602.pdf" target="_blank">PDF</a></div>
-                <div class="reg-meta"><span class="date-updated">02/2026 更新</span></div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-faq">FAQ 17.2</span></div>
-                <div class="reg-title">常問問題 — ESG報告守則 <a class="source-link" href="https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/faq-17.2_c_202604.pdf" target="_blank">PDF</a></div>
-                <div class="reg-meta"><span class="date-updated">04/2026 更新</span></div>
+            <div class="section-content">
+                <table class="grid">
+                    <thead><tr><th style="width:110px;">编号</th><th>标题</th><th style="width:90px;">日期</th></tr></thead>
+                    <tbody id="gl-tbody"><tr><td colspan="3"><div class="loading-tip">⏳ 加载中...</div></td></tr></tbody>
+                </table>
             </div>
         </div>
     </div>
 
-    <!-- ====== SECTION 5: 指引信 · 上市决策 ====== -->
-    <div class="section">
-        <div class="section-header hkex" onclick="toggleSection(this)">
-            <h2>📨 指引信 · 上市决策 最新</h2>
-            <span class="badge badge-gl">GL+LD</span>
-            <span class="toggle-icon">▼</span>
-        </div>
-        <div class="section-content reg-list" id="gl-list">
-            <div class="reg-item hkex new">
-                <div class="reg-badges"><span class="badge badge-gl">GL121-26</span><span class="badge badge-new">NEW</span></div>
-                <div class="reg-title">有關公眾持股量的指引 <a class="source-link" href="https://cn-rules.hkex.com.hk/node/12806" target="_blank">查看</a></div>
-                <div class="reg-meta"><span class="date-updated">12/2025 更新</span></div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-gl">GL95-18</span></div>
-                <div class="reg-title">長時間停牌及除牌的指引 <a class="source-link" href="https://cn-rules.hkex.com.hk/node/12803" target="_blank">查看</a></div>
-                <div class="reg-meta">12/2025 更新</div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-gl">GL80-15</span></div>
-                <div class="reg-title">上市發行人發行可轉換證券的指引 <a class="source-link" href="https://cn-rules.hkex.com.hk/node/12807" target="_blank">查看</a></div>
-                <div class="reg-meta">12/2025 更新</div>
-            </div>
-            <div class="reg-item hkex new">
-                <div class="reg-badges"><span class="badge badge-ld">LD140-2025</span><span class="badge badge-new">NEW</span></div>
-                <div class="reg-title">股本掛鈎證券認股權證到期 <a class="source-link" href="https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/ld140-2025_c_202506.pdf" target="_blank">PDF</a></div>
-                <div class="reg-meta"><span class="date-updated">06/2025</span></div>
-            </div>
-            <div class="reg-item hkex new">
-                <div class="reg-badges"><span class="badge badge-ld">LD139-2025</span><span class="badge badge-new">NEW</span></div>
-                <div class="reg-title">發行可換股債券同時購回股份 <a class="source-link" href="https://cn-rules.hkex.com.hk/sites/default/files/pdf_documents/ld139-2025_c_202506.pdf" target="_blank">PDF</a></div>
-                <div class="reg-meta"><span class="date-updated">06/2025</span></div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-gl">GL117-23</span></div>
-                <div class="reg-title">自動股份購回計劃的指引 <a class="source-link" href="https://cn-rules.hkex.com.hk/node/12808" target="_blank">查看</a></div>
-                <div class="reg-meta">08/2025 更新</div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-gl">GL77-14</span></div>
-                <div class="reg-title">業務使用合約安排的指引 <a class="source-link" href="https://cn-rules.hkex.com.hk/node/12813" target="_blank">查看</a></div>
-                <div class="reg-meta">05/2025 更新</div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-badges"><span class="badge badge-gl">GL120-24</span></div>
-                <div class="reg-title">長時間停牌發行人調查指引 <a class="source-link" href="https://cn-rules.hkex.com.hk/node/12803" target="_blank">查看</a></div>
-                <div class="reg-meta">11/2024</div>
-            </div>
-            <div class="reg-item hkex">
-                <div class="reg-meta"><a href="https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/%E6%9C%89%E9%97%9C%E4%B8%8A%E5%B8%82%E7%99%BC%E8%A1%8C%E4%BA%BA%E7%9A%84%E6%8C%87%E5%BC%95%E6%96%87%E4%BB%B6" target="_blank">查看全部 31 份指引信 →</a></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ====== SECTION: 监管处罚与执法 ====== -->
+    <!-- ====== SECTION 6: 监管处罚与执法 ====== -->
     <div class="section" id="enf-section">
-        <div class="section-header" style="border-left:4px solid #b71c1c;" onclick="toggleSection(this)">
+        <div class="section-header enf" onclick="toggleSection(this)">
             <h2>⚖️ 监管处罚与执法</h2>
-            <span class="badge badge-rule" style="background:#b71c1c;color:#fff;">实时</span>
+            <span class="badge badge-live">实时</span>
             <span class="toggle-icon">▼</span>
         </div>
         <div class="section-content">
-            <div class="two-col enf-grid-col">
+            <div class="enf-grid-col">
                 <div>
                     <div class="enf-subtitle hkex">🏢 联交所纪律行动</div>
-                    <div class="enf-list" id="enf-hkex"></div>
+                    <div id="enf-hkex"><div class="loading-tip">⏳ 加载中...</div></div>
                 </div>
                 <div>
                     <div class="enf-subtitle sfc">🔍 证监会执法新闻</div>
-                    <div class="enf-list" id="enf-sfc"></div>
+                    <div id="enf-sfc"><div class="loading-tip">⏳ 加载中...</div></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ====== SECTION: 律所解读 ====== -->
+    <!-- ====== SECTION 7: 律所解读 ====== -->
     <div class="section" id="law-section">
         <div class="section-header" onclick="toggleSection(this)">
             <h2>🏛️ 律所监管动态解读</h2>
             <span class="badge badge-consult">专业分析</span>
             <span class="toggle-icon">▼</span>
         </div>
-        <div class="section-content reg-list" id="law-list">
-            <div class="reg-item"><div class="reg-meta">⏳ 正在加载律所解读...</div></div>
+        <div class="section-content">
+            <div class="law-grid" id="law-cards"><div class="loading-tip">⏳ 正在加载律所解读...</div></div>
         </div>
     </div>
 
@@ -615,27 +691,43 @@
     <div class="footer">
         <p>
             <strong>数据来源：</strong>
-            <a href="https://cn-rules.hkex.com.hk/" target="_blank">HKEX 规则手册</a> ·
-            <a href="https://www.sfc.hk/" target="_blank">SFC 证监会</a> ·
-            <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" target="_blank">HKEX 新闻发布</a> ·
-            <a href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/" target="_blank">SFC 新闻公告</a>
+            <a href="https://cn-rules.hkex.com.hk/" target="_blank" rel="noopener">HKEX 规则手册</a> ·
+            <a href="https://www.sfc.hk/" target="_blank" rel="noopener">SFC 证监会</a> ·
+            <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" target="_blank" rel="noopener">HKEX 新闻发布</a> ·
+            <a href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/" target="_blank" rel="noopener">SFC 新闻公告</a>
         </p>
-        <p style="margin-top:6px;" id="update-footer">自动抓取 · 每15分钟更新 · 最后更新: 2026-07-10 09:41:19 · 后台刷新中...</p>
+        <p style="margin-top:6px;" id="update-footer">自动抓取 · 每15分钟自动刷新 · 加载中...</p>
     </div>
 
 </div>
 
 <script>
-// === 全数据源加载 ===
+// === 嵌入模式：?embed=1 时隐藏顶导航与头部（用于 iframe 嵌入其他看板） ===
+if (new URLSearchParams(location.search).get('embed') === '1') {
+    document.addEventListener('DOMContentLoaded', function() {
+        var tn = document.querySelector('.topnav');
+        var hd = document.querySelector('.header');
+        if (tn) tn.style.display = 'none';
+        if (hd) hd.style.display = 'none';
+        document.body.style.paddingTop = '0';
+    });
+}
+
+// === 数据加载与渲染 ===
 const DATA_BASE = '../data/';
+let REFRESHING = false;
+
+function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+}
 
 async function loadJSON(path, noCache) {
     try {
         var url = path;
-        if (noCache) {
-            url = path + (path.indexOf('?') >= 0 ? '&' : '?') + '_t=' + Date.now();
-        }
-        const resp = await fetch(url);
+        if (noCache) url = path + (path.indexOf('?') >= 0 ? '&' : '?') + '_t=' + Date.now();
+        const resp = await fetch(url, {cache: noCache ? 'no-store' : 'default'});
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         return await resp.json();
     } catch(e) {
@@ -648,218 +740,258 @@ function toggleSection(header) {
     header.closest('.section').classList.toggle('collapsed');
 }
 
-// 页面打开时：强制刷新一次最新数据，之后每15分钟自动刷新
-document.addEventListener('DOMContentLoaded', async function() {
-    var statusEl = document.getElementById('refresh-status');
-    try {
-        if (statusEl) { statusEl.textContent = '后台刷新中...'; statusEl.style.color = '#ffd54f'; }
-        await refreshData(true);
-        if (statusEl) { statusEl.textContent = '✓ 已刷新'; statusEl.style.color = '#81c784'; }
-    } catch (e) {
-        console.error('数据刷新失败:', e);
-        if (statusEl) { statusEl.textContent = '✗ 刷新失败: ' + e.message; statusEl.style.color = '#e57373'; }
-    }
-    setInterval(function() {
-        refreshData(true).catch(function(e){ console.error('定时刷新失败:', e); });
-    }, 900000);
+function showToast(msg, isError) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast show' + (isError ? ' error' : '');
+    setTimeout(function(){ t.className = 'toast'; }, 3000);
+}
+
+// === 刷新按钮 ===
+function manualRefresh() {
+    if (REFRESHING) return;
+    var btn = document.getElementById('refresh-btn');
+    var txt = document.getElementById('refresh-btn-text');
+    REFRESHING = true;
+    btn.disabled = true;
+    btn.classList.add('loading');
+    txt.textContent = '正在刷新...';
+    refreshAll(true).then(function(ok){
+        if (ok) {
+            showToast('✓ 全部动态已刷新 · ' + new Date().toLocaleTimeString('zh-HK', {timeZone:'Asia/Hong_Kong'}));
+        } else {
+            showToast('✗ 部分数据刷新失败，请稍后重试', true);
+        }
+    }).catch(function(e){
+        console.error(e);
+        showToast('✗ 刷新失败: ' + e.message, true);
+    }).finally(function(){
+        REFRESHING = false;
+        btn.disabled = false;
+        btn.classList.remove('loading');
+        txt.textContent = '刷新全部动态';
+    });
+}
+
+// 页面打开时加载一次最新数据，之后每15分钟自动刷新
+document.addEventListener('DOMContentLoaded', function() {
+    refreshAll(true);
+    setInterval(function(){ if (!REFRESHING) refreshAll(true); }, 900000);
 });
 
-// Transform functions
-function esc(s) {
-    return String(s || '').replace(/[&<>"']/g, function(c){
-        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-    });
-}
-function txSfcNews(items) {
-    return (items||[]).map(function(i,idx){
-        var type = i.type === 'enforcement' ? 'enforcement' : 'general';
-        return {
-            id:'sn-'+idx,
-            title:i.title||'',
-            url:i.url||'',
-            date:(i.date||'').slice(0,10),
-            source:'SFC',
-            category:type==='enforcement'?'enforcement_news':'general',
-            type:type,
-            summary:'',
-            method:'sfc_api'
-        };
-    });
-}
-function txSfcCirc(items) {
-    return (items||[]).map(function(i,idx){
-        return {
-            id:'sc-'+idx,
-            title:i.title||'',
-            url:i.url||'',
-            date:(i.date||'').slice(0,10),
-            source:'SFC',
-            category:'regulatory_rule',
-            summary:'',
-            method:'sfc_api'
-        };
-    });
-}
-function txHkexGuidance(items) {
-    return (items||[]).map(function(i,idx){ var s=i.detail!==i.ref?i.detail:''; return {id:'hg-'+idx,title:(i.ref?i.ref+' - ':'')+(i.detail||i.topic||''),url:i.url||i.topicUrl||'',date:parseHkexDate(i.date),source:'HKEX',category:'regulatory_rule',summary:s,method:'hkex_scraper'};});
-}
-function parseHkexDate(d) { if(!d) return ''; var m=d.match(/\(?(\d{2})\/(\d{4})\)?/); return m?m[2]+'-'+m[1]+'-01':''; }
+// === 主刷新流程：拉取全部 JSON 并重渲染所有动态区块 ===
+async function refreshAll(noCache) {
+    var results = await Promise.all([
+        loadJSON(DATA_BASE + 'update_meta.json', noCache),
+        loadJSON(DATA_BASE + 'sfc_news.json', noCache),
+        loadJSON(DATA_BASE + 'hkex_regulatory_announcements.json', noCache),
+        loadJSON(DATA_BASE + 'hkex_claude_search.json', noCache),
+        loadJSON(DATA_BASE + 'hkex_guidance_updates.json', noCache),
+        loadJSON(DATA_BASE + 'law_firm_summaries.json', noCache)
+    ]);
+    var meta = results[0], sfcNews = results[1], hkexReg = results[2],
+        hkexClaude = results[3], guidanceData = results[4], lawData = results[5];
+    var okCount = results.filter(function(r){ return !!r; }).length;
 
-function txHkexReg(items) {
-    var cm = {disciplinary:'disciplinary',consultation:'consultation',enforcement_news:'enforcement_news',regulatory_rule:'regulatory_rule',other:'general'};
-    return (items||[]).map(function(i,idx){ return {id:'hr-'+idx,title:i.title||'',url:i.url||'',date:(i.date||'').slice(0,10),source:'HKEX',category:cm[i.category]||'general',summary:i.description||'',method:'hkex_rss'};});
-}
-function txHkexNews(items) {
-    return (items||[]).map(function(i,idx){ return {id:'hn-'+idx,title:i.title||'',url:i.url||'',date:(i.date||'').slice(0,10),source:'HKEX',category:i.category==='regulatory_rule'?'regulatory_rule':'general',summary:i.description||'',method:'hkex_rss'};});
-}
-function txGLArchive(items) {
-    return (items||[]).map(function(i,idx){ var t=(i.gl_ref?i.gl_ref+' - ':'')+(i.title||''); t=t.replace(/&nbsp;/g,' '); return {id:'gla-'+idx,title:t,url:i.url||'',date:(i.date||'').slice(0,10),source:'HKEX',category:'regulatory_rule',summary:(i.doc_type||'')+' . '+(i.category||''),method:'hkex_archive'};});
-}
-var CL_CAT = {disciplinary:'disciplinary',consultation:'consultation',enforcement_news:'enforcement_news',regulatory_rule:'regulatory_rule'};
-function txClaude(items) {
-    return (items||[]).map(function(i,idx){ return {id:'cl-'+idx,title:i.title||'',url:i.url||'',date:(i.date||'').slice(0,10),source:'HKEX',category:CL_CAT[i.category]||'general',summary:'HKEX/SFC 最新消息',method:'claude_api'};});
-}
+    // --- 头部时间与统计 ---
+    var allDates = [];
+    if (sfcNews && sfcNews.items) allDates = allDates.concat(sfcNews.items.map(function(i){return i.date;}));
+    if (hkexReg && hkexReg.items) allDates = allDates.concat(hkexReg.items.map(function(i){return i.date;}));
+    if (hkexClaude && hkexClaude.items) allDates = allDates.concat(hkexClaude.items.map(function(i){return i.date;}));
+    allDates = allDates.filter(function(d){ return /^\d{4}-\d{2}-\d{2}/.test(d || ''); });
 
-async function refreshData(noCache) {
-    noCache = !!noCache;
-    var meta = await loadJSON(DATA_BASE+'update_meta.json', noCache);
-    var sfcNews = await loadJSON(DATA_BASE+'sfc_news.json', noCache);
-    var sfcCirc = await loadJSON(DATA_BASE+'sfc_circulars.json', noCache);
-    var hkexUp = await loadJSON(DATA_BASE+'hkex_guidance_updates.json', noCache);
-    var hkexReg = await loadJSON(DATA_BASE+'hkex_regulatory_announcements.json', noCache);
-    var hkexNews = await loadJSON(DATA_BASE+'hkex_news_releases.json', noCache);
-    var hkexGL = await loadJSON(DATA_BASE+'hkex_guidance_archive.json', noCache);
-    var hkexClaude = await loadJSON(DATA_BASE+'hkex_claude_search.json', noCache);
-    var lawData = await loadJSON(DATA_BASE+'law_firm_summaries.json', noCache);
+    var st = (meta && meta.stats) || {};
+    var totalCount = (st.sfcNews||0) + (st.sfcCirculars||0) + (st.hkexGuidanceUpdates||0) +
+                     (st.hkexRegulatory||0) + (st.hkexNews||0) + (st.hkexGLArchive||0) +
+                     (st.hkexClaude||0) + (st.lawFirms||0);
 
-    // Build allItems
-    var allItems = [];
-    if (sfcNews) allItems = allItems.concat(txSfcNews(sfcNews.items));
-    if (sfcCirc) allItems = allItems.concat(txSfcCirc(sfcCirc.items));
-    if (hkexUp) allItems = allItems.concat(txHkexGuidance(hkexUp.items));
-    if (hkexReg) allItems = allItems.concat(txHkexReg(hkexReg.items));
-    if (hkexNews) allItems = allItems.concat(txHkexNews(hkexNews.items));
-    if (hkexGL) allItems = allItems.concat(txGLArchive(hkexGL.items));
-    if (hkexClaude) allItems = allItems.concat(txClaude(hkexClaude.items));
-    allItems.sort(function(a,b){ return a.date>b.date?-1:a.date<b.date?1:0; });
-
-    // Update header time
+    var timeStr = '';
     if (meta && meta.lastUpdate) {
-        var d = new Date(meta.lastUpdate);
-        var ts = d.toLocaleString('zh-HK',{timeZone:'Asia/Hong_Kong',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
-        var hdr = document.getElementById('header-update-time');
-        if (hdr) hdr.innerHTML = '最后更新：<strong>' + ts + '</strong> (每小時刷新) | 共 <strong>' + allItems.length + '</strong> 条资讯';
-        document.getElementById('update-footer').textContent = '自动抓取 · 每15分钟更新 · ' + ts + ' · 共' + allItems.length + '条';
-        var statusEl = document.getElementById('refresh-status');
-        if (statusEl) { statusEl.textContent = '✓ 已刷新'; statusEl.style.color = '#81c784'; }
-        // Update stats
-        var st = meta.stats||{};
-        var statEls = document.querySelectorAll('.stat-number');
-        if (statEls.length >= 5) {
-            statEls[0].textContent = allItems.filter(function(i){return i.date>=new Date(Date.now()-30*86400000).toISOString().slice(0,10);}).length;
-            statEls[1].textContent = (st.hkexRegulatory||0) + (st.hkexClaude||0);
-            statEls[2].textContent = allItems.filter(function(i){return i.category==='disciplinary'||i.category==='enforcement_news';}).length;
-            statEls[3].textContent = (st.hkexGuidanceUpdates||0) + (st.hkexGLArchive||0);
-            statEls[4].textContent = st.hkexGLArchive||0;
-        }
-    }
-
-    // Render dynamic lists
-    if (sfcNews && sfcNews.items) renderSfcNewsList(sfcNews.items.slice(0, 30));
-    if (lawData && lawData.items) renderLawFirmsList(lawData.items);
-    if (hkexUp && hkexUp.items && hkexUp.items.length) renderGuidanceList(hkexUp.items);
-    if (hkexGL && hkexGL.items && hkexGL.items.length) renderGLList(hkexGL.items.slice(0, 50));
-
-    // Render enforcement
-    renderEnforcement(allItems);
-}
-
-function renderSfcNewsList(items) {
-    var c = document.getElementById('sfc-news-list');
-    if (!c) return;
-    var h = '';
-    items.forEach(function(i){
-        var lbl = i.type==='enforcement'?'<span class="badge badge-enf" style="font-size:0.65rem;">执法</span>':'<span class="badge badge-sfc" style="font-size:0.65rem;">新闻</span>';
-        h += '<div class="reg-item sfc">' +
-             '<div class="reg-badges">' + lbl + '</div>' +
-             '<div class="reg-title">' + esc(i.title) + ' <a class="source-link sfc" href="' + esc(i.url) + '" target="_blank">SFC</a></div>' +
-             '<div class="reg-meta">' + esc((i.date||'').slice(0,10)) + '</div>' +
-             '</div>';
-    });
-    c.innerHTML = h || '<div class="reg-item sfc"><div class="reg-meta">暂无数据</div></div>';
-}
-
-function renderLawFirmsList(items) {
-    var c = document.getElementById('law-list');
-    if (!c) return;
-    items.sort(function(a,b){return a.date>b.date?-1:a.date<b.date?1:0;});
-    var h = '';
-    items.forEach(function(i){
-        h += '<div class="reg-item">' +
-             '<div class="reg-badges"><span class="topic-tag">' + esc(i.firm||'') + '</span>' + (i.topic?'<span class="badge badge-consult">' + esc(i.topic) + '</span>':'') + '</div>' +
-             '<div class="reg-title">' + esc(i.title||'') + '</div>' +
-             '<div class="reg-meta">' + esc((i.date||'').slice(0,10)) + (i.url?' · <a class="source-link" href="' + esc(i.url) + '" target="_blank">阅读原文 →</a>':'') + '</div>' +
-             '</div>';
-    });
-    c.innerHTML = h || '<div class="reg-item"><div class="reg-meta">暂无数据</div></div>';
-}
-
-function renderGuidanceList(items) {
-    var c = document.getElementById('guidance-list');
-    if (!c || !items.length) return;
-    var h = '';
-    items.forEach(function(i){
-        h += '<div class="reg-item hkex">' +
-             '<div class="reg-badges"><span class="badge badge-faq">' + esc(i.ref||'') + '</span><span class="topic-tag">' + esc(i.topic||'') + '</span></div>' +
-             '<div class="reg-title">' + esc(i.detail||'') + (i.url?' <a class="source-link" href="' + esc(i.url) + '" target="_blank">PDF</a>':'') + '</div>' +
-             '<div class="reg-meta">' + esc(i.date||'') + '</div>' +
-             '</div>';
-    });
-    c.innerHTML = h;
-}
-
-function renderGLList(items) {
-    var c = document.getElementById('gl-list');
-    if (!c || !items.length) return;
-    var h = '';
-    items.forEach(function(i){
-        var t = (i.gl_ref?i.gl_ref+' - ':'')+(i.title||'');
-        t = t.replace(/&nbsp;/g,' ');
-        h += '<div class="reg-item hkex">' +
-             '<div class="reg-badges"><span class="badge badge-gl">' + esc(i.gl_ref||'') + '</span><span class="topic-tag">' + esc(i.doc_type||'') + '</span></div>' +
-             '<div class="reg-title">' + esc(t) + (i.url?' <a class="source-link" href="' + esc(i.url) + '" target="_blank">PDF</a>':'') + '</div>' +
-             '<div class="reg-meta">更新: ' + esc(i.update_date||i.date||'') + (i.category?' · ' + esc(i.category):'') + '</div>' +
-             '</div>';
-    });
-    c.innerHTML = h;
-}
-
-function renderEnforcement(items) {
-    var hkexEnf=[], sfcEnf=[];
-    items.forEach(function(i){
-        if (i.source==='HKEX' && (i.category==='disciplinary'||i.category==='enforcement_news')) hkexEnf.push(i);
-        if (i.source==='SFC' && (i.category==='enforcement_news'||i.category==='disciplinary')) sfcEnf.push(i);
-    });
-    hkexEnf.sort(function(a,b){return a.date>b.date?-1:a.date<b.date?1:0;});
-    sfcEnf.sort(function(a,b){return a.date>b.date?-1:a.date<b.date?1:0;});
-    var dedup = function(arr){ var s={},r=[]; arr.forEach(function(i){ if(!s[i.url]){s[i.url]=true;r.push(i);} }); return r; };
-    hkexEnf=dedup(hkexEnf); sfcEnf=dedup(sfcEnf);
-    if (hkexEnf.length===0 && sfcEnf.length===0) return;
-    document.getElementById('enf-section').style.display='';
-
-    var renderList = function(arr, id){
-        var h='';
-        arr.slice(0,30).forEach(function(i){
-            var m=i.title.match(/股份代號[：:]\s*(\d+)/);
-            var sc=m?m[1]:'';
-            h+='<div class="enf-item"><div class="enf-date">'+(i.date||'').slice(0,10)+'</div>'
-              +(sc?'<span class="enf-stock">'+esc(sc)+'</span> ':'')
-              +'<div class="enf-title">'+(i.url?'<a href="'+esc(i.url)+'" target="_blank">'+esc(i.title)+'</a>':esc(i.title))+'</div></div>';
+        timeStr = new Date(meta.lastUpdate).toLocaleString('zh-HK', {
+            timeZone:'Asia/Hong_Kong', year:'numeric', month:'2-digit', day:'2-digit',
+            hour:'2-digit', minute:'2-digit', second:'2-digit'
         });
-        document.getElementById(id).innerHTML=h;
+    }
+    document.getElementById('header-update-time').innerHTML =
+        '最后更新：<strong>' + esc(timeStr || '未知') + '</strong> (每15分钟自动刷新) | 共 <strong>' + totalCount + '</strong> 条资讯';
+    document.getElementById('update-footer').textContent =
+        '自动抓取 · 每15分钟自动刷新 · 最后更新: ' + (timeStr || '未知') + ' · 共 ' + totalCount + ' 条';
+
+    // 统计卡片
+    var cutoff = new Date(Date.now() - 30*86400000).toISOString().slice(0,10);
+    var recent30 = allDates.filter(function(d){ return d.slice(0,10) >= cutoff; }).length;
+    var enfCount = 0;
+    if (sfcNews && sfcNews.items) enfCount += sfcNews.items.filter(function(i){return i.type==='enforcement';}).length;
+    if (hkexReg && hkexReg.items) enfCount += hkexReg.items.filter(function(i){return i.category==='disciplinary' || i.category==='enforcement_news';}).length;
+    if (hkexClaude && hkexClaude.items) enfCount += hkexClaude.items.filter(function(i){return i.category==='disciplinary';}).length;
+    document.getElementById('stat-1').textContent = recent30;
+    document.getElementById('stat-2').textContent = (st.hkexRegulatory||0) + (st.hkexClaude||0);
+    document.getElementById('stat-3').textContent = enfCount;
+    document.getElementById('stat-4').textContent = (st.hkexGuidanceUpdates||0) + (st.hkexGLArchive||0);
+    document.getElementById('stat-5').textContent = st.hkexGLArchive || 0;
+
+    // --- 动态区块渲染 ---
+    if (sfcNews && sfcNews.items) renderSfcCards(sfcNews.items);
+    if (guidanceData && guidanceData.items) {
+        renderFaqTable(guidanceData.items);
+        renderGlTable(guidanceData.items);
+    }
+    renderEnforcement(hkexReg ? hkexReg.items : [], hkexClaude ? hkexClaude.items : [], sfcNews ? sfcNews.items : []);
+    if (lawData && lawData.items) renderLawCards(lawData.items);
+
+    return okCount >= 5;
+}
+
+// === SFC 卡片 ===
+function renderSfcCards(items) {
+    var c = document.getElementById('sfc-cards');
+    var sorted = items.slice().sort(function(a,b){ return (b.date||'') < (a.date||'') ? -1 : 1; });
+    var h = '';
+    sorted.slice(0, 12).forEach(function(i){
+        var isEnf = i.type === 'enforcement';
+        var lbl = isEnf ? '<span class="badge badge-enf">执法</span>' : '<span class="badge badge-sfc">新闻</span>';
+        var title = esc((i.title || '').replace(/\s+/g, ' ').trim());
+        h += '<div class="news-card">' +
+             '<div class="nc-badges">' + lbl + '</div>' +
+             '<div class="nc-title"><a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + title + '</a></div>' +
+             '<div class="nc-meta">' + esc((i.date||'').slice(0,10)) + ' <span class="badge badge-sfc" style="font-size:0.62rem;">SFC</span></div>' +
+             '</div>';
+    });
+    c.innerHTML = h || '<div class="loading-tip">暂无数据</div>';
+}
+
+// === FAQ 表格（从 hkex_guidance_updates.json 动态渲染） ===
+function latestUpdateKey(dateStr) {
+    // 取日期串中最后一个 MM/YYYY 作为排序键，如 "12/2011 (02/2026)" → "202602"
+    var ms = String(dateStr || '').match(/\d{2}\/\d{4}/g);
+    if (!ms || !ms.length) return '';
+    var last = ms[ms.length - 1].split('/');
+    return last[1] + last[0];
+}
+function fmtUpdDate(dateStr) {
+    var m = String(dateStr || '').match(/\((\d{2}\/\d{4})\)/);
+    return m ? m[1] : String(dateStr || '').trim();
+}
+function renderFaqTable(items) {
+    var tb = document.getElementById('faq-tbody');
+    var seen = {}, faqs = [];
+    items.forEach(function(i){
+        if (!/^常問問題/.test(i.ref || '')) return;
+        if (seen[i.ref]) return;
+        seen[i.ref] = true;
+        faqs.push(i);
+    });
+    faqs.sort(function(a,b){ return latestUpdateKey(b.date) < latestUpdateKey(a.date) ? -1 : 1; });
+    var h = '';
+    faqs.forEach(function(i){
+        // 编号：常問問題1.1 - 編號1-20 → FAQ 1.1
+        var num = (i.ref || '').replace(/常問問題\s*/i, 'FAQ ').split(/[-–]/)[0].trim();
+        h += '<tr>' +
+             '<td><span class="badge badge-faq">' + esc(num) + '</span></td>' +
+             '<td><div class="rule-title">' + esc(i.detail || '') + '</div>' +
+             ((i.topic && String(i.detail||'').indexOf(i.topic) < 0) ? '<div class="rule-sub">' + esc(i.topic) + '</div>' : '') + '</td>' +
+             '<td><span class="date-key">' + esc(fmtUpdDate(i.date)) + '</span></td>' +
+             '<td>' + (i.url ? '<a class="pdf-link" href="' + esc(i.url) + '" target="_blank" rel="noopener">PDF</a>' : '') + '</td>' +
+             '</tr>';
+    });
+    tb.innerHTML = h || '<tr><td colspan="4"><div class="loading-tip">暂无数据</div></td></tr>';
+}
+
+// === 指引信 · 上市决策表格（从 hkex_guidance_updates.json 动态渲染） ===
+function renderGlTable(items) {
+    var tb = document.getElementById('gl-tbody');
+    var seen = {}, docs = [];
+    items.forEach(function(i){
+        var ref = i.ref || '';
+        if (!/^(GL|LD)\d/.test(ref)) return;
+        if (seen[ref]) return;
+        seen[ref] = true;
+        docs.push(i);
+    });
+    docs.sort(function(a,b){
+        var ka = latestUpdateKey(a.date), kb = latestUpdateKey(b.date);
+        if (ka !== kb) return ka < kb ? 1 : -1;
+        // 同月：首次刊发（NEW）的排前面
+        var na = /\(\d{2}\/\d{4}\)/.test(a.date || '') ? 0 : 1;
+        var nb = /\(\d{2}\/\d{4}\)/.test(b.date || '') ? 0 : 1;
+        return nb - na;
+    });
+    var h = '';
+    docs.slice(0, 10).forEach(function(i){
+        var isGL = /^GL/.test(i.ref);
+        // 首次刊发（无括号更新日期）→ NEW 徽章
+        var isNew = !/\(\d{2}\/\d{4}\)/.test(i.date || '');
+        var title = (i.detail || '').replace(/^(指引信|上市決策|上市决策)\s*[-–—]\s*/, '');
+        if (title.length > 42) title = title.slice(0, 42) + '…';
+        var url = i.url || i.topicUrl || '';
+        var dateCell = isNew
+            ? '<span class="date-key">' + esc(fmtUpdDate(i.date)) + '</span>'
+            : '<span class="date-sub">(' + esc(fmtUpdDate(i.date)) + ')</span>';
+        h += '<tr>' +
+             '<td><span class="badge ' + (isGL ? 'badge-gl' : 'badge-ld') + '">' + esc(i.ref) + '</span>' +
+             (isNew ? ' <span class="badge badge-new">NEW</span>' : '') + '</td>' +
+             '<td>' + (url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener" style="color:#1f497d;text-decoration:none;">' + esc(title) + '</a>' : esc(title)) + '</td>' +
+             '<td>' + dateCell + '</td>' +
+             '</tr>';
+    });
+    h += '<tr><td colspan="3" style="text-align:right;"><a href="https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/%E6%9C%89%E9%97%9C%E4%B8%8A%E5%B8%82%E7%99%BC%E8%A1%8C%E4%BA%BA%E7%9A%84%E6%8C%87%E5%BC%95%E6%96%87%E4%BB%B6" target="_blank" rel="noopener" style="color:#7b1fa2;font-size:0.82rem;">查看全部指引信及上市决策 →</a></td></tr>';
+    tb.innerHTML = h;
+}
+
+// === 监管处罚与执法 ===
+function renderEnforcement(hkexRegItems, hkexClaudeItems, sfcNewsItems) {
+    var hkexEnf = [], sfcEnf = [];
+    hkexRegItems.forEach(function(i){
+        if (i.category === 'disciplinary' || i.category === 'enforcement_news')
+            hkexEnf.push({title:(i.title||'').replace(/\s+/g,' ').trim(), url:i.url||'', date:(i.date||'').slice(0,10)});
+    });
+    hkexClaudeItems.forEach(function(i){
+        if (i.category === 'disciplinary')
+            hkexEnf.push({title:(i.title||'').replace(/\s+/g,' ').trim(), url:i.url||'', date:(i.date||'').slice(0,10)});
+    });
+    sfcNewsItems.forEach(function(i){
+        if (i.type === 'enforcement')
+            sfcEnf.push({title:(i.title||'').replace(/\s+/g,' ').trim(), url:i.url||'', date:(i.date||'').slice(0,10)});
+    });
+    var dedup = function(arr){
+        var s = {}, r = [];
+        arr.forEach(function(i){ if (i.url && !s[i.url]) { s[i.url] = true; r.push(i); } });
+        return r;
     };
-    renderList(hkexEnf,'enf-hkex');
-    renderList(sfcEnf,'enf-sfc');
+    hkexEnf = dedup(hkexEnf).sort(function(a,b){ return a.date > b.date ? -1 : 1; });
+    sfcEnf = dedup(sfcEnf).sort(function(a,b){ return a.date > b.date ? -1 : 1; });
+
+    var render = function(arr) {
+        var h = '';
+        arr.slice(0, 30).forEach(function(i){
+            var m = i.title.match(/股份代號[：:]\s*(\d+)/);
+            var sc = m ? m[1] : '';
+            h += '<div class="enf-item"><div class="enf-date">' + esc(i.date) + '</div>' +
+                 (sc ? '<span class="enf-stock">' + esc(sc) + '</span> ' : '') +
+                 '<div class="enf-title">' + (i.url ? '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.title) + '</a>' : esc(i.title)) + '</div></div>';
+        });
+        return h || '<div class="loading-tip">暂无数据</div>';
+    };
+    document.getElementById('enf-hkex').innerHTML = render(hkexEnf);
+    document.getElementById('enf-sfc').innerHTML = render(sfcEnf);
+}
+
+// === 律所解读卡片 ===
+function renderLawCards(items) {
+    var c = document.getElementById('law-cards');
+    var sorted = items.slice().sort(function(a,b){ return (b.date||'') < (a.date||'') ? -1 : 1; });
+    var h = '';
+    sorted.forEach(function(i){
+        h += '<div class="law-card">' +
+             '<div class="law-firm">' + esc(i.firm || '') + '</div>' +
+             '<div class="law-topic">' + (i.topic ? '<span class="badge badge-consult">' + esc(i.topic) + '</span>' : '') + '</div>' +
+             '<div class="law-summary">' + esc(i.summary || i.title || '') + '</div>' +
+             (i.summary && i.title ? '<div class="law-title-en">' + esc(i.title) + '</div>' : '') +
+             '<div class="law-meta"><span>' + esc((i.date||'').slice(0,10)) + '</span>' +
+             (i.url ? '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">阅读原文 →</a>' : '') + '</div>' +
+             '</div>';
+    });
+    c.innerHTML = h || '<div class="loading-tip">暂无数据</div>';
 }
 </script>
 

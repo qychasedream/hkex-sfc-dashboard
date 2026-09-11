@@ -1,14 +1,12 @@
 name: Regulatory Data Update (Free Tier)
 
 on:
-  schedule:
-    # 每 15 分钟自动更新一次（GitHub Actions 公共仓库免费）
-    - cron: '*/15 * * * *'
-  # 允许手动触发
+  # 自动定时更新已停用（2026-08-28 起改为本地手动刷新：双击 刷新数据.bat）
+  # 如需恢复，取消下面两行的注释：
+  # schedule:
+  #   - cron: '*/15 * * * *'
+  # 保留手动触发
   workflow_dispatch:
-  # 每次推送到 main 分支时也更新一次（方便测试）
-  push:
-    branches: [main]
 
 jobs:
   update-data:
