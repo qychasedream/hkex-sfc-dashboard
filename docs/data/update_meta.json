@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-12T12:34:25.973281+08:00",
+  "lastUpdate": "2026-09-12T09:09:10.582197+08:00",
   "stats": {
     "sfcNews": 90,
     "sfcCirculars": 20,
@@ -7,7 +7,6 @@
     "hkexRegulatory": 50,
     "hkexNews": 45,
     "hkexGLArchive": 130,
-    "hkexClaude": 25,
-    "lawFirms": 61
+    "hkexClaude": 0
   }
 }
