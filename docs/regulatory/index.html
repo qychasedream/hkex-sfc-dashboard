@@ -397,9 +397,174 @@
             .refresh-btn { position: static; margin-top: 12px; }
             .header { padding-bottom: 16px; }
         }
+
+        /* === 悬浮左侧栏（看板切换）=== */
+        .edge-trigger {
+            position: fixed; left: 0; top: 0;
+            width: 14px; height: 100vh;
+            z-index: 999;
+        }
+        .edge-hint {
+            position: fixed; left: 0; top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            color: #90caf9;
+            border-radius: 0 10px 10px 0;
+            padding: 18px 7px;
+            font-size: 0.72rem;
+            writing-mode: vertical-rl;
+            letter-spacing: 3px;
+            box-shadow: 3px 0 12px rgba(15,52,96,0.3);
+            transition: opacity 0.25s, transform 0.25s;
+            z-index: 998;
+            cursor: pointer;
+        }
+        .edge-hint::before { content: '☰ '; }
+        .edge-trigger:hover ~ .edge-hint,
+        .fsidebar:hover ~ .edge-hint,
+        body.side-open .edge-hint { opacity: 0; transform: translateY(-50%) translateX(-100%); pointer-events: none; }
+
+        .fsidebar {
+            position: fixed; left: 0; top: 0;
+            width: 200px; height: 100vh;
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+            z-index: 1000;
+            display: flex; flex-direction: column;
+            box-shadow: 10px 0 40px rgba(10,20,50,0.4);
+        }
+        .edge-trigger:hover ~ .fsidebar,
+        .edge-hint:hover ~ .fsidebar,
+        .fsidebar:hover,
+        body.side-open .fsidebar { transform: translateX(0); }
+
+        .fsidebar .fsb-logo {
+            padding: 24px 22px 18px;
+            color: #fff; font-weight: 700; font-size: 1.05rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .fsidebar .fsb-logo small { display: block; font-size: 0.7rem; color: rgba(255,255,255,0.45); font-weight: 400; margin-top: 3px; }
+        .fsidebar .fsb-nav { flex: 1; overflow-y: auto; padding: 12px; }
+        .fsidebar .fsb-group { font-size: 0.66rem; color: rgba(255,255,255,0.35); letter-spacing: 2px; padding: 16px 12px 6px; }
+        .fsidebar .fsb-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 12px; margin: 2px 0;
+            border-radius: 8px;
+            color: rgba(255,255,255,0.75); text-decoration: none;
+            font-size: 0.89rem;
+            transition: all 0.16s;
+            border-left: 3px solid transparent;
+        }
+        .fsidebar .fsb-item:hover { background: rgba(255,255,255,0.08); color: #fff; border-left-color: #64b5f6; }
+        .fsidebar .fsb-item.active {
+            background: rgba(100,181,246,0.16);
+            color: #90caf9;
+            border-left-color: #64b5f6;
+            font-weight: 600;
+        }
+        .fsidebar .fsb-foot {
+            padding: 16px 22px;
+            font-size: 0.72rem; color: rgba(255,255,255,0.4);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            line-height: 1.8;
+        }
+        /* 嵌入股价看板 iframe 时隐藏悬浮侧栏，避免双重导航 */
+        body.embed-mode .edge-trigger,
+        body.embed-mode .edge-hint,
+        body.embed-mode .fsidebar { display: none; }
+
+        /* === 悬浮侧栏：细分板块子菜单 === */
+        html { scroll-behavior: smooth; }
+        .section { scroll-margin-top: 16px; }
+        .fsb-caret {
+            margin-left: auto;
+            font-size: 0.7rem;
+            transition: transform 0.2s;
+            opacity: 0.7;
+        }
+        .fsidebar .fsb-item.open .fsb-caret { transform: rotate(180deg); }
+        .fsb-sub {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin-left: 14px;
+            border-left: 1px solid rgba(255,255,255,0.12);
+        }
+        .fsb-sub.open { max-height: 320px; }
+        .fsb-subitem {
+            display: block;
+            padding: 7px 12px;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            transition: all 0.15s;
+        }
+        .fsb-subitem:hover { color: #fff; background: rgba(255,255,255,0.08); }
+        .fsb-subitem.current { color: #90caf9; font-weight: 600; }
     </style>
 </head>
 <body>
+<!-- 悬浮左侧栏：股价看板 / 监管看板 切换 -->
+<div class="edge-trigger"></div>
+<div class="edge-hint" id="edge-hint">展开菜单</div>
+<nav class="fsidebar" id="fsidebar">
+    <div class="fsb-logo">📊 董办看板<small>Board Office Dashboards</small></div>
+    <div class="fsb-nav">
+        <div class="fsb-group">切换看板</div>
+        <a class="fsb-item" href="https://qychasedream.github.io/" target="_top">📈 股价看板</a>
+        <a class="fsb-item active open" href="javascript:void(0)" id="fsb-reg-toggle">📋 监管看板<span class="fsb-caret">▾</span></a>
+        <div class="fsb-sub open" id="fsb-sub">
+            <a class="fsb-subitem" href="#sec-timeline">📅 监管动态时间线</a>
+            <a class="fsb-subitem" href="#sec-hkex-rules">📑 HKEX 规则修订</a>
+            <a class="fsb-subitem" href="#sec-sfc">⚖️ SFC 监管动态</a>
+            <a class="fsb-subitem" href="#sec-guidance">🆕 指引文件更新</a>
+            <a class="fsb-subitem" href="#sec-gl">📨 指引信 · 上市决策</a>
+            <a class="fsb-subitem" href="#enf-section">⚖️ 监管处罚与执法</a>
+            <a class="fsb-subitem" href="#law-section">🏛️ 律所解读</a>
+        </div>
+    </div>
+    <div class="fsb-foot">HKEX · SFC 监管资讯<br>GitHub Actions 自动更新</div>
+</nav>
+<script>
+    // 嵌入模式（股价看板 iframe）下隐藏悬浮侧栏；移动端点按把手开合侧栏
+    if (new URLSearchParams(location.search).get('embed') === '1') {
+        document.body.classList.add('embed-mode');
+    }
+    document.getElementById('edge-hint').addEventListener('click', function () {
+        document.body.classList.toggle('side-open');
+    });
+    document.addEventListener('click', function (e) {
+        if (document.body.classList.contains('side-open') &&
+            !e.target.closest('.fsidebar') && !e.target.closest('.edge-hint')) {
+            document.body.classList.remove('side-open');
+        }
+    });
+    // 「监管看板」点击展开/收起细分板块；子项点击后平滑滚动定位
+    (function () {
+        var toggle = document.getElementById('fsb-reg-toggle');
+        var sub = document.getElementById('fsb-sub');
+        toggle.addEventListener('click', function () {
+            toggle.classList.toggle('open');
+            sub.classList.toggle('open');
+        });
+        var items = sub.querySelectorAll('.fsb-subitem');
+        items.forEach(function (item) {
+            item.addEventListener('click', function () {
+                items.forEach(function (i) { i.classList.remove('current'); });
+                item.classList.add('current');
+                // 若目标版块处于折叠状态，先展开再跳转
+                var target = document.querySelector(item.getAttribute('href'));
+                if (target && target.classList.contains('collapsed')) {
+                    target.classList.remove('collapsed');
+                }
+                document.body.classList.remove('side-open');
+            });
+        });
+    })();
+</script>
+
 <div class="topnav">
   📊 <a href="../">香港监管咨询看板</a> &nbsp;|&nbsp;
   📋 <a href="./" class="active">监管资讯看板 (HKEX + SFC)</a>
@@ -447,7 +612,7 @@
     </div>
 
     <!-- ====== SECTION 1: 监管动态时间线 ====== -->
-    <div class="section">
+    <div class="section" id="sec-timeline">
         <div class="section-header" onclick="toggleSection(this)">
             <h2>📅 2026年6月–8月 监管动态时间线</h2>
             <span class="badge badge-new">最新</span>
@@ -540,7 +705,7 @@
     </div>
 
     <!-- ====== SECTION 2: HKEX 上市规则修订与咨询（表格） ====== -->
-    <div class="section">
+    <div class="section" id="sec-hkex-rules">
         <div class="section-header hkex" onclick="toggleSection(this)">
             <h2>📑 HKEX 上市规则修订与咨询</h2>
             <span class="badge badge-hkex">联交所</span>
@@ -609,7 +774,7 @@
     </div>
 
     <!-- ====== SECTION 3: SFC 近期监管与执法动态（卡片） ====== -->
-    <div class="section">
+    <div class="section" id="sec-sfc">
         <div class="section-header sfc" onclick="toggleSection(this)">
             <h2>⚖️ SFC 证监会 — 近期监管与执法动态</h2>
             <span class="badge badge-sfc">证监会</span>
@@ -622,7 +787,7 @@
 
     <!-- ====== SECTION 4+5: FAQ 指引文件更新 + 指引信·上市决策 ====== -->
     <div class="two-col-grid">
-        <div class="section">
+        <div class="section" id="sec-guidance">
             <div class="section-header hkex" onclick="toggleSection(this)">
                 <h2>🆕 2026年 指引文件更新</h2>
                 <span class="badge badge-faq">FAQ 常問問題</span>
@@ -635,7 +800,7 @@
                 </table>
             </div>
         </div>
-        <div class="section">
+        <div class="section" id="sec-gl">
             <div class="section-header hkex" onclick="toggleSection(this)">
                 <h2>📨 指引信 · 上市决策 最新</h2>
                 <span class="badge badge-gl">GL+LD</span>
