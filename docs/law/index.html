@@ -83,6 +83,25 @@
     .empty { text-align: center; color: #999; padding: 40px 0; font-size: 0.85rem; }
     .foot { max-width: 1000px; margin: 0 auto; padding: 0 20px 30px; font-size: 0.72rem; color: #aaa; }
 
+    /* 需人工跟进的律所 */
+    .manual-box {
+        max-width: 1000px; margin: 14px auto 0; padding: 0 20px;
+    }
+    .manual-inner {
+        background: #fffbf0; border: 1px solid #ffe7ba; border-radius: 10px;
+        padding: 12px 16px;
+    }
+    .manual-inner .mtitle { font-size: 0.82rem; font-weight: 700; color: #ad6800; margin-bottom: 8px; }
+    .manual-inner .mrow { display: flex; flex-wrap: wrap; gap: 8px; }
+    .mlink {
+        display: inline-flex; align-items: center; gap: 6px;
+        background: #fff; border: 1px solid #ffe7ba; border-radius: 8px;
+        padding: 6px 12px; font-size: 0.8rem; color: #333; text-decoration: none;
+        transition: all 0.15s;
+    }
+    .mlink:hover { border-color: #faad14; box-shadow: 0 2px 8px rgba(250,173,20,0.2); }
+    .mlink .note { font-size: 0.66rem; color: #bbb; }
+
     @media (max-width: 700px) {
         .header h1 { font-size: 1.15rem; }
         .main { padding: 0 12px; }
@@ -104,6 +123,13 @@
     <div class="toolbar-inner">
         <input id="search" placeholder="🔍 搜索标题 / 摘要关键词，如：18C、关连交易、稳定币…">
         <div class="firm-chips" id="firm-chips"></div>
+    </div>
+</div>
+
+<div class="manual-box">
+    <div class="manual-inner">
+        <div class="mtitle">⏰ 以下律所无法自动抓取，请定期手动点击查看（建议每周一次）</div>
+        <div class="mrow" id="manual-links"></div>
     </div>
 </div>
 
@@ -189,6 +215,21 @@ document.getElementById('search').addEventListener('input', function (e) {
     keyword = e.target.value;
     renderList();
 });
+
+// 无法自动抓取、需人工点击跟进的律所（官网反爬/无公开接口）
+var MANUAL_FIRMS = [
+    { name: '竞天公诚', url: 'https://www.jingtian.com/', note: 'SPA 无接口' },
+    { name: '海问', url: 'https://www.haiwen-law.com/', note: '服务器连不通' },
+    { name: '通商', url: 'https://www.tongshanglaw.com/', note: 'SSL 失败' },
+    { name: '的近 Deacons', url: 'https://www.deacons.com/news-and-insights/', note: '全站 403' },
+    { name: '贝克麦坚时', url: 'https://www.bakermckenzie.com/zh/insight/publications', note: '需代理' },
+    { name: '年利达 Linklaters', url: 'https://www.linklaters.com/zh-hk/insights', note: 'sitemap 不全' },
+    { name: '世达 Skadden', url: 'https://www.skadden.com/insights', note: '无 sitemap' },
+];
+document.getElementById('manual-links').innerHTML = MANUAL_FIRMS.map(function (f) {
+    return '<a class="mlink" href="' + esc(f.url) + '" target="_blank" rel="noopener">🔗 ' + esc(f.name) +
+           (f.note ? '<span class="note">' + esc(f.note) + '</span>' : '') + '</a>';
+}).join('');
 
 fetch('../data/law_firm_full.json?_t=' + Date.now())
     .then(function (r) { return r.json(); })
