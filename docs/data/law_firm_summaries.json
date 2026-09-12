@@ -1,8 +1,33 @@
 {
-  "updated": "2026-08-31T12:56:16.681345+08:00",
+  "updated": "2026-09-12T12:34:25.907475+08:00",
   "source": "Verified Law Firm Publications (curated + auto-scan)",
-  "count": 24,
+  "count": 58,
   "items": [
+    {
+      "firm": "Charltons (易周律师行)",
+      "title": "Listing Biotech, Specialist Technology & WVR-Structured Companies On HKEX",
+      "url": "https://www.charltonslaw.com/listing-biotech-specialist-technology-wvr-structured-companies-on-hkex/",
+      "date": "2026-09-02",
+      "topic": "上市竞争力",
+      "summary": ""
+    },
+    {
+      "firm": "Deacons (的近)",
+      "title": "Deacons publishes updated 2026 edition \"Float Guide – How to float a company on the Hong Kong Stock Exchange\"",
+      "url": "https://www.deacons.com/2026/08/31/deacons-corporate-finance-practice-group-publishes-our-updated-2026-edition-float-guide-how-to-float-a-company-on-the-hong-kong-stock-exchange/",
+      "date": "2026-08-31",
+      "topic": "上市监管",
+      "summary": "发布2026版香港上市指南，纳入7月24日生效的上市框架改革。",
+      "verified": "manual"
+    },
+    {
+      "firm": "Bird & Bird (鸿鹄)",
+      "title": "Completing the jigsaw: PCPD supplements Hong Kong’s AI regulatory framework with agentic AI guidance",
+      "url": "https://www.twobirds.com/en/insights/2026/china/completing-the-jigsaw-pcpd-supplements-hong-kong-ai-regulatory-framework-with-agentic-ai-guidance",
+      "date": "2026-08-28",
+      "topic": "上市监管",
+      "summary": ""
+    },
     {
       "firm": "JSM (孖士打)",
       "title": "What Hong Kong stablecoin issuers need to know about the latest AML/CFT compliance?",
@@ -20,6 +45,22 @@
       "summary": "解读GL122-26：联交所厘清数字资产业务的上市期望，披露要求与内部监控架构全解析。"
     },
     {
+      "firm": "Skadden (世达)",
+      "title": "Report on Hong Kong-Listed Biotech Companies",
+      "url": "https://www.skadden.com/insights/publications/2026/08/2026-report-on-hong-kong-listed-biotech-companies",
+      "date": "2026-08-12",
+      "topic": "生物科技",
+      "summary": "第五份香港上市生物科技公司年报：2024-2025年IPO数据及82家18A公司治理实践。"
+    },
+    {
+      "firm": "JSM (孖士打)",
+      "title": "企业「出海」的法律导航：精准管控合规风险与善用香港法制优势",
+      "url": "https://www.jsm.com/zh/publications/2026/going-global-with-confidence-managing-compliance-risks-and-leveraging-the-advantages-of-hong-kongs-legal-system/",
+      "date": "2026-08-12",
+      "topic": "上市监管",
+      "summary": ""
+    },
+    {
       "firm": "Morgan Lewis",
       "title": "HKEX Adopts Proposed Amendments to Listing Framework Following Competitiveness Review",
       "url": "https://www.morganlewis.com/pubs/2026/08/hkex-adopts-proposed-amendments-to-listing-framework-following-competitiveness-review",
@@ -33,6 +74,22 @@
       "url": "https://www.charltonslaw.com/hong-kong-sfc-fines-luk-fook-securities-for-cybersecurity-failures/",
       "date": "2026-08-10",
       "topic": "监管执法",
+      "summary": ""
+    },
+    {
+      "firm": "JSM (孖士打)",
+      "title": "Banking Legislation (Miscellaneous Amendments) Bill 2026 in Hong Kong: What changes lie ahead?",
+      "url": "https://www.jsm.com/zh/publications/2026/banking-legislation-miscellaneous-amendments-bill-2026-in-hong-kong-what-changes-lie-ahead/",
+      "date": "2026-08-07",
+      "topic": "上市监管",
+      "summary": ""
+    },
+    {
+      "firm": "Charltons (易周律师行)",
+      "title": "New Tax Regimes for Hong Kong Funds, Family Offices and Carried Interest",
+      "url": "https://www.charltonslaw.com/new-tax-regimes-for-hong-kong-funds-family-offices-and-carried-interest/",
+      "date": "2026-08-04",
+      "topic": "上市监管",
       "summary": ""
     },
     {
@@ -100,6 +157,30 @@
       "summary": "竞争力检讨三大改革：优化WVR制度、便利海外发行人上市、简化首次上市要求。"
     },
     {
+      "firm": "JSM (孖士打)",
+      "title": "Hong Kong: Commission-spreading requirements extended to bancassurance",
+      "url": "https://www.jsm.com/zh/publications/2026/hong-kong-commission-spreading-requirements-extended-to-bancassurance/",
+      "date": "2026-07-21",
+      "topic": "上市监管",
+      "summary": ""
+    },
+    {
+      "firm": "JSM (孖士打)",
+      "title": "“I don’t agree” means what it says: Hong Kong court refuses to let employer rely on a rejected exit deal",
+      "url": "https://www.jsm.com/zh/publications/2026/i-dont-agree-means-what-it-says-hong-kong-court-refuses-to-let-employer-rely-on-a-rejected-exit-deal/",
+      "date": "2026-07-03",
+      "topic": "上市监管",
+      "summary": ""
+    },
+    {
+      "firm": "Clifford Chance (高伟绅)",
+      "title": "HK Capital Market Compliance Report May-Jun 2026",
+      "url": "https://www.cliffordchance.com/briefings/2026/07/clifford-chance-client-briefing-hk-capital-market-compliance-rep.html",
+      "date": "2026-07",
+      "topic": "合规报告",
+      "summary": "汇总2026年5-6月联交所纪律处分（如利时集团333笔关连资金转移案）与证监会执法动态。"
+    },
+    {
       "firm": "Charltons (易周律师行)",
       "title": "New SFC Requirements for Cybersecurity to Counter AI-enabled Cyber Threats",
       "url": "https://www.charltonslaw.com/new-sfc-requirements-for-cybersecurity-to-counter-ai-enabled-cyber-threats/",
@@ -116,6 +197,14 @@
       "summary": ""
     },
     {
+      "firm": "King & Wood Mallesons (金杜)",
+      "title": "How to Launch Crypto Perps in Hong Kong?",
+      "url": "https://www.kingandwood.com/hk/en/insights/latest-thinking/how-to-launch-crypto-perps-in-hong-kong.html",
+      "date": "2026-06-11",
+      "topic": "数字资产",
+      "summary": "持牌虚拟资产平台推出永续合约的法律与监管路径分析。"
+    },
+    {
       "firm": "JSM (孖士打)",
       "title": "SFC licensed firms urged to guard against AI-enabled cyberattacks",
       "url": "https://www.jsm.com/zh/publications/2026/sfc-licensed-firms-urged-to-guard-against-ai-enabled-cyberattacks/",
@@ -124,12 +213,110 @@
       "summary": ""
     },
     {
+      "firm": "Linklaters (年利达)",
+      "title": "HKEX updates the Guide for New Listing Applicants",
+      "url": "https://www.linklaters.com/insights/publications/2026/june/hkex-updates-the-guide-for-new-listing-applicants",
+      "date": "2026-06-05",
+      "topic": "上市监管",
+      "summary": "解读港交所第五次更新《新上市申请人指南》：董事适格性、资深投资者独立性、FINI申报豁免等四大变化。"
+    },
+    {
+      "firm": "King & Wood Mallesons (金杜)",
+      "title": "CSRC and SFC redefine the compliance perimeter for Chinese mainland-facing cross-border securities, futures and fund business",
+      "url": "https://www.kingandwood.com/hk/en/insights/latest-thinking/csrc-and-sfc-redefine-the-compliance-perimeter-for-chinese-mainland-facing-cross-border-securities-futures-and-fund-business.html",
+      "date": "2026-06-04",
+      "topic": "跨境监管",
+      "summary": "证监会等八部门跨境证券整治方案下，内地与香港合规边界重置。"
+    },
+    {
+      "firm": "Slaughter and May (司力达)",
+      "title": "Getting ready for Hong Kong's uncertificated securities market",
+      "url": "https://www.slaughterandmay.com/insights/new-insights/getting-ready-for-hong-kong-s-uncertificated-securities-market/",
+      "date": "2026-06-04",
+      "topic": "无纸化",
+      "summary": "解读香港无纸化证券市场（USM）制度，实施日拟定2026年11月16日，列明发行人过渡准备事项。"
+    },
+    {
+      "firm": "Deacons (的近)",
+      "title": "HKEX clarifies that a director's involvement in integrity non-compliance incidents may not necessarily affect the director's suitability",
+      "url": "https://www.deacons.com/2026/06/03/hong-kong-stock-exchange-clarifies-that-a-directors-involvement-in-integrity-non-compliance-incidents-may-not-necessarily-affect-the-directors-suitability/",
+      "date": "2026-06-03",
+      "topic": "董事适格性",
+      "summary": "联交所澄清董事曾涉诚信违规事件不必然影响其董事适合性。",
+      "verified": "manual"
+    },
+    {
+      "firm": "Clifford Chance (高伟绅)",
+      "title": "HK Capital Market Compliance Report Mar-Apr 2026",
+      "url": "https://www.cliffordchance.com/briefings/2026/06/hk-capital-market-compliance-report-mar-apr-2026.html",
+      "date": "2026-06",
+      "topic": "合规报告",
+      "summary": "汇总2026年3-4月联交所纪律行动（如煜盛文化不配合调查案）与证监会监管动态。"
+    },
+    {
+      "firm": "Linklaters (年利达)",
+      "title": "Bigger, Broader, Greener: Hong Kong Raises the Bar on its Green and Sustainable Finance Scheme",
+      "url": "https://www.linklaters.com/insights/publications/2026/may/bigger-broader-greener-hong-kong-raises-the-bar-on-its-green-and-sustainable-finance-scheme",
+      "date": "2026-05-05",
+      "topic": "ESG",
+      "summary": "金管局更新绿色及可持续金融资助计划指引，2026年4月24日起生效。"
+    },
+    {
+      "firm": "Deacons (的近)",
+      "title": "SFC Introduces Framework for Secondary Trading of Tokenised SFC-authorised Investment Products",
+      "url": "https://www.deacons.com/2026/04/29/sfc-introduces-framework-for-secondary-trading-of-tokenised-sfc-authorised-investment-products/",
+      "date": "2026-04-29",
+      "topic": "数字资产",
+      "summary": "解读证监会通函：代币化认可基金首次可在持牌平台二级交易。",
+      "verified": "manual"
+    },
+    {
+      "firm": "King & Wood Mallesons (金杜)",
+      "title": "Hong Kong Permits Secondary Trading of Tokenised Products – What You Need to Know",
+      "url": "https://www.kingandwood.com/hk/en/insights/latest-thinking/hong-kong-permits-secondary-trading-of-tokenised-products-what-you-need-to-know.html",
+      "date": "2026-04-24",
+      "topic": "数字资产",
+      "summary": "证监会允许代币化认可产品二级交易，涉平台安排、稳定币结算与印花税。"
+    },
+    {
+      "firm": "King & Wood Mallesons (金杜)",
+      "title": "King & Wood assists Structured Products Industry on HKEX's Review of Chapter 15A – Structured Products",
+      "url": "https://www.kingandwood.com/hk/en/insights/latest-thinking/king-and-wood-assists-structured-products-industry-on-hkex-s-review-of-chapter-15a-structured-products.html",
+      "date": "2026-04-22",
+      "topic": "结构性产品",
+      "summary": "金杜协助业界参与联交所15A章结构性产品上市规则检讨。"
+    },
+    {
+      "firm": "Clifford Chance (高伟绅)",
+      "title": "HK Capital Market Compliance Report Nov 2025-Feb 2026",
+      "url": "https://www.cliffordchance.com/briefings/2026/04/clifford-chance-client-briefing-hk-capital-market-compliance-rep.html",
+      "date": "2026-04",
+      "topic": "合规报告",
+      "summary": "汇总2025年11月至2026年2月香港上市规则执法处罚案例与合规监管更新。"
+    },
+    {
       "firm": "Charltons (易周律师行)",
       "title": "HKEX Launches Major Consultation on Listing Framework Reform",
       "url": "https://www.charltonslaw.com/hkex-launches-major-consultation-on-listing-framework-reform/",
       "date": "2026-03-17",
       "topic": "上市竞争力",
       "summary": "联交所就上市框架改革推出重大市场咨询，全面检讨上市机制竞争力。"
+    },
+    {
+      "firm": "Freshfields (富而德)",
+      "title": "Demystifying Hong Kong bank licence revocations",
+      "url": "https://www.freshfields.com/en/our-thinking/briefings/2026/03/demystifying-hong-kong-bank-licence-revocations",
+      "date": "2026-03-11",
+      "topic": "银行监管",
+      "summary": "解析在香港撤销银行牌照的步骤、监管考量与操作要点。"
+    },
+    {
+      "firm": "Skadden (世达)",
+      "title": "Hong Kong Exchange Speeds Up Listing Reviews and Loosens Retail Allocation",
+      "url": "https://www.skadden.com/insights/publications/2026/02/hong-kong-exchange-speeds-up",
+      "date": "2026-02-28",
+      "topic": "上市竞争力",
+      "summary": "港交所加快上市审核时间表，放宽零售配售及大型发行人公众持股量要求。"
     },
     {
       "firm": "Norton Rose Fulbright",
@@ -164,12 +351,29 @@
       "summary": "证监会保荐人通函附录：剖析保荐人不当行为案例及监管期望。"
     },
     {
+      "firm": "Slaughter and May (司力达)",
+      "title": "Hong Kong progresses new licensing regimes for virtual asset dealing and custody",
+      "url": "https://www.slaughterandmay.com/insights/new-insights/hong-kong-progresses-new-licensing-regimes-for-virtual-asset-dealing-and-custody-consults-on-regimes-for-virtual-asset-advisory-and-management/",
+      "date": "2026-01-23",
+      "topic": "数字资产",
+      "summary": "香港就虚拟资产交易及托管发牌制度发表咨询总结，并进一步咨询咨询与管理服务监管。"
+    },
+    {
       "firm": "Bird & Bird (鸿鹄)",
       "title": "HKEX revises ongoing public float requirements: what listed issuers need to know",
       "url": "https://www.twobirds.com/en/insights/2026/china/hkex-revises-ongoing-public-float-requirements-what-listed-issuers-need-to-know",
       "date": "2026-01-15",
       "topic": "公众持股量",
       "summary": "解读联交所持续公众持股量要求修订要点，以及上市发行人需要了解的合规事项。"
+    },
+    {
+      "firm": "Deacons (的近)",
+      "title": "New ongoing public float requirements will come into effect on 1 January 2026",
+      "url": "https://www.deacons.com/2025/12/22/new-ongoing-public-float-requirements-will-come-into-effect-on-1-january-2026/",
+      "date": "2025-12-22",
+      "topic": "公众持股量",
+      "summary": "解读持续公众持股量新规2026年元旦生效及GL121-26指引信。",
+      "verified": "manual"
     },
     {
       "firm": "JSM (孖士打)",
@@ -188,12 +392,84 @@
       "summary": "联交所上市公司自2026年1月1日起适用新的持续公众持股量要求，逐条解读新规。"
     },
     {
+      "firm": "Baker McKenzie (贝克麦坚时)",
+      "title": "Hong Kong: Importance and Pitfalls of Professional Investor Classification",
+      "url": "https://www.bakermckenzie.com/en/insight/publications/alerts/2025/12/hong-kong-importance-and-pitfalls-of-professional-investor-classification",
+      "date": "2025-12",
+      "topic": "投资者分类",
+      "summary": "证监会执法凸显专业投资者分类对牌照、产品发售与豁免的影响。"
+    },
+    {
+      "firm": "Baker McKenzie (贝克麦坚时)",
+      "title": "Hong Kong: CFA Clarifies Interpretation of \"Connected Transactions\"",
+      "url": "https://www.bakermckenzie.com/en/insight/publications/alerts/2025/12/hong-kong-cfa-clarifies-interpretation-of-connected-transactions",
+      "date": "2025-12",
+      "topic": "关连交易",
+      "summary": "终审法院确立关连交易实质重于形式的解释，强调董事披露义务。"
+    },
+    {
+      "firm": "Baker McKenzie (贝克麦坚时)",
+      "title": "Hong Kong: SFC Consults on UT Code Amendments",
+      "url": "https://www.bakermckenzie.com/en/insight/publications/alerts/2025/10/hong-kong-sfc-consults-on-ut-code-amendments",
+      "date": "2025-10",
+      "topic": "基金监管",
+      "summary": "证监会就单位信托守则修订公开咨询，接轨国际标准。"
+    },
+    {
+      "firm": "Slaughter and May (司力达)",
+      "title": "Recent SFC enforcement action demonstrates increased scrutiny of licensed fund managers",
+      "url": "https://www.slaughterandmay.com/insights/new-insights/recent-sfc-enforcement-action-demonstrates-increased-scrutiny-of-licensed-fund-managers/",
+      "date": "2025-09-19",
+      "topic": "监管执法",
+      "summary": "证监会就持牌资产管理公司挪用客户资金等失当行为执法，基金管理人监管趋严。"
+    },
+    {
+      "firm": "Freshfields (富而德)",
+      "title": "Hong Kong Stablecoins Ordinance Overview",
+      "url": "https://www.freshfields.com/en/our-thinking/briefings/2025/09/hong-kong-stablecoins-ordinance-overview",
+      "date": "2025-09-09",
+      "topic": "数字资产",
+      "summary": "《稳定币条例》2025年8月1日生效，确立发牌、销售与运营的法定监管框架。"
+    },
+    {
+      "firm": "Slaughter and May (司力达)",
+      "title": "Hong Kong launches stablecoin regime",
+      "url": "https://www.slaughterandmay.com/insights/new-insights/hong-kong-launches-stablecoin-regime/",
+      "date": "2025-08-01",
+      "topic": "数字资产",
+      "summary": "《稳定币条例》生效，确立法币稳定币发行发牌制度，部分境外活动亦受规管。"
+    },
+    {
       "firm": "JSM (孖士打)",
       "title": "Hong Kong: Licensing regime for stablecoin issuers goes live on 1 August 2025",
       "url": "https://www.jsm.com/zh/publications/2025/hong-kong-licensing-regime-for-stablecoin-issuers-goes-live-on-1-august-2025/",
       "date": "2025-08-01",
       "topic": "数字资产",
       "summary": ""
+    },
+    {
+      "firm": "Baker McKenzie (贝克麦坚时)",
+      "title": "Hong Kong: The Exchange Overhauls IPO Pricing and Open Market Rules",
+      "url": "https://www.bakermckenzie.com/en/insight/publications/alerts/2025/08/hong-kong-the-exchange-overhauls-ipo-pricing-and-open-market-rules-and-furt",
+      "date": "2025-08",
+      "topic": "上市竞争力",
+      "summary": "联交所落实IPO定价与公开市场规则改革，并继续咨询公众持股量。（URL末尾截断系官网原文如此，可正常打开）"
+    },
+    {
+      "firm": "Clifford Chance (高伟绅)",
+      "title": "2025 HK Compliance Directors' Handbook (Chinese)",
+      "url": "https://www.cliffordchance.com/briefings/2025/08/2025-hk-compliance-directors-handbook--chinese-.html",
+      "date": "2025-08",
+      "topic": "董事合规",
+      "summary": "市场首本香港上市公司董事合规手册：董事责任、权益申报、信息披露、企业管治与年报要点。"
+    },
+    {
+      "firm": "Freshfields (富而德)",
+      "title": "Building out Hong Kong's stablecoin regulatory framework - Stablecoins Bill",
+      "url": "https://www.freshfields.com/en/our-thinking/briefings/2025/02/building-out-hong-kongs-stablecoin-regulatory-framework-stablecoins-bill",
+      "date": "2025-02-13",
+      "topic": "数字资产",
+      "summary": "评析《稳定币条例草案》的立法框架及其与咨询结论的衔接。"
     }
   ]
 }

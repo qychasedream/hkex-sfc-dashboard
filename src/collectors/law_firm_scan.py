@@ -37,6 +37,15 @@ URL_KEYWORDS = [
     'hkex', 'hong-kong-stock-exchange', 'hong-kong-listing', 'listing-rule',
     'sfc', 'public-float', 'sponsor', 'wvr', 'weighted-voting',
     'digital-asset', 'virtual-asset', 'stablecoin', 'ipo',
+    'hong-kong',  # 香港相关性兜底信号（各所为全球站，URL含hong-kong即香港内容）
+    'uncertificated',  # 无纸化证券市场
+    'connected-transaction',  # 关连交易
+]
+
+# URL 排除词（命中即丢弃：与资本市场监管无关的香港内容，如雇佣法、博彩、疫情不可抗力）
+URL_EXCLUDE = [
+    'non-compete', 'employment', 'basketball', 'betting', '博彩',
+    'force-majeure', 'covid', 'sanctions-against', 'real-estate', 'property',
 ]
 
 # 主题自动分类（按 URL/标题关键词）
@@ -61,6 +70,15 @@ SOURCES = [
      'path_filter': r'/publications/'},
     {'firm': 'Latham & Watkins (瑞生)', 'type': 'sitemap', 'url': 'https://www.lw.com/sitemap.xml',
      'path_filter': r'/insights/'},
+    # === 2026-09-12 新增（均已实测可抓取） ===
+    {'firm': 'Slaughter and May (司力达)', 'type': 'rss', 'url': 'https://www.slaughterandmay.com/insights/rss'},
+    {'firm': 'Clifford Chance (高伟绅)', 'type': 'sitemap', 'url': 'https://www.cliffordchance.com/briefings/2026/sitemap.xml',
+     'path_filter': r'/briefings/20'},  # 注意：sitemap 按年度拆分，每年初需更新 URL 中的年份
+    {'firm': 'Freshfields (富而德)', 'type': 'sitemap', 'url': 'https://www.freshfields.com/en/sitemap.xml',
+     'path_filter': r'/our-thinking/'},
+    {'firm': 'King & Wood Mallesons (金杜)', 'type': 'sitemap', 'url': 'https://www.kingandwood.com/sitemap-hk.xml',
+     'path_filter': r'/hk/(en|zh)/insights/'},
+    # 不纳入自动扫描：年利达(sitemap收录不全)、世达(无sitemap)、贝克麦坚时(仅代理可达)、的近(全站403) —— 走 gen_data.py 人工精选
 ]
 
 
@@ -156,7 +174,7 @@ def fetch_title_and_date(url):
             import html as html_mod
             t = html_mod.unescape(re.sub(r'\s+', ' ', m.group(1))).strip()
             # 去掉站点名后缀（中英文）
-            t = re.split(r'\s*[|｜–—-]\s*(?:Charltons|Bird|Davis|Latham|Morgan|Norton|JSM|Mayer|孖士打|汉坤|漢坤|何韋|易周).*$', t)[0].strip()
+            t = re.split(r'\s*[|｜–—-]\s*(?:Charltons|Bird|Davis|Latham|Morgan|Norton|JSM|Mayer|Slaughter|Clifford|Freshfields|King & Wood|KWM|孖士打|汉坤|漢坤|何韋|易周|司力达|高伟绅|富而德|金杜).*$', t)[0].strip()
             # 拒绝通用标题（如纯所名 "Bird & Bird"）
             if len(t) >= 15 and not re.fullmatch(r'[A-Za-z &]+', t):
                 title = t
@@ -200,6 +218,8 @@ def main():
                 text = f'{title} {link}'
                 if not any(k in text.lower() for k in URL_KEYWORDS):
                     continue
+                if any(x in text.lower() for x in URL_EXCLUDE):
+                    continue
                 if normalize_url(link) in existing_urls:
                     continue
                 if date and date < cutoff:
@@ -210,6 +230,8 @@ def main():
             print(f"[{firm}] sitemap 解析 {len(urls)} 个 URL")
             for loc, lastmod in urls:
                 if not any(k in loc.lower() for k in URL_KEYWORDS):
+                    continue
+                if any(x in loc.lower() for x in URL_EXCLUDE):
                     continue
                 if normalize_url(loc) in existing_urls:
                     continue
