@@ -503,6 +503,26 @@
         }
         .fsb-subitem:hover { color: #fff; background: rgba(255,255,255,0.08); }
         .fsb-subitem.current { color: #90caf9; font-weight: 600; }
+
+        /* === 侧栏锁定（钉子）=== */
+        .fsb-pin {
+            position: absolute; top: 16px; right: 12px;
+            background: transparent; border: none;
+            font-size: 0.95rem; cursor: pointer;
+            opacity: 0.45; padding: 4px 6px; border-radius: 6px;
+            transform: rotate(45deg);
+            transition: all 0.2s;
+            z-index: 2;
+        }
+        .fsb-pin:hover { opacity: 1; background: rgba(255,255,255,0.12); }
+        body.side-pinned .fsb-pin { opacity: 1; transform: rotate(0deg); }
+        body.side-pinned .fsidebar { transform: translateX(0); }
+        body.side-pinned .edge-hint { opacity: 0; transform: translateY(-50%) translateX(-100%); pointer-events: none; }
+        body { transition: padding-left 0.3s cubic-bezier(0.4,0,0.2,1); }
+        body.side-pinned { padding-left: 200px; }
+        @media (max-width: 900px) {
+            body.side-pinned { padding-left: 0; } /* 窄屏钉住时仍悬浮覆盖，避免内容过窄 */
+        }
     </style>
 </head>
 <body>
@@ -511,6 +531,7 @@
 <div class="edge-hint" id="edge-hint">展开菜单</div>
 <nav class="fsidebar" id="fsidebar">
     <div class="fsb-logo">📊 董办看板<small>Board Office Dashboards</small></div>
+    <button class="fsb-pin" id="fsb-pin" title="锁定 / 释放侧栏">📌</button>
     <div class="fsb-nav">
         <div class="fsb-group">切换看板</div>
         <a class="fsb-item" href="https://qychasedream.github.io/" target="_top">📈 股价看板</a>
@@ -535,6 +556,15 @@
     document.getElementById('edge-hint').addEventListener('click', function () {
         document.body.classList.toggle('side-open');
     });
+    // 钉子：锁定后侧栏常驻（记住选择），再点释放恢复悬停隐藏
+    (function () {
+        if (localStorage.getItem('sbPinned') === '1') document.body.classList.add('side-pinned');
+        document.getElementById('fsb-pin').addEventListener('click', function (e) {
+            e.stopPropagation();
+            document.body.classList.toggle('side-pinned');
+            localStorage.setItem('sbPinned', document.body.classList.contains('side-pinned') ? '1' : '0');
+        });
+    })();
     document.addEventListener('click', function (e) {
         if (document.body.classList.contains('side-open') &&
             !e.target.closest('.fsidebar') && !e.target.closest('.edge-hint')) {
