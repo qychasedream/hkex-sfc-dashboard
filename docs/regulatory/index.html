@@ -384,7 +384,9 @@
         .enf-item .enf-title a { color: var(--text); text-decoration: none; }
         .enf-item .enf-title a:hover { color: var(--hkex-blue); text-decoration: underline; }
         .enf-stock { font-size: 0.7rem; color: var(--accent-new); font-weight: 700; }
-        .enf-company { font-weight: 700; color: var(--text); margin: 2px 0 3px; }
+        /* 代码/公司/违规标签同一行排列 */
+        .enf-item .enf-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
+        .enf-company { font-weight: 700; color: var(--text); }
         .enf-tag {
             display: inline-block;
             background: #eceff1; color: #546e7a;
@@ -426,6 +428,31 @@
         @media (max-width: 700px) {
             .refresh-btn { position: static; margin-top: 12px; }
             .header { padding-bottom: 16px; }
+
+            /* === 手机端适配 === */
+            .container { padding: 12px; }
+            .header { padding: 18px 16px 14px; }
+            .header h1 { font-size: 1.25rem; }
+            .update-line { font-size: 0.72rem; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .stat-card { padding: 10px 12px; }
+            .stat-number { font-size: 1.3rem; }
+            .stat-label { font-size: 0.7rem; }
+            /* 宽表格可左右滑动，字号缩小 */
+            .section-content { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            table.grid { min-width: 560px; font-size: 0.78rem; }
+            table.grid th, table.grid td { padding: 6px 8px; }
+            .section-header h2 { font-size: 0.95rem; }
+            .enf-item { font-size: 0.8rem; }
+            .enf-company { font-size: 0.82rem; }
+            .enf-gist { font-size: 0.72rem; }
+            .news-card .nc-title { font-size: 0.8rem; }
+            .law-card { padding: 12px; }
+            .law-summary { font-size: 0.78rem; }
+            .timeline { padding-left: 14px; }
+            .refresh-btn { font-size: 0.8rem; padding: 8px 14px; }
+            /* 侧栏钉住时不挤压内容（悬浮覆盖） */
+            body.side-pinned { padding-left: 0; }
         }
 
         /* === 悬浮左侧栏（看板切换）=== */
@@ -546,6 +573,17 @@
         }
         .fsb-pin:hover { opacity: 1; background: rgba(255,255,255,0.12); }
         body.side-pinned .fsb-pin { opacity: 1; transform: rotate(0deg); }
+        /* 手机端收起按钮：仅窄屏显示 */
+        .fsb-close {
+            display: none;
+            position: absolute; top: 16px; right: 46px;
+            background: transparent; border: none;
+            color: rgba(255,255,255,0.55); font-size: 1rem;
+            cursor: pointer; padding: 4px 6px; border-radius: 6px;
+            z-index: 2;
+        }
+        .fsb-close:hover { color: #fff; background: rgba(255,255,255,0.12); }
+        @media (max-width: 700px) { .fsb-close { display: block; } }
         body.side-pinned .fsidebar { transform: translateX(0); }
         body.side-pinned .edge-hint { opacity: 0; transform: translateY(-50%) translateX(-100%); pointer-events: none; }
         body { transition: padding-left 0.3s cubic-bezier(0.4,0,0.2,1); }
@@ -561,6 +599,7 @@
 <div class="edge-hint" id="edge-hint">展开菜单</div>
 <nav class="fsidebar" id="fsidebar">
     <div class="fsb-logo">📊 董办看板<small>Board Office Dashboards</small></div>
+    <button class="fsb-close" id="fsb-close" title="收起侧栏">✕</button>
     <button class="fsb-pin" id="fsb-pin" title="锁定 / 释放侧栏">📌</button>
     <div class="fsb-nav">
         <div class="fsb-group">切换看板</div>
@@ -585,6 +624,10 @@
     }
     document.getElementById('edge-hint').addEventListener('click', function () {
         document.body.classList.toggle('side-open');
+    });
+    document.getElementById('fsb-close').addEventListener('click', function (e) {
+        e.stopPropagation();
+        document.body.classList.remove('side-open');
     });
     // 钉子：锁定后侧栏常驻（记住选择），再点释放恢复悬停隐藏
     (function () {
@@ -879,7 +922,6 @@
     <div class="section" id="enf-section">
         <div class="section-header enf" onclick="toggleSection(this)">
             <h2>⚖️ 监管处罚与执法</h2>
-            <span class="badge badge-live">实时</span>
             <span class="toggle-icon">▼</span>
         </div>
         <div class="section-content">
@@ -1190,32 +1232,32 @@ function renderEnforcement(hkexRegItems, hkexClaudeItems, sfcNewsItems) {
 
     var render = function(arr) {
         var h = '';
+        // 违规类型标签配色：不同类别不同颜色，便于快速识别
+        var TAG_COLORS = {
+            '资金占用/转移': 'red', '违规担保': 'red',
+            '关连交易': 'orange', '关联贷款': 'orange',
+            '内幕消息披露': 'purple', '股份回购': 'purple',
+            '须予披露交易': 'blue', '收购/出售事项': 'blue',
+            '内部监控缺失': 'teal', '企业管治': 'teal',
+            '违反董事职责': 'green',
+            '财报/业绩披露': 'pink', '盈利预警': 'pink',
+            '延迟刊发': '', '公司秘书失职': ''
+        };
         arr.slice(0, 30).forEach(function(i){
             var m = i.title.match(/股份代號[：:]\s*(\d+)/);
             var sc = i.code || (m ? m[1] : '');
-            var headHtml = '';
-            if (i.company) {
-                // 违规类型标签配色：不同类别不同颜色，便于快速识别
-                var TAG_COLORS = {
-                    '资金占用/转移': 'red', '违规担保': 'red',
-                    '关连交易': 'orange', '关联贷款': 'orange',
-                    '内幕消息披露': 'purple', '股份回购': 'purple',
-                    '须予披露交易': 'blue', '收购/出售事项': 'blue',
-                    '内部监控缺失': 'teal', '企业管治': 'teal',
-                    '违反董事职责': 'green',
-                    '财报/业绩披露': 'pink', '盈利预警': 'pink',
-                    '延迟刊发': '', '公司秘书失职': ''
-                };
-                var tags = (i.violations || []).map(function(v){
-                    var c = TAG_COLORS[v] || '';
-                    return '<span class="enf-tag' + (c ? ' ' + c : '') + '">' + esc(v) + '</span>';
-                }).join('');
-                headHtml = '<div class="enf-company">' + esc(i.company) + (tags ? ' ' + tags : '') + '</div>';
-            }
+            var tags = (i.violations || []).map(function(v){
+                var c = TAG_COLORS[v] || '';
+                return '<span class="enf-tag' + (c ? ' ' + c : '') + '">' + esc(v) + '</span>';
+            }).join('');
             var gistHtml = i.gist ? '<div class="enf-gist">' + esc(i.gist) + '</div>' : '';
-            h += '<div class="enf-item"><div class="enf-date">' + esc(i.date) + '</div>' +
-                 (sc ? '<span class="enf-stock">' + esc(sc) + '</span> ' : '') +
-                 headHtml + gistHtml +
+            // 头部一行：日期 + 股份代号 + 公司名 + 违规标签
+            h += '<div class="enf-item">' +
+                 '<div class="enf-head"><span class="enf-date">' + esc(i.date) + '</span>' +
+                 (sc ? '<span class="enf-stock">' + esc(sc) + '</span>' : '') +
+                 (i.company ? '<span class="enf-company">' + esc(i.company) + '</span>' : '') +
+                 tags + '</div>' +
+                 gistHtml +
                  '<div class="enf-title">' + (i.url ? '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.title) + '</a>' : esc(i.title)) + '</div></div>';
         });
         return h || '<div class="loading-tip">暂无数据</div>';
@@ -1238,6 +1280,19 @@ function hashColorIdx(s) {
 }
 function renderLawCards(items) {
     var c = document.getElementById('law-cards');
+    // 部分律所仅自己可见：?full=1 解锁（并记住），?full=0 恢复默认视图
+    var LAW_HIDDEN = ['Charltons', '易周', '的近', 'Deacons', 'Baker McKenzie', '贝克麦坚时', 'Clifford Chance', '高伟绅'];
+    var q = new URLSearchParams(location.search);
+    if (q.get('full') === '1') { try { localStorage.setItem('law_full', '1'); } catch (e) {} }
+    if (q.get('full') === '0') { try { localStorage.removeItem('law_full'); } catch (e) {} }
+    var fullView = false;
+    try { fullView = localStorage.getItem('law_full') === '1'; } catch (e) {}
+    if (!fullView) {
+        items = items.filter(function(i){
+            var f = i.firm || '';
+            return !LAW_HIDDEN.some(function(k){ return f.indexOf(k) >= 0; });
+        });
+    }
     var sorted = items.slice().sort(function(a,b){ return (b.date||'') < (a.date||'') ? -1 : 1; });
     var h = '';
     sorted.forEach(function(i){
