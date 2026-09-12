@@ -600,18 +600,27 @@ def main():
         'items': hkex_claude
     }, 'hkex_claude_search.json')
 
-    # 8. 元数据 (记录本次更新)
+    # 8. 元数据 (记录本次更新；与既有文件合并，保留 gen_data.py 写入的 lawFirms 等统计)
+    meta_path = os.path.join(DATA_DIR, 'update_meta.json')
+    old_stats = {}
+    if os.path.exists(meta_path):
+        try:
+            with open(meta_path, encoding='utf-8') as f:
+                old_stats = json.load(f).get('stats', {})
+        except Exception:
+            pass
+    old_stats.update({
+        'sfcNews': len(sfc_news),
+        'sfcCirculars': len(sfc_circulars),
+        'hkexGuidanceUpdates': len(hkex_updates),
+        'hkexRegulatory': len(hkex_reg),
+        'hkexNews': len(hkex_news),
+        'hkexGLArchive': len(hkex_gl_archive),
+        'hkexClaude': len(hkex_claude)
+    })
     save_json({
         'lastUpdate': datetime.now(HKT).isoformat(),
-        'stats': {
-            'sfcNews': len(sfc_news),
-            'sfcCirculars': len(sfc_circulars),
-            'hkexGuidanceUpdates': len(hkex_updates),
-            'hkexRegulatory': len(hkex_reg),
-            'hkexNews': len(hkex_news),
-            'hkexGLArchive': len(hkex_gl_archive),
-            'hkexClaude': len(hkex_claude)
-        }
+        'stats': old_stats
     }, 'update_meta.json', skip_empty=False)
 
     print(f"\n=== 更新完成 ===")
