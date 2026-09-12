@@ -370,6 +370,15 @@
         .enf-item .enf-title a { color: var(--text); text-decoration: none; }
         .enf-item .enf-title a:hover { color: var(--hkex-blue); text-decoration: underline; }
         .enf-stock { font-size: 0.7rem; color: var(--accent-new); font-weight: 700; }
+        .enf-company { font-weight: 700; color: var(--text); margin: 2px 0 3px; }
+        .enf-tag {
+            display: inline-block;
+            background: #fff3e0; color: #e65100;
+            border-radius: 4px;
+            font-size: 0.68rem; font-weight: 600;
+            padding: 1px 7px; margin: 0 4px 2px 0;
+        }
+        .enf-gist { font-size: 0.76rem; color: #888; margin: 2px 0 4px; line-height: 1.5; }
 
         /* === FOOTER === */
         .footer {
@@ -1138,7 +1147,8 @@ function renderEnforcement(hkexRegItems, hkexClaudeItems, sfcNewsItems) {
     var hkexEnf = [], sfcEnf = [];
     hkexRegItems.forEach(function(i){
         if (i.category === 'disciplinary' || i.category === 'enforcement_news')
-            hkexEnf.push({title:(i.title||'').replace(/\s+/g,' ').trim(), url:i.url||'', date:(i.date||'').slice(0,10)});
+            hkexEnf.push({title:(i.title||'').replace(/\s+/g,' ').trim(), url:i.url||'', date:(i.date||'').slice(0,10),
+                          company:i.company||'', code:i.code||'', violations:i.violations||[], gist:i.gist||''});
     });
     hkexClaudeItems.forEach(function(i){
         if (i.category === 'disciplinary')
@@ -1160,9 +1170,16 @@ function renderEnforcement(hkexRegItems, hkexClaudeItems, sfcNewsItems) {
         var h = '';
         arr.slice(0, 30).forEach(function(i){
             var m = i.title.match(/股份代號[：:]\s*(\d+)/);
-            var sc = m ? m[1] : '';
+            var sc = i.code || (m ? m[1] : '');
+            var headHtml = '';
+            if (i.company) {
+                var tags = (i.violations || []).map(function(v){ return '<span class="enf-tag">' + esc(v) + '</span>'; }).join('');
+                headHtml = '<div class="enf-company">' + esc(i.company) + (tags ? ' ' + tags : '') + '</div>';
+            }
+            var gistHtml = i.gist ? '<div class="enf-gist">' + esc(i.gist) + '</div>' : '';
             h += '<div class="enf-item"><div class="enf-date">' + esc(i.date) + '</div>' +
                  (sc ? '<span class="enf-stock">' + esc(sc) + '</span> ' : '') +
+                 headHtml + gistHtml +
                  '<div class="enf-title">' + (i.url ? '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.title) + '</a>' : esc(i.title)) + '</div></div>';
         });
         return h || '<div class="loading-tip">暂无数据</div>';

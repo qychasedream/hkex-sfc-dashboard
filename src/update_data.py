@@ -267,6 +267,118 @@ def fetch_hkex_regulatory_announcements():
     return items
 
 
+# === 纪律行动违规类型提取 ===
+# 关键词 -> 看板展示标签（页面为繁体，标签用简体与看板 UI 一致）
+VIOLATION_RULES = [
+    (r'資金轉移|資金佔用|佔用資金|挪用', '资金占用/转移'),
+    (r'關連交易|關連人士', '关连交易'),
+    (r'內幕消息', '内幕消息披露'),
+    (r'須予披露|須予公布', '须予披露交易'),
+    (r'內部監控', '内部监控缺失'),
+    (r'董事職責|董事的職責|董事責任|董事職務', '违反董事职责'),
+    (r'延遲刊發|延遲公布|延遲發佈|逾期刊發', '延迟刊发'),
+    (r'財務報表|全年業績|中期業績|年報|中期報告|核數師', '财报/业绩披露'),
+    (r'盈利警告|盈利預警|盈警', '盈利预警'),
+    (r'擔保', '违规担保'),
+    (r'貸款', '关联贷款'),
+    (r'收購|出售', '收购/出售事项'),
+    (r'公司秘書', '公司秘书失职'),
+    (r'企業管治', '企业管治'),
+    (r'回購', '股份回购'),
+]
+
+DISCIPLINARY_CACHE_FILE = 'disciplinary_details.json'
+DISCIPLINARY_MAX_FETCH = 12  # 每次运行最多新抓取的公告页数，避免拖慢定时任务
+
+
+def _parse_disciplinary_title(title):
+    """从标题提取公司名与股份代号，如 '聯交所對利時集團(控股)有限公司（股份代號：526）...'"""
+    m = re.search(r'聯交所對(.+?)(?:（清盤中）)?（(?:已除牌，前)?股份代號：(\d+)）', title)
+    if not m:
+        return '', ''
+    company = re.sub(r'（前稱[^）]*）', '', m.group(1)).strip('、 ')
+    return company, m.group(2)
+
+
+def _extract_disciplinary_detail(url):
+    """抓取纪律行动公告页，提取违规类型标签与违规摘要"""
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        html = resp.read().decode('utf-8', errors='ignore')
+    # 只取 <main> 区域，避开导航/页脚的干扰关键词（如「企業管治」出现在导航菜单）
+    m = re.search(r'<main[\s\S]*?</main>', html)
+    body_html = m.group(0) if m else html
+    text = re.sub(r'<script[\s\S]*?</script>|<style[\s\S]*?</style>', ' ', body_html)
+    text = re.sub(r'<[^>]+>', ' ', text)
+    text = re.sub(r'&nbsp;?|\s+', ' ', text)
+
+    violations = []
+    for pattern, label in VIOLATION_RULES:
+        if re.search(pattern, text) and label not in violations:
+            violations.append(label)
+
+    # 违规摘要：取含「被裁定/違反」的描述句，截取约 120 字
+    gist = ''
+    m = re.search(r'(該公司[^。]*(?:被裁定|違反)[^。]*。)', text)
+    if not m:
+        m = re.search(r'([^。]*(?:被裁定|違反)[^。]*。)', text)
+    if m:
+        gist = m.group(1).strip()
+        if len(gist) > 120:
+            gist = gist[:118] + '…'
+    return violations, gist
+
+
+def enrich_disciplinary_items(items):
+    """为纪律行动条目补充公司名、股份代号、违规标签（按 URL 缓存，每条公告只抓一次）"""
+    cache_path = os.path.join(DATA_DIR, DISCIPLINARY_CACHE_FILE)
+    cache = {}
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, encoding='utf-8') as f:
+                cache = json.load(f).get('items', {})
+        except Exception:
+            cache = {}
+
+    fetched = 0
+    for it in items:
+        if it.get('category') != 'disciplinary':
+            continue
+        url = it.get('url', '')
+        title = it.get('title', '')
+        detail = cache.get(url)
+        if detail is None:
+            company, code = _parse_disciplinary_title(title)
+            detail = {'company': company, 'code': code, 'violations': [], 'gist': ''}
+            if url and fetched < DISCIPLINARY_MAX_FETCH:
+                try:
+                    detail['violations'], detail['gist'] = _extract_disciplinary_detail(url)
+                    cache[url] = detail
+                    fetched += 1
+                except Exception as e:
+                    print(f"  [WARN] 纪律行动详情抓取失败 {url}: {e}")
+                    # 抓取失败不写入缓存，下次运行重试
+            elif url and fetched >= DISCIPLINARY_MAX_FETCH:
+                # 超出本次抓取配额，先只附公司/代码，不缓存
+                pass
+            else:
+                cache[url] = detail
+        it['company'] = detail.get('company', '')
+        it['code'] = detail.get('code', '')
+        it['violations'] = detail.get('violations', [])
+        it['gist'] = detail.get('gist', '')
+
+    try:
+        with open(cache_path, 'w', encoding='utf-8') as f:
+            json.dump({'updated': datetime.now(HKT).isoformat(), 'items': cache},
+                      f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"  [WARN] 纪律行动缓存写入失败: {e}")
+    if fetched:
+        print(f"  ✓ 新抓取 {fetched} 条纪律行动详情（缓存共 {len(cache)} 条）")
+    return items
+
+
 def fetch_hkex_news_releases():
     """从 HKEX RSS Feed 获取新闻稿，过滤监管相关内容"""
     print("[HKEX] 获取新闻稿 (RSS, 过滤监管相关)...")
@@ -566,6 +678,7 @@ def main():
 
     # 4. HKEX 监管通讯 (RSS)
     hkex_reg = fetch_hkex_regulatory_announcements()
+    hkex_reg = enrich_disciplinary_items(hkex_reg)
     save_json({
         'updated': datetime.now(HKT).isoformat(),
         'source': 'HKEX Regulatory Announcements RSS',
