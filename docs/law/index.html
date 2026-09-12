@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>律所解读 · 香港资本市场（全量版）</title>
+<script>
+// 与董办看板共用密码验证状态：未验证则跳去入口输密码后自动跳回
+(function () {
+    if (location.protocol === 'file:') return;
+    try { if (localStorage.getItem('dash_pwd')) return; } catch (e) {}
+    location.replace('https://qychasedream.github.io/?next=' + encodeURIComponent(location.href));
+})();
+</script>
+<style>
+    :root {
+        --bg: #f4f6f9;
+        --card: #fff;
+        --text: #333;
+        --text2: #777;
+        --border: #e4e8ee;
+        --accent: #1a1a2e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+        background: var(--bg); color: var(--text); line-height: 1.6;
+    }
+    .header {
+        background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+        color: #fff; padding: 26px 20px 20px;
+    }
+    .header-inner { max-width: 1000px; margin: 0 auto; }
+    .header h1 { font-size: 1.4rem; }
+    .header .sub { font-size: 0.8rem; opacity: 0.75; margin-top: 4px; }
+
+    .toolbar {
+        max-width: 1000px; margin: 16px auto 0; padding: 0 20px;
+        position: sticky; top: 0; z-index: 50;
+    }
+    .toolbar-inner {
+        background: var(--card); border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        padding: 12px 14px;
+    }
+    #search {
+        width: 100%; padding: 9px 14px;
+        border: 1px solid var(--border); border-radius: 8px;
+        font-size: 0.9rem; outline: none;
+    }
+    #search:focus { border-color: #1565c0; box-shadow: 0 0 0 2px rgba(21,101,192,0.12); }
+    .firm-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .chip {
+        font-size: 0.72rem; padding: 3px 10px; border-radius: 12px;
+        border: 1px solid var(--border); background: #fafbfc; color: #555;
+        cursor: pointer; user-select: none;
+    }
+    .chip.on { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
+    .chip .n { opacity: 0.65; font-size: 0.66rem; }
+
+    .main { max-width: 1000px; margin: 14px auto 60px; padding: 0 20px; }
+    .count-line { font-size: 0.78rem; color: var(--text2); margin: 4px 2px 10px; }
+
+    .card {
+        background: var(--card); border: 1px solid var(--border);
+        border-left: 4px solid #999;
+        border-radius: 8px; padding: 13px 16px; margin-bottom: 10px;
+        transition: box-shadow 0.15s;
+    }
+    .card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.09); }
+    .card-top { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .firm-name { font-weight: 700; font-size: 0.88rem; }
+    .topic-tag {
+        font-size: 0.66rem; font-weight: 600;
+        padding: 1px 8px; border-radius: 4px;
+    }
+    .card-date { margin-left: auto; font-size: 0.72rem; color: #aaa; flex-shrink: 0; }
+    .card-title { font-size: 0.92rem; font-weight: 600; margin: 5px 0 3px; line-height: 1.5; }
+    .card-title a { color: var(--text); text-decoration: none; }
+    .card-title a:hover { color: #1565c0; text-decoration: underline; }
+    .card-sum { font-size: 0.78rem; color: var(--text2); }
+
+    .empty { text-align: center; color: #999; padding: 40px 0; font-size: 0.85rem; }
+    .foot { max-width: 1000px; margin: 0 auto; padding: 0 20px 30px; font-size: 0.72rem; color: #aaa; }
+
+    @media (max-width: 700px) {
+        .header h1 { font-size: 1.15rem; }
+        .main { padding: 0 12px; }
+        .toolbar { padding: 0 12px; }
+        .card-date { margin-left: 0; }
+    }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <h1>🏛️ 律所解读 · 香港资本市场（全量版）</h1>
+        <div class="sub">红圈所 + 魔术圈 + 港所 · 仅专业解读文章 · <span id="upd"></span></div>
+    </div>
+</header>
+
+<div class="toolbar">
+    <div class="toolbar-inner">
+        <input id="search" placeholder="🔍 搜索标题 / 摘要关键词，如：18C、关连交易、稳定币…">
+        <div class="firm-chips" id="firm-chips"></div>
+    </div>
+</div>
+
+<main class="main">
+    <div class="count-line" id="count-line">加载中…</div>
+    <div id="list"><div class="empty">⏳ 正在加载…</div></div>
+</main>
+
+<div class="foot">数据来源：各律所官网公开发表的专业文章 · 仅供内部参考</div>
+
+<script>
+// 律所/话题配色（与主看板同一套哈希取色，同一律所颜色恒定）
+var PALETTE = [
+    ['#e3f2fd', '#1565c0'], ['#fce4ec', '#ad1457'], ['#f3e5f5', '#6a1b9a'],
+    ['#e0f2f1', '#00695c'], ['#fff3e0', '#e65100'], ['#e8f5e9', '#2e7d32'],
+    ['#fff8e1', '#f57f17'], ['#eceff1', '#455a64'], ['#e8eaf6', '#283593'], ['#efebe9', '#4e342e']
+];
+function colorOf(s) {
+    var h = 0;
+    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return PALETTE[h % PALETTE.length];
+}
+function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+}
+
+var ITEMS = [];
+var activeFirm = '';
+var keyword = '';
+
+function renderChips() {
+    var counts = {};
+    ITEMS.forEach(function (i) { var f = i.firm || '未知'; counts[f] = (counts[f] || 0) + 1; });
+    var firms = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; });
+    var h = '<span class="chip' + (activeFirm === '' ? ' on' : '') + '" data-firm="">全部 <span class="n">' + ITEMS.length + '</span></span>';
+    firms.forEach(function (f) {
+        h += '<span class="chip' + (activeFirm === f ? ' on' : '') + '" data-firm="' + esc(f) + '">' + esc(f) + ' <span class="n">' + counts[f] + '</span></span>';
+    });
+    var box = document.getElementById('firm-chips');
+    box.innerHTML = h;
+    box.querySelectorAll('.chip').forEach(function (c) {
+        c.addEventListener('click', function () {
+            activeFirm = c.getAttribute('data-firm');
+            renderChips();
+            renderList();
+        });
+    });
+}
+
+function renderList() {
+    var kw = keyword.trim().toLowerCase();
+    var shown = ITEMS.filter(function (i) {
+        if (activeFirm && (i.firm || '') !== activeFirm) return false;
+        if (kw && ((i.title || '') + ' ' + (i.summary || '')).toLowerCase().indexOf(kw) < 0) return false;
+        return true;
+    });
+    document.getElementById('count-line').textContent = '显示 ' + shown.length + ' 篇 / 共收录 ' + ITEMS.length + ' 篇';
+    if (!shown.length) {
+        document.getElementById('list').innerHTML = '<div class="empty">没有匹配的文章</div>';
+        return;
+    }
+    var h = '';
+    shown.forEach(function (i) {
+        var firm = i.firm || '未知';
+        var fc = colorOf(firm);
+        var tc = colorOf('T:' + (i.topic || ''));
+        h += '<div class="card" style="border-left-color:' + fc[1] + ';">' +
+             '<div class="card-top">' +
+             '<span class="firm-name" style="color:' + fc[1] + ';">' + esc(firm) + '</span>' +
+             (i.topic ? '<span class="topic-tag" style="background:' + tc[0] + ';color:' + tc[1] + ';">' + esc(i.topic) + '</span>' : '') +
+             '<span class="card-date">' + esc((i.date || '').slice(0, 10)) + '</span>' +
+             '</div>' +
+             '<div class="card-title">' + (i.url ? '<a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.title) + '</a>' : esc(i.title)) + '</div>' +
+             (i.summary ? '<div class="card-sum">' + esc(i.summary) + '</div>' : '') +
+             '</div>';
+    });
+    document.getElementById('list').innerHTML = h;
+}
+
+document.getElementById('search').addEventListener('input', function (e) {
+    keyword = e.target.value;
+    renderList();
+});
+
+fetch('../data/law_firm_full.json?_t=' + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+        ITEMS = (d.items || []).slice().sort(function (a, b) { return (b.date || '') < (a.date || '') ? -1 : 1; });
+        var upd = (d.updated || '').replace('T', ' ').slice(0, 16);
+        document.getElementById('upd').textContent = '更新于 ' + upd;
+        renderChips();
+        renderList();
+    })
+    .catch(function () {
+        document.getElementById('list').innerHTML = '<div class="empty">数据加载失败</div>';
+    });
+</script>
+</body>
+</html>
