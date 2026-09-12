@@ -218,6 +218,7 @@
         .badge-hkex { background: #e3f2fd; color: #1f497d; }
         .badge-rule { background: #fff8e1; color: #e65100; }
         .badge-enf { background: #ffebee; color: #b71c1c; }
+        .badge-news { background: #e3f2fd; color: #1565c0; }
         .badge-consult { background: #f3e5f5; color: #7b1fa2; }
         .badge-live { background: #b71c1c; color: #fff; }
 
@@ -1073,12 +1074,13 @@ function renderSfcCards(items) {
     var h = '';
     sorted.slice(0, 12).forEach(function(i){
         var isEnf = i.type === 'enforcement';
-        var lbl = isEnf ? '<span class="badge badge-enf">执法</span>' : '<span class="badge badge-sfc">新闻</span>';
+        // 执法=红 / 新闻=蓝，同类徽章一眼区分（本版块均为 SFC，不再重复打 SFC 标签）
+        var lbl = isEnf ? '<span class="badge badge-enf">执法</span>' : '<span class="badge badge-news">新闻</span>';
         var title = esc((i.title || '').replace(/\s+/g, ' ').trim());
         h += '<div class="news-card">' +
              '<div class="nc-badges">' + lbl + '</div>' +
              '<div class="nc-title"><a href="' + esc(i.url) + '" target="_blank" rel="noopener">' + title + '</a></div>' +
-             '<div class="nc-meta">' + esc((i.date||'').slice(0,10)) + ' <span class="badge badge-sfc" style="font-size:0.62rem;">SFC</span></div>' +
+             '<div class="nc-meta">' + esc((i.date||'').slice(0,10)) + '</div>' +
              '</div>';
     });
     c.innerHTML = h || '<div class="loading-tip">暂无数据</div>';
@@ -1223,14 +1225,29 @@ function renderEnforcement(hkexRegItems, hkexClaudeItems, sfcNewsItems) {
 }
 
 // === 律所解读卡片 ===
+// 10 组区分度配色：按律所名 / 话题名哈希稳定取色（同一律所、同一话题颜色固定）
+var LAW_COLORS = [
+    ['#e3f2fd', '#1565c0'], ['#fce4ec', '#ad1457'], ['#f3e5f5', '#6a1b9a'],
+    ['#e0f2f1', '#00695c'], ['#fff3e0', '#e65100'], ['#e8f5e9', '#2e7d32'],
+    ['#fff8e1', '#f57f17'], ['#eceff1', '#455a64'], ['#e8eaf6', '#283593'], ['#efebe9', '#4e342e']
+];
+function hashColorIdx(s) {
+    var h = 0;
+    for (var k = 0; k < s.length; k++) h = (h * 31 + s.charCodeAt(k)) >>> 0;
+    return h % LAW_COLORS.length;
+}
 function renderLawCards(items) {
     var c = document.getElementById('law-cards');
     var sorted = items.slice().sort(function(a,b){ return (b.date||'') < (a.date||'') ? -1 : 1; });
     var h = '';
     sorted.forEach(function(i){
-        h += '<div class="law-card">' +
-             '<div class="law-firm">' + esc(i.firm || '') + '</div>' +
-             '<div class="law-topic">' + (i.topic ? '<span class="badge badge-consult">' + esc(i.topic) + '</span>' : '') + '</div>' +
+        var firm = i.firm || '';
+        var fc = LAW_COLORS[hashColorIdx(firm)];
+        var topic = i.topic || '';
+        var tc = LAW_COLORS[hashColorIdx('T:' + topic)];
+        h += '<div class="law-card" style="border-left:3px solid ' + fc[1] + ';">' +
+             '<div class="law-firm" style="color:' + fc[1] + ';">' + esc(firm) + '</div>' +
+             '<div class="law-topic">' + (topic ? '<span class="badge" style="background:' + tc[0] + ';color:' + tc[1] + ';">' + esc(topic) + '</span>' : '') + '</div>' +
              '<div class="law-summary">' + esc(i.summary || i.title || '') + '</div>' +
              (i.summary && i.title ? '<div class="law-title-en">' + esc(i.title) + '</div>' : '') +
              '<div class="law-meta"><span>' + esc((i.date||'').slice(0,10)) + '</span>' +
