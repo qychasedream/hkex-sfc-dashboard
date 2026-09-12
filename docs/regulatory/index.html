@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>香港监管资讯看板 — HKEX · SFC</title>
+    <script>
+    // 统一入口密码门：未通过密码验证时，先跳到董办看板入口输密码，验证后自动跳回本页
+    // （embed=1 嵌入模式与本地 file:// 预览不拦截；密码验证状态存在 localStorage，两个看板同域共享）
+    (function () {
+        if (location.protocol === 'file:') return;
+        if (new URLSearchParams(location.search).get('embed') === '1') return;
+        try { if (localStorage.getItem('dash_pwd')) return; } catch (e) {}
+        location.replace('https://qychasedream.github.io/?next=' + encodeURIComponent(location.href));
+    })();
+    </script>
     <style>
         :root {
             --hkex-blue: #1f497d;
@@ -361,6 +371,9 @@
         /* === ENFORCEMENT === */
         .enf-grid-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 12px 0; }
         @media (max-width: 768px) { .enf-grid-col { grid-template-columns: 1fr; } }
+        /* 两栏各自独立滚动（不再共用一个滚动条） */
+        #enf-section .section-content { max-height: none; overflow: visible; }
+        .enf-grid-col > div { max-height: 560px; overflow-y: auto; padding-right: 6px; }
         .enf-subtitle { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
         .enf-subtitle.hkex { color: var(--hkex-blue); }
         .enf-subtitle.sfc { color: var(--sfc-red); }
@@ -373,11 +386,18 @@
         .enf-company { font-weight: 700; color: var(--text); margin: 2px 0 3px; }
         .enf-tag {
             display: inline-block;
-            background: #fff3e0; color: #e65100;
+            background: #eceff1; color: #546e7a;
             border-radius: 4px;
             font-size: 0.68rem; font-weight: 600;
             padding: 1px 7px; margin: 0 4px 2px 0;
         }
+        .enf-tag.red    { background: #ffebee; color: #c62828; }
+        .enf-tag.orange { background: #fff3e0; color: #e65100; }
+        .enf-tag.purple { background: #f3e5f5; color: #6a1b9a; }
+        .enf-tag.blue   { background: #e3f2fd; color: #1565c0; }
+        .enf-tag.teal   { background: #e0f2f1; color: #00695c; }
+        .enf-tag.green  { background: #e8f5e9; color: #2e7d32; }
+        .enf-tag.pink   { background: #fce4ec; color: #ad1457; }
         .enf-gist { font-size: 0.76rem; color: #888; margin: 2px 0 4px; line-height: 1.5; }
 
         /* === FOOTER === */
@@ -1173,7 +1193,21 @@ function renderEnforcement(hkexRegItems, hkexClaudeItems, sfcNewsItems) {
             var sc = i.code || (m ? m[1] : '');
             var headHtml = '';
             if (i.company) {
-                var tags = (i.violations || []).map(function(v){ return '<span class="enf-tag">' + esc(v) + '</span>'; }).join('');
+                // 违规类型标签配色：不同类别不同颜色，便于快速识别
+                var TAG_COLORS = {
+                    '资金占用/转移': 'red', '违规担保': 'red',
+                    '关连交易': 'orange', '关联贷款': 'orange',
+                    '内幕消息披露': 'purple', '股份回购': 'purple',
+                    '须予披露交易': 'blue', '收购/出售事项': 'blue',
+                    '内部监控缺失': 'teal', '企业管治': 'teal',
+                    '违反董事职责': 'green',
+                    '财报/业绩披露': 'pink', '盈利预警': 'pink',
+                    '延迟刊发': '', '公司秘书失职': ''
+                };
+                var tags = (i.violations || []).map(function(v){
+                    var c = TAG_COLORS[v] || '';
+                    return '<span class="enf-tag' + (c ? ' ' + c : '') + '">' + esc(v) + '</span>';
+                }).join('');
                 headHtml = '<div class="enf-company">' + esc(i.company) + (tags ? ' ' + tags : '') + '</div>';
             }
             var gistHtml = i.gist ? '<div class="enf-gist">' + esc(i.gist) + '</div>' : '';
