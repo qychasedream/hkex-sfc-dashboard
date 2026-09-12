@@ -921,7 +921,7 @@
             <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" target="_blank" rel="noopener">HKEX 新闻发布</a> ·
             <a href="https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/" target="_blank" rel="noopener">SFC 新闻公告</a>
         </p>
-        <p style="margin-top:6px;" id="update-footer">GitHub Actions 定时抓取 · 页面每15分钟自动检查更新 · 加载中...</p>
+        <p style="margin-top:6px;" id="update-footer">数据更新于 加载中...</p>
     </div>
 
 </div>
@@ -1038,9 +1038,9 @@ async function refreshAll(noCache) {
         });
     }
     document.getElementById('header-update-time').innerHTML =
-        '数据更新：<strong>' + esc(timeStr || '未知') + '</strong>（定时抓取，约1–2小时一次） | 收录 <strong>' + totalCount + '</strong> 条';
+        '数据更新于 <strong>' + esc(timeStr || '未知') + '</strong> | 收录 <strong>' + totalCount + '</strong> 条';
     document.getElementById('update-footer').textContent =
-        'GitHub Actions 定时抓取（约1–2小时一次） · 页面每15分钟自动检查更新 · 数据更新于 ' + (timeStr || '未知') + ' · 收录 ' + totalCount + ' 条';
+        '数据更新于 ' + (timeStr || '未知') + ' · 收录 ' + totalCount + ' 条';
 
     // 统计卡片
     var cutoff = new Date(Date.now() - 30*86400000).toISOString().slice(0,10);
