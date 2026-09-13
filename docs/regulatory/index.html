@@ -1110,7 +1110,13 @@ async function refreshAll(noCache) {
         // 指引信表格：规则手册更新 + 指引信档案合并（档案含最新修订，如 GL95-18 的 9 月标注版）
         var glMerged = guidanceData.items.slice();
         if (glArchive && glArchive.items) {
-            var keyOf = function (d) { var m = String(d || '').match(/(\d{2})\/(\d{4})/g); return m ? m[m.length-1] : ''; };
+            // 返回数值型 YYYYMM 便于比较（字符串比较 '09/2026' < '12/2025' 会出错）
+            var keyOf = function (d) {
+                var m = String(d || '').match(/(\d{2})\/(\d{4})/g);
+                if (!m || !m.length) return 0;
+                var last = m[m.length - 1].split('/');
+                return Number(last[1]) * 100 + Number(last[0]);
+            };
             var byRef = {};
             glMerged.forEach(function(i){ if (i.ref) byRef[i.ref] = i; });
             glArchive.items.forEach(function(a){
@@ -1130,7 +1136,8 @@ async function refreshAll(noCache) {
         renderGlTable(glMerged);
     }
     renderEnforcement(hkexReg ? hkexReg.items : [], hkexClaude ? hkexClaude.items : [], sfcNews ? sfcNews.items : []);
-    renderTimelineAuto(hkexReg ? hkexReg.items : [], sfcNews ? sfcNews.items : []);
+    renderTimelineAuto(hkexReg ? hkexReg.items : [], sfcNews ? sfcNews.items : [],
+                       glArchive ? glArchive.items : [], guidanceData ? guidanceData.items : []);
     if (lawData && lawData.items) renderLawCards(lawData.items);
 
     return okCount >= 5;
@@ -1234,7 +1241,7 @@ function renderGlTable(items) {
 }
 
 // === 时间线自动区（2026-09 起，数据源驱动，随每次抓取更新） ===
-function renderTimelineAuto(hkexRegItems, sfcNewsItems) {
+function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidanceItems) {
     var el = document.getElementById('timeline-auto');
     if (!el) return;
     var items = [];
@@ -1245,6 +1252,20 @@ function renderTimelineAuto(hkexRegItems, sfcNewsItems) {
     sfcNewsItems.forEach(function(i){
         if ((i.date || '') >= '2026-09-01')
             items.push({ date: i.date.slice(0,10), title: (i.title||'').replace(/\s+/g,' ').trim(), url: i.url || '', src: 'sfc' });
+    });
+    // 指引信/上市决策（档案源，date 为 YYYY-MM-DD）
+    (glArchiveItems || []).forEach(function(a){
+        if ((a.date || '') >= '2026-09-01')
+            items.push({ date: a.date.slice(0,10), title: (a.title||'').replace(/\s+/g,' ').trim(), url: a.url || '', src: 'hkex' });
+    });
+    // 指引文件更新（规则手册源，date 形如 '05/2018 (09/2026)'；GL/LD 已由档案覆盖，这里只收 FAQ 类）
+    (guidanceItems || []).forEach(function(g){
+        var ms = String(g.date || '').match(/(\d{2})\/(\d{4})/g) || [];
+        var last = ms.length ? ms[ms.length - 1] : '';
+        if (last >= '09/2026' && !/^(GL|LD)\d/.test(g.ref || '')) {
+            items.push({ date: last.split('/')[1] + '-' + last.split('/')[0] + '-01',
+                         title: (g.detail || '') + '（' + (g.ref || '') + '）', url: g.url || g.topicUrl || '', src: 'hkex' });
+        }
     });
     items.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
     var h = '';
