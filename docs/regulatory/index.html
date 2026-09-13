@@ -685,7 +685,7 @@
         <span class="pill pill-sfc">SFC 证监会</span>
         <span class="pill pill-new">持续更新</span>
     </div>
-    <div class="update-line">🕐 <span id="header-update-time">加载中...</span> | 来源：<a href="https://cn-rules.hkex.com.hk/" target="_blank">HKEX 规则手册</a> · <a class="sfc" href="https://www.sfc.hk/" target="_blank">SFC 证监会</a> · <a href="https://www.hkex.com.hk/News/News-Release?sc_lang=zh-HK" target="_blank">HKEX 新闻</a></div>
+    <div class="update-line">🕐 <span id="header-update-time">加载中...</span></div>
 </header>
 
 <div class="container">
@@ -1080,9 +1080,9 @@ async function refreshAll(noCache) {
         });
     }
     document.getElementById('header-update-time').innerHTML =
-        '数据更新于 <strong>' + esc(timeStr || '未知') + '</strong> | 收录 <strong>' + totalCount + '</strong> 条';
+        '数据更新于 <strong>' + esc(timeStr || '未知') + '</strong>';
     document.getElementById('update-footer').textContent =
-        '数据更新于 ' + (timeStr || '未知') + ' · 收录 ' + totalCount + ' 条';
+        '数据更新于 ' + (timeStr || '未知');
 
     // 统计卡片
     var cutoff = new Date(Date.now() - 30*86400000).toISOString().slice(0,10);
@@ -1283,7 +1283,8 @@ function renderLawCards(items) {
     // 同事版只收录 6 家律所（金杜/汉坤/中伦/普衡/锦天城/竞天公诚）；
     // 本人完整视图：?full=1 解锁并记住，?full=0 恢复
     var LAW_ALLOW = ['金杜', 'King & Wood', 'KWM', '汉坤', '漢坤', 'Han Kun', '中伦', '中倫', 'Zhong Lun',
-                     '普衡', 'Pillsbury', '锦天城', '錦天城', 'AllBright', '竞天公诚', '競天公誠', 'Jingtian'];
+                     '普衡', 'Pillsbury', '锦天城', '錦天城', 'AllBright', '竞天公诚', '競天公誠', 'Jingtian',
+                     '君合', 'Jun He'];
     var q = new URLSearchParams(location.search);
     if (q.get('full') === '1') { try { localStorage.setItem('law_full', '1'); } catch (e) {} }
     if (q.get('full') === '0') { try { localStorage.removeItem('law_full'); } catch (e) {} }
