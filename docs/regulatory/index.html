@@ -971,13 +971,15 @@
 </div>
 
 <script>
-// === 嵌入模式：?embed=1 时隐藏顶导航与头部（用于 iframe 嵌入其他看板） ===
+// === 嵌入模式：?embed=1 时隐藏顶导航、头部与页脚（时间以母页看板头部为准，避免两个时间并存引起误解） ===
 if (new URLSearchParams(location.search).get('embed') === '1') {
     document.addEventListener('DOMContentLoaded', function() {
         var tn = document.querySelector('.topnav');
         var hd = document.querySelector('.header');
+        var ft = document.querySelector('.footer');
         if (tn) tn.style.display = 'none';
         if (hd) hd.style.display = 'none';
+        if (ft) ft.style.display = 'none';
         document.body.style.paddingTop = '0';
     });
 }
@@ -1056,10 +1058,12 @@ async function refreshAll(noCache) {
         loadJSON(DATA_BASE + 'hkex_regulatory_announcements.json', noCache),
         loadJSON(DATA_BASE + 'hkex_claude_search.json', noCache),
         loadJSON(DATA_BASE + 'hkex_guidance_updates.json', noCache),
-        loadJSON(DATA_BASE + 'law_firm_full.json', noCache)
+        loadJSON(DATA_BASE + 'law_firm_full.json', noCache),
+        loadJSON(DATA_BASE + 'hkex_guidance_archive.json', noCache)
     ]);
     var meta = results[0], sfcNews = results[1], hkexReg = results[2],
-        hkexClaude = results[3], guidanceData = results[4], lawData = results[5];
+        hkexClaude = results[3], guidanceData = results[4], lawData = results[5],
+        glArchive = results[6];
     var okCount = results.filter(function(r){ return !!r; }).length;
 
     // --- 头部时间与统计 ---
@@ -1103,7 +1107,27 @@ async function refreshAll(noCache) {
     if (sfcNews && sfcNews.items) renderSfcCards(sfcNews.items);
     if (guidanceData && guidanceData.items) {
         renderFaqTable(guidanceData.items);
-        renderGlTable(guidanceData.items);
+        // 指引信表格：规则手册更新 + 指引信档案合并（档案含最新修订，如 GL95-18 的 9 月标注版）
+        var glMerged = guidanceData.items.slice();
+        if (glArchive && glArchive.items) {
+            var keyOf = function (d) { var m = String(d || '').match(/(\d{2})\/(\d{4})/g); return m ? m[m.length-1] : ''; };
+            var byRef = {};
+            glMerged.forEach(function(i){ if (i.ref) byRef[i.ref] = i; });
+            glArchive.items.forEach(function(a){
+                if (!a.gl_ref) return;
+                // 转成 updates 格式：首次刊发日期 MM/YYYY + (更新 MM/YYYY)
+                var fm = (a.first_date || '').match(/(\d{2})\/(\d{2})\/(\d{4})/);
+                var um = (a.update_date || '').match(/(\d{2})\/(\d{2})\/(\d{4})/);
+                var dateStr = '';
+                if (fm) dateStr = fm[2] + '/' + fm[3];
+                if (um) dateStr += ' (' + um[2] + '/' + um[3] + ')';
+                var item = { ref: a.gl_ref, detail: a.title, date: dateStr || a.date, url: a.url, docType: a.doc_type };
+                var old = byRef[a.gl_ref];
+                if (!old || keyOf(item.date) > keyOf(old.date)) byRef[a.gl_ref] = item;
+            });
+            glMerged = Object.values(byRef);
+        }
+        renderGlTable(glMerged);
     }
     renderEnforcement(hkexReg ? hkexReg.items : [], hkexClaude ? hkexClaude.items : [], sfcNews ? sfcNews.items : []);
     renderTimelineAuto(hkexReg ? hkexReg.items : [], sfcNews ? sfcNews.items : []);
