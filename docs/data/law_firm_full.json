@@ -364,6 +364,14 @@
       "summary": "解析在香港撤销银行牌照的步骤、监管考量与操作要点。"
     },
     {
+      "firm": "普衡 (Pillsbury)",
+      "url": "https://www.pillsburylaw.com/en/news-and-insights/office-comptroller-currency-genius-act-rules-payment-stablecoins.html",
+      "date": "2026-03-03",
+      "title": "Office of the Comptroller of the Currency Proposes GENIUS Act Implementing Rules for Payment Stablecoins",
+      "topic": "数字资产",
+      "summary": "The proposed rule would translate the GENIUS Act’s payment stablecoin framework into detailed operational requirements for reserves, redemption, gover"
+    },
+    {
       "firm": "Skadden (世达)",
       "title": "Hong Kong Exchange Speeds Up Listing Reviews and Loosens Retail Allocation",
       "url": "https://www.skadden.com/insights/publications/2026/02/hong-kong-exchange-speeds-up",
@@ -418,6 +426,14 @@
       "date": "2026-01-15",
       "topic": "公众持股量",
       "summary": "解读联交所持续公众持股量要求修订要点，以及上市发行人需要了解的合规事项。"
+    },
+    {
+      "firm": "普衡 (Pillsbury)",
+      "url": "https://www.pillsburylaw.com/en/news-and-insights/stablecoin-interest-yield-sticking-points-senate-crypto-bill.html",
+      "date": "2026-01-15",
+      "title": "Stablecoin Interest and Yield are Sticking Points in Senate Crypto Bill",
+      "topic": "数字资产",
+      "summary": "In an interview with Law360, Pillsbury partner Kayvan Ghaffari said that the treatment of stablecoin interest and yield will likely be a sticking poin"
     },
     {
       "firm": "Deacons (的近)",
@@ -477,7 +493,7 @@
       "summary": "证监会就持牌资产管理公司挪用客户资金等失当行为执法，基金管理人监管趋严。"
     }
   ],
-  "count": 59,
-  "updated": "2026-09-13T09:10:46.401098+08:00",
+  "count": 61,
+  "updated": "2026-09-13T11:40:17.945235+08:00",
   "source": "Law Firm Publications (full edition: 17 existing + red-circle + HK-practice firms)"
 }

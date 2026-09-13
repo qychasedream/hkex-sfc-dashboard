@@ -90,12 +90,27 @@ LIST_SOURCES = [
         'base': 'https://www.tylaw.com.cn',
         'date_from_url': lambda m: '%s-%s-%s' % (m.group(2), m.group(3), m.group(4)),
     },
+    {
+        'firm': '锦天城 (AllBright)', 'type': 'listpage',
+        'pages': ['https://www.allbrightlaw.com/CN/10475.aspx'],  # 专业文章
+        'link_re': r"href='(/CN/10475/[a-f0-9]+\.aspx)'",
+        'base': 'https://www.allbrightlaw.com',
+    },
+    {
+        'firm': '汉坤 (Han Kun)', 'type': 'listpage',
+        'pages': ['https://www.hankunlaw.com/portal/list/index/id/3.html'],  # 汉坤资讯
+        'link_re': r'href="(/portal/article/index/cid/\d+/id/\d+\.html)"',
+        'base': 'https://www.hankunlaw.com',
+    },
 ]
 
 SITEMAP_SOURCES = [
     # 方达内容类型：details32=洞察文章、details31=洞察报告；details3=团队、details34=业绩新闻（不收）
     {'firm': '方达 (Fangda Partners)', 'type': 'sitemap',
      'url': 'https://www.fangdalaw.com/sitemap.xml', 'path_filter': r'/content/details(31|32)_\d+\.html'},
+    {'firm': '普衡 (Pillsbury)', 'type': 'sitemap',
+     'url': 'https://www.pillsburylaw.com/sitemap.xml', 'path_filter': r'/en/news-and-insights/',
+     'url_kw': ['hong-kong', 'hongkong', 'hkex', 'china-listing', 'stablecoin', 'virtual-asset']},
 ]
 
 
@@ -225,7 +240,9 @@ def collect_listpage(src):
             print(f"  [WARN] 列表页获取失败 {page}: {e}")
             continue
         for m in re.finditer(src['link_re'], html):
-            path = m.group(2) if m.group(2) and m.group(2).startswith('/') else m.group(1)
+            # 链接取最后一个以 / 开头的捕获组（兼容带编号组的日期提取表达式）
+            g2 = m.group(2) if m.lastindex and m.lastindex >= 2 else None
+            path = g2 if g2 and g2.startswith('/') else m.group(1)
             if not path.startswith('http'):
                 path = src['base'] + path
             date = src['date_from_url'](m) if src.get('date_from_url') else ''
@@ -280,6 +297,9 @@ def main():
         urls = get_sitemap_urls(src['url'], src.get('path_filter'))
         print(f"[{src['firm']}] sitemap 解析 {len(urls)} 篇")
         for loc, lastmod in urls:
+            # 英文站 sitemap 量大，先用 URL 关键词预筛（中文所为数字 URL，不过滤）
+            if src.get('url_kw') and not any(k in loc.lower() for k in src['url_kw']):
+                continue
             if normalize_url(loc) in existing:
                 continue
             date = parse_date(lastmod)

@@ -1054,7 +1054,7 @@ async function refreshAll(noCache) {
         loadJSON(DATA_BASE + 'hkex_regulatory_announcements.json', noCache),
         loadJSON(DATA_BASE + 'hkex_claude_search.json', noCache),
         loadJSON(DATA_BASE + 'hkex_guidance_updates.json', noCache),
-        loadJSON(DATA_BASE + 'law_firm_summaries.json', noCache)
+        loadJSON(DATA_BASE + 'law_firm_full.json', noCache)
     ]);
     var meta = results[0], sfcNews = results[1], hkexReg = results[2],
         hkexClaude = results[3], guidanceData = results[4], lawData = results[5];
@@ -1280,8 +1280,10 @@ function hashColorIdx(s) {
 }
 function renderLawCards(items) {
     var c = document.getElementById('law-cards');
-    // 部分律所仅自己可见：?full=1 解锁（并记住），?full=0 恢复默认视图
-    var LAW_HIDDEN = ['Charltons', '易周', '的近', 'Deacons', 'Baker McKenzie', '贝克麦坚时', 'Clifford Chance', '高伟绅'];
+    // 同事版只收录 6 家律所（金杜/汉坤/中伦/普衡/锦天城/竞天公诚）；
+    // 本人完整视图：?full=1 解锁并记住，?full=0 恢复
+    var LAW_ALLOW = ['金杜', 'King & Wood', 'KWM', '汉坤', '漢坤', 'Han Kun', '中伦', '中倫', 'Zhong Lun',
+                     '普衡', 'Pillsbury', '锦天城', '錦天城', 'AllBright', '竞天公诚', '競天公誠', 'Jingtian'];
     var q = new URLSearchParams(location.search);
     if (q.get('full') === '1') { try { localStorage.setItem('law_full', '1'); } catch (e) {} }
     if (q.get('full') === '0') { try { localStorage.removeItem('law_full'); } catch (e) {} }
@@ -1290,7 +1292,7 @@ function renderLawCards(items) {
     if (!fullView) {
         items = items.filter(function(i){
             var f = i.firm || '';
-            return !LAW_HIDDEN.some(function(k){ return f.indexOf(k) >= 0; });
+            return LAW_ALLOW.some(function(k){ return f.indexOf(k) >= 0; });
         });
     }
     var sorted = items.slice().sort(function(a,b){ return (b.date||'') < (a.date||'') ? -1 : 1; });
