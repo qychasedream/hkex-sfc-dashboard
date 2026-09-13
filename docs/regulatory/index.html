@@ -248,6 +248,7 @@
             background: #dfe4ea;
         }
         .tl-item { position: relative; padding: 10px 0 12px; }
+        .tl-divider { text-align: center; font-size: 0.74rem; color: #bbb; padding: 10px 0 4px; letter-spacing: 1px; }
         .tl-item + .tl-item { border-top: 1px dashed #eef1f4; }
         .tl-item::before {
             content: '';
@@ -676,9 +677,6 @@
 <div class="toast" id="toast"></div>
 
 <header class="header">
-    <button class="refresh-btn" id="refresh-btn" onclick="manualRefresh()">
-        <span class="ricon">🔄</span><span id="refresh-btn-text">刷新全部动态</span>
-    </button>
     <h1>📊 香港监管资讯看板</h1>
     <div class="badge-row">
         <span class="pill pill-hkex">HKEX 联交所</span>
@@ -717,12 +715,14 @@
     <!-- ====== SECTION 1: 监管动态时间线 ====== -->
     <div class="section" id="sec-timeline">
         <div class="section-header" onclick="toggleSection(this)">
-            <h2>📅 2026年6月–8月 监管动态时间线</h2>
+            <h2>📅 监管动态时间线</h2>
             <span class="badge badge-new">最新</span>
             <span class="toggle-icon">▼</span>
         </div>
         <div class="section-content">
+            <div class="timeline" id="timeline-auto"></div>
             <div class="timeline">
+                <div class="tl-divider">— 2026年6月–8月 · 精选回顾 —</div>
                 <div class="tl-item hkex">
                     <div class="tl-meta">2026年8月21日 · HKEX</div>
                     <div class="tl-title">🔵 联交所延长新上市申请有效期：6个月 → 12个月 <a class="source-link" href="https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260821news?sc_lang=zh-HK" target="_blank" rel="noopener">📰 原文</a></div>
@@ -1097,6 +1097,7 @@ async function refreshAll(noCache) {
         renderGlTable(guidanceData.items);
     }
     renderEnforcement(hkexReg ? hkexReg.items : [], hkexClaude ? hkexClaude.items : [], sfcNews ? sfcNews.items : []);
+    renderTimelineAuto(hkexReg ? hkexReg.items : [], sfcNews ? sfcNews.items : []);
     if (lawData && lawData.items) renderLawCards(lawData.items);
 
     return okCount >= 5;
@@ -1197,6 +1198,32 @@ function renderGlTable(items) {
     });
     h += '<tr><td colspan="3" style="text-align:right;"><a href="https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/%E6%9C%89%E9%97%9C%E4%B8%8A%E5%B8%82%E7%99%BC%E8%A1%8C%E4%BA%BA%E7%9A%84%E6%8C%87%E5%BC%95%E6%96%87%E4%BB%B6" target="_blank" rel="noopener" style="color:#7b1fa2;font-size:0.82rem;">查看全部指引信及上市决策 →</a></td></tr>';
     tb.innerHTML = h;
+}
+
+// === 时间线自动区（2026-09 起，数据源驱动，随每次抓取更新） ===
+function renderTimelineAuto(hkexRegItems, sfcNewsItems) {
+    var el = document.getElementById('timeline-auto');
+    if (!el) return;
+    var items = [];
+    hkexRegItems.forEach(function(i){
+        if ((i.date || '') >= '2026-09-01' && i.category !== 'other')
+            items.push({ date: i.date.slice(0,10), title: (i.title||'').replace(/\s+/g,' ').trim(), url: i.url || '', src: 'hkex' });
+    });
+    sfcNewsItems.forEach(function(i){
+        if ((i.date || '') >= '2026-09-01')
+            items.push({ date: i.date.slice(0,10), title: (i.title||'').replace(/\s+/g,' ').trim(), url: i.url || '', src: 'sfc' });
+    });
+    items.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
+    var h = '';
+    items.slice(0, 20).forEach(function(i){
+        var d = i.date.split('-');
+        var meta = Number(d[0]) + '年' + Number(d[1]) + '月' + Number(d[2]) + '日 · ' + (i.src === 'hkex' ? 'HKEX' : 'SFC');
+        h += '<div class="tl-item ' + i.src + '">' +
+             '<div class="tl-meta">' + esc(meta) + '</div>' +
+             '<div class="tl-title">' + (i.url ? '<a class="source-link' + (i.src === 'sfc' ? ' sfc' : '') + '" href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.title) + '</a>' : esc(i.title)) + '</div>' +
+             '</div>';
+    });
+    if (h) el.innerHTML = h + '<div class="tl-divider">— 以上为 9 月起自动更新 —</div>';
 }
 
 // === 监管处罚与执法 ===
