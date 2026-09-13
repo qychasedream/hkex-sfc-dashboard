@@ -462,6 +462,66 @@ def fetch_hkex_news_releases():
     return items
 
 
+def fetch_hkex_whats_new():
+    """抓取 HKEX「最新動態」(What's New) 列表 —— 官方上市资讯总入口，作为遗漏兜底源
+    接口为页面原生 ajax 端点（DisplayCSMListingNewsFilterSectionRecord）"""
+    print("[HKEX] 获取 What's New 最新动态...")
+    url = 'https://www.hkex.com.hk/services/HKEX/HKEX%20MARKET/ajaxform.aspx/DisplayCSMListingNewsFilterSectionRecord'
+    month_map = {'一月': 1, '二月': 2, '三月': 3, '四月': 4, '五月': 5, '六月': 6,
+                 '七月': 7, '八月': 8, '九月': 9, '十月': 10, '十一月': 11, '十二月': 12}
+    items = []
+    try:
+        for offset in (0, 50):
+            body = json.dumps({
+                'datasource': '{6A672746-2B3C-412E-9964-4A9CE272481D}',
+                'newsCategory': [], 'datefrom': '', 'dateto': '', 'newCategoryType': '',
+                'keyword': '', 'currentcount': offset, 'loadmorecount': 50, 'sc_lang': 'zh-HK'
+            }).encode()
+            req = urllib.request.Request(url, data=body, headers={
+                'Content-Type': 'application/json; charset=utf-8',
+                'User-Agent': 'Mozilla/5.0', 'X-Requested-With': 'XMLHttpRequest'})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                d = json.loads(resp.read().decode('utf-8', 'ignore'))
+            batch = json.loads(d['d']) if d.get('d') else []
+            if not batch:
+                break
+            for it in batch:
+                # PublishDate 形如「九月 2026」，Day 为日
+                m = re.match(r'(\S+)\s+(\d{4})', it.get('PublishDate', ''))
+                month = month_map.get(m.group(1), 0) if m else 0
+                year = int(m.group(2)) if m else 0
+                day = int(it.get('Day') or 0)
+                if not (year and month):
+                    continue
+                date_str = f'{year}-{month:02d}-{day:02d}' if day else f'{year}-{month:02d}-01'
+                title = re.sub(r'\s+', ' ', it.get('NewsTitle', '') or '').strip()
+                if not title:
+                    continue
+                link = (it.get('LinkURL') or '').strip()
+                if link and link.startswith('/'):
+                    link = 'https://www.hkex.com.hk' + link
+                items.append({
+                    'title': title,
+                    'url': link or 'https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK',
+                    'date': date_str,
+                    'category': it.get('CategoryTitle') or '',
+                })
+        # 按 URL+标题去重
+        seen = set()
+        dedup = []
+        for i in items:
+            k = i['title'] + '|' + i['date']
+            if k in seen:
+                continue
+            seen.add(k)
+            dedup.append(i)
+        print(f"  ✓ What's New: {len(dedup)} 条")
+        return dedup
+    except Exception as e:
+        print(f"  [WARN] What's New 获取失败: {e}")
+        return []
+
+
 def fetch_hkex_guidance_archive():
     """从 HKEX 指引信档案页抓取所有指引信（含结构性产品、债务证券等）"""
     print("[HKEX] 获取指引信档案 (hkex.com.hk)...")
@@ -703,6 +763,15 @@ def main():
         'count': len(hkex_gl_archive),
         'items': hkex_gl_archive
     }, 'hkex_guidance_archive.json')
+
+    # 6.5 HKEX What's New 最新动态（官方上市资讯总入口，遗漏兜底源）
+    whats_new = fetch_hkex_whats_new()
+    save_json({
+        'updated': datetime.now(HKT).isoformat(),
+        'source': 'HKEX Whats New (Listing)',
+        'count': len(whats_new),
+        'items': whats_new
+    }, 'hkex_whats_new.json')
 
     # 7. HKEX 最新消息 (Claude API web_search, 可选)
     hkex_claude = fetch_hkex_via_claude()

@@ -1059,11 +1059,12 @@ async function refreshAll(noCache) {
         loadJSON(DATA_BASE + 'hkex_claude_search.json', noCache),
         loadJSON(DATA_BASE + 'hkex_guidance_updates.json', noCache),
         loadJSON(DATA_BASE + 'law_firm_full.json', noCache),
-        loadJSON(DATA_BASE + 'hkex_guidance_archive.json', noCache)
+        loadJSON(DATA_BASE + 'hkex_guidance_archive.json', noCache),
+        loadJSON(DATA_BASE + 'hkex_whats_new.json', noCache)
     ]);
     var meta = results[0], sfcNews = results[1], hkexReg = results[2],
         hkexClaude = results[3], guidanceData = results[4], lawData = results[5],
-        glArchive = results[6];
+        glArchive = results[6], whatsNew = results[7];
     var okCount = results.filter(function(r){ return !!r; }).length;
 
     // --- 头部时间与统计 ---
@@ -1137,7 +1138,8 @@ async function refreshAll(noCache) {
     }
     renderEnforcement(hkexReg ? hkexReg.items : [], hkexClaude ? hkexClaude.items : [], sfcNews ? sfcNews.items : []);
     renderTimelineAuto(hkexReg ? hkexReg.items : [], sfcNews ? sfcNews.items : [],
-                       glArchive ? glArchive.items : [], guidanceData ? guidanceData.items : []);
+                       glArchive ? glArchive.items : [], guidanceData ? guidanceData.items : [],
+                       whatsNew ? whatsNew.items : []);
     if (lawData && lawData.items) renderLawCards(lawData.items);
 
     return okCount >= 5;
@@ -1241,7 +1243,7 @@ function renderGlTable(items) {
 }
 
 // === 时间线自动区（2026-09 起，数据源驱动，随每次抓取更新） ===
-function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidanceItems) {
+function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidanceItems, whatsNewItems) {
     var el = document.getElementById('timeline-auto');
     if (!el) return;
     var items = [];
@@ -1254,19 +1256,36 @@ function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidance
             items.push({ date: i.date.slice(0,10), title: (i.title||'').replace(/\s+/g,' ').trim(), url: i.url || '', src: 'sfc' });
     });
     // 指引信/上市决策（档案源，date 为 YYYY-MM-DD）
+    var seenGlRef = {};
     (glArchiveItems || []).forEach(function(a){
-        if ((a.date || '') >= '2026-09-01')
+        if ((a.date || '') >= '2026-09-01') {
+            var rm = (a.title || '').match(/(GL|LD)\d+[-–—]\d+/);
+            if (rm) seenGlRef[rm.group(0)] = true;
             items.push({ date: a.date.slice(0,10), title: (a.title||'').replace(/\s+/g,' ').trim(), url: a.url || '', src: 'hkex' });
+        }
+    });
+    // HKEX「最新動態」(What's New)：上市资讯总入口；与档案按 GL/LD 编号去重（档案有 PDF 直链，优先）
+    (whatsNewItems || []).forEach(function(w){
+        if ((w.date || '') >= '2026-09-01') {
+            var rm = (w.title || '').match(/(GL|LD)\d+[-–—]\d+/);
+            if (rm && seenGlRef[rm.group(0)]) return;
+            items.push({ date: w.date.slice(0,10), title: (w.title||'').replace(/\s+/g,' ').trim(), url: w.url || '', src: 'hkex' });
+        }
     });
     // 指引文件更新（规则手册源，date 形如 '05/2018 (09/2026)'；GL/LD 已由档案覆盖，这里只收 FAQ 类）
     (guidanceItems || []).forEach(function(g){
         var ms = String(g.date || '').match(/(\d{2})\/(\d{4})/g) || [];
-        var last = ms.length ? ms[ms.length - 1] : '';
-        if (last >= '09/2026' && !/^(GL|LD)\d/.test(g.ref || '')) {
-            items.push({ date: last.split('/')[1] + '-' + last.split('/')[0] + '-01',
+        if (!ms.length) return;
+        var last = ms[ms.length - 1].split('/');
+        var ym = Number(last[1]) * 100 + Number(last[0]);  // 数值型 YYYYMM 比较
+        if (ym >= 202609 && !/^(GL|LD)\d/.test(g.ref || '')) {
+            items.push({ date: last[1] + '-' + last[0] + '-01',
                          title: (g.detail || '') + '（' + (g.ref || '') + '）', url: g.url || g.topicUrl || '', src: 'hkex' });
         }
     });
+    // 同标题去重
+    var seenT = {};
+    items = items.filter(function(i){ if (seenT[i.title]) return false; seenT[i.title] = true; return true; });
     items.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
     var h = '';
     items.slice(0, 20).forEach(function(i){
