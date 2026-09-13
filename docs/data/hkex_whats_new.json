@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13T20:01:43.487516+08:00",
+  "updated": "2026-09-13T20:11:50.833013+08:00",
   "source": "HKEX Whats New (Listing)",
   "count": 80,
   "items": [
@@ -7,481 +7,641 @@
       "title": "刊發網上培訓影片 - 管理層討論及分析披露：實務指引與應用",
       "url": "https://www.hkex.com.hk/Listing/Education-Centre/Listed-Issuers/MDA-Disclosure-Practical-Guidance-and-Applications?sc_lang=zh-HK",
       "date": "2026-09-11",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發經修訂的指引信(GL95-18)以反映有關內部監控檢討的最新規定",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/GL95_18(202609)_c.pdf",
       "date": "2026-09-01",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "GL95-18",
+      "description": ""
     },
     {
       "title": "刊發經修訂的上市申請人表格",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Forms/New-Applicants/Main-Board-New-Applicants?sc_lang=en",
       "date": "2026-08-29",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "主板上市申請人: SE001",
+      "description": ""
     },
     {
       "title": "刊發香港交易所聯訊通用戶登記研討會的錄影及簡報",
       "url": "https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform/Education-Centre?sc_lang=zh-HK",
       "date": "2026-07-31",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發經修訂的主板及GEM上市發行人的交易安排電子表格（CF093），以反映於2026年7月2日生效的每手買賣單位框架的相關優化措施",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Forms/Equity-Securities-Issuers/Main-Board-Issuers?sc_lang=en",
       "date": "2026-07-25",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "主板上市發行人: CF093",
+      "description": ""
     },
     {
       "title": "更新 《新上市申請人指南》",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://cn-rules.hkex.com.hk/node/14039",
       "date": "2026-07-24",
-      "category": ""
+      "category": "",
+      "ref": "反映於2026年7月24日刊發的《上市機制競爭力檢討諮詢總結》中所述的建議及《上市規則》的相應修訂；及",
+      "description": ""
     },
     {
       "title": "刊發經修訂的上市申請人表格",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/CN001(202607).docx",
       "date": "2026-07-24",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "主板上市申請人: CN001",
+      "description": ""
     },
     {
       "title": "刊發有關數字資產相關活動的新指引信 (GL122-26)",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/GL122_26(202607)_c.pdf",
       "date": "2026-07-24",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "GL122-26",
+      "description": ""
     },
     {
       "title": "更新《有關上市發行人的指引文件》的綜合版本以(1)反映有關2026年7月24日刊發的《有關上市機制競爭力檢討》諮詢總結的上市規則修訂；(2)反映有關2026年6月30日刊發的《優化香港證券市場每手買賣單位框架》諮詢總結所載的相關優化措施；及(3)納入有關數字資產相關活動的新指引信(GL122-26)",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/GM_consolidated(202607)_c.pdf",
       "date": "2026-07-24",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "有關上市發行人的指引文件",
+      "description": ""
     },
     {
       "title": "刊發更新的網上培訓 - 公司行動涉及的交易安排，以反映於2026年7月2日生效的優化香港證券市場每手買賣單位框架",
       "url": "https://www.hkex.com.hk/Listing/Education-Centre/Listed-Issuers/Trading-Arrangements-for-Corporate-Actions?sc_lang=en",
       "date": "2026-07-24",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發《有關上市機制競爭力檢討的諮詢總結》",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/News/Market-Consultations/2016-to-Present/Responses_Jul_2026?sc_lang=en",
       "date": "2026-07-24",
-      "category": "New Listing Applicants, Listed issuers"
+      "category": "New Listing Applicants, Listed issuers",
+      "ref": "對諮詢文件的回應",
+      "description": ""
     },
     {
       "title": "認可證券交易所列表新增馬來西亞交易所",
       "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Guidance/IPO/Listing-of-Overseas-Companies/List-of-Recognised-Stock-Exchange?sc_lang=en",
       "date": "2026-07-23",
-      "category": "Overseas Issuers"
+      "category": "Overseas Issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "聯交所刊發《上市監管及規則執行通訊》",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Other-Resources/Listed-Issuers/LIR-Newsletter/newsletter_202607_c.pdf",
       "date": "2026-07-09",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "更新結構性產品發行人剩餘價值公告表格及指引",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Forms/Structured-Products-Issuers/Form_Filling_Guide_SPRV001_e.pdf",
       "date": "2026-07-02",
-      "category": ""
+      "category": "",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發及更新有關結構性產品發行人的指引",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Other-Resources/Structured-Products/SP_FAQ_Issuer_Eligibility_c.pdf",
       "date": "2026-06-30",
-      "category": "Structured Products"
+      "category": "Structured Products",
+      "ref": "常問問題 - 發行人資格",
+      "description": ""
     },
     {
       "title": "更新《有關若干類別公司行動的交易安排之指引》以反映於2026年6月30日刊發的《優化香港證券市場每手買賣單位框架》諮詢總結所載的相關優化措施",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/d_ta(202606)_c.pdf",
       "date": "2026-06-30",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "推出聚焦股東價值網頁",
       "url": "https://www.hkex.com.hk/Listing/Sustainability/Shareholder-Value-in-Focus/Overview?sc_lang=zh-HK",
       "date": "2026-06-30",
-      "category": "CG"
+      "category": "CG",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "有關推出香港交易所聯訊通的更新資訊",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform?sc_lang=zh-HK",
       "date": "2026-06-29",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "更新的香港交易所聯訊通主頁",
+      "description": ""
     },
     {
       "title": "更新 《新上市申請人指南》",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://cn-rules.hkex.com.hk/node/14024",
       "date": "2026-05-29",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "新增有關董事根據《上市規則》適合性的上市決策；",
+      "description": ""
     },
     {
       "title": "刊發《無紙證券市場指引》",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Other-Resources/Uncertificated-Securities-Market/Guide_on_USM_c.pdf",
       "date": "2026-05-29",
-      "category": "New Listing Applicants, Listed issuers"
+      "category": "New Listing Applicants, Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "ESG Academy 研討會錄影 — 風險管理及內部監控：從認知到實踐",
       "url": "https://www.hkex.com.hk/Listing/Sustainability/ESG-Academy/Publications-and-Training/Webinar-Series/Risk-Management-and-Internal-Controls?sc_lang=en",
       "date": "2026-05-29",
-      "category": "ESG"
+      "category": "ESG",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "更新有關債務證券發行人的常問問題",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/DS_FAQ_Listing_procedures_pro(202605)_c.pdf",
       "date": "2026-05-12",
-      "category": "Debt Securities"
+      "category": "Debt Securities",
+      "ref": "常問問題 (有關僅售予專業投資者的債務證券) -上市申請及文件",
+      "description": ""
     },
     {
       "title": "更新有關獲認可可擔任在香港上市的內地註冊成立公司的申報會計師及／或核數師的內地會計師事務所名錄",
       "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Guidance/Others/Other-Resources/List-of-Approved-Mainland-Accounting-Firms?sc_lang=en",
       "date": "2026-05-08",
-      "category": "New Listing Applicants, Listed issuers"
+      "category": "New Listing Applicants, Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "更新有關可持續核證框架及IFRS S2修訂的《環境、社會及管治報告守則》常問問題",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/faq_17,-d-,2(202604)_c.pdf",
       "date": "2026-04-24",
-      "category": "ESG, Listed issuers"
+      "category": "ESG, Listed issuers",
+      "ref": "常問問題17.2 – 編號1-21",
+      "description": ""
     },
     {
       "title": "刊發《檢討第十五A章 – 結構性產品的諮詢意見總結》",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260420news?sc_lang=zh-HK",
       "date": "2026-04-20",
-      "category": "Structured Products"
+      "category": "Structured Products",
+      "ref": "諮詢意見總結",
+      "description": ""
     },
     {
       "title": "更新有關核數師的委聘、罷免及薪酬的常問問題",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/faq_16(202604)_c.pdf",
       "date": "2026-04-17",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "常問問題16 – 編號5",
+      "description": ""
     },
     {
       "title": "刊發《建立有效風險管理及內部監控系統的實用建議》及《董事會及董事企業管治指引》的相應更新",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/RMIC_Practical_Tips(202604)_c.pdf",
       "date": "2026-04-15",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "建立有效風險管理及內部監控系統的實用建議",
+      "description": ""
     },
     {
       "title": "刊發經修訂的投資工具上市申請人表格及指引",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Forms/New-Applicants/Main-Board-New-Applicants?sc_lang=en",
       "date": "2026-03-31",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "CIS002",
+      "description": ""
     },
     {
       "title": "刊發有關無紙證券市場、「香港交易所聯訊通」及其他輕微修訂的《上市規則》修訂",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/%E7%AC%AC%E4%B8%80%E7%99%BE%E4%BA%94%E5%8D%81%E4%BA%8C%E6%AC%A1%E4%BF%AE%E8%A8%82",
       "date": "2026-03-30",
-      "category": "New Listing Applicants, Listed issuers"
+      "category": "New Listing Applicants, Listed issuers",
+      "ref": "《主板上市規則》修訂",
+      "description": ""
     },
     {
       "title": "刊發經修訂電子表格",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Forms/Equity-Securities-Issuers/Main-Board-Issuers?sc_lang=en",
       "date": "2026-03-14",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "主板上市發行人: FF301 / FF302",
+      "description": ""
     },
     {
       "title": "刊發《有關上市機制競爭力檢討的諮詢文件》",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260313news?sc_lang=zh-HK",
       "date": "2026-03-13",
-      "category": "New Listing Applicants, Listed issuers"
+      "category": "New Listing Applicants, Listed issuers",
+      "ref": "諮詢文件",
+      "description": ""
     },
     {
       "title": "刊發有關公司秘書兼任多家公司職務的常問問題及《董事會及董事企業管治指引》的相應修訂",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/faq_1,-d-,2(202602)_c.pdf",
       "date": "2026-02-27",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "常問問題1.2 – 編號3",
+      "description": ""
     },
     {
       "title": "更新有關初任董事培訓規定的常問問題",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/faq_1,-d-,1(202602)_c.pdf",
       "date": "2026-02-27",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "常問問題1.1 – 編號4",
+      "description": ""
     },
     {
       "title": "刊發香港交易所聯訊通的培訓影片(第四部分)",
       "url": "https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform/Education-Centre?sc_lang=zh-HK",
       "date": "2026-02-09",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發有關公眾持股量規定的常問問題",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/faq_7(202602)_c.pdf",
       "date": "2026-02-02",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "常問問題7 – 編號2至5",
+      "description": ""
     },
     {
       "title": "刊發香港交易所聯訊通的培訓影片(第三部分 )",
       "url": "https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform/Education-Centre?sc_lang=zh-HK",
       "date": "2026-01-19",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發經修訂電子表格",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Forms/Equity-Securities-Issuers/Main-Board-Issuers?sc_lang=en",
       "date": "2026-01-17",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "主板上市發行人: FF301 / FF302",
+      "description": ""
     },
     {
       "title": "刊發經修訂的上市申請人的電子表格",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Forms/New-Applicants/Main-Board-New-Applicants?sc_lang=en",
       "date": "2026-01-10",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "主板上市申請人: M119",
+      "description": ""
     },
     {
       "title": "刊發香港交易所聯訊通的培訓影片(第二部分 )",
       "url": "https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform/Education-Centre?sc_lang=zh-HK",
       "date": "2026-01-05",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發經修訂的投資工具上市申請人表格及指引",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/CN001_CIS(202601).docx",
       "date": "2026-01-02",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "CN001 (CIS)",
+      "description": ""
     },
     {
       "title": "更新《有關上市發行人的指引文件》的綜合版本以(1)反映有關2025年12月17日刊發的《持續公眾持股量規定》諮詢總結的上市規則修訂；及(2)納入有關公眾持股量規定的新指引信 (GL121-26)",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/GM_consolidated(202601)_c.pdf",
       "date": "2025-12-31",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "有關上市發行人的指引文件",
+      "description": ""
     },
     {
       "title": "刊發有關公眾持股量規定的新指引信 (GL121-26)",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Whats-New/News-Item/GL121_26(202512)_c.pdf",
       "date": "2025-12-31",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "GL121-26",
+      "description": ""
     },
     {
       "title": "推出香港交易所聯訊通試用版",
       "url": "https://www.hkex.com.hk/nonCMS/HKEXIAPTRIAL",
       "date": "2025-12-22",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發香港交易所聯訊通的用戶指南及培訓影片(第一部分)",
       "url": "https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform?sc_lang=zh-HK",
       "date": "2025-12-22",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發更新的網上培訓 - 持續披露責任及短暫停牌，以反映將於2026年1月1日生效的持續公眾持股量規定的相關規則修訂）",
       "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New/Whats-New/News-Item/2025/20251219News/External-Link-Redirect?sc_lang=en",
       "date": "2025-12-19",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發更新的網上培訓 - 持續責任，以反映將於2026年1月1日生效的持續公眾持股量規定的相關規則修訂）",
       "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New/Whats-New/News-Item/2025/20251219_2-News/External-Link-Redirect?sc_lang=en",
       "date": "2025-12-19",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發經修訂月報表電子表格的預覽版，以反映將於2026年1月1日生效有關持續公眾持股量規定的《上市規則》修訂 (經修訂電子表格的最終版本將會在2026年1月18日晚上六時起在電子呈交系統供下載及提交）",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Forms/Equity-Securities-Issuers/Main-Board-Issuers?sc_lang=en",
       "date": "2025-12-17",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "主板上市發行人: FF301 (預覽版) / FF302 (預覽版)",
+      "description": ""
     },
     {
       "title": "刊發《有關持續公眾持股量要求的諮詢總結》",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/251217news?sc_lang=zh-HK",
       "date": "2025-12-17",
-      "category": "New Listing Applicants, Listed issuers"
+      "category": "New Listing Applicants, Listed issuers",
+      "ref": "對諮詢文件的回應",
+      "description": ""
     },
     {
       "title": "刊發發行人報告年度審閱報告",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Other-Resources/Exchanges-Review-of-Issuers-Annual-Disclosure/ARIR_2025_c.pdf",
       "date": "2025-12-11",
-      "category": "Annual report, CG, ESG, Listed issuers"
+      "category": "Annual report, CG, ESG, Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "更新年報編備指引",
       "url": "https://cn-rules.hkex.com.hk/sites/default/files/net_file_store/Guide_on_Preparation_of_Annual_Report_c.pdf",
       "date": "2025-12-11",
-      "category": "Annual report, Listed issuers"
+      "category": "Annual report, Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "推出年報易覽",
       "url": "https://are.hkex.com.hk/home/zh-HK",
       "date": "2025-12-11",
-      "category": "Annual report, Listed issuers"
+      "category": "Annual report, Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "聯交所刊發《上市監管及規則執行通訊》",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Other-Resources/Listed-Issuers/LIR-Newsletter/newsletter_202511_c.pdf",
       "date": "2025-11-28",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發經修訂的上市申請人的電子表格指引",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Forms/New-Applicants/Main-Board-New-Applicants?sc_lang=en",
       "date": "2025-11-07",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "主板上市申請人: M119",
+      "description": ""
     },
     {
       "title": "刊發《檢討第十五A章 – 結構性產品的諮詢文件》",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/2509302news?sc_lang=zh-HK",
       "date": "2025-09-30",
-      "category": "Structured Products"
+      "category": "Structured Products",
+      "ref": "諮詢文件",
+      "description": ""
     },
     {
       "title": "更新 《新上市申請人指南》以 (1) 反映我們於2025年8月1日刊發的《建議優化首次公開招股市場定價及公開市場規定的總結及進一步諮詢文件》中所述的建議及相關《主板規則》修訂實施後所作出的相應修訂; (2) 納入對於《主板規則》第十八A 章所述的生物科技公司及《主板規則》第十八C 章所述的特專科技公司之資深投資者規定的進一步指引；及 (3) 納入問卷的概覧，以便收集與承配人有關的所需額外資訊。",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/%E6%96%B0%E4%B8%8A%E5%B8%82%E7%94%B3%E8%AB%8B%E4%BA%BA%E6%8C%87%E5%8D%97",
       "date": "2025-08-01",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "新上市申請人指南",
+      "description": ""
     },
     {
       "title": "更新《上市發行人的指引文件》以反映有關2025年8月1日刊發的《建議優化首次公開招股市場定價及公開市場規定的總結及進一步諮詢文件》諮詢總結的修訂",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Interpretation-and-Guidance/Guidance-Materials-for-Listed-Issuers/GM_consolidated_c.pdf",
       "date": "2025-08-01",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "上市發行人的指引文件",
+      "description": ""
     },
     {
       "title": "刊發《建議優化首次公開招股市場定價及公開市場規定的總結及進一步諮詢文件》",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/2508012news?sc_lang=zh-HK",
       "date": "2025-08-01",
-      "category": "New Listing Applicants, Listed issuers"
+      "category": "New Listing Applicants, Listed issuers",
+      "ref": "對諮詢文件的回應",
+      "description": ""
     },
     {
       "title": "刊發有關進一步擴大無紙化上市機制的經修訂的常問問題及指引",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/net_file_store/faq-10_c.pdf",
       "date": "2025-07-31",
-      "category": ""
+      "category": "",
+      "ref": "常問問題10",
+      "description": ""
     },
     {
       "title": "香港交易所聯訊通 – 發行人合規的一站式平台",
       "url": "https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform?sc_lang=zh-HK",
       "date": "2025-07-25",
-      "category": ""
+      "category": "",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "更新《上市發行人的指引文件》的綜合版本以納入更新的董事及《企業管治守則》常問問題（常問問題1.1 及常問問題17.1）以反映將於2025年7月1日生效的新企業管治規定",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Interpretation-and-Guidance/Guidance-Materials-for-Listed-Issuers/GM_consolidated_c.pdf",
       "date": "2025-06-30",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "上市發行人的指引文件",
+      "description": ""
     },
     {
       "title": "更新標題類別以包括(i)更換提名委員會成員; 及(ii) 未能符合提名委員會的規定",
       "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Headline-Categories?sc_lang=en",
       "date": "2025-06-30",
-      "category": ""
+      "category": "",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "聯交所刊發《上市監管及規則執行通訊》",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Other-Resources/Listed-Issuers/LIR-Newsletter/newsletter_202506_c.pdf",
       "date": "2025-06-20",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "ESG Academy 研討會錄影— 制定氣候策略 擁抱未知將來：情景規劃及分析",
       "url": "https://www.hkex.com.hk/Listing/Sustainability/ESG-Academy/Publications-and-Training/Webinar-Series/Developing-Climate-Strategies?sc_lang=en",
       "date": "2025-06-09",
-      "category": "ESG"
+      "category": "ESG",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發實施無紙證券市場及「發行人平台」所需的《上市規則》條文修訂資料文件",
       "url": "https://www.hkex.com.hk/News/Market-Communications/2025/250530news?sc_lang=zh-HK",
       "date": "2025-05-30",
-      "category": "New Listing Applicants, Listed issuers"
+      "category": "New Listing Applicants, Listed issuers",
+      "ref": "資料文件",
+      "description": ""
     },
     {
       "title": "刊發更新的年報編備指引, 以反映將於2025年7月1日生效的《企業管治守則》的相關規則修訂",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Corporate-Governance-Practices/Updated_CG_Guide_2025_c.pdf",
       "date": "2025-05-29",
-      "category": "Annual report, Listed issuers"
+      "category": "Annual report, Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發更新的網上培訓 - 持續責任, 以反映將於2025年7月1日生效的《企業管治守則》的相關規則修訂",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hksi.org/ejai/ContinuingObligations_tc/story.html",
       "date": "2025-05-29",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "廣東話",
+      "description": ""
     },
     {
       "title": "更新董事及《企業管治守則》常問問題以反映將於2025年7月1日生效的新企業管治規定",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/net_file_store/faq_-_1.1_01072025_c.pdf",
       "date": "2025-05-29",
-      "category": "CG"
+      "category": "CG",
+      "ref": "常問問題 1.1",
+      "description": ""
     },
     {
       "title": "刊發更新的董事會及董事企業管治指引 (更新以反映將於2025年7月1日生效的規則修訂)",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Corporate-Governance-Practices/Updated_CG_Guide_2025_c.pdf",
       "date": "2025-05-29",
-      "category": "CG"
+      "category": "CG",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發經修訂及新的上市申請人的電子表格及指引",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates/Forms/New-Applicants/Main-Board-New-Applicants?sc_lang=en",
       "date": "2025-05-10",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "主板上市申請人: M119 / M201 / T103",
+      "description": ""
     },
     {
       "title": "更新指引信HKEX-GL77-14以反映對適用於上市發行人的《新上市申請人指南》之修訂，並對《上市發行人的指引文件》及《年報編備指引》的綜合版本作出相應修訂",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/net_file_store/GL77-14_c.pdf",
       "date": "2025-05-06",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "HKEX-GL77-14",
+      "description": ""
     },
     {
       "title": "更新 《新上市申請人指南》",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BF%AE%E8%A8%82",
       "date": "2025-05-06",
-      "category": "New Listing Applicants"
+      "category": "New Listing Applicants",
+      "ref": "有關《指南》的修訂包括(i)允許生物科技公司及特專科技公司可以選擇以保密形式提交上市申請; (ii) 生物科技公司及特專科技公司將被視為已滿足《主板規則》第八A章所列的創新產業公司規定及外界認可規定；及(iii) 就合約安排而言，更新對受中國證監會備案制度規管的申請人所需的監管保證要求及其他規定的監管批准要求。",
+      "description": ""
     },
     {
       "title": "聯交所按主題重新整合上市規則執行簡報",
       "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Newsletters/Explore-by-topic?sc_lang=en",
       "date": "2025-03-31",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "認可證券交易所列表新增泰國證券交易所",
       "url": "https://www.hkex.com.hk/Listing/Rules-and-Resources/Guidance/IPO/Listing-of-Overseas-Companies/List-of-Recognised-Stock-Exchange?sc_lang=en",
       "date": "2025-03-10",
-      "category": "Overseas Issuers"
+      "category": "Overseas Issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發《有關建議進一步擴大無紙化上市機制及其他《上市規則》修訂的諮詢總結》",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2025/250124news?sc_lang=zh-HK",
       "date": "2025-01-24",
-      "category": "Paperless"
+      "category": "Paperless",
+      "ref": "對諮詢文件的回應",
+      "description": ""
     },
     {
       "title": "刊發常問問題",
-      "url": "https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK",
+      "url": "https://cn-rules.hkex.com.hk/sites/default/files/net_file_store/faq-10_c.pdf",
       "date": "2024-12-31",
-      "category": "Listed issuers"
+      "category": "Listed issuers",
+      "ref": "常問問題10 – 編號3A",
+      "description": ""
     },
     {
       "title": "更新《環境、社會及管治報告守則》常問問題以反映新的氣候相關披露規定",
       "url": "https://cn-rules.hkex.com.hk/sites/default/files/net_file_store/faq-17.2_c.pdf",
       "date": "2024-12-31",
-      "category": "ESG"
+      "category": "ESG",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發《有關《企業管治守則》及相關《上市規則》條文檢討的諮詢總結》",
       "url": "https://www.hkex.com.hk/News/Market-Consultations/2016-to-Present/June-2024-Review-of-CG-Code?sc_lang=zh-HK",
       "date": "2024-12-19",
-      "category": "CG"
+      "category": "CG",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發《建議優化首次公開招股市場定價及公開市場規定的諮詢文件》",
       "url": "https://www.hkex.com.hk/News/Market-Consultations/2016-to-Present/December-2024-Optimise-IPO-Price?sc_lang=zh-hk",
       "date": "2024-12-19",
-      "category": "New Listing Applicants, Listed issuers"
+      "category": "New Listing Applicants, Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發發行人年報審閱報告",
       "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Other-Resources/Exchanges-Review-of-Issuers-Annual-Disclosure/rdiar_2024_c.pdf",
       "date": "2024-12-10",
-      "category": "Annual report, Listed issuers"
+      "category": "Annual report, Listed issuers",
+      "ref": "",
+      "description": ""
     },
     {
       "title": "刊發年報編備指引",
       "url": "https://cn-rules.hkex.com.hk/sites/default/files/net_file_store/Guide_on_Preparation_of_Annual_Report_c.pdf",
       "date": "2024-12-10",
-      "category": "Annual report, Listed issuers"
+      "category": "Annual report, Listed issuers",
+      "ref": "",
+      "description": ""
     }
   ]
 }

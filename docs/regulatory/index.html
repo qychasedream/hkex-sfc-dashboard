@@ -1255,21 +1255,23 @@ function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidance
         if ((i.date || '') >= '2026-09-01')
             items.push({ date: i.date.slice(0,10), title: (i.title||'').replace(/\s+/g,' ').trim(), url: i.url || '', src: 'sfc' });
     });
-    // 指引信/上市决策（档案源，date 为 YYYY-MM-DD）
+    // 指引信/上市决策（档案源，date 为 YYYY-MM-DD）—— 覆盖 7 月起，与 What's New 对齐
     var seenGlRef = {};
     (glArchiveItems || []).forEach(function(a){
-        if ((a.date || '') >= '2026-09-01') {
+        if ((a.date || '') >= '2026-07-01') {
             var rm = (a.title || '').match(/(GL|LD)\d+[-–—]\d+/);
             if (rm) seenGlRef[rm[0]] = true;
             items.push({ date: a.date.slice(0,10), title: (a.title||'').replace(/\s+/g,' ').trim(), url: a.url || '', src: 'hkex' });
         }
     });
-    // HKEX「最新動態」(What's New)：上市资讯总入口；与档案按 GL/LD 编号去重（档案有 PDF 直链，优先）
+    // HKEX「最新動態」(What's New)：上市资讯总入口，覆盖 7 月起；与档案按 GL/LD 编号去重（档案有 PDF 直链，优先）
     (whatsNewItems || []).forEach(function(w){
-        if ((w.date || '') >= '2026-09-01') {
+        if ((w.date || '') >= '2026-07-01') {
             var rm = (w.title || '').match(/(GL|LD)\d+[-–—]\d+/);
             if (rm && seenGlRef[rm[0]]) return;
-            items.push({ date: w.date.slice(0,10), title: (w.title||'').replace(/\s+/g,' ').trim(), url: w.url || '', src: 'hkex' });
+            var t = (w.title||'').replace(/\s+/g,' ').trim();
+            if (w.ref) t = '【' + w.ref + '】' + t;
+            items.push({ date: w.date.slice(0,10), title: t, url: w.url || '', src: 'hkex' });
         }
     });
     // 指引文件更新（规则手册源，date 形如 '05/2018 (09/2026)'；GL/LD 已由档案覆盖，这里只收 FAQ 类）
@@ -1278,7 +1280,7 @@ function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidance
         if (!ms.length) return;
         var last = ms[ms.length - 1].split('/');
         var ym = Number(last[1]) * 100 + Number(last[0]);  // 数值型 YYYYMM 比较
-        if (ym >= 202609 && !/^(GL|LD)\d/.test(g.ref || '')) {
+        if (ym >= 202607 && !/^(GL|LD)\d/.test(g.ref || '')) {
             items.push({ date: last[1] + '-' + last[0] + '-01',
                          title: (g.detail || '') + '（' + (g.ref || '') + '）', url: g.url || g.topicUrl || '', src: 'hkex' });
         }
@@ -1296,7 +1298,7 @@ function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidance
              '<div class="tl-title">' + (i.url ? '<a class="source-link' + (i.src === 'sfc' ? ' sfc' : '') + '" href="' + esc(i.url) + '" target="_blank" rel="noopener">' + esc(i.title) + '</a>' : esc(i.title)) + '</div>' +
              '</div>';
     });
-    if (h) el.innerHTML = h + '<div class="tl-divider">— 以上为 9 月起自动更新 —</div>';
+    if (h) el.innerHTML = h + '<div class="tl-divider">— 以上为 7 月起自动更新 —</div>';
 }
 
 // === 监管处罚与执法 ===

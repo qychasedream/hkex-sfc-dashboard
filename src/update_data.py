@@ -507,11 +507,22 @@ def fetch_hkex_whats_new():
                 link = (it.get('LinkURL') or '').strip()
                 if link and link.startswith('/'):
                     link = 'https://www.hkex.com.hk' + link
+                # 文件编号与 PDF 链接（如 GL95-18 / SE001 / CF093）
+                ref = ''
+                bullets = it.get('ListingNewsBulletLinkURLItems') or []
+                if bullets:
+                    ref = (bullets[0].get('LinkTitle') or '').strip()
+                    if not link:
+                        burl = (bullets[0].get('LinkURL') or '').strip()
+                        if burl:
+                            link = 'https://www.hkex.com.hk' + burl if burl.startswith('/') else burl
                 items.append({
                     'title': title,
                     'url': link or 'https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=zh-HK',
                     'date': date_str,
                     'category': it.get('CategoryTitle') or '',
+                    'ref': ref,
+                    'description': (it.get('NewsDescription') or '').strip(),
                 })
         # 按 URL+标题去重
         seen = set()
