@@ -1260,7 +1260,7 @@ function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidance
     (glArchiveItems || []).forEach(function(a){
         if ((a.date || '') >= '2026-09-01') {
             var rm = (a.title || '').match(/(GL|LD)\d+[-–—]\d+/);
-            if (rm) seenGlRef[rm.group(0)] = true;
+            if (rm) seenGlRef[rm[0]] = true;
             items.push({ date: a.date.slice(0,10), title: (a.title||'').replace(/\s+/g,' ').trim(), url: a.url || '', src: 'hkex' });
         }
     });
@@ -1268,7 +1268,7 @@ function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidance
     (whatsNewItems || []).forEach(function(w){
         if ((w.date || '') >= '2026-09-01') {
             var rm = (w.title || '').match(/(GL|LD)\d+[-–—]\d+/);
-            if (rm && seenGlRef[rm.group(0)]) return;
+            if (rm && seenGlRef[rm[0]]) return;
             items.push({ date: w.date.slice(0,10), title: (w.title||'').replace(/\s+/g,' ').trim(), url: w.url || '', src: 'hkex' });
         }
     });
