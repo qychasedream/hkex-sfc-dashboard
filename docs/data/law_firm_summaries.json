@@ -1,8 +1,16 @@
 {
-  "updated": "2026-09-12T12:39:11.562980+08:00",
+  "updated": "2026-09-13T11:50:27.994397+08:00",
   "source": "Verified Law Firm Publications (curated + auto-scan)",
-  "count": 58,
+  "count": 66,
   "items": [
+    {
+      "firm": "JSM (孖士打)",
+      "title": "Settled or not? Hong Kong court says employer can still sue employee despite settlement agreement",
+      "url": "https://www.jsm.com/zh/publications/2026/settled-or-not-hong-kong-court-says-employer-can-still-sue-employee-despite-settlement-agreement/",
+      "date": "2026-09-10",
+      "topic": "上市监管",
+      "summary": ""
+    },
     {
       "firm": "Charltons (易周律师行)",
       "title": "Listing Biotech, Specialist Technology & WVR-Structured Companies On HKEX",
@@ -34,6 +42,22 @@
       "url": "https://www.jsm.com/zh/publications/2025/what-hong-kong-stablecoin-issuers-need-to-know-about-the-latest-aml-cft-compliance/",
       "date": "2026-08-26",
       "topic": "数字资产",
+      "summary": ""
+    },
+    {
+      "firm": "Charltons (易周律师行)",
+      "title": "Charltons Finalist for Transactional Boutique Law Firm of the Year at ALB Hong Kong Law Awards 2026",
+      "url": "https://www.charltonslaw.com/charltons-finalist-for-transactional-boutique-law-firm-of-the-year-at-alb-hong-kong-law-awards-2026/",
+      "date": "2026-08-26",
+      "topic": "上市监管",
+      "summary": ""
+    },
+    {
+      "firm": "Charltons (易周律师行)",
+      "title": "Julia Charlton Finalist for Managing Partner of the Year at ALB Hong Kong Law Awards 2026",
+      "url": "https://www.charltonslaw.com/julia-charlton-finalised-for-managing-partner-of-the-year-at-alb-hong-kong-law-awards-2026/",
+      "date": "2026-08-25",
+      "topic": "上市监管",
       "summary": ""
     },
     {
@@ -117,6 +141,14 @@
       "summary": "中文深度解读GL122-26：数字资产投资、稳定币、RWA代币化的上市资格、持续合规与披露要求。"
     },
     {
+      "firm": "Freshfields (富而德)",
+      "title": "One systemically important issuer, two regulators: Bank of England finalises systemic stablecoin policies and proposes joint regulatory approach with the FCA",
+      "url": "https://www.freshfields.com/en/our-thinking/briefings/2026/07/one-systemically-important-issuer-two-regulators-bank-of-england-finalises-systemic-stablecoin-policies-and-proposes-joint-regulatory-approach-with-the-fca",
+      "date": "2026-07-30",
+      "topic": "数字资产",
+      "summary": ""
+    },
+    {
       "firm": "Charltons (易周律师行)",
       "title": "Revised HKEX Listing Rules Take Effect on 24 July 2026",
       "url": "https://www.charltonslaw.com/revised-hkex-listing-rules-take-effect-on-24-july-2026/",
@@ -165,6 +197,14 @@
       "summary": ""
     },
     {
+      "firm": "Freshfields (富而德)",
+      "title": "Freshfields advises GRO Capital on sale of iPoint-systems",
+      "url": "https://www.freshfields.com/en/our-thinking/news/news-search/2026/07/freshfields-advises-gro-capital-on-sale-of-ipoint-systems",
+      "date": "2026-07-10",
+      "topic": "IPO保荐人",
+      "summary": ""
+    },
+    {
       "firm": "JSM (孖士打)",
       "title": "“I don’t agree” means what it says: Hong Kong court refuses to let employer rely on a rejected exit deal",
       "url": "https://www.jsm.com/zh/publications/2026/i-dont-agree-means-what-it-says-hong-kong-court-refuses-to-let-employer-rely-on-a-rejected-exit-deal/",
@@ -193,6 +233,14 @@
       "title": "SFC Circular: Required Account Opening Controls & Offshore Intermediary Relationship Monitoring",
       "url": "https://www.charltonslaw.com/sfc-circular-required-account-opening-controls-offshore-intermediary-relationship-monitoring/",
       "date": "2026-06-17",
+      "topic": "上市监管",
+      "summary": ""
+    },
+    {
+      "firm": "JSM (孖士打)",
+      "title": "Competition Commission (Hong Kong): Overview, Practical Law Practice Note",
+      "url": "https://www.jsm.com/zh/publications/2026/competition-commission-hong-kong-overview-practical-law-practice-note/",
+      "date": "2026-06-15",
       "topic": "上市监管",
       "summary": ""
     },
@@ -252,6 +300,14 @@
       "date": "2026-06",
       "topic": "合规报告",
       "summary": "汇总2026年3-4月联交所纪律行动（如煜盛文化不配合调查案）与证监会监管动态。"
+    },
+    {
+      "firm": "Freshfields (富而德)",
+      "title": "London International Disputes Week: From SWIFT to Stablecoins",
+      "url": "https://www.freshfields.com/en/our-thinking/events/2026/06/from-swift-to-stablecoins",
+      "date": "2026-05-20",
+      "topic": "数字资产",
+      "summary": ""
     },
     {
       "firm": "Linklaters (年利达)",
@@ -470,6 +526,14 @@
       "date": "2025-02-13",
       "topic": "数字资产",
       "summary": "评析《稳定币条例草案》的立法框架及其与咨询结论的衔接。"
+    },
+    {
+      "firm": "Clifford Chance (高伟绅)",
+      "title": "Insurance Horizon Scanner | Fire Horse Edition: Riding the Regulatory Shift in Insurance Distribution Hong Kong & Singapore",
+      "url": "http://www.cliffordchance.com/briefings/2026/02/insurance-horizon-scanner-fire-horse-edition-riding-the-regulatory-shift-in-insurance-distribution-hong-kong-and-singapore.html",
+      "date": "",
+      "topic": "上市监管",
+      "summary": ""
     }
   ]
 }
