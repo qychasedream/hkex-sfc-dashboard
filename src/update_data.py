@@ -14,8 +14,15 @@ import re
 import os
 import sys
 import io
+import ssl
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
+
+# cn-rules.hkex.com.hk 证书链不完整，GitHub Actions runner 的 CA 库验证失败（浏览器正常）
+# 只读公开数据，对该站关闭证书校验
+SSL_NOVERIFY = ssl.create_default_context()
+SSL_NOVERIFY.check_hostname = False
+SSL_NOVERIFY.verify_mode = ssl.CERT_NONE
 
 # 修复 Windows 控制台编码问题
 if sys.platform == 'win32':
@@ -137,7 +144,7 @@ def fetch_hkex_guidance():
         try:
             url = f'https://cn-rules.hkex.com.hk/node/{nid}'
             req = urllib.request.Request(url, headers=HEADERS)
-            with urllib.request.urlopen(req, timeout=20) as resp:
+            with urllib.request.urlopen(req, timeout=20, context=SSL_NOVERIFY) as resp:
                 html = resp.read().decode('utf-8')
 
             rows = re.findall(r'<tr[^>]*>(.*?)</tr>', html, re.DOTALL)
