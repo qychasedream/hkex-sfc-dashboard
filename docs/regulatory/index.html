@@ -1290,7 +1290,7 @@ function renderTimelineAuto(hkexRegItems, sfcNewsItems, glArchiveItems, guidance
     items = items.filter(function(i){ if (seenT[i.title]) return false; seenT[i.title] = true; return true; });
     items.sort(function(a,b){ return a.date < b.date ? 1 : -1; });
     var h = '';
-    items.slice(0, 20).forEach(function(i){
+    items.slice(0, 40).forEach(function(i){
         var d = i.date.split('-');
         var meta = Number(d[0]) + '年' + Number(d[1]) + '月' + Number(d[2]) + '日 · ' + (i.src === 'hkex' ? 'HKEX' : 'SFC');
         h += '<div class="tl-item ' + i.src + '">' +
