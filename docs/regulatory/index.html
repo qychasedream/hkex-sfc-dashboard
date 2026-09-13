@@ -630,6 +630,15 @@
         e.stopPropagation();
         document.body.classList.remove('side-open');
     });
+    // hash 直达：展开目标版块（供嵌入 iframe 时锚点导航/直接链接；含 hashchange 不重载场景）
+    function expandHashTarget() {
+        if (location.hash) {
+            var t = document.getElementById(location.hash.slice(1));
+            if (t && t.classList.contains('collapsed')) t.classList.remove('collapsed');
+        }
+    }
+    window.addEventListener('load', expandHashTarget);
+    window.addEventListener('hashchange', expandHashTarget);
     // 钉子：锁定后侧栏常驻（记住选择），再点释放恢复悬停隐藏
     (function () {
         if (localStorage.getItem('sbPinned') === '1') document.body.classList.add('side-pinned');
