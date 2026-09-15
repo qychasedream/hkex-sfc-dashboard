@@ -1,8 +1,21 @@
 {
-  "updated": "2026-09-15T14:02:55.793888+08:00",
+  "updated": "2026-09-15T19:48:07.738795+08:00",
   "source": "HKEX Regulatory Announcements RSS",
   "count": 50,
   "items": [
+    {
+      "title": "聯交所對秀商時代控股有限公司（股份代號：1849）三名前董事的紀律行動",
+      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260915news?sc_lang=zh-HK",
+      "date": "2026-09-15",
+      "description": "聯交所對秀商時代控股有限公司（股份代號：1849）三名前董事的紀律行動",
+      "category": "disciplinary",
+      "company": "秀商時代控股有限公司",
+      "code": "1849",
+      "violations": [
+        "违反董事职责"
+      ],
+      "gist": "不配合聯交所的調查是嚴重違反《上市規則》的行為，可能會導致最嚴重的紀律制裁。"
+    },
     {
       "title": "聯交所對Home Control International Limited（股份代號：1747）及兩名前董事的紀律行動",
       "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260908news?sc_lang=zh-HK",
@@ -509,13 +522,6 @@
       "code": "59",
       "violations": [],
       "gist": "該公司 ）前執行董事兼主席余斌先生 作出董事不適合性聲明 1 及譴責 作為調查該公司 及 ／或其董事是否違反《證券及期貨條例》的一部分，證券及期貨事務監察委員會 （ 證監會 ） 向余先生發出會面及調查通知和提醒電郵。"
-    },
-    {
-      "title": "通告 - 關於夢東方集團有限公司（強制清盤中）  （於百慕達註冊成立之有限公司）  （股份代號：593）取消上市地位",
-      "url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260123news?sc_lang=zh-HK",
-      "date": "2026-01-23",
-      "description": "通告 - 關於夢東方集團有限公司（強制清盤中）  （於百慕達註冊成立之有限公司）  （股份代號：593）取消上市地位",
-      "category": "enforcement_news"
     }
   ]
 }

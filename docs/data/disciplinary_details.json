@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T14:02:55.793631+08:00",
+  "updated": "2026-09-15T19:48:07.738431+08:00",
   "items": {
     "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260908news?sc_lang=zh-HK": {
       "company": "Home Control International Limited",
@@ -208,6 +208,14 @@
       "code": "59",
       "violations": [],
       "gist": "該公司 ）前執行董事兼主席余斌先生 作出董事不適合性聲明 1 及譴責 作為調查該公司 及 ／或其董事是否違反《證券及期貨條例》的一部分，證券及期貨事務監察委員會 （ 證監會 ） 向余先生發出會面及調查通知和提醒電郵。"
+    },
+    "https://www.hkex.com.hk/News/Regulatory-Announcements/2026/260915news?sc_lang=zh-HK": {
+      "company": "秀商時代控股有限公司",
+      "code": "1849",
+      "violations": [
+        "违反董事职责"
+      ],
+      "gist": "不配合聯交所的調查是嚴重違反《上市規則》的行為，可能會導致最嚴重的紀律制裁。"
     }
   }
 }
