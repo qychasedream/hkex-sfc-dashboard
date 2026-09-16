@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-16T14:08:10.374162+08:00",
+  "updated": "2026-09-16T19:39:56.118870+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR142",
+      "title": "證監會歡迎行政長官為鞏固香港的世界領先國際金融中心地位所勾劃的藍圖",
+      "type": "general",
+      "date": "2026-09-16",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR142"
+    },
     {
       "refNo": "26PR141",
       "title": "證監會禁止莫卓玲重投業界42個月",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-31",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR53"
-    },
-    {
-      "refNo": "26PR51",
-      "title": "無紙證券市場制度──預計於2026年11月實施",
-      "type": "general",
-      "date": "2026-03-30",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR51"
     }
   ]
 }
