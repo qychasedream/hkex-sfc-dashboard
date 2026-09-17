@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-17T18:21:47.072198+08:00",
+  "updated": "2026-09-17T23:14:35.399763+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR143",
+      "title": "法庭為不遵從證監會就調查市場操縱案發出的通知的刑事檢控訂定審訊前覆核日期",
+      "type": "enforcement",
+      "date": "2026-09-17",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR143"
+    },
     {
       "refNo": "26PR142",
       "title": "證監會歡迎行政長官為鞏固香港的世界領先國際金融中心地位所勾劃的藍圖",
@@ -625,13 +632,6 @@
       "type": "general",
       "date": "2026-03-31",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR52"
-    },
-    {
-      "refNo": "26PR53",
-      "title": "2025年香港證券業盈利及交易額均創五年新高",
-      "type": "general",
-      "date": "2026-03-31",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR53"
     }
   ]
 }
