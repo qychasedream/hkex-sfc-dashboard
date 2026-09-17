@@ -1,8 +1,16 @@
 {
-  "updated": "2026-09-17T13:29:25.402409+08:00",
+  "updated": "2026-09-17T18:22:35.582471+08:00",
   "source": "Verified Law Firm Publications (curated + auto-scan)",
-  "count": 66,
+  "count": 67,
   "items": [
+    {
+      "firm": "JSM (孖士打)",
+      "title": "Hong Kong court refuses to enforce a 12-month post-termination restriction against junior frontline staff",
+      "url": "https://www.jsm.com/zh/publications/2026/hong-kong-court-refuses-to-enforce-a-12-month-post-termination-restriction-against-junior-frontline-staff/",
+      "date": "2026-09-17",
+      "topic": "上市监管",
+      "summary": ""
+    },
     {
       "firm": "JSM (孖士打)",
       "title": "Settled or not? Hong Kong court says employer can still sue employee despite settlement agreement",
