@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-18T13:04:55.547295+08:00",
+  "updated": "2026-09-18T17:48:44.363856+08:00",
   "source": "SFC e-Distribution API",
   "count": 90,
   "items": [
+    {
+      "refNo": "26PR145",
+      "title": "證監會取得延續針對盧衍溢及Major Success Group Limited的全球性凍結令的命令",
+      "type": "enforcement",
+      "date": "2026-09-18",
+      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR145"
+    },
     {
       "refNo": "26PR144",
       "title": "黃天祐的新演說：在公司治理研討會2026上的主題演說",
@@ -625,13 +632,6 @@
       "type": "enforcement",
       "date": "2026-04-09",
       "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR55"
-    },
-    {
-      "refNo": "26PR54",
-      "title": "黃天祐的新演說：在香港中資基金業協會·彭博2025離岸中資基金大獎頒獎典禮上的演說",
-      "type": "general",
-      "date": "2026-04-08",
-      "url": "https://apps.sfc.hk/edistributionWeb/gateway/TC/news-and-announcements/news/doc?refNo=26PR54"
     }
   ]
 }
